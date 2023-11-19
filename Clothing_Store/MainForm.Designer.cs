@@ -79,32 +79,41 @@
             // btnproducts
             // 
             this.btnproducts.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnproducts.BackColor = System.Drawing.Color.White;
+            this.btnproducts.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnproducts.FlatAppearance.BorderSize = 3;
+            this.btnproducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnproducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnproducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnproducts.Location = new System.Drawing.Point(198, -2);
             this.btnproducts.Name = "btnproducts";
             this.btnproducts.Size = new System.Drawing.Size(181, 85);
             this.btnproducts.TabIndex = 1;
             this.btnproducts.Text = "Products";
-            this.btnproducts.UseVisualStyleBackColor = true;
+            this.btnproducts.UseVisualStyleBackColor = false;
+            this.btnproducts.Click += new System.EventHandler(this.btnproducts_Click);
             // 
             // btnStock
             // 
             this.btnStock.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnStock.BackColor = System.Drawing.Color.White;
             this.btnStock.Location = new System.Drawing.Point(385, -1);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(196, 85);
             this.btnStock.TabIndex = 2;
             this.btnStock.Text = "Stocks";
-            this.btnStock.UseVisualStyleBackColor = true;
+            this.btnStock.UseVisualStyleBackColor = false;
             // 
             // btnCustomers
             // 
             this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCustomers.BackColor = System.Drawing.Color.White;
             this.btnCustomers.Location = new System.Drawing.Point(587, -2);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(125, 85);
             this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Customers";
-            this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.UseVisualStyleBackColor = false;
             // 
             // btnOrders
             // 

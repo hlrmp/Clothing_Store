@@ -21,8 +21,14 @@ namespace Clothing_Store
         {
             
                 btnHome.BackColor = Color.Salmon;
-               
-          
+                btnproducts.BackColor = Color.White;
+
+        }
+
+        private void btnproducts_Click(object sender, EventArgs e)
+        {
+            btnproducts.BackColor = Color.Salmon;
+            btnHome.BackColor = Color.White;
         }
     }
 }
