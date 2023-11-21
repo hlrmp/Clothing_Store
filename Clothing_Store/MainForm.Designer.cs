@@ -36,7 +36,6 @@
             this.btnStock = new System.Windows.Forms.Button();
             this.btnproducts = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.panelLfs = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panelRSide = new System.Windows.Forms.Panel();
             this.btnDeliveries = new System.Windows.Forms.Button();
@@ -157,17 +156,6 @@
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // panelLfs
-            // 
-            this.panelLfs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelLfs.BackColor = System.Drawing.Color.Teal;
-            this.panelLfs.Location = new System.Drawing.Point(2, 183);
-            this.panelLfs.Name = "panelLfs";
-            this.panelLfs.Size = new System.Drawing.Size(200, 514);
-            this.panelLfs.TabIndex = 1;
-            this.panelLfs.Visible = false;
-            // 
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(2, 183);
@@ -230,9 +218,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainpanel.BackColor = System.Drawing.Color.Teal;
-            this.mainpanel.Location = new System.Drawing.Point(208, 183);
+            this.mainpanel.Location = new System.Drawing.Point(31, 183);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1034, 514);
+            this.mainpanel.Size = new System.Drawing.Size(1211, 514);
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Visible = false;
             // 
@@ -245,7 +233,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelRSide);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.panelLfs);
             this.Controls.Add(this.panel1buttonCollections);
             this.Controls.Add(this.mainpanel);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -268,7 +255,6 @@
         private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnOrders;
-        private System.Windows.Forms.Panel panelLfs;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Panel panelRSide;
         private System.Windows.Forms.Button btnDeliveries;

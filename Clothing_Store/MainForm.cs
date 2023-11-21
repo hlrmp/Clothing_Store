@@ -29,7 +29,7 @@ namespace Clothing_Store
 
             panelRSide.Show();
             monthCalendar1.Show();
-            panelLfs.Hide();
+          
 
 
         }
@@ -55,8 +55,7 @@ namespace Clothing_Store
 
             panelRSide.Hide();
             monthCalendar1.Hide();
-            panelLfs.Show();
-
+          
         }
 
         private void btnStock_Click(object sender, EventArgs e)

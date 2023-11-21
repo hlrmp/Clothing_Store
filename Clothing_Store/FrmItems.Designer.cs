@@ -42,7 +42,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(138, 81);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(617, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(617, 431);
             this.dataGridView1.TabIndex = 0;
             // 
             // textBox1
@@ -53,7 +53,6 @@
             this.textBox1.Size = new System.Drawing.Size(273, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Search ";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // sidepanelitems
             // 
@@ -62,14 +61,17 @@
             this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
             this.sidepanelitems.Location = new System.Drawing.Point(12, 81);
             this.sidepanelitems.Name = "sidepanelitems";
-            this.sidepanelitems.Size = new System.Drawing.Size(120, 357);
+            this.sidepanelitems.Size = new System.Drawing.Size(120, 431);
             this.sidepanelitems.TabIndex = 2;
             // 
             // FrmItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScroll = true;
+            this.AutoScrollMargin = new System.Drawing.Size(3, 3);
+            this.AutoScrollMinSize = new System.Drawing.Size(3, 3);
+            this.ClientSize = new System.Drawing.Size(800, 524);
             this.Controls.Add(this.sidepanelitems);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
