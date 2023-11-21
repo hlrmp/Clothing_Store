@@ -63,6 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmItems.Designer.cs">
+      <DependentUpon>FrmItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmItems.resx">
+      <DependentUpon>FrmItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
     </EmbeddedResource>

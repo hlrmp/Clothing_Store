@@ -29,16 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1buttonCollections = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnproducts = new System.Windows.Forms.Button();
-            this.btnStock = new System.Windows.Forms.Button();
-            this.btnCustomers = new System.Windows.Forms.Button();
-            this.btnOrders = new System.Windows.Forms.Button();
-            this.btnAccount = new System.Windows.Forms.Button();
             this.btnlogout = new System.Windows.Forms.Button();
+            this.btnAccount = new System.Windows.Forms.Button();
+            this.btnOrders = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnStock = new System.Windows.Forms.Button();
+            this.btnproducts = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.panelLfs = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.panelRSide = new System.Windows.Forms.Panel();
+            this.btnDeliveries = new System.Windows.Forms.Button();
+            this.btnItemStatus = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.mainpanel = new System.Windows.Forms.Panel();
             this.panel1buttonCollections.SuspendLayout();
+            this.panelRSide.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1buttonCollections
@@ -56,8 +62,83 @@
             this.panel1buttonCollections.Controls.Add(this.btnHome);
             this.panel1buttonCollections.Location = new System.Drawing.Point(-1, 87);
             this.panel1buttonCollections.Name = "panel1buttonCollections";
-            this.panel1buttonCollections.Size = new System.Drawing.Size(1125, 84);
+            this.panel1buttonCollections.Size = new System.Drawing.Size(1261, 84);
             this.panel1buttonCollections.TabIndex = 0;
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnlogout.Location = new System.Drawing.Point(1146, -2);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(114, 85);
+            this.btnlogout.TabIndex = 6;
+            this.btnlogout.Text = "Logout";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            // 
+            // btnAccount
+            // 
+            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnAccount.Location = new System.Drawing.Point(958, -2);
+            this.btnAccount.Name = "btnAccount";
+            this.btnAccount.Size = new System.Drawing.Size(114, 85);
+            this.btnAccount.TabIndex = 5;
+            this.btnAccount.Text = "Account";
+            this.btnAccount.UseVisualStyleBackColor = true;
+            // 
+            // btnOrders
+            // 
+            this.btnOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnOrders.Location = new System.Drawing.Point(786, -1);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(166, 85);
+            this.btnOrders.TabIndex = 4;
+            this.btnOrders.Text = "Orders & Delivery";
+            this.btnOrders.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCustomers.BackColor = System.Drawing.Color.White;
+            this.btnCustomers.Location = new System.Drawing.Point(655, -2);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(125, 85);
+            this.btnCustomers.TabIndex = 3;
+            this.btnCustomers.Text = "Customers";
+            this.btnCustomers.UseVisualStyleBackColor = false;
+            // 
+            // btnStock
+            // 
+            this.btnStock.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnStock.BackColor = System.Drawing.Color.White;
+            this.btnStock.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnStock.FlatAppearance.BorderSize = 3;
+            this.btnStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStock.Location = new System.Drawing.Point(384, -1);
+            this.btnStock.Name = "btnStock";
+            this.btnStock.Size = new System.Drawing.Size(196, 85);
+            this.btnStock.TabIndex = 2;
+            this.btnStock.Text = "Stocks";
+            this.btnStock.UseVisualStyleBackColor = false;
+            this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
+            // 
+            // btnproducts
+            // 
+            this.btnproducts.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnproducts.BackColor = System.Drawing.Color.White;
+            this.btnproducts.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnproducts.FlatAppearance.BorderSize = 3;
+            this.btnproducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnproducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnproducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnproducts.Location = new System.Drawing.Point(197, -1);
+            this.btnproducts.Name = "btnproducts";
+            this.btnproducts.Size = new System.Drawing.Size(181, 85);
+            this.btnproducts.TabIndex = 1;
+            this.btnproducts.Text = "Products";
+            this.btnproducts.UseVisualStyleBackColor = false;
+            this.btnproducts.Click += new System.EventHandler(this.btnproducts_Click);
             // 
             // btnHome
             // 
@@ -76,82 +157,14 @@
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // btnproducts
-            // 
-            this.btnproducts.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnproducts.BackColor = System.Drawing.Color.White;
-            this.btnproducts.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnproducts.FlatAppearance.BorderSize = 3;
-            this.btnproducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnproducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnproducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnproducts.Location = new System.Drawing.Point(198, -2);
-            this.btnproducts.Name = "btnproducts";
-            this.btnproducts.Size = new System.Drawing.Size(181, 85);
-            this.btnproducts.TabIndex = 1;
-            this.btnproducts.Text = "Products";
-            this.btnproducts.UseVisualStyleBackColor = false;
-            this.btnproducts.Click += new System.EventHandler(this.btnproducts_Click);
-            // 
-            // btnStock
-            // 
-            this.btnStock.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnStock.BackColor = System.Drawing.Color.White;
-            this.btnStock.Location = new System.Drawing.Point(385, -1);
-            this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(196, 85);
-            this.btnStock.TabIndex = 2;
-            this.btnStock.Text = "Stocks";
-            this.btnStock.UseVisualStyleBackColor = false;
-            // 
-            // btnCustomers
-            // 
-            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCustomers.BackColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(587, -2);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(125, 85);
-            this.btnCustomers.TabIndex = 3;
-            this.btnCustomers.Text = "Customers";
-            this.btnCustomers.UseVisualStyleBackColor = false;
-            // 
-            // btnOrders
-            // 
-            this.btnOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnOrders.Location = new System.Drawing.Point(718, -1);
-            this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(166, 85);
-            this.btnOrders.TabIndex = 4;
-            this.btnOrders.Text = "Orders & Delivery";
-            this.btnOrders.UseVisualStyleBackColor = true;
-            // 
-            // btnAccount
-            // 
-            this.btnAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAccount.Location = new System.Drawing.Point(890, -2);
-            this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(114, 85);
-            this.btnAccount.TabIndex = 5;
-            this.btnAccount.Text = "Account";
-            this.btnAccount.UseVisualStyleBackColor = true;
-            // 
-            // btnlogout
-            // 
-            this.btnlogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnlogout.Location = new System.Drawing.Point(1010, -2);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(114, 85);
-            this.btnlogout.TabIndex = 6;
-            this.btnlogout.Text = "Logout";
-            this.btnlogout.UseVisualStyleBackColor = true;
-            // 
             // panelLfs
             // 
-            this.panelLfs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelLfs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panelLfs.BackColor = System.Drawing.Color.Teal;
             this.panelLfs.Location = new System.Drawing.Point(2, 183);
             this.panelLfs.Name = "panelLfs";
-            this.panelLfs.Size = new System.Drawing.Size(200, 473);
+            this.panelLfs.Size = new System.Drawing.Size(200, 514);
             this.panelLfs.TabIndex = 1;
             this.panelLfs.Visible = false;
             // 
@@ -161,20 +174,86 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
             // 
+            // panelRSide
+            // 
+            this.panelRSide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelRSide.BackColor = System.Drawing.Color.Teal;
+            this.panelRSide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRSide.Controls.Add(this.btnItemStatus);
+            this.panelRSide.Controls.Add(this.btnDeliveries);
+            this.panelRSide.Location = new System.Drawing.Point(1061, 177);
+            this.panelRSide.Name = "panelRSide";
+            this.panelRSide.Size = new System.Drawing.Size(199, 193);
+            this.panelRSide.TabIndex = 3;
+            // 
+            // btnDeliveries
+            // 
+            this.btnDeliveries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeliveries.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnDeliveries.FlatAppearance.BorderSize = 3;
+            this.btnDeliveries.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDeliveries.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDeliveries.Location = new System.Drawing.Point(-2, -1);
+            this.btnDeliveries.Name = "btnDeliveries";
+            this.btnDeliveries.Size = new System.Drawing.Size(200, 23);
+            this.btnDeliveries.TabIndex = 0;
+            this.btnDeliveries.Text = "Deliveries";
+            this.btnDeliveries.UseVisualStyleBackColor = true;
+            // 
+            // btnItemStatus
+            // 
+            this.btnItemStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItemStatus.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnItemStatus.FlatAppearance.BorderSize = 3;
+            this.btnItemStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnItemStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnItemStatus.Location = new System.Drawing.Point(-2, 19);
+            this.btnItemStatus.Name = "btnItemStatus";
+            this.btnItemStatus.Size = new System.Drawing.Size(200, 23);
+            this.btnItemStatus.TabIndex = 1;
+            this.btnItemStatus.Text = "Item Status";
+            this.btnItemStatus.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1264, 90);
+            this.panel1.TabIndex = 4;
+            // 
+            // mainpanel
+            // 
+            this.mainpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainpanel.BackColor = System.Drawing.Color.Teal;
+            this.mainpanel.Location = new System.Drawing.Point(208, 183);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Size = new System.Drawing.Size(1034, 514);
+            this.mainpanel.TabIndex = 2;
+            this.mainpanel.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1126, 653);
+            this.ClientSize = new System.Drawing.Size(1254, 709);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelRSide);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.panelLfs);
             this.Controls.Add(this.panel1buttonCollections);
+            this.Controls.Add(this.mainpanel);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.panel1buttonCollections.ResumeLayout(false);
             this.panel1buttonCollections.PerformLayout();
+            this.panelRSide.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -191,5 +270,10 @@
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Panel panelLfs;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Panel panelRSide;
+        private System.Windows.Forms.Button btnDeliveries;
+        private System.Windows.Forms.Button btnItemStatus;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel mainpanel;
     }
 }
