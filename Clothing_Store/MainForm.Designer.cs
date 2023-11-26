@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1buttonCollections = new System.Windows.Forms.Panel();
             this.btnlogout = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
@@ -38,19 +39,23 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panelRSide = new System.Windows.Forms.Panel();
-            this.btnDeliveries = new System.Windows.Forms.Button();
             this.btnItemStatus = new System.Windows.Forms.Button();
+            this.btnDeliveries = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.mainpanel = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pboxTshirt = new System.Windows.Forms.PictureBox();
             this.panel1buttonCollections.SuspendLayout();
             this.panelRSide.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1buttonCollections
             // 
             this.panel1buttonCollections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1buttonCollections.BackColor = System.Drawing.Color.Teal;
+            this.panel1buttonCollections.BackColor = System.Drawing.Color.White;
             this.panel1buttonCollections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1buttonCollections.Controls.Add(this.btnlogout);
             this.panel1buttonCollections.Controls.Add(this.btnAccount);
@@ -67,12 +72,18 @@
             // btnlogout
             // 
             this.btnlogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnlogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnlogout.FlatAppearance.BorderSize = 3;
+            this.btnlogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnlogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogout.Location = new System.Drawing.Point(1146, -2);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(114, 85);
             this.btnlogout.TabIndex = 6;
             this.btnlogout.Text = "Logout";
             this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // btnAccount
             // 
@@ -98,12 +109,18 @@
             // 
             this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCustomers.BackColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(655, -2);
+            this.btnCustomers.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCustomers.FlatAppearance.BorderSize = 3;
+            this.btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomers.Location = new System.Drawing.Point(586, -1);
             this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(125, 85);
+            this.btnCustomers.Size = new System.Drawing.Size(194, 85);
             this.btnCustomers.TabIndex = 3;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnStock
             // 
@@ -174,20 +191,6 @@
             this.panelRSide.Size = new System.Drawing.Size(199, 193);
             this.panelRSide.TabIndex = 3;
             // 
-            // btnDeliveries
-            // 
-            this.btnDeliveries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeliveries.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnDeliveries.FlatAppearance.BorderSize = 3;
-            this.btnDeliveries.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnDeliveries.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDeliveries.Location = new System.Drawing.Point(-2, -1);
-            this.btnDeliveries.Name = "btnDeliveries";
-            this.btnDeliveries.Size = new System.Drawing.Size(200, 23);
-            this.btnDeliveries.TabIndex = 0;
-            this.btnDeliveries.Text = "Deliveries";
-            this.btnDeliveries.UseVisualStyleBackColor = true;
-            // 
             // btnItemStatus
             // 
             this.btnItemStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -202,11 +205,26 @@
             this.btnItemStatus.Text = "Item Status";
             this.btnItemStatus.UseVisualStyleBackColor = true;
             // 
+            // btnDeliveries
+            // 
+            this.btnDeliveries.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeliveries.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnDeliveries.FlatAppearance.BorderSize = 3;
+            this.btnDeliveries.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDeliveries.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDeliveries.Location = new System.Drawing.Point(-2, -1);
+            this.btnDeliveries.Name = "btnDeliveries";
+            this.btnDeliveries.Size = new System.Drawing.Size(200, 23);
+            this.btnDeliveries.TabIndex = 0;
+            this.btnDeliveries.Text = "Deliveries";
+            this.btnDeliveries.UseVisualStyleBackColor = true;
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 90);
@@ -224,12 +242,34 @@
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Visible = false;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Matura MT Script Capitals", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(295, 5);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(698, 85);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Clothing Store System";
+            // 
+            // pboxTshirt
+            // 
+            this.pboxTshirt.Image = ((System.Drawing.Image)(resources.GetObject("pboxTshirt.Image")));
+            this.pboxTshirt.Location = new System.Drawing.Point(265, 197);
+            this.pboxTshirt.Name = "pboxTshirt";
+            this.pboxTshirt.Size = new System.Drawing.Size(196, 194);
+            this.pboxTshirt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxTshirt.TabIndex = 5;
+            this.pboxTshirt.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1254, 709);
+            this.Controls.Add(this.pboxTshirt);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelRSide);
             this.Controls.Add(this.monthCalendar1);
@@ -241,6 +281,9 @@
             this.panel1buttonCollections.ResumeLayout(false);
             this.panel1buttonCollections.PerformLayout();
             this.panelRSide.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,5 +304,7 @@
         private System.Windows.Forms.Button btnItemStatus;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel mainpanel;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox pboxTshirt;
     }
 }

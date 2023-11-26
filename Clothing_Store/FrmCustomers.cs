@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Clothing_Store
 {
-    public partial class FrmItems : Form
+    public partial class FrmCustomers : Form
     {
-        public FrmItems()
+        public FrmCustomers()
         {
             InitializeComponent();
         }
 
+       
     }
 }
