@@ -78,7 +78,7 @@ namespace Clothing_Store
      
         private void btnproducts_Click(object sender, EventArgs e)
         {
-            fa.Refresh();
+            
             // button color
             btnproducts.BackColor = Color.Salmon;
             btnHome.BackColor = Color.White;
