@@ -1,3 +1,3 @@
 # Clothing_Store
-## Base Color = Teal
-### Matura Mt
+- Base Color = Teal
+-  Matura Mt
