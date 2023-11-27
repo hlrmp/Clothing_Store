@@ -34,6 +34,7 @@ namespace Clothing_Store
                 Name = "Edit",
                 DataPropertyName = "Edit"
                 
+                
             };
             dataGridView1.Columns.Add(editColumn);
 
