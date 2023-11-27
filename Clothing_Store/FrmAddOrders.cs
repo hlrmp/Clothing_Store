@@ -41,7 +41,14 @@ namespace Clothing_Store
 
             if (dialogResult == DialogResult.Yes)
             {
-                this.Close();
+                this.Hide();
+
+                txtCustomerName.Clear();
+                cbCategory.ResetText();
+                cbItem.ResetText();
+                numericQuantity.ResetText();
+                cbCategory.ResetText();
+
             }
             else
             {
