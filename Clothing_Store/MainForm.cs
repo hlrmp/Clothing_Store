@@ -23,9 +23,8 @@ namespace Clothing_Store
         FrmStocks fs = new FrmStocks();
         FrmCustomers fc = new FrmCustomers();
         FrmAccounts fa = new FrmAccounts();
+        FrmOrders fo = new FrmOrders();
        
-
-
         private void btnHome_Click(object sender, EventArgs e)
         {
             // button color
@@ -41,6 +40,7 @@ namespace Clothing_Store
             fs.Hide();
             i.Hide();
             fa.Hide();
+            fo.Hide();
 
             // pannel and forms
             mainpanel.Hide();
@@ -92,6 +92,7 @@ namespace Clothing_Store
             fs.Hide();
             i.Show();
             fa.Hide();
+            fo.Hide();
 
             // pannel
             mainpanel.Controls.Clear();
@@ -146,6 +147,7 @@ namespace Clothing_Store
             fc.Hide();
             fs.Show();
             fa.Hide();
+            fo.Hide();
 
 
             // pannel
@@ -207,6 +209,7 @@ namespace Clothing_Store
             fs.Hide();
             fc.Show();
             fa.Hide();
+            fo.Hide();
 
             // pannel
             mainpanel.Controls.Clear();
@@ -252,12 +255,59 @@ namespace Clothing_Store
 
         private void btnOrders_Click(object sender, EventArgs e)  // btnOrders begin
         {
+            // button color
             btnOrders.BackColor = Color.Salmon;
             btnCustomers.BackColor = Color.White;
             btnHome.BackColor = Color.White;
             btnStock.BackColor = Color.White;
             btnproducts.BackColor = Color.White;
             btnAccount.BackColor = Color.White;
+
+            // form
+            i.Hide();
+            fs.Hide();
+            fc.Hide();
+            fa.Hide();
+            fo.Show();
+
+
+            // pannel
+            mainpanel.Controls.Clear();
+            fo.FormBorderStyle = FormBorderStyle.None;
+            fo.TopLevel = false;
+            fo.AutoScroll = true;
+            fo.Dock = DockStyle.Fill;
+            mainpanel.Controls.Add(fo);
+
+            mainpanel.Show();
+
+
+            panelRSide.Hide();
+            monthCalendar1.Hide();
+
+
+            // picture boxes
+            pboxTshirt.Hide();
+            pboxPoloshirt.Hide();
+            pboxPants.Hide();
+            pboxShorts.Hide();
+            pboxPolo.Hide();
+            pboxCollecton.Hide();
+
+            // labels and total
+            label1.Hide();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+            label5.Hide();
+            label6.Hide();
+            lblTotalCollection.Hide();
+            lblTotalPants.Hide();
+            lblTotalPolo.Hide();
+            lblTotalPoloShirt.Hide();
+            lblTotalShorts.Hide();
+            lblTotalTshirt.Hide();
+
 
         } //btnOrders end
 
@@ -278,6 +328,7 @@ namespace Clothing_Store
             fs.Hide();
             fc.Hide();
             fa.Show();
+            fo.Hide();
 
             // pannel
             mainpanel.Controls.Clear();

@@ -44,9 +44,13 @@
             this.panelFilter = new System.Windows.Forms.Panel();
             this.checkBoxCollection = new System.Windows.Forms.CheckBox();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalNumber = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.datagridItems)).BeginInit();
             this.sidepanelitems.SuspendLayout();
             this.panelFilter.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // datagridItems
@@ -73,12 +77,13 @@
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
+            this.sidepanelitems.Controls.Add(this.panel1);
             this.sidepanelitems.Controls.Add(this.btnWomens);
             this.sidepanelitems.Controls.Add(this.btnUnisex);
             this.sidepanelitems.Controls.Add(this.btnMens);
             this.sidepanelitems.Location = new System.Drawing.Point(12, 81);
             this.sidepanelitems.Name = "sidepanelitems";
-            this.sidepanelitems.Size = new System.Drawing.Size(120, 448);
+            this.sidepanelitems.Size = new System.Drawing.Size(120, 449);
             this.sidepanelitems.TabIndex = 2;
             // 
             // btnWomens
@@ -237,6 +242,37 @@
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(4, 20);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(64, 18);
+            this.lblTotal.TabIndex = 10;
+            this.lblTotal.Text = "Total :";
+            // 
+            // lblTotalNumber
+            // 
+            this.lblTotalNumber.AutoSize = true;
+            this.lblTotalNumber.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNumber.ForeColor = System.Drawing.Color.White;
+            this.lblTotalNumber.Location = new System.Drawing.Point(74, 20);
+            this.lblTotalNumber.Name = "lblTotalNumber";
+            this.lblTotalNumber.Size = new System.Drawing.Size(41, 18);
+            this.lblTotalNumber.TabIndex = 11;
+            this.lblTotalNumber.Text = "000";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.lblTotalNumber);
+            this.panel1.Location = new System.Drawing.Point(0, 334);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(120, 74);
+            this.panel1.TabIndex = 19;
+            // 
             // FrmItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +295,8 @@
             this.sidepanelitems.ResumeLayout(false);
             this.panelFilter.ResumeLayout(false);
             this.panelFilter.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,5 +320,8 @@
         private System.Windows.Forms.Panel panelFilter;
         private System.Windows.Forms.CheckBox checkBoxCollection;
         private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblTotalNumber;
     }
 }
