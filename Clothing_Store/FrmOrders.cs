@@ -22,6 +22,43 @@ namespace Clothing_Store
             fao.Show();
         }
 
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+
+         
+
+            var editColumn = new DataGridViewButtonColumn
+            {
+                Text = "Edit",
+                UseColumnTextForButtonValue = true,
+                Name = "Edit",
+                DataPropertyName = "Edit"
+                
+            };
+            dataGridView1.Columns.Add(editColumn);
+
+
+            //DataGridViewButtonColumn EditColumn = new DataGridViewButtonColumn();
+            //EditColumn.Text = "Edit";
+            //EditColumn.Name = "Edit";
+            //EditColumn.DataPropertyName = "Edit";
+            //dataGridView1.Columns.Add(EditColumn);
+            //DataGridViewButtonColumn DelColumn = new DataGridViewButtonColumn();
+            //DelColumn.Text = "Delete";
+            //DelColumn.Name = "Delete";
+            //DelColumn.DataPropertyName = "Delete";
+            //dataGridView1.Columns.Add(DelColumn);
+
+
+
+
+            //DataTable dt = new DataTable();
+
+            //dt.Columns.Add(new DataColumn("Edit", typeof(System.Windows.Forms.Button)));
+
+            //dataGridView1.DataSource = dt;
+        }
        
-    }
-}
+
+    } // class end 
+} // name space end

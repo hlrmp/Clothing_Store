@@ -119,12 +119,13 @@
             this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnManage.Location = new System.Drawing.Point(3, 210);
+            this.btnManage.Location = new System.Drawing.Point(3, 141);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(114, 63);
             this.btnManage.TabIndex = 12;
             this.btnManage.Text = "Manage ";
             this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // btnTotal
             // 
@@ -133,7 +134,7 @@
             this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTotal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTotal.Location = new System.Drawing.Point(3, 141);
+            this.btnTotal.Location = new System.Drawing.Point(3, 210);
             this.btnTotal.Name = "btnTotal";
             this.btnTotal.Size = new System.Drawing.Size(114, 63);
             this.btnTotal.TabIndex = 13;
