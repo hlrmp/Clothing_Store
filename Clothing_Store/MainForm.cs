@@ -367,10 +367,6 @@ namespace Clothing_Store
             lblTotalShorts.Hide();
             lblTotalTshirt.Hide();
 
-
-
-
-
         } // btnAccount end
 
         private void btnlogout_Click(object sender, EventArgs e)    // log out begin

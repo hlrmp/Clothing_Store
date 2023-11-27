@@ -34,6 +34,9 @@
             this.sidepanelitems = new System.Windows.Forms.Panel();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnManage = new System.Windows.Forms.Button();
+            this.btnTotal = new System.Windows.Forms.Button();
+            this.btnHomeOrders = new System.Windows.Forms.Button();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +77,9 @@
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
+            this.sidepanelitems.Controls.Add(this.btnHomeOrders);
+            this.sidepanelitems.Controls.Add(this.btnTotal);
+            this.sidepanelitems.Controls.Add(this.btnManage);
             this.sidepanelitems.Controls.Add(this.btnAddStock);
             this.sidepanelitems.Location = new System.Drawing.Point(12, 81);
             this.sidepanelitems.Name = "sidepanelitems";
@@ -85,9 +91,9 @@
             this.btnAddStock.FlatAppearance.BorderSize = 0;
             this.btnAddStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddStock.Location = new System.Drawing.Point(3, 3);
+            this.btnAddStock.Location = new System.Drawing.Point(3, 72);
             this.btnAddStock.Name = "btnAddStock";
             this.btnAddStock.Size = new System.Drawing.Size(114, 63);
             this.btnAddStock.TabIndex = 11;
@@ -105,6 +111,48 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(617, 431);
             this.dataGridView1.TabIndex = 13;
+            // 
+            // btnManage
+            // 
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnManage.Location = new System.Drawing.Point(3, 210);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Size = new System.Drawing.Size(114, 63);
+            this.btnManage.TabIndex = 12;
+            this.btnManage.Text = "Manage ";
+            this.btnManage.UseVisualStyleBackColor = true;
+            // 
+            // btnTotal
+            // 
+            this.btnTotal.FlatAppearance.BorderSize = 0;
+            this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTotal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTotal.Location = new System.Drawing.Point(3, 141);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(114, 63);
+            this.btnTotal.TabIndex = 13;
+            this.btnTotal.Text = "Total";
+            this.btnTotal.UseVisualStyleBackColor = true;
+            // 
+            // btnHomeOrders
+            // 
+            this.btnHomeOrders.FlatAppearance.BorderSize = 0;
+            this.btnHomeOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnHomeOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeOrders.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHomeOrders.Location = new System.Drawing.Point(3, 3);
+            this.btnHomeOrders.Name = "btnHomeOrders";
+            this.btnHomeOrders.Size = new System.Drawing.Size(114, 63);
+            this.btnHomeOrders.TabIndex = 14;
+            this.btnHomeOrders.Text = "Home";
+            this.btnHomeOrders.UseVisualStyleBackColor = true;
             // 
             // FrmOrders
             // 
@@ -134,5 +182,8 @@
         private System.Windows.Forms.Panel sidepanelitems;
         private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnHomeOrders;
+        private System.Windows.Forms.Button btnTotal;
+        private System.Windows.Forms.Button btnManage;
     }
 }
