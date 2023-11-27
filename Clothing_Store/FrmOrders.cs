@@ -15,18 +15,6 @@ namespace Clothing_Store
         public FrmOrders()
         {
             InitializeComponent();
-
-            var editColumn = new DataGridViewButtonColumn
-            {
-                Text = "Edit",
-                UseColumnTextForButtonValue = true,
-                Name = "Edit",
-                DataPropertyName = "Edit"
-
-
-            };
-            dataGridView1.Columns.Add(editColumn);
-
         }
         FrmAddOrders fao = new FrmAddOrders();
         private void btnAddStock_Click(object sender, EventArgs e)
@@ -39,7 +27,17 @@ namespace Clothing_Store
 
          
 
-           
+            var editColumn = new DataGridViewButtonColumn
+            {
+                Text = "Edit",
+                UseColumnTextForButtonValue = true,
+                Name = "Edit",
+                DataPropertyName = "Edit"
+                
+                
+            };
+            dataGridView1.Columns.Add(editColumn);
+
 
             //DataGridViewButtonColumn EditColumn = new DataGridViewButtonColumn();
             //EditColumn.Text = "Edit";
