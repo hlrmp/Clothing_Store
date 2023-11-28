@@ -40,7 +40,6 @@ namespace Clothing_Store
 
             panelAccount.Show();
 
-
             fback.Show();
 
             
@@ -50,6 +49,7 @@ namespace Clothing_Store
         private void btnHomeAccounts_Click(object sender, EventArgs e) // home button begin
         {
             panelAccount.Hide();
+
         } // home buton end
 
 
