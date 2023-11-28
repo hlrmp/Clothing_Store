@@ -29,8 +29,10 @@ namespace Clothing_Store
         }  // border color end
 
         private void btnClose_Click(object sender, EventArgs e)  // close button begin
-        {
+        {          
             this.Hide();
+           
+
         } // close button end
 
 

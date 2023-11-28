@@ -27,14 +27,14 @@ namespace Clothing_Store
         private void btnBackup_Click(object sender, EventArgs e)// btn backup begin
         {
             // pannel
-            panel1.Controls.Clear();
+            panelAccount.Controls.Clear();
             fback.FormBorderStyle = FormBorderStyle.None;
             fback.TopLevel = false;
             fback.AutoScroll = true;
             fback.Dock = DockStyle.Fill;
-            panel1.Controls.Add(fback);
+            panelAccount.Controls.Add(fback);
 
-            panel1.Show();
+            panelAccount.Show();
 
             fback.Show();
             
@@ -42,8 +42,7 @@ namespace Clothing_Store
 
         private void btnHomeAccounts_Click(object sender, EventArgs e) // home button begin
         {
-            panel1.Hide();
-
+            panelAccount.Hide();
         } // home buton end
 
 

@@ -39,7 +39,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblsearch = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelAccount = new System.Windows.Forms.Panel();
             this.sidepanelAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -191,25 +191,26 @@
             this.lblsearch.TabIndex = 10;
             this.lblsearch.Text = "Search";
             // 
-            // panel1
+            // panelAccount
             // 
-            this.panel1.Location = new System.Drawing.Point(149, 93);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(597, 405);
-            this.panel1.TabIndex = 11;
-            this.panel1.Visible = false;
+            this.panelAccount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelAccount.Location = new System.Drawing.Point(149, 93);
+            this.panelAccount.Name = "panelAccount";
+            this.panelAccount.Size = new System.Drawing.Size(597, 405);
+            this.panelAccount.TabIndex = 11;
+            this.panelAccount.Visible = false;
             // 
             // FrmAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.sidepanelAdmin);
+            this.Controls.Add(this.panelAccount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAccounts";
             this.Text = "FrmAccounts";
@@ -233,6 +234,6 @@
         private System.Windows.Forms.Button btnUserLog;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Label lblsearch;
-        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Panel panelAccount;
     }
 }

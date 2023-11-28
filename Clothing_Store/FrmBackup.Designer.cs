@@ -31,6 +31,7 @@
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBackup
@@ -71,17 +72,29 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(77, 51);
+            this.textBox1.Location = new System.Drawing.Point(77, 65);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(453, 202);
+            this.textBox1.Size = new System.Drawing.Size(453, 188);
             this.textBox1.TabIndex = 16;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblTitle.Location = new System.Drawing.Point(34, 23);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(194, 39);
+            this.lblTitle.TabIndex = 40;
+            this.lblTitle.Text = "Backup File";
             // 
             // FrmBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 354);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnBackup);
@@ -99,5 +112,6 @@
         private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblTitle;
     }
 }
