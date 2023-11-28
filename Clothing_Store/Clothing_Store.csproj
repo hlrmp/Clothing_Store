@@ -93,6 +93,12 @@
     <Compile Include="FrmAddUser.Designer.cs">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBackup.Designer.cs">
+      <DependentUpon>FrmBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     <Compile Include="FrmOrders.Designer.cs">
       <DependentUpon>FrmOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRecovey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRecovey.Designer.cs">
+      <DependentUpon>FrmRecovey.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +176,9 @@
     <EmbeddedResource Include="FrmAddUser.resx">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBackup.resx">
+      <DependentUpon>FrmBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomers.resx">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrders.resx">
       <DependentUpon>FrmOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRecovey.resx">
+      <DependentUpon>FrmRecovey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReports.resx">
       <DependentUpon>FrmReports.cs</DependentUpon>

@@ -16,10 +16,37 @@ namespace Clothing_Store
         {
             InitializeComponent();
         }
-        FrmAddUser fadd = new FrmAddUser();
-        private void btnCreate_Click(object sender, EventArgs e)
+        FrmAddUser fadd = new FrmAddUser(); // add user instance
+        FrmBackup fback = new FrmBackup();
+        private void btnCreate_Click(object sender, EventArgs e)  // create new user begin
         {
             fadd.ShowDialog();
-        }
-    }
-}
+        } // create new user end
+
+
+        private void btnBackup_Click(object sender, EventArgs e)// btn backup begin
+        {
+            // pannel
+            panel1.Controls.Clear();
+            fback.FormBorderStyle = FormBorderStyle.None;
+            fback.TopLevel = false;
+            fback.AutoScroll = true;
+            fback.Dock = DockStyle.Fill;
+            panel1.Controls.Add(fback);
+
+            panel1.Show();
+
+            fback.Show();
+            
+        }  // btn bacup end 
+
+        private void btnHomeAccounts_Click(object sender, EventArgs e) // home button begin
+        {
+            panel1.Hide();
+
+        } // home buton end
+
+
+
+    } // class end
+} // name space end
