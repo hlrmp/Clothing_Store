@@ -31,7 +31,7 @@ namespace Clothing_Store
         private void btnClose_Click(object sender, EventArgs e)  // close button begin
         {          
             this.Hide();
-           
+            
             
         } // close button end
 

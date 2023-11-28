@@ -29,6 +29,11 @@ namespace Clothing_Store
                   Color.Teal, 10, ButtonBorderStyle.Solid);
         }  // border color end
 
+        private void btnCancel_Click(object sender, EventArgs e) //  cancel utton begin
+        {
+            this.Hide();
+
+        } // cancel button end
 
 
     } // class end

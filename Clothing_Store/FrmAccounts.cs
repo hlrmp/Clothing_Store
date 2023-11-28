@@ -20,7 +20,10 @@ namespace Clothing_Store
         FrmBackup fback = new FrmBackup();
         private void btnCreate_Click(object sender, EventArgs e)  // create new user begin
         {
+            panelAccount.Hide();
+
             fadd.ShowDialog();
+
         } // create new user end
 
     
@@ -51,6 +54,24 @@ namespace Clothing_Store
             panelAccount.Hide();
 
         } // home buton end
+
+        FrmRecovey frec = new FrmRecovey();
+        private void btnRecovery_Click(object sender, EventArgs e)  //  recovery button begin
+        {
+            panelAccount.Hide();
+
+            panelAccount.Controls.Clear();
+            frec.FormBorderStyle = FormBorderStyle.None;
+            frec.TopLevel = false;
+            frec.AutoScroll = true;
+            frec.Dock = DockStyle.Fill;
+            panelAccount.Controls.Add(frec);
+
+            panelAccount.Show();
+
+            frec.Show();
+
+        } // recovery buton end
 
 
 

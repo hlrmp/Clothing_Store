@@ -73,6 +73,7 @@
             this.btnRecovery.TabIndex = 12;
             this.btnRecovery.Text = "Recovery";
             this.btnRecovery.UseVisualStyleBackColor = true;
+            this.btnRecovery.Click += new System.EventHandler(this.btnRecovery_Click);
             // 
             // btnBackup
             // 
