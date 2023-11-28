@@ -37,6 +37,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblsearch = new System.Windows.Forms.Label();
+            this.lbltotal = new System.Windows.Forms.Label();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.sidepanelitems.Controls.Add(this.lbltotal);
             this.sidepanelitems.Controls.Add(this.btnHomeCustomers);
             this.sidepanelitems.Controls.Add(this.btnTotal);
             this.sidepanelitems.Controls.Add(this.btnManage);
@@ -69,6 +71,7 @@
             this.btnHomeCustomers.TabIndex = 38;
             this.btnHomeCustomers.Text = "Home";
             this.btnHomeCustomers.UseVisualStyleBackColor = false;
+            this.btnHomeCustomers.Click += new System.EventHandler(this.btnHomeCustomers_Click);
             // 
             // btnTotal
             // 
@@ -84,6 +87,7 @@
             this.btnTotal.TabIndex = 37;
             this.btnTotal.Text = "Total";
             this.btnTotal.UseVisualStyleBackColor = false;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
             // 
             // btnManage
             // 
@@ -99,6 +103,7 @@
             this.btnManage.TabIndex = 36;
             this.btnManage.Text = "Manage";
             this.btnManage.UseVisualStyleBackColor = false;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // btnAdd
             // 
@@ -158,6 +163,17 @@
             this.lblsearch.TabIndex = 39;
             this.lblsearch.Text = "Search";
             // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(46, 276);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(19, 20);
+            this.lbltotal.TabIndex = 39;
+            this.lbltotal.Text = "0";
+            // 
             // FrmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,6 +188,7 @@
             this.Name = "FrmCustomers";
             this.Text = "FrmCustomers";
             this.sidepanelitems.ResumeLayout(false);
+            this.sidepanelitems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -189,5 +206,6 @@
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.Button btnHomeCustomers;
+        private System.Windows.Forms.Label lbltotal;
     }
 }
