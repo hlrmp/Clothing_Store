@@ -40,7 +40,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnDelivery = new System.Windows.Forms.Button();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +80,6 @@
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
-            this.sidepanelitems.Controls.Add(this.btnDelivery);
             this.sidepanelitems.Controls.Add(this.btnHomeOrders);
             this.sidepanelitems.Controls.Add(this.btnTotal);
             this.sidepanelitems.Controls.Add(this.btnManage);
@@ -112,7 +110,7 @@
             this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTotal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTotal.Location = new System.Drawing.Point(3, 285);
+            this.btnTotal.Location = new System.Drawing.Point(3, 225);
             this.btnTotal.Name = "btnTotal";
             this.btnTotal.Size = new System.Drawing.Size(114, 63);
             this.btnTotal.TabIndex = 13;
@@ -180,20 +178,6 @@
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             // 
-            // btnDelivery
-            // 
-            this.btnDelivery.FlatAppearance.BorderSize = 0;
-            this.btnDelivery.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelivery.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelivery.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelivery.Location = new System.Drawing.Point(3, 216);
-            this.btnDelivery.Name = "btnDelivery";
-            this.btnDelivery.Size = new System.Drawing.Size(114, 63);
-            this.btnDelivery.TabIndex = 15;
-            this.btnDelivery.Text = "Deliveries";
-            this.btnDelivery.UseVisualStyleBackColor = true;
-            // 
             // FrmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,6 +211,5 @@
         private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.Button btnDelivery;
     }
 }

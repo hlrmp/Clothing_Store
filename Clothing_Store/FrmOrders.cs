@@ -61,7 +61,12 @@ namespace Clothing_Store
 
             //dataGridView1.DataSource = dt;
         }
-       
 
+        private void btnDelivery_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     } // class end 
 } // name space end

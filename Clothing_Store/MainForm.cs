@@ -25,6 +25,7 @@ namespace Clothing_Store
         FrmAccounts fa = new FrmAccounts();
         FrmOrders fo = new FrmOrders();
         FrmReports fr = new FrmReports();
+        FrmDelivery fd = new FrmDelivery();
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -36,6 +37,8 @@ namespace Clothing_Store
                 btnOrders.BackColor = Color.White;
                 btnAccount.BackColor = Color.White;
                 btnReports.BackColor = Color.White;
+                btnDelivery.BackColor = Color.White;
+
 
             // forms
             fc.Hide();
@@ -44,6 +47,7 @@ namespace Clothing_Store
             fa.Hide();
             fo.Hide();
             fr.Hide();
+            fd.Hide();
 
             // pannel and forms
             mainpanel.Hide();
@@ -90,6 +94,7 @@ namespace Clothing_Store
             btnOrders.BackColor = Color.White;
             btnAccount.BackColor = Color.White;
             btnReports.BackColor = Color.White;
+            btnDelivery.BackColor = Color.White;
 
             // forms
             fc.Hide();
@@ -98,6 +103,7 @@ namespace Clothing_Store
             fa.Hide();
             fo.Hide();
             fr.Hide();
+            fd.Hide();
 
             // pannel
             mainpanel.Controls.Clear();
@@ -146,7 +152,7 @@ namespace Clothing_Store
             btnOrders.BackColor = Color.White;
             btnAccount.BackColor = Color.White;
             btnReports.BackColor = Color.White;
-
+            btnDelivery.BackColor = Color.White;
 
             // forms
             i.Hide();
@@ -155,6 +161,7 @@ namespace Clothing_Store
             fa.Hide();
             fo.Hide();
             fr.Hide();
+            fd.Hide();
 
             // pannel
             mainpanel.Controls.Clear();
@@ -207,7 +214,7 @@ namespace Clothing_Store
             btnOrders.BackColor = Color.White;
             btnAccount.BackColor = Color.White;
             btnReports.BackColor = Color.White;
-
+            btnDelivery.BackColor = Color.White;
 
 
             // form
@@ -217,6 +224,7 @@ namespace Clothing_Store
             fa.Hide();
             fo.Hide();
             fr.Hide();
+            fd.Hide();
 
             // pannel
             mainpanel.Controls.Clear();
@@ -270,6 +278,7 @@ namespace Clothing_Store
             btnproducts.BackColor = Color.White;
             btnAccount.BackColor = Color.White;
             btnReports.BackColor = Color.White;
+            btnDelivery.BackColor = Color.White;
 
             // form
             i.Hide();
@@ -278,6 +287,7 @@ namespace Clothing_Store
             fa.Hide();
             fo.Show();
             fr.Hide();
+            fd.Hide();
 
             // pannel
             mainpanel.Controls.Clear();
@@ -329,7 +339,7 @@ namespace Clothing_Store
             btnStock.BackColor = Color.White;
             btnproducts.BackColor = Color.White;
             btnReports.BackColor = Color.White;
-
+            btnDelivery.BackColor = Color.White;
 
             // form
             i.Hide();
@@ -338,6 +348,7 @@ namespace Clothing_Store
             fa.Show();
             fo.Hide();
             fr.Hide();
+            fd.Hide();
 
             // pannel
             mainpanel.Controls.Clear();
@@ -390,7 +401,7 @@ namespace Clothing_Store
             btnHome.BackColor = Color.White;
             btnStock.BackColor = Color.White;
             btnproducts.BackColor = Color.White;
-
+            btnDelivery.BackColor = Color.White;
 
 
             // form
@@ -400,6 +411,8 @@ namespace Clothing_Store
             fa.Hide();
             fo.Hide();
             fr.Show();
+            fd.Hide();
+
 
             // pannel
             mainpanel.Controls.Clear();
@@ -440,6 +453,68 @@ namespace Clothing_Store
 
         } // button reports end
 
+   
+        private void btnDelivery_Click(object sender, EventArgs e) // button delivery begin
+        {
+            // buton color
+            btnDelivery.BackColor = Color.Salmon;
+            btnReports.BackColor = Color.White;
+            btnAccount.BackColor = Color.White;
+            btnOrders.BackColor = Color.White;
+            btnCustomers.BackColor = Color.White;
+            btnHome.BackColor = Color.White;
+            btnStock.BackColor = Color.White;
+            btnproducts.BackColor = Color.White;
+
+
+
+            // form
+            i.Hide();
+            fs.Hide();
+            fc.Hide();
+            fa.Hide();
+            fo.Hide();
+            fr.Hide();
+            fd.Show();
+
+            // pannel
+            mainpanel.Controls.Clear();
+            fd.FormBorderStyle = FormBorderStyle.None;
+            fd.TopLevel = false;
+            fd.AutoScroll = true;
+            fd.Dock = DockStyle.Fill;
+            mainpanel.Controls.Add(fd);
+
+            mainpanel.Show();
+
+
+            panelRSide.Hide();
+            monthCalendar1.Hide();
+
+
+            // picture boxes
+            pboxTshirt.Hide();
+            pboxPoloshirt.Hide();
+            pboxPants.Hide();
+            pboxShorts.Hide();
+            pboxPolo.Hide();
+            pboxCollecton.Hide();
+
+            // labels and total
+            label1.Hide();
+            label2.Hide();
+            label3.Hide();
+            label4.Hide();
+            label5.Hide();
+            label6.Hide();
+            lblTotalCollection.Hide();
+            lblTotalPants.Hide();
+            lblTotalPolo.Hide();
+            lblTotalPoloShirt.Hide();
+            lblTotalShorts.Hide();
+            lblTotalTshirt.Hide();
+        } // button delivery end
+
         private void btnlogout_Click(object sender, EventArgs e)    // log out begin
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to Exit ? ", "Log out", MessageBoxButtons.YesNo);
@@ -456,6 +531,5 @@ namespace Clothing_Store
         } // logout end 
 
      
-       
     } // class end 
 } // names space end
