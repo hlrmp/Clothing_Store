@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="FrmAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
