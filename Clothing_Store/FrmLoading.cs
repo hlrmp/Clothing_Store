@@ -34,7 +34,7 @@ namespace Clothing_Store
            // this.FormBorderStyle = FormBorderStyle.None;  
            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
 
-            // cp.Value = 0;
+            circularProgressBar1.Value = 0;
           
           
         }
@@ -70,18 +70,18 @@ namespace Clothing_Store
 
             
         {
-            if (progressBar1.Value < 100)
+            if (circularProgressBar1.Value < 100)
             {
                 progressBar1.Value += 1;
                 label1.Text = progressBar1.Value.ToString() + "%";
 
-            //    cp.Value += 1;
-              //  cp.Text = cp.Value.ToString() + "%";
+               circularProgressBar1.Value += 1;
+               circularProgressBar1.Text = circularProgressBar1.Value.ToString() + "%";
             }
             else
             {
                 timer1.Stop();
-
+                this.Hide();
             }
         }
     }

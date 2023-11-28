@@ -16,6 +16,7 @@ namespace Clothing_Store
         public frmLogin()
         {
             InitializeComponent();
+            
         }
 
             protected override void OnPaint(PaintEventArgs e)    // border color begin
@@ -23,10 +24,10 @@ namespace Clothing_Store
                //  base.OnPaint(e);
 
               ControlPaint.DrawBorder(e.Graphics, ClientRectangle,
-                    Color.DarkOliveGreen, 10, ButtonBorderStyle.Solid,
-                    Color.DarkOliveGreen, 10, ButtonBorderStyle.Solid,
-                    Color.DarkOliveGreen, 10, ButtonBorderStyle.Solid,
-                    Color.DarkOliveGreen, 10, ButtonBorderStyle.Solid);
+                    Color.Teal, 10, ButtonBorderStyle.Solid,
+                    Color.Teal, 10, ButtonBorderStyle.Solid,
+                    Color.Teal, 10, ButtonBorderStyle.Solid,
+                    Color.Teal, 10, ButtonBorderStyle.Solid);
         }  // border color end
 
         private void btnClose_Click(object sender, EventArgs e)  // close button begin
@@ -47,6 +48,15 @@ namespace Clothing_Store
                         txtPassword.UseSystemPasswordChar = true;
                     }
             } // check box show end 
+
+        private void btnLogin_Click(object sender, EventArgs e) // log in button begin
+        {
+            FrmLoading ffl = new FrmLoading();
+            ffl.ShowDialog();
+
+
+        } // lig in button end
+
 
     }// class end
 }//  name space end 
