@@ -34,6 +34,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbSortby = new System.Windows.Forms.ComboBox();
+            this.btnHomeDelivery = new System.Windows.Forms.Button();
+            this.btnTotal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,12 +48,13 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdd.Location = new System.Drawing.Point(3, 13);
+            this.btnAdd.Location = new System.Drawing.Point(3, 72);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(114, 63);
             this.btnAdd.TabIndex = 34;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnManage
             // 
@@ -61,7 +64,7 @@
             this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnManage.Location = new System.Drawing.Point(3, 91);
+            this.btnManage.Location = new System.Drawing.Point(3, 141);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(114, 63);
             this.btnManage.TabIndex = 35;
@@ -95,6 +98,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.panel1.Controls.Add(this.btnTotal);
+            this.panel1.Controls.Add(this.btnHomeDelivery);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.btnManage);
             this.panel1.Location = new System.Drawing.Point(12, 81);
@@ -110,7 +115,37 @@
             this.cbSortby.Name = "cbSortby";
             this.cbSortby.Size = new System.Drawing.Size(240, 21);
             this.cbSortby.TabIndex = 39;
-            this.cbSortby.Text = "Sort by";
+            this.cbSortby.Text = "Sort by Status";
+            // 
+            // btnHomeDelivery
+            // 
+            this.btnHomeDelivery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnHomeDelivery.FlatAppearance.BorderSize = 0;
+            this.btnHomeDelivery.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnHomeDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeDelivery.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHomeDelivery.Location = new System.Drawing.Point(3, 3);
+            this.btnHomeDelivery.Name = "btnHomeDelivery";
+            this.btnHomeDelivery.Size = new System.Drawing.Size(114, 63);
+            this.btnHomeDelivery.TabIndex = 36;
+            this.btnHomeDelivery.Text = "Home";
+            this.btnHomeDelivery.UseVisualStyleBackColor = false;
+            // 
+            // btnTotal
+            // 
+            this.btnTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnTotal.FlatAppearance.BorderSize = 0;
+            this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTotal.Location = new System.Drawing.Point(3, 210);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(114, 63);
+            this.btnTotal.TabIndex = 38;
+            this.btnTotal.Text = "Total";
+            this.btnTotal.UseVisualStyleBackColor = false;
             // 
             // FrmDelivery
             // 
@@ -139,5 +174,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbSortby;
+        private System.Windows.Forms.Button btnHomeDelivery;
+        private System.Windows.Forms.Button btnTotal;
     }
 }

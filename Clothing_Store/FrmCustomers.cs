@@ -17,6 +17,11 @@ namespace Clothing_Store
             InitializeComponent();
         }
 
-       
-    }
-}
+        FrmAddCustomer fadd = new FrmAddCustomer();
+        private void btnAdd_Click(object sender, EventArgs e)  // add buton begin
+        {
+            fadd.ShowDialog();
+        } //add button end
+
+    } // class end
+} // namespace end

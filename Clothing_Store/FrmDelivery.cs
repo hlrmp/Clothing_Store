@@ -16,5 +16,13 @@ namespace Clothing_Store
         {
             InitializeComponent();
         }
-    }
-}
+
+        FrmAddDelivery fadd = new FrmAddDelivery();
+        private void btnAdd_Click(object sender, EventArgs e) // button add begin
+        {
+            fadd.ShowDialog();
+        } // buttton add end
+
+
+    } // class end
+}  // name space end
