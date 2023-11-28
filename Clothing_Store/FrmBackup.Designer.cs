@@ -50,6 +50,7 @@
             this.btnBackup.TabIndex = 14;
             this.btnBackup.Text = "Back-up";
             this.btnBackup.UseVisualStyleBackColor = false;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // btnClose
             // 

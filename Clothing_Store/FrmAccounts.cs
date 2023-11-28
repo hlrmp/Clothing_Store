@@ -23,10 +23,14 @@ namespace Clothing_Store
             fadd.ShowDialog();
         } // create new user end
 
+    
+        
+
 
         private void btnBackup_Click(object sender, EventArgs e)// btn backup begin
         {
             // pannel
+
             panelAccount.Controls.Clear();
             fback.FormBorderStyle = FormBorderStyle.None;
             fback.TopLevel = false;
@@ -36,7 +40,10 @@ namespace Clothing_Store
 
             panelAccount.Show();
 
+
             fback.Show();
+
+            
             
         }  // btn bacup end 
 

@@ -32,8 +32,13 @@ namespace Clothing_Store
         {          
             this.Hide();
            
-
+            
         } // close button end
+
+        private void btnBackup_Click(object sender, EventArgs e) // backup button begin
+        {
+
+        } // back up button end
 
 
     } // class end
