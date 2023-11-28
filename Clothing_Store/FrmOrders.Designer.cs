@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrders));
             this.lblsearch = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.sidepanelitems = new System.Windows.Forms.Panel();
+            this.btnHomeOrders = new System.Windows.Forms.Button();
+            this.btnTotal = new System.Windows.Forms.Button();
+            this.btnManage = new System.Windows.Forms.Button();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnManage = new System.Windows.Forms.Button();
-            this.btnTotal = new System.Windows.Forms.Button();
-            this.btnHomeOrders = new System.Windows.Forms.Button();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -86,6 +89,49 @@
             this.sidepanelitems.Size = new System.Drawing.Size(120, 431);
             this.sidepanelitems.TabIndex = 14;
             // 
+            // btnHomeOrders
+            // 
+            this.btnHomeOrders.FlatAppearance.BorderSize = 0;
+            this.btnHomeOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnHomeOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeOrders.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHomeOrders.Location = new System.Drawing.Point(3, 3);
+            this.btnHomeOrders.Name = "btnHomeOrders";
+            this.btnHomeOrders.Size = new System.Drawing.Size(114, 63);
+            this.btnHomeOrders.TabIndex = 14;
+            this.btnHomeOrders.Text = "Home";
+            this.btnHomeOrders.UseVisualStyleBackColor = true;
+            // 
+            // btnTotal
+            // 
+            this.btnTotal.FlatAppearance.BorderSize = 0;
+            this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTotal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTotal.Location = new System.Drawing.Point(3, 210);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(114, 63);
+            this.btnTotal.TabIndex = 13;
+            this.btnTotal.Text = "Total";
+            this.btnTotal.UseVisualStyleBackColor = true;
+            // 
+            // btnManage
+            // 
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnManage.Location = new System.Drawing.Point(3, 141);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Size = new System.Drawing.Size(114, 63);
+            this.btnManage.TabIndex = 12;
+            this.btnManage.Text = "Manage ";
+            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            // 
             // btnAddStock
             // 
             this.btnAddStock.FlatAppearance.BorderSize = 0;
@@ -103,57 +149,34 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete});
             this.dataGridView1.Location = new System.Drawing.Point(138, 81);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(617, 431);
             this.dataGridView1.TabIndex = 13;
             // 
-            // btnManage
+            // Edit
             // 
-            this.btnManage.FlatAppearance.BorderSize = 0;
-            this.btnManage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnManage.Location = new System.Drawing.Point(3, 141);
-            this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(114, 63);
-            this.btnManage.TabIndex = 12;
-            this.btnManage.Text = "Manage ";
-            this.btnManage.UseVisualStyleBackColor = true;
-            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
             // 
-            // btnTotal
+            // Delete
             // 
-            this.btnTotal.FlatAppearance.BorderSize = 0;
-            this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTotal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTotal.Location = new System.Drawing.Point(3, 210);
-            this.btnTotal.Name = "btnTotal";
-            this.btnTotal.Size = new System.Drawing.Size(114, 63);
-            this.btnTotal.TabIndex = 13;
-            this.btnTotal.Text = "Total";
-            this.btnTotal.UseVisualStyleBackColor = true;
-            // 
-            // btnHomeOrders
-            // 
-            this.btnHomeOrders.FlatAppearance.BorderSize = 0;
-            this.btnHomeOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnHomeOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHomeOrders.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHomeOrders.Location = new System.Drawing.Point(3, 3);
-            this.btnHomeOrders.Name = "btnHomeOrders";
-            this.btnHomeOrders.Size = new System.Drawing.Size(114, 63);
-            this.btnHomeOrders.TabIndex = 14;
-            this.btnHomeOrders.Text = "Home";
-            this.btnHomeOrders.UseVisualStyleBackColor = true;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
             // 
             // FrmOrders
             // 
@@ -186,5 +209,7 @@
         private System.Windows.Forms.Button btnHomeOrders;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

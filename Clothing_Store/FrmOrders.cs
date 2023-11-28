@@ -33,6 +33,8 @@ namespace Clothing_Store
                 UseColumnTextForButtonValue = true,
                 Name = "Edit",
                 DataPropertyName = "Edit"
+
+
                 
                 
             };
