@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.sidepanelAdmin = new System.Windows.Forms.Panel();
+            this.btnRecovery = new System.Windows.Forms.Button();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.btnActivitylog = new System.Windows.Forms.Button();
+            this.btnUserLog = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnHomeAccounts = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnUserLog = new System.Windows.Forms.Button();
-            this.btnActivitylog = new System.Windows.Forms.Button();
-            this.btnBackup = new System.Windows.Forms.Button();
-            this.btnRecovery = new System.Windows.Forms.Button();
-            this.btnHomeAccounts = new System.Windows.Forms.Button();
             this.lblsearch = new System.Windows.Forms.Label();
             this.sidepanelAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,6 +58,93 @@
             this.sidepanelAdmin.Name = "sidepanelAdmin";
             this.sidepanelAdmin.Size = new System.Drawing.Size(120, 431);
             this.sidepanelAdmin.TabIndex = 6;
+            // 
+            // btnRecovery
+            // 
+            this.btnRecovery.FlatAppearance.BorderSize = 0;
+            this.btnRecovery.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnRecovery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecovery.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRecovery.Location = new System.Drawing.Point(3, 348);
+            this.btnRecovery.Name = "btnRecovery";
+            this.btnRecovery.Size = new System.Drawing.Size(114, 63);
+            this.btnRecovery.TabIndex = 12;
+            this.btnRecovery.Text = "Recovery";
+            this.btnRecovery.UseVisualStyleBackColor = true;
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.FlatAppearance.BorderSize = 0;
+            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBackup.Location = new System.Drawing.Point(3, 279);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(114, 63);
+            this.btnBackup.TabIndex = 11;
+            this.btnBackup.Text = "Back Up";
+            this.btnBackup.UseVisualStyleBackColor = true;
+            // 
+            // btnActivitylog
+            // 
+            this.btnActivitylog.FlatAppearance.BorderSize = 0;
+            this.btnActivitylog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnActivitylog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActivitylog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivitylog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnActivitylog.Location = new System.Drawing.Point(3, 210);
+            this.btnActivitylog.Name = "btnActivitylog";
+            this.btnActivitylog.Size = new System.Drawing.Size(114, 63);
+            this.btnActivitylog.TabIndex = 10;
+            this.btnActivitylog.Text = "Activity log\r\n";
+            this.btnActivitylog.UseVisualStyleBackColor = true;
+            // 
+            // btnUserLog
+            // 
+            this.btnUserLog.FlatAppearance.BorderSize = 0;
+            this.btnUserLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnUserLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserLog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUserLog.Location = new System.Drawing.Point(3, 141);
+            this.btnUserLog.Name = "btnUserLog";
+            this.btnUserLog.Size = new System.Drawing.Size(114, 63);
+            this.btnUserLog.TabIndex = 9;
+            this.btnUserLog.Text = "User log\r\n";
+            this.btnUserLog.UseVisualStyleBackColor = true;
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.FlatAppearance.BorderSize = 0;
+            this.btnCreate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCreate.Location = new System.Drawing.Point(3, 72);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(114, 63);
+            this.btnCreate.TabIndex = 8;
+            this.btnCreate.Text = "Create Acc.";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnHomeAccounts
+            // 
+            this.btnHomeAccounts.BackColor = System.Drawing.Color.Transparent;
+            this.btnHomeAccounts.FlatAppearance.BorderSize = 0;
+            this.btnHomeAccounts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnHomeAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeAccounts.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHomeAccounts.ImageKey = "(none)";
+            this.btnHomeAccounts.Location = new System.Drawing.Point(3, 3);
+            this.btnHomeAccounts.Name = "btnHomeAccounts";
+            this.btnHomeAccounts.Size = new System.Drawing.Size(114, 63);
+            this.btnHomeAccounts.TabIndex = 13;
+            this.btnHomeAccounts.Text = "Home";
+            this.btnHomeAccounts.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -88,92 +175,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(617, 431);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // btnCreate
-            // 
-            this.btnCreate.FlatAppearance.BorderSize = 0;
-            this.btnCreate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCreate.Location = new System.Drawing.Point(3, 72);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(114, 63);
-            this.btnCreate.TabIndex = 8;
-            this.btnCreate.Text = "Create Acc.";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            // 
-            // btnUserLog
-            // 
-            this.btnUserLog.FlatAppearance.BorderSize = 0;
-            this.btnUserLog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnUserLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserLog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUserLog.Location = new System.Drawing.Point(3, 141);
-            this.btnUserLog.Name = "btnUserLog";
-            this.btnUserLog.Size = new System.Drawing.Size(114, 63);
-            this.btnUserLog.TabIndex = 9;
-            this.btnUserLog.Text = "User log\r\n";
-            this.btnUserLog.UseVisualStyleBackColor = true;
-            // 
-            // btnActivitylog
-            // 
-            this.btnActivitylog.FlatAppearance.BorderSize = 0;
-            this.btnActivitylog.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnActivitylog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActivitylog.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActivitylog.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnActivitylog.Location = new System.Drawing.Point(3, 210);
-            this.btnActivitylog.Name = "btnActivitylog";
-            this.btnActivitylog.Size = new System.Drawing.Size(114, 63);
-            this.btnActivitylog.TabIndex = 10;
-            this.btnActivitylog.Text = "Activity log\r\n";
-            this.btnActivitylog.UseVisualStyleBackColor = true;
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.FlatAppearance.BorderSize = 0;
-            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBackup.Location = new System.Drawing.Point(3, 279);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(114, 63);
-            this.btnBackup.TabIndex = 11;
-            this.btnBackup.Text = "Back Up";
-            this.btnBackup.UseVisualStyleBackColor = true;
-            // 
-            // btnRecovery
-            // 
-            this.btnRecovery.FlatAppearance.BorderSize = 0;
-            this.btnRecovery.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnRecovery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRecovery.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRecovery.Location = new System.Drawing.Point(3, 348);
-            this.btnRecovery.Name = "btnRecovery";
-            this.btnRecovery.Size = new System.Drawing.Size(114, 63);
-            this.btnRecovery.TabIndex = 12;
-            this.btnRecovery.Text = "Recovery";
-            this.btnRecovery.UseVisualStyleBackColor = true;
-            // 
-            // btnHomeAccounts
-            // 
-            this.btnHomeAccounts.BackColor = System.Drawing.Color.Transparent;
-            this.btnHomeAccounts.FlatAppearance.BorderSize = 0;
-            this.btnHomeAccounts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnHomeAccounts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHomeAccounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeAccounts.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHomeAccounts.ImageKey = "(none)";
-            this.btnHomeAccounts.Location = new System.Drawing.Point(3, 3);
-            this.btnHomeAccounts.Name = "btnHomeAccounts";
-            this.btnHomeAccounts.Size = new System.Drawing.Size(114, 63);
-            this.btnHomeAccounts.TabIndex = 13;
-            this.btnHomeAccounts.Text = "Home";
-            this.btnHomeAccounts.UseVisualStyleBackColor = false;
             // 
             // lblsearch
             // 

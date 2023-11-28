@@ -30,10 +30,7 @@ namespace Clothing_Store
                   Color.Teal, 10, ButtonBorderStyle.Solid);
         }  // border color end
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Cancel_Click(object sender, EventArgs e)  //  cancel button begin
         {

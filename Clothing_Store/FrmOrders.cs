@@ -19,7 +19,7 @@ namespace Clothing_Store
         FrmAddOrders fao = new FrmAddOrders();
         private void btnAddStock_Click(object sender, EventArgs e)
         {
-            fao.Show();
+            fao.ShowDialog();
         }
 
         private void btnManage_Click(object sender, EventArgs e)

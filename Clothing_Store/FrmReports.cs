@@ -16,5 +16,10 @@ namespace Clothing_Store
         {
             InitializeComponent();
         }
+
+        private void btnStocks_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

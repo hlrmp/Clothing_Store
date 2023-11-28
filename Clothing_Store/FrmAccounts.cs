@@ -16,5 +16,10 @@ namespace Clothing_Store
         {
             InitializeComponent();
         }
+        FrmAddUser fadd = new FrmAddUser();
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            fadd.ShowDialog();
+        }
     }
 }

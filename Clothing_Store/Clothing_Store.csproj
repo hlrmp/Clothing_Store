@@ -75,6 +75,12 @@
     <Compile Include="FrmAddOrders.Designer.cs">
       <DependentUpon>FrmAddOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddUser.Designer.cs">
+      <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,12 @@
     <Compile Include="FrmOrders.Designer.cs">
       <DependentUpon>FrmOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReports.Designer.cs">
+      <DependentUpon>FrmReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStocks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +137,9 @@
     <EmbeddedResource Include="FrmAddOrders.resx">
       <DependentUpon>FrmAddOrders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddUser.resx">
+      <DependentUpon>FrmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCustomers.resx">
       <DependentUpon>FrmCustomers.cs</DependentUpon>
     </EmbeddedResource>
@@ -139,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOrders.resx">
       <DependentUpon>FrmOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReports.resx">
+      <DependentUpon>FrmReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStocks.resx">
       <DependentUpon>FrmStocks.cs</DependentUpon>
