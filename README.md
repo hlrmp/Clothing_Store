@@ -1,3 +1,4 @@
 # Clothing_Store
-- Base Color = Teal
+-  Colors = Teal, navy - 7, 25, 82
 -  Matura Mt
+-  verdana
