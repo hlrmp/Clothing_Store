@@ -168,15 +168,19 @@
             // 
             this.Edit.HeaderText = "Edit";
             this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
             // 
             // Delete
             // 
             this.Delete.HeaderText = "Delete";
             this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
             // 
             // FrmOrders
             // 

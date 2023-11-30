@@ -25,7 +25,7 @@ namespace Clothing_Store
         private void btnManage_Click(object sender, EventArgs e)
         {
 
-         
+
 
             var editColumn = new DataGridViewButtonColumn
             {

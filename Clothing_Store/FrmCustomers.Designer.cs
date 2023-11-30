@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustomers));
             this.sidepanelitems = new System.Windows.Forms.Panel();
+            this.lbltotal = new System.Windows.Forms.Label();
             this.btnHomeCustomers = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
@@ -37,9 +39,12 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblsearch = new System.Windows.Forms.Label();
-            this.lbltotal = new System.Windows.Forms.Label();
+            this.dataGridViewManage = new System.Windows.Forms.DataGridView();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
             this.SuspendLayout();
             // 
             // sidepanelitems
@@ -56,6 +61,17 @@
             this.sidepanelitems.Name = "sidepanelitems";
             this.sidepanelitems.Size = new System.Drawing.Size(120, 431);
             this.sidepanelitems.TabIndex = 5;
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(46, 276);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(19, 20);
+            this.lbltotal.TabIndex = 39;
+            this.lbltotal.Text = "0";
             // 
             // btnHomeCustomers
             // 
@@ -128,6 +144,8 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(273, 20);
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // dataGridView1
             // 
@@ -165,23 +183,52 @@
             this.lblsearch.Size = new System.Drawing.Size(41, 13);
             this.lblsearch.TabIndex = 39;
             this.lblsearch.Text = "Search";
+            this.lblsearch.Click += new System.EventHandler(this.lblsearch_Click);
             // 
-            // lbltotal
+            // dataGridViewManage
             // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(46, 276);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(19, 20);
-            this.lbltotal.TabIndex = 39;
-            this.lbltotal.Text = "0";
+            this.dataGridViewManage.AllowUserToAddRows = false;
+            this.dataGridViewManage.AllowUserToDeleteRows = false;
+            this.dataGridViewManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Edit,
+            this.Delete});
+            this.dataGridViewManage.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewManage.Name = "dataGridViewManage";
+            this.dataGridViewManage.ReadOnly = true;
+            this.dataGridViewManage.Size = new System.Drawing.Size(617, 431);
+            this.dataGridViewManage.TabIndex = 40;
+            this.dataGridViewManage.Visible = false;
+            // 
+            // Edit
+            // 
+            this.Edit.FillWeight = 50F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 50F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
             // 
             // FrmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.sidepanelitems);
@@ -193,6 +240,7 @@
             this.sidepanelitems.ResumeLayout(false);
             this.sidepanelitems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +258,8 @@
         private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.Button btnHomeCustomers;
         private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.DataGridView dataGridViewManage;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

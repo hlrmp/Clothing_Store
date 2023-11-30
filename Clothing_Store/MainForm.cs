@@ -15,6 +15,9 @@ namespace Clothing_Store
         public MainForm()
         {
             InitializeComponent();
+
+            employee();
+
         } // main constructor end
 
 
@@ -26,6 +29,7 @@ namespace Clothing_Store
         FrmOrders fo = new FrmOrders();
         FrmReports fr = new FrmReports();
         FrmDelivery fd = new FrmDelivery();
+        frmLogin flog = new frmLogin();
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -515,13 +519,18 @@ namespace Clothing_Store
             lblTotalTshirt.Hide();
         } // button delivery end
 
+
+
+
         private void btnlogout_Click(object sender, EventArgs e)    // log out begin
         {
             DialogResult dialogResult = MessageBox.Show("Do you want to Exit ? ", "Log out", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
-                this.Close();
+             
+                flog.Show();
+                this.Hide();
             }
             else
             {
@@ -530,6 +539,23 @@ namespace Clothing_Store
 
         } // logout end 
 
-     
+        string emp;
+        public void employee()    // emp condition begin
+        {
+            emp = "Manager";
+
+            if ( emp == "Cashier")
+            {
+                btnAccount.Hide();
+            }
+            else if (emp == "Manager")
+            {
+                btnAccount.Show();
+            }
+        } // emp condition begin
+
+    
+
+
     } // class end 
 } // names space end
