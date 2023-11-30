@@ -118,6 +118,7 @@ namespace Clothing_Store
             SqlConnection cn = new SqlConnection(ConnectionClass.conn);
                                      
             cn.Open();
+
             string sch = txtSearch.Text;
 
             string query = "Select *  from Customers where First_Name LIKE '" + sch + '%' + "'   ";
