@@ -18,7 +18,7 @@ namespace Clothing_Store
         public FrmAddCustomer()
         {
             InitializeComponent();
-            this.Paint += new PaintEventHandler(UserControl1_Paint);
+          
         }
 
             customerClass cs = new customerClass();
@@ -262,11 +262,6 @@ namespace Clothing_Store
 
 
 
-        private void UserControl1_Paint(object sender, PaintEventArgs e)
-
-        {
-            ControlPaint.DrawBorder(e.Graphics, txtFname.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
-        }
 
 
     } // class end
