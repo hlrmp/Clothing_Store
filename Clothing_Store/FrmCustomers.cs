@@ -165,28 +165,25 @@ namespace Clothing_Store
 
 
 
-        public void filter()
+        public void filter() // filter begin
         {
-            SqlConnection sql = new SqlConnection(ConnectionClass.conn);
-            string query = ("SELECT TOP 0 * FROM Customers");
-            sql.Open();
-
-            SqlCommand cmd;
-            cmd = new SqlCommand(query,sql);
-            SqlDataReader rd = cmd.ExecuteReader();
-
-
-            while (rd.Read())
-            {
-                string top = rd[1].ToString();
-                MessageBox.Show(top);
-
-                ArrayList arr = new ArrayList();
-                arr.Add(top);
-            }
-           
-
           
-        }
+
+            ArrayList arr = new ArrayList();
+
+            arr.Add("First Name");
+            arr.Add("Last Name");
+            arr.Add("Address");
+            arr.Add("Contact");
+            arr.Add("Email");
+
+            foreach (string list in arr)
+            {
+                cbFilter.Items.Add(list);
+            }
+          
+        } // filter end
+
+       
     } // class end
 } // namespace end

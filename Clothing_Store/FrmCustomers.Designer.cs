@@ -142,9 +142,8 @@
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.Location = new System.Drawing.Point(438, 40);
-            this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(273, 21);
+            this.txtSearch.Size = new System.Drawing.Size(243, 20);
             this.txtSearch.TabIndex = 4;
             this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
@@ -180,7 +179,7 @@
             this.lblsearch.AutoSize = true;
             this.lblsearch.BackColor = System.Drawing.Color.White;
             this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsearch.Location = new System.Drawing.Point(659, 43);
+            this.lblsearch.Location = new System.Drawing.Point(634, 43);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(41, 13);
             this.lblsearch.TabIndex = 39;
@@ -228,10 +227,11 @@
             // cbFilter
             // 
             this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFilter.BackColor = System.Drawing.Color.White;
             this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(708, 40);
+            this.cbFilter.Location = new System.Drawing.Point(681, 40);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(47, 21);
+            this.cbFilter.Size = new System.Drawing.Size(74, 21);
             this.cbFilter.TabIndex = 41;
             this.cbFilter.Text = "Filter";
             // 
