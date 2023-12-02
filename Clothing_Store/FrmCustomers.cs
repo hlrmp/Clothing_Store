@@ -23,7 +23,11 @@ namespace Clothing_Store
             seecustomers(); // see cutomers on the datagrid - load form
             total(); // total customers string lbltotal
             filter();// search filter
+
+
         }
+
+         
 
         FrmAddCustomer fadd = new FrmAddCustomer();
         private void btnAdd_Click(object sender, EventArgs e)  // add buton begin
@@ -184,6 +188,18 @@ namespace Clothing_Store
           
         } // filter end
 
-       
+        private void FrmCustomers_Load(object sender, EventArgs e) // form load begin
+        {
+          /*  this.txtSearch.Size = new System.Drawing.Size(243, 21);
+            this.cbFilter.Size = new System.Drawing.Size(74, 20);
+
+            this.txtSearch.Height = 21;*/
+
+            this.txtSearch.AutoSize = false;
+            this.txtSearch.Size = new System.Drawing.Size(243, 21);
+
+        } // form load eend
+
+
     } // class end
 } // namespace end

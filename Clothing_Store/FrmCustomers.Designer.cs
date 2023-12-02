@@ -250,6 +250,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCustomers";
             this.Text = "FrmCustomers";
+            this.Load += new System.EventHandler(this.FrmCustomers_Load);
             this.sidepanelitems.ResumeLayout(false);
             this.sidepanelitems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
