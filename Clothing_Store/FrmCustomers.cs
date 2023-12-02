@@ -47,7 +47,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
           
                
-                string sj = "select * from customers";
+                string sj = "select concat(First_Name,' ', Last_Name) AS Name, Contact_No, Email,  Address, Delivery_Address from Customers";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
@@ -64,7 +64,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "select * from customers";
+            string sj = "select First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address from Customers";
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
 
@@ -109,7 +109,7 @@ namespace Clothing_Store
         private void btnTotal_Click(object sender, EventArgs e) // total button begin
         {
             seetotalcustomers(); // see numbers of customers - total 
-
+            dataGridViewManage.Hide();
 
         } // total  button end
 
@@ -301,8 +301,20 @@ namespace Clothing_Store
             this.txtSearch.AutoSize = false;
             this.txtSearch.Size = new System.Drawing.Size(243, 21);
 
+
+            Timer timer = new Timer();
+            timer.Interval = (1 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
+
         } // form load eend
 
+        private void timer1_Tick(object sender, EventArgs e) // timer begin
+        {
+            total();
+            lbltotal.Refresh();
+
+        } // timer end
 
     } // class end
 } // namespace end
