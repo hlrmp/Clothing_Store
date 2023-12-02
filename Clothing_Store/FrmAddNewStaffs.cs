@@ -66,6 +66,7 @@ namespace Clothing_Store
             uc.staffEmail = txtEmail.Text;
             uc.StaffAddress = txtAddress.Text;
             uc.StaffConntacNo = txtContactNo.Text;
+            uc.StaffPosition = cbPosition.Text;
 
 
             DialogResult dialogResult = MessageBox.Show("Doyou wnat to Add this New Staff", "Confirm", MessageBoxButtons.YesNo);

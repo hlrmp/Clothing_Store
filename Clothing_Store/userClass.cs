@@ -28,6 +28,7 @@ namespace Clothing_Store
         private string user_name;
         private string password;
         private string user_type;
+        private string Position;
 
         public userClass()
         {
@@ -44,15 +45,17 @@ namespace Clothing_Store
             this.Email = " ";
             this.Address = " ";
             this.ContactNo = " ";
+            this.Position = " ";
         }
 
-        public userClass(string firstName, string lastName, string email, string address, string contactNo) // staff info
+        public userClass(string firstName, string lastName, string email, string address, string contactNo, string position) // staff info
         {
             FirstName = firstName;
             LastName = lastName;
             Email = email;
             Address = address;
             ContactNo = contactNo;
+            Position = position;
             
         } // staff info
 
@@ -80,7 +83,14 @@ namespace Clothing_Store
         {
             get { return ContactNo; }
             set { ContactNo = value; }
-        } // staffs info encapsulation end
+        }
+        public string StaffPosition
+        {
+            get { return Position; }
+            set { Position = value; }
+        }
+
+        // staffs info encapsulation end
 
 
         public userClass(string userid, int staffid, string username, // user info

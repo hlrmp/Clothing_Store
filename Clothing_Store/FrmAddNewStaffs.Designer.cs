@@ -46,7 +46,7 @@
             this.Cancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -228,20 +228,20 @@
             this.label2.TabIndex = 75;
             this.label2.Text = "Position :";
             // 
-            // comboBox1
+            // cbPosition
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(130, 170);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(230, 21);
-            this.comboBox1.TabIndex = 76;
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.Location = new System.Drawing.Point(130, 170);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(230, 21);
+            this.cbPosition.TabIndex = 76;
             // 
             // FrmAddNewStaffs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 450);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.btnAdd);
@@ -289,6 +289,6 @@
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPosition;
     }
 }
