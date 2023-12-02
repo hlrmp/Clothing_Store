@@ -75,7 +75,7 @@
             // 
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
             this.sidepanelitems.Controls.Add(this.btnHome);
             this.sidepanelitems.Controls.Add(this.panel1);
             this.sidepanelitems.Controls.Add(this.btnWomens);
@@ -237,7 +237,7 @@
             this.panelFilter.Controls.Add(this.checkBoxPrice);
             this.panelFilter.Controls.Add(this.checkBoxSize);
             this.panelFilter.Controls.Add(this.checkBoxName);
-            this.panelFilter.Location = new System.Drawing.Point(482, 59);
+            this.panelFilter.Location = new System.Drawing.Point(482, 66);
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.Size = new System.Drawing.Size(273, 63);
             this.panelFilter.TabIndex = 17;
@@ -250,7 +250,7 @@
             this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Location = new System.Drawing.Point(696, 12);
+            this.btnFilter.Location = new System.Drawing.Point(696, 9);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(59, 25);
             this.btnFilter.TabIndex = 18;
