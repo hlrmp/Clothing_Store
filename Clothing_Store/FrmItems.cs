@@ -127,6 +127,7 @@ namespace Clothing_Store
 
             if (name == true)
             {
+              
                 checkBoxPrice.Checked = false;
                 checkBoxSize.Checked = false;   
             }
