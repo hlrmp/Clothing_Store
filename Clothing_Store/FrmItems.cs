@@ -156,7 +156,7 @@ namespace Clothing_Store
             SqlConnection connection = new SqlConnection(ConnectionClass.conn);
             connection.Open();
 
-            string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Category , Size FROM Products where Category = 'mens'";
+            string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Category , Price , Size FROM Products where Category = 'mens'";
             SqlDataAdapter data = new SqlDataAdapter(quer, connection);
             DataTable table = new DataTable();
 

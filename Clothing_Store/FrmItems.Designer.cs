@@ -75,7 +75,7 @@
             // 
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
+            this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.sidepanelitems.Controls.Add(this.btnHome);
             this.sidepanelitems.Controls.Add(this.panel1);
             this.sidepanelitems.Controls.Add(this.btnWomens);
@@ -154,7 +154,7 @@
             this.btnUnisex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnisex.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnisex.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUnisex.Location = new System.Drawing.Point(0, 210);
+            this.btnUnisex.Location = new System.Drawing.Point(3, 210);
             this.btnUnisex.Name = "btnUnisex";
             this.btnUnisex.Size = new System.Drawing.Size(114, 63);
             this.btnUnisex.TabIndex = 8;
@@ -181,7 +181,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblTitle.Location = new System.Drawing.Point(12, 29);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(133, 39);
@@ -237,7 +237,7 @@
             this.panelFilter.Controls.Add(this.checkBoxPrice);
             this.panelFilter.Controls.Add(this.checkBoxSize);
             this.panelFilter.Controls.Add(this.checkBoxName);
-            this.panelFilter.Location = new System.Drawing.Point(482, 66);
+            this.panelFilter.Location = new System.Drawing.Point(482, 59);
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.Size = new System.Drawing.Size(273, 63);
             this.panelFilter.TabIndex = 17;
@@ -250,7 +250,7 @@
             this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Location = new System.Drawing.Point(696, 9);
+            this.btnFilter.Location = new System.Drawing.Point(696, 12);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(59, 25);
             this.btnFilter.TabIndex = 18;
