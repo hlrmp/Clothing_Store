@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -127,7 +128,6 @@ namespace Clothing_Store
 
             if (name == true)
             {
-                
                 checkBoxPrice.Checked = false;
                 checkBoxSize.Checked = false;   
             }
@@ -143,6 +143,27 @@ namespace Clothing_Store
             }
 
         }  // filter method end
+
+
+        public void filt()  // cb filter begin
+        {
+            ArrayList array = new ArrayList();
+            array.Add("Price");
+            array.Add("Name");
+            array.Add("Size");
+
+            foreach (string op in array)
+            {
+                cbFilter.Items.Add(op);
+            }
+        }  // cb filter end
+
+        private void FrmItems_Load(object sender, EventArgs e)  // frrm load begin
+        {
+            btnHome.BackColor = Color.Blue;
+            
+
+        }  // frm load end
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e) // enter on search
         {
@@ -657,6 +678,7 @@ namespace Clothing_Store
 
         } // unisex search
 
+      
 
     } // class end
 } // name space end 

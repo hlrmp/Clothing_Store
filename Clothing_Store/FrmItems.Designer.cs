@@ -45,6 +45,7 @@
             this.checkBoxSize = new System.Windows.Forms.CheckBox();
             this.panelFilter = new System.Windows.Forms.Panel();
             this.btnFilter = new System.Windows.Forms.Button();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagridItems)).BeginInit();
             this.sidepanelitems.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -237,7 +238,7 @@
             this.panelFilter.Controls.Add(this.checkBoxPrice);
             this.panelFilter.Controls.Add(this.checkBoxSize);
             this.panelFilter.Controls.Add(this.checkBoxName);
-            this.panelFilter.Location = new System.Drawing.Point(482, 66);
+            this.panelFilter.Location = new System.Drawing.Point(482, 81);
             this.panelFilter.Name = "panelFilter";
             this.panelFilter.Size = new System.Drawing.Size(273, 63);
             this.panelFilter.TabIndex = 17;
@@ -258,6 +259,15 @@
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
+            // cbFilter
+            // 
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(614, 59);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(141, 21);
+            this.cbFilter.TabIndex = 19;
+            this.cbFilter.Text = "Filter";
+            // 
             // FrmItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +276,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(3, 3);
             this.AutoScrollMinSize = new System.Drawing.Size(3, 3);
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panelFilter);
             this.Controls.Add(this.lblsearch);
@@ -276,6 +287,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmItems";
             this.Text = "FrmItems";
+            this.Load += new System.EventHandler(this.FrmItems_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagridItems)).EndInit();
             this.sidepanelitems.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -306,5 +318,6 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalNumber;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.ComboBox cbFilter;
     }
 }
