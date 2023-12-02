@@ -123,29 +123,133 @@ namespace Clothing_Store
 
         public void search() // search method begin
         {
-            SqlConnection cn = new SqlConnection(ConnectionClass.conn);
-                                     
-            cn.Open();
+           
 
-            string sch = txtSearch.Text;
+            if (cbFilter.Text.ToString() == "First Name")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
 
-            string query = "Select *  from Customers where First_Name LIKE '" + sch + '%' + "'   ";
+                cn.Open();
 
-            SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+                string sch = txtSearch.Text;
 
-                    SqlCommand command = new SqlCommand();
-                    command.CommandText = query;
-                    command.Parameters.Clear();
+                string query = "Select *  from Customers where First_Name LIKE '" + sch + '%' + "'   ";
 
-                    DataTable table = new DataTable();
-                    adapt.Fill(table);
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
-                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dataGridView1.DataSource = table;
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = table;
 
 
-            cn.Close();
+                cn.Close();
+            }
+            else if (cbFilter.Text.ToString() == "Last Name")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
 
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "Select *  from Customers where Last_Name LIKE '" + sch + '%' + "'   ";
+
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = table;
+
+
+                cn.Close();
+            }
+            else if (cbFilter.Text.ToString() == "Address")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "Select *  from Customers where Address LIKE '" + sch + '%' + "'   ";
+
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = table;
+
+
+                cn.Close();
+            }
+            else if (cbFilter.Text.ToString() == "Contact")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "Select *  from Customers where Contact_No LIKE '" + sch + '%' + "'   ";
+
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = table;
+
+
+                cn.Close();
+            }
+            else if (cbFilter.Text.ToString() == "Email")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "Select *  from Customers where Email LIKE '" + sch + '%' + "'   ";
+
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = table;
+
+
+                cn.Close();
+            }
         }  // search method end
 
         private void lblsearch_Click(object sender, EventArgs e)  // searc click begin
