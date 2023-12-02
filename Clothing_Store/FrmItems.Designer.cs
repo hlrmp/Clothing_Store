@@ -31,26 +31,24 @@
             this.datagridItems = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.sidepanelitems = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalNumber = new System.Windows.Forms.Label();
             this.btnWomens = new System.Windows.Forms.Button();
             this.btnUnisex = new System.Windows.Forms.Button();
             this.btnMens = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblsearch = new System.Windows.Forms.Label();
-            this.checkBoxTshirt = new System.Windows.Forms.CheckBox();
-            this.checkBoxPoloShirt = new System.Windows.Forms.CheckBox();
-            this.checkBoxPants = new System.Windows.Forms.CheckBox();
-            this.checkBoxShorts = new System.Windows.Forms.CheckBox();
-            this.checkBoxPolo = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrice = new System.Windows.Forms.CheckBox();
+            this.checkBoxName = new System.Windows.Forms.CheckBox();
+            this.checkBoxSize = new System.Windows.Forms.CheckBox();
             this.panelFilter = new System.Windows.Forms.Panel();
-            this.checkBoxCollection = new System.Windows.Forms.CheckBox();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblTotalNumber = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.datagridItems)).BeginInit();
             this.sidepanelitems.SuspendLayout();
-            this.panelFilter.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // datagridItems
@@ -71,12 +69,14 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(273, 20);
             this.txtSearch.TabIndex = 1;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // sidepanelitems
             // 
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
+            this.sidepanelitems.Controls.Add(this.btnHome);
             this.sidepanelitems.Controls.Add(this.panel1);
             this.sidepanelitems.Controls.Add(this.btnWomens);
             this.sidepanelitems.Controls.Add(this.btnUnisex);
@@ -86,6 +86,52 @@
             this.sidepanelitems.Size = new System.Drawing.Size(120, 449);
             this.sidepanelitems.TabIndex = 2;
             // 
+            // btnHome
+            // 
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHome.Location = new System.Drawing.Point(3, 3);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(114, 63);
+            this.btnHome.TabIndex = 20;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.lblTotalNumber);
+            this.panel1.Location = new System.Drawing.Point(0, 334);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(120, 74);
+            this.panel1.TabIndex = 19;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
+            this.lblTotal.Location = new System.Drawing.Point(4, 20);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(64, 18);
+            this.lblTotal.TabIndex = 10;
+            this.lblTotal.Text = "Total :";
+            // 
+            // lblTotalNumber
+            // 
+            this.lblTotalNumber.AutoSize = true;
+            this.lblTotalNumber.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNumber.ForeColor = System.Drawing.Color.White;
+            this.lblTotalNumber.Location = new System.Drawing.Point(74, 20);
+            this.lblTotalNumber.Name = "lblTotalNumber";
+            this.lblTotalNumber.Size = new System.Drawing.Size(41, 18);
+            this.lblTotalNumber.TabIndex = 11;
+            this.lblTotalNumber.Text = "000";
+            // 
             // btnWomens
             // 
             this.btnWomens.FlatAppearance.BorderSize = 0;
@@ -93,12 +139,13 @@
             this.btnWomens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWomens.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWomens.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnWomens.Location = new System.Drawing.Point(3, 85);
+            this.btnWomens.Location = new System.Drawing.Point(3, 141);
             this.btnWomens.Name = "btnWomens";
             this.btnWomens.Size = new System.Drawing.Size(114, 63);
             this.btnWomens.TabIndex = 9;
             this.btnWomens.Text = "Womens";
             this.btnWomens.UseVisualStyleBackColor = true;
+            this.btnWomens.Click += new System.EventHandler(this.btnWomens_Click);
             // 
             // btnUnisex
             // 
@@ -107,12 +154,13 @@
             this.btnUnisex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUnisex.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUnisex.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUnisex.Location = new System.Drawing.Point(3, 163);
+            this.btnUnisex.Location = new System.Drawing.Point(0, 210);
             this.btnUnisex.Name = "btnUnisex";
             this.btnUnisex.Size = new System.Drawing.Size(114, 63);
             this.btnUnisex.TabIndex = 8;
             this.btnUnisex.Text = "Unisex";
             this.btnUnisex.UseVisualStyleBackColor = true;
+            this.btnUnisex.Click += new System.EventHandler(this.btnUnisex_Click);
             // 
             // btnMens
             // 
@@ -121,12 +169,13 @@
             this.btnMens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMens.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMens.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMens.Location = new System.Drawing.Point(3, 16);
+            this.btnMens.Location = new System.Drawing.Point(3, 72);
             this.btnMens.Name = "btnMens";
             this.btnMens.Size = new System.Drawing.Size(114, 63);
             this.btnMens.TabIndex = 7;
             this.btnMens.Text = "Mens";
             this.btnMens.UseVisualStyleBackColor = true;
+            this.btnMens.Click += new System.EventHandler(this.btnMens_Click);
             // 
             // lblTitle
             // 
@@ -152,80 +201,47 @@
             this.lblsearch.Text = "Search";
             this.lblsearch.Click += new System.EventHandler(this.lblsearch_Click);
             // 
-            // checkBoxTshirt
+            // checkBoxPrice
             // 
-            this.checkBoxTshirt.AutoSize = true;
-            this.checkBoxTshirt.Location = new System.Drawing.Point(9, 15);
-            this.checkBoxTshirt.Name = "checkBoxTshirt";
-            this.checkBoxTshirt.Size = new System.Drawing.Size(55, 17);
-            this.checkBoxTshirt.TabIndex = 12;
-            this.checkBoxTshirt.Text = "T-shirt";
-            this.checkBoxTshirt.UseVisualStyleBackColor = true;
+            this.checkBoxPrice.AutoSize = true;
+            this.checkBoxPrice.Location = new System.Drawing.Point(9, 15);
+            this.checkBoxPrice.Name = "checkBoxPrice";
+            this.checkBoxPrice.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxPrice.TabIndex = 12;
+            this.checkBoxPrice.Text = "Price";
+            this.checkBoxPrice.UseVisualStyleBackColor = true;
             // 
-            // checkBoxPoloShirt
+            // checkBoxName
             // 
-            this.checkBoxPoloShirt.AutoSize = true;
-            this.checkBoxPoloShirt.Location = new System.Drawing.Point(85, 15);
-            this.checkBoxPoloShirt.Name = "checkBoxPoloShirt";
-            this.checkBoxPoloShirt.Size = new System.Drawing.Size(69, 17);
-            this.checkBoxPoloShirt.TabIndex = 13;
-            this.checkBoxPoloShirt.Text = "Polo-shirt";
-            this.checkBoxPoloShirt.UseVisualStyleBackColor = true;
+            this.checkBoxName.AutoSize = true;
+            this.checkBoxName.Location = new System.Drawing.Point(85, 15);
+            this.checkBoxName.Name = "checkBoxName";
+            this.checkBoxName.Size = new System.Drawing.Size(54, 17);
+            this.checkBoxName.TabIndex = 13;
+            this.checkBoxName.Text = "Name";
+            this.checkBoxName.UseVisualStyleBackColor = true;
             // 
-            // checkBoxPants
+            // checkBoxSize
             // 
-            this.checkBoxPants.AutoSize = true;
-            this.checkBoxPants.Location = new System.Drawing.Point(9, 38);
-            this.checkBoxPants.Name = "checkBoxPants";
-            this.checkBoxPants.Size = new System.Drawing.Size(53, 17);
-            this.checkBoxPants.TabIndex = 14;
-            this.checkBoxPants.Text = "Pants";
-            this.checkBoxPants.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxShorts
-            // 
-            this.checkBoxShorts.AutoSize = true;
-            this.checkBoxShorts.Location = new System.Drawing.Point(85, 38);
-            this.checkBoxShorts.Name = "checkBoxShorts";
-            this.checkBoxShorts.Size = new System.Drawing.Size(56, 17);
-            this.checkBoxShorts.TabIndex = 15;
-            this.checkBoxShorts.Text = "Shorts";
-            this.checkBoxShorts.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxPolo
-            // 
-            this.checkBoxPolo.AutoSize = true;
-            this.checkBoxPolo.Location = new System.Drawing.Point(181, 15);
-            this.checkBoxPolo.Name = "checkBoxPolo";
-            this.checkBoxPolo.Size = new System.Drawing.Size(47, 17);
-            this.checkBoxPolo.TabIndex = 16;
-            this.checkBoxPolo.Text = "Polo";
-            this.checkBoxPolo.UseVisualStyleBackColor = true;
+            this.checkBoxSize.AutoSize = true;
+            this.checkBoxSize.Location = new System.Drawing.Point(181, 15);
+            this.checkBoxSize.Name = "checkBoxSize";
+            this.checkBoxSize.Size = new System.Drawing.Size(46, 17);
+            this.checkBoxSize.TabIndex = 16;
+            this.checkBoxSize.Text = "Size";
+            this.checkBoxSize.UseVisualStyleBackColor = true;
             // 
             // panelFilter
             // 
             this.panelFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelFilter.Controls.Add(this.checkBoxCollection);
-            this.panelFilter.Controls.Add(this.checkBoxTshirt);
-            this.panelFilter.Controls.Add(this.checkBoxPolo);
-            this.panelFilter.Controls.Add(this.checkBoxPoloShirt);
-            this.panelFilter.Controls.Add(this.checkBoxShorts);
-            this.panelFilter.Controls.Add(this.checkBoxPants);
+            this.panelFilter.Controls.Add(this.checkBoxPrice);
+            this.panelFilter.Controls.Add(this.checkBoxSize);
+            this.panelFilter.Controls.Add(this.checkBoxName);
             this.panelFilter.Location = new System.Drawing.Point(482, 66);
             this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(273, 67);
+            this.panelFilter.Size = new System.Drawing.Size(273, 63);
             this.panelFilter.TabIndex = 17;
             this.panelFilter.Visible = false;
-            // 
-            // checkBoxCollection
-            // 
-            this.checkBoxCollection.AutoSize = true;
-            this.checkBoxCollection.Location = new System.Drawing.Point(181, 38);
-            this.checkBoxCollection.Name = "checkBoxCollection";
-            this.checkBoxCollection.Size = new System.Drawing.Size(72, 17);
-            this.checkBoxCollection.TabIndex = 17;
-            this.checkBoxCollection.Text = "Collection";
-            this.checkBoxCollection.UseVisualStyleBackColor = true;
             // 
             // btnFilter
             // 
@@ -241,37 +257,6 @@
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(4, 20);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(64, 18);
-            this.lblTotal.TabIndex = 10;
-            this.lblTotal.Text = "Total :";
-            // 
-            // lblTotalNumber
-            // 
-            this.lblTotalNumber.AutoSize = true;
-            this.lblTotalNumber.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalNumber.ForeColor = System.Drawing.Color.White;
-            this.lblTotalNumber.Location = new System.Drawing.Point(74, 20);
-            this.lblTotalNumber.Name = "lblTotalNumber";
-            this.lblTotalNumber.Size = new System.Drawing.Size(41, 18);
-            this.lblTotalNumber.TabIndex = 11;
-            this.lblTotalNumber.Text = "000";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblTotal);
-            this.panel1.Controls.Add(this.lblTotalNumber);
-            this.panel1.Location = new System.Drawing.Point(0, 334);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(120, 74);
-            this.panel1.TabIndex = 19;
             // 
             // FrmItems
             // 
@@ -293,10 +278,10 @@
             this.Text = "FrmItems";
             ((System.ComponentModel.ISupportInitialize)(this.datagridItems)).EndInit();
             this.sidepanelitems.ResumeLayout(false);
-            this.panelFilter.ResumeLayout(false);
-            this.panelFilter.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelFilter.ResumeLayout(false);
+            this.panelFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,16 +297,14 @@
         private System.Windows.Forms.Button btnUnisex;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblsearch;
-        private System.Windows.Forms.CheckBox checkBoxTshirt;
-        private System.Windows.Forms.CheckBox checkBoxPoloShirt;
-        private System.Windows.Forms.CheckBox checkBoxPants;
-        private System.Windows.Forms.CheckBox checkBoxShorts;
-        private System.Windows.Forms.CheckBox checkBoxPolo;
+        private System.Windows.Forms.CheckBox checkBoxPrice;
+        private System.Windows.Forms.CheckBox checkBoxName;
+        private System.Windows.Forms.CheckBox checkBoxSize;
         private System.Windows.Forms.Panel panelFilter;
-        private System.Windows.Forms.CheckBox checkBoxCollection;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalNumber;
+        private System.Windows.Forms.Button btnHome;
     }
 }
