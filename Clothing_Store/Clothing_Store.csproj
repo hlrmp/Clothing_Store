@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionClass.cs" />
+    <Compile Include="customerClass.cs" />
     <Compile Include="FrmAccounts.cs">
       <SubType>Form</SubType>
     </Compile>

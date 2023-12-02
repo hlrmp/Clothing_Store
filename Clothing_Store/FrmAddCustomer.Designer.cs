@@ -35,10 +35,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtContactNo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtMname = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFname = new System.Windows.Forms.TextBox();
@@ -129,19 +127,10 @@
             this.label7.TabIndex = 63;
             this.label7.Text = "Contact No. :";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(250, 119);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 13);
-            this.label6.TabIndex = 62;
-            this.label6.Text = "Middle Name";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(350, 119);
+            this.label5.Location = new System.Drawing.Point(347, 119);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 61;
@@ -150,24 +139,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(93, 119);
+            this.label4.Location = new System.Drawing.Point(179, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 60;
             this.label4.Text = "First Name";
             // 
-            // txtMname
-            // 
-            this.txtMname.BackColor = System.Drawing.Color.White;
-            this.txtMname.Location = new System.Drawing.Point(253, 95);
-            this.txtMname.Name = "txtMname";
-            this.txtMname.Size = new System.Drawing.Size(66, 20);
-            this.txtMname.TabIndex = 59;
-            // 
             // txtLname
             // 
             this.txtLname.BackColor = System.Drawing.Color.White;
-            this.txtLname.Location = new System.Drawing.Point(342, 96);
+            this.txtLname.Location = new System.Drawing.Point(305, 95);
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(146, 20);
             this.txtLname.TabIndex = 58;
@@ -176,7 +157,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label3.Location = new System.Drawing.Point(29, 95);
+            this.label3.Location = new System.Drawing.Point(82, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 18);
             this.label3.TabIndex = 57;
@@ -185,7 +166,7 @@
             // txtFname
             // 
             this.txtFname.BackColor = System.Drawing.Color.White;
-            this.txtFname.Location = new System.Drawing.Point(91, 96);
+            this.txtFname.Location = new System.Drawing.Point(144, 95);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(143, 20);
             this.txtFname.TabIndex = 56;
@@ -239,10 +220,8 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtContactNo);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtMname);
             this.Controls.Add(this.txtLname);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFname);
@@ -268,10 +247,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtContactNo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtMname;
         private System.Windows.Forms.TextBox txtLname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFname;

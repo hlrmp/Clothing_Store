@@ -51,8 +51,7 @@ namespace Clothing_Store
             {
                 this.Hide();
 
-                txtFname.Clear();
-                txtMname.Clear();
+                txtFname.Clear();     
                 txtLname.Clear();
                 txtAddress.Clear();
                 txtContactNo.Clear();
@@ -73,7 +72,7 @@ namespace Clothing_Store
         {
             SqlConnection cnn = new SqlConnection(ConnectionClass.conn);
 
-            string sj = "select count(*)  AS 'Total Customers' from customers";
+        /*    string sj = "select count(*)  AS 'Total Customers' from customers";
             cnn.Open();
             SqlCommand cmd;
             cmd = new SqlCommand(sj, cnn);
@@ -83,34 +82,32 @@ namespace Clothing_Store
             n = Convert.ToInt32(reader[0]) +1 ;  // - total numbers +1 
 
 
-            cnn.Close();
+            cnn.Close();*/
 
-            string fname = txtFname.Text;
-            string mname = " ";
-            mname = txtMname.Text;
-            string lname = txtLname.Text;
-            string add = txtAddress.Text;
-            string deladd = txtDeliveryAddress.Text;
-            string con = txtContactNo.Text;
-            string em = txtEmail.Text;
+            customerClass cs = new customerClass();
+
+            cs.First_Name = txtFname.Text;  
+            cs.Last_Name = txtLname.Text;
+            cs.address = txtAddress.Text;
+            cs.DelAddress = txtDeliveryAddress.Text;
+            cs.Contact_No = txtContactNo.Text;
+            cs.email = txtEmail.Text;
             
 
 
             cnn.Open();
-            string quer1 = "insert into Customers( Customer_Id, First_Name, Middle_Name, Last_Name, Address, Delivery_Address, Contact_No, Email) values ( @Customer_Id, @First_Name, @Middle_Name, @Last_Name, @Address, @Delivery_Address, @Contact_No, @Email) ";
+            string quer1 = "insert into Customers( First_Name, Last_Name, Address, Delibvery_Address, Contact_No, Email ,Status) values ( @First_Name,  @Last_Name, @Address, @Delivery_Address, @Contact_No, @Email,  @Status) ";
             SqlCommand command = new SqlCommand(quer1, cnn);
 
 
 
-            command.Parameters.AddWithValue("@Customer_Id", n);
-            command.Parameters.AddWithValue("@First_Name", fname);
-            command.Parameters.AddWithValue("@Middle_Name", mname);
-            command.Parameters.AddWithValue("@Last_Name", lname);
-            command.Parameters.AddWithValue("@Address", add);
-            command.Parameters.AddWithValue("@Delivery_Address", deladd);
-            command.Parameters.AddWithValue("@Contact_No", con);
-            command.Parameters.AddWithValue("@Email", em);
-
+            command.Parameters.AddWithValue("@First_Name", cs.First_Name);
+            command.Parameters.AddWithValue("@Last_Name", cs.Last_Name);
+            command.Parameters.AddWithValue("@Address", cs.address);
+            command.Parameters.AddWithValue("@Delivery_Address", cs.DelAddress);
+            command.Parameters.AddWithValue("@Contact_No", cs.Contact_No);
+            command.Parameters.AddWithValue("@Email", cs.email);
+            command.Parameters.AddWithValue("@Status", "1");
             command.ExecuteNonQuery();
 
 

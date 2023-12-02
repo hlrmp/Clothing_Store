@@ -23,7 +23,7 @@ namespace Clothing_Store
             seecustomers(); // see cutomers on the datagrid - load form
             total(); // total customers string lbltotal
             filter();// search filter
-
+            seecustomers();// see customer list
 
         }
 
