@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +22,7 @@ namespace Clothing_Store
             InitializeComponent();
             seecustomers(); // see cutomers on the datagrid - load form
             total(); // total customers string lbltotal
+            filter();// search filter
         }
 
         FrmAddCustomer fadd = new FrmAddCustomer();
@@ -161,5 +165,28 @@ namespace Clothing_Store
 
 
 
+        public void filter()
+        {
+            SqlConnection sql = new SqlConnection(ConnectionClass.conn);
+            string query = ("SELECT TOP 0 * FROM Customers");
+            sql.Open();
+
+            SqlCommand cmd;
+            cmd = new SqlCommand(query,sql);
+            SqlDataReader rd = cmd.ExecuteReader();
+
+
+            while (rd.Read())
+            {
+                string top = rd[1].ToString();
+                MessageBox.Show(top);
+
+                ArrayList arr = new ArrayList();
+                arr.Add(top);
+            }
+           
+
+          
+        }
     } // class end
 } // namespace end

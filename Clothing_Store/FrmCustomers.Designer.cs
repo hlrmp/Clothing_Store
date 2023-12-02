@@ -42,6 +42,7 @@
             this.dataGridViewManage = new System.Windows.Forms.DataGridView();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
@@ -140,9 +141,10 @@
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(482, 40);
+            this.txtSearch.Location = new System.Drawing.Point(438, 40);
+            this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(273, 20);
+            this.txtSearch.Size = new System.Drawing.Size(273, 21);
             this.txtSearch.TabIndex = 4;
             this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
@@ -178,7 +180,7 @@
             this.lblsearch.AutoSize = true;
             this.lblsearch.BackColor = System.Drawing.Color.White;
             this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsearch.Location = new System.Drawing.Point(705, 43);
+            this.lblsearch.Location = new System.Drawing.Point(659, 43);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(41, 13);
             this.lblsearch.TabIndex = 39;
@@ -223,11 +225,22 @@
             this.Delete.ReadOnly = true;
             this.Delete.Width = 50;
             // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(708, 40);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(47, 21);
+            this.cbFilter.TabIndex = 41;
+            this.cbFilter.Text = "Filter";
+            // 
             // FrmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.lblTitle);
@@ -261,5 +274,6 @@
         private System.Windows.Forms.DataGridView dataGridViewManage;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.ComboBox cbFilter;
     }
 }
