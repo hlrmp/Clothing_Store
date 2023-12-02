@@ -35,11 +35,6 @@ namespace Clothing_Store
             {
                 this.Hide();
 
-                txtFname.Clear();
-                txtMname.Clear();
-                txtLname.Clear();
-                txtAddress.Clear();
-                txtContactNo.Clear();
                 txtUserName.Clear();
                 txtUserPass.Clear();
                 txtConfirmPass.Clear();
@@ -51,13 +46,19 @@ namespace Clothing_Store
             }
         } // cancel button end
 
+
+        // class instance
+        userClass uc = new userClass();
         private void btnAdd_Click(object sender, EventArgs e)  // add button begin
         {
+            
+
             DialogResult dialogResult = MessageBox.Show("Doyou wnat to Add this to the Users ", "Confirm", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("succesfully added", "Confirmation", MessageBoxButtons.OK);
+                this.Hide();
             }
             else
             {
@@ -66,7 +67,7 @@ namespace Clothing_Store
 
         } //  add button end
 
-        private void ckShowPass_CheckedChanged(object sender, EventArgs e)
+        private void ckShowPass_CheckedChanged(object sender, EventArgs e)   // show pass begin
         {
 
             if (ckShowPass.Checked == true)
@@ -77,6 +78,9 @@ namespace Clothing_Store
             {
                 txtUserPass.UseSystemPasswordChar = true;
             }
-        }
+
+        } // show pass end
+
+     
     }// class end
 } // name space end

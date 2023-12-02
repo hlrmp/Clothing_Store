@@ -82,6 +82,12 @@
     <Compile Include="FrmAddDelivery.Designer.cs">
       <DependentUpon>FrmAddDelivery.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddNewStaffs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddNewStaffs.Designer.cs">
+      <DependentUpon>FrmAddNewStaffs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userClass.cs" />
     <EmbeddedResource Include="FrmAccounts.resx">
       <DependentUpon>FrmAccounts.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddDelivery.resx">
       <DependentUpon>FrmAddDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddNewStaffs.resx">
+      <DependentUpon>FrmAddNewStaffs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddOrders.resx">
       <DependentUpon>FrmAddOrders.cs</DependentUpon>

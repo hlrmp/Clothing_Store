@@ -16,15 +16,20 @@ namespace Clothing_Store
         {
             InitializeComponent();
         }
-        FrmAddUser fadd = new FrmAddUser(); // add user instance
+        
+        // form instance
+       
         FrmBackup fback = new FrmBackup();
-        private void btnCreate_Click(object sender, EventArgs e)  // create new user begin
+        FrmRecovey frec = new FrmRecovey();
+        FrmAddUser fuser = new FrmAddUser();
+        FrmAddNewStaffs fstaf = new FrmAddNewStaffs();
+        private void btnCreate_Click(object sender, EventArgs e)  //  add new user begin
         {
-            panelAccount.Hide();
+           
+            panelAdd.Show();    
+           
 
-            fadd.ShowDialog();
-
-        } // create new user end
+        } //  add new user end
 
     
         
@@ -33,46 +38,41 @@ namespace Clothing_Store
         private void btnBackup_Click(object sender, EventArgs e)// btn backup begin
         {
             // pannel
-
-            panelAccount.Controls.Clear();
-            fback.FormBorderStyle = FormBorderStyle.None;
-            fback.TopLevel = false;
-            fback.AutoScroll = true;
-            fback.Dock = DockStyle.Fill;
-            panelAccount.Controls.Add(fback);
-
-            panelAccount.Show();
-
-            fback.Show();
-
-            
-            
+         
+            fback.ShowDialog();
+           
+           
         }  // btn bacup end 
 
         private void btnHomeAccounts_Click(object sender, EventArgs e) // home button begin
         {
-            panelAccount.Hide();
+            panelAdd.Hide();
 
         } // home buton end
 
-        FrmRecovey frec = new FrmRecovey();
+       
         private void btnRecovery_Click(object sender, EventArgs e)  //  recovery button begin
         {
-            panelAccount.Hide();
+           
 
-            panelAccount.Controls.Clear();
-            frec.FormBorderStyle = FormBorderStyle.None;
-            frec.TopLevel = false;
-            frec.AutoScroll = true;
-            frec.Dock = DockStyle.Fill;
-            panelAccount.Controls.Add(frec);
-
-            panelAccount.Show();
-
-            frec.Show();
+            frec.ShowDialog();
 
         } // recovery buton end
 
+        private void btnAddNewStaff_Click(object sender, EventArgs e) // panel add staff begin 
+        {
+
+            fstaf.ShowDialog();
+            panelAdd.Hide();
+
+        }// panel add staff end 
+
+        private void button1_Click(object sender, EventArgs e) // panel add user begin
+        {
+            fuser.ShowDialog();
+            panelAdd.Hide();
+
+        } // panel add user end
 
 
     } // class end
