@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Clothing_Store
 {
@@ -17,9 +18,10 @@ namespace Clothing_Store
         public FrmAddCustomer()
         {
             InitializeComponent();
+            this.Paint += new PaintEventHandler(UserControl1_Paint);
         }
 
-        customerClass cs = new customerClass();
+            customerClass cs = new customerClass();
 
         private void btnAdd_Click(object sender, EventArgs e) // add button begin
         {
@@ -250,13 +252,21 @@ namespace Clothing_Store
             {
                 MessageBox.Show(ne.Message);
             }
-                   // end of catch 
+            // end of catch 
 
 
 
         } // add cutomers 
 
 
+
+
+
+        private void UserControl1_Paint(object sender, PaintEventArgs e)
+
+        {
+            ControlPaint.DrawBorder(e.Graphics, txtFname.ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
+        }
 
 
     } // class end

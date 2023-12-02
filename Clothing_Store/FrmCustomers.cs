@@ -301,6 +301,7 @@ namespace Clothing_Store
             this.txtSearch.AutoSize = false;
             this.txtSearch.Size = new System.Drawing.Size(243, 21);
 
+            
 
             Timer timer = new Timer();
             timer.Interval = (1 * 1000);
