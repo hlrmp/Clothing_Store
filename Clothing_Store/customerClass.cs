@@ -51,7 +51,7 @@ namespace Clothing_Store
             get { return Address; }
             set { Address = value; }
         }
-        public string DelAddress
+        public string Delivery_Address
         {
             get { return DeliveryAddress; }
             set { DeliveryAddress = value; }

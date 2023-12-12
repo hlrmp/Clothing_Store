@@ -94,14 +94,14 @@ namespace Clothing_Store
             if (Regex.IsMatch(deladdress, regexClass.mix))
             {
 
-                cs.DelAddress = deladdress;
+                cs.Delivery_Address = deladdress;
             }
             else
             {
                 throw new StringFormatException("please enter your Address Correctly");
             }
 
-            return cs.DelAddress;
+            return cs.Delivery_Address;
         }
         public string Email(string email)
         {
@@ -202,7 +202,7 @@ namespace Clothing_Store
                     cs.First_Name = Fname(txtFname.Text);
                     cs.Last_Name = Lname(txtLname.Text);
                     cs.address = Address(txtAddress.Text);
-                    cs.DelAddress = delAddress(txtDeliveryAddress.Text);
+                    cs.Delivery_Address = delAddress(txtDeliveryAddress.Text);
                     cs.Contact_No = ContactNo(txtContactNo.Text);
                     cs.email = Email(txtEmail.Text);
 
@@ -217,7 +217,7 @@ namespace Clothing_Store
                     command.Parameters.AddWithValue("@First_Name", cs.First_Name);
                     command.Parameters.AddWithValue("@Last_Name", cs.Last_Name);
                     command.Parameters.AddWithValue("@Address", cs.address);
-                    command.Parameters.AddWithValue("@Delivery_Address", cs.DelAddress);
+                    command.Parameters.AddWithValue("@Delivery_Address", cs.Delivery_Address);
                     command.Parameters.AddWithValue("@Contact_No", cs.Contact_No);
                     command.Parameters.AddWithValue("@Email", cs.email);
                     command.Parameters.AddWithValue("@Status", "1");

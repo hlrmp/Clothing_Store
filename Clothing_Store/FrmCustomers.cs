@@ -24,6 +24,9 @@ namespace Clothing_Store
             total(); // total customers string lbltotal
             filter();// search filter
 
+          
+
+
         }
 
          
@@ -73,7 +76,11 @@ namespace Clothing_Store
             dataGridViewManage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewManage.DataSource = table;
 
+          
         } // manage cusstomers end - datagrid
+
+
+      
 
         public void seetotalcustomers()   // total customers begin - datagrid
         {
@@ -118,7 +125,12 @@ namespace Clothing_Store
             dataGridViewManage.Show();
             manageCustomers();
 
+           
+
         } // mannage button end
+
+        
+     
 
         public void search() // search method begin
         {
@@ -249,6 +261,34 @@ namespace Clothing_Store
 
                 cn.Close();
             }
+
+            else
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "Select *  from Customers where First_Name LIKE '" + sch + '%' + "'   ";
+
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+
+                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1.DataSource = table;
+
+
+                cn.Close();
+            }
+
+
         }  // search method end
 
         private void lblsearch_Click(object sender, EventArgs e)  // searc click begin
@@ -291,6 +331,8 @@ namespace Clothing_Store
           
         } // filter end
 
+    
+
         private void FrmCustomers_Load(object sender, EventArgs e) // form load begin
         {
           /*  this.txtSearch.Size = new System.Drawing.Size(243, 21);
@@ -316,6 +358,29 @@ namespace Clothing_Store
             lbltotal.Refresh();
 
         } // timer end
+
+        private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e)  // datagrid view button begin
+        {
+            if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Edit")
+            {
+                MessageBox.Show("EDIT");
+
+                panelEdit.Visible = true;
+
+            }
+            if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                MessageBox.Show("DELETE");
+            }
+
+        } // datagrid view button end
+
+        private void btnCancel_Click(object sender, EventArgs e)   // panel edit button cacel begin
+        {
+            panelEdit.Visible = false;
+
+        } // panel edit button cancel end 
+
 
     } // class end
 } // namespace end
