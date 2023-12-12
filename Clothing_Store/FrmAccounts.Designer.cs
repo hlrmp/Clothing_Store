@@ -40,8 +40,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblsearch = new System.Windows.Forms.Label();
             this.panelAdd = new System.Windows.Forms.Panel();
-            this.btnAddNewStaff = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnAddNewStaff = new System.Windows.Forms.Button();
             this.sidepanelAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelAdd.SuspendLayout();
@@ -206,22 +206,6 @@
             this.panelAdd.TabIndex = 0;
             this.panelAdd.Visible = false;
             // 
-            // btnAddNewStaff
-            // 
-            this.btnAddNewStaff.BackColor = System.Drawing.Color.Teal;
-            this.btnAddNewStaff.FlatAppearance.BorderSize = 0;
-            this.btnAddNewStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAddNewStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNewStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNewStaff.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddNewStaff.Location = new System.Drawing.Point(3, 0);
-            this.btnAddNewStaff.Name = "btnAddNewStaff";
-            this.btnAddNewStaff.Size = new System.Drawing.Size(179, 48);
-            this.btnAddNewStaff.TabIndex = 33;
-            this.btnAddNewStaff.Text = "Add New Staff";
-            this.btnAddNewStaff.UseVisualStyleBackColor = false;
-            this.btnAddNewStaff.Click += new System.EventHandler(this.btnAddNewStaff_Click);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Teal;
@@ -237,6 +221,22 @@
             this.button1.Text = "Add New Account";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAddNewStaff
+            // 
+            this.btnAddNewStaff.BackColor = System.Drawing.Color.Teal;
+            this.btnAddNewStaff.FlatAppearance.BorderSize = 0;
+            this.btnAddNewStaff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAddNewStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewStaff.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddNewStaff.Location = new System.Drawing.Point(3, 0);
+            this.btnAddNewStaff.Name = "btnAddNewStaff";
+            this.btnAddNewStaff.Size = new System.Drawing.Size(179, 48);
+            this.btnAddNewStaff.TabIndex = 33;
+            this.btnAddNewStaff.Text = "Add New Staff";
+            this.btnAddNewStaff.UseVisualStyleBackColor = false;
+            this.btnAddNewStaff.Click += new System.EventHandler(this.btnAddNewStaff_Click);
             // 
             // FrmAccounts
             // 

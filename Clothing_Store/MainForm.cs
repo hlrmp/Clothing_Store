@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,9 @@ namespace Clothing_Store
             InitializeComponent();
 
             employee();
+            totalShorts();
+            totalPolo();
+            totalTshirt();
 
         } // main constructor end
 
@@ -554,7 +558,54 @@ namespace Clothing_Store
             }
         } // emp condition begin
 
-    
+        public void totalShorts()  // total  - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
+                "INNER JOIN Inventory AS i " +
+                "ON (p.Product_Id = i.product_Id) Where Type like 'shorts'";
+
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lblTotalShorts.Text = reader[0].ToString();  // - total numbers
+
+        }  // total  - string
+        public void totalPolo()  // total  - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
+                "INNER JOIN Inventory AS i " +
+                "ON (p.Product_Id = i.product_Id) Where Type like 'polo'";
+
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lblTotalPolo.Text = reader[0].ToString();  // - total numbers
+
+        }  // total  - string
+        public void totalTshirt()  // total  - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
+                "INNER JOIN Inventory AS i " +
+                "ON (p.Product_Id = i.product_Id) Where Type like 'tshirt'";
+
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lblTotalTshirt.Text = reader[0].ToString();  // - total numbers
+
+        }  // total  - string
 
 
     } // class end 

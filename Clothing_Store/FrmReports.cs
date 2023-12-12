@@ -21,5 +21,10 @@ namespace Clothing_Store
         {
 
         }
+
+        private void btnWeekly_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

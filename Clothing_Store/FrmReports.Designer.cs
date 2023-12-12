@@ -32,18 +32,18 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.sidepanelitems = new System.Windows.Forms.Panel();
+            this.btnTotal = new System.Windows.Forms.Button();
+            this.btnYearly = new System.Windows.Forms.Button();
             this.btnHomeReports = new System.Windows.Forms.Button();
             this.btnWeekly = new System.Windows.Forms.Button();
             this.btnmonthly = new System.Windows.Forms.Button();
             this.btnDaily = new System.Windows.Forms.Button();
-            this.btnYearly = new System.Windows.Forms.Button();
-            this.btnTotal = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnItems = new System.Windows.Forms.Button();
-            this.btnStocks = new System.Windows.Forms.Button();
-            this.btnCustomers = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnStocks = new System.Windows.Forms.Button();
+            this.btnItems = new System.Windows.Forms.Button();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -96,6 +96,34 @@
             this.sidepanelitems.Size = new System.Drawing.Size(120, 431);
             this.sidepanelitems.TabIndex = 19;
             // 
+            // btnTotal
+            // 
+            this.btnTotal.FlatAppearance.BorderSize = 0;
+            this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTotal.Location = new System.Drawing.Point(3, 339);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(114, 63);
+            this.btnTotal.TabIndex = 16;
+            this.btnTotal.Text = "Total";
+            this.btnTotal.UseVisualStyleBackColor = true;
+            // 
+            // btnYearly
+            // 
+            this.btnYearly.FlatAppearance.BorderSize = 0;
+            this.btnYearly.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnYearly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYearly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnYearly.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnYearly.Location = new System.Drawing.Point(3, 279);
+            this.btnYearly.Name = "btnYearly";
+            this.btnYearly.Size = new System.Drawing.Size(114, 63);
+            this.btnYearly.TabIndex = 15;
+            this.btnYearly.Text = "Yearly";
+            this.btnYearly.UseVisualStyleBackColor = true;
+            // 
             // btnHomeReports
             // 
             this.btnHomeReports.FlatAppearance.BorderSize = 0;
@@ -123,6 +151,7 @@
             this.btnWeekly.TabIndex = 13;
             this.btnWeekly.Text = "Weekly";
             this.btnWeekly.UseVisualStyleBackColor = true;
+            this.btnWeekly.Click += new System.EventHandler(this.btnWeekly_Click);
             // 
             // btnmonthly
             // 
@@ -152,34 +181,6 @@
             this.btnDaily.Text = "Daily";
             this.btnDaily.UseVisualStyleBackColor = true;
             // 
-            // btnYearly
-            // 
-            this.btnYearly.FlatAppearance.BorderSize = 0;
-            this.btnYearly.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnYearly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYearly.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYearly.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnYearly.Location = new System.Drawing.Point(3, 279);
-            this.btnYearly.Name = "btnYearly";
-            this.btnYearly.Size = new System.Drawing.Size(114, 63);
-            this.btnYearly.TabIndex = 15;
-            this.btnYearly.Text = "Yearly";
-            this.btnYearly.UseVisualStyleBackColor = true;
-            // 
-            // btnTotal
-            // 
-            this.btnTotal.FlatAppearance.BorderSize = 0;
-            this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTotal.Location = new System.Drawing.Point(3, 339);
-            this.btnTotal.Name = "btnTotal";
-            this.btnTotal.Size = new System.Drawing.Size(114, 63);
-            this.btnTotal.TabIndex = 16;
-            this.btnTotal.Text = "Total";
-            this.btnTotal.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -208,19 +209,35 @@
             this.panel1.Size = new System.Drawing.Size(617, 34);
             this.panel1.TabIndex = 23;
             // 
-            // btnItems
+            // btnOrders
             // 
-            this.btnItems.FlatAppearance.BorderSize = 0;
-            this.btnItems.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItems.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnItems.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnItems.Location = new System.Drawing.Point(22, 3);
-            this.btnItems.Name = "btnItems";
-            this.btnItems.Size = new System.Drawing.Size(114, 28);
-            this.btnItems.TabIndex = 18;
-            this.btnItems.Text = "Items";
-            this.btnItems.UseVisualStyleBackColor = true;
+            this.btnOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOrders.FlatAppearance.BorderSize = 0;
+            this.btnOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrders.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOrders.Location = new System.Drawing.Point(494, 3);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Size = new System.Drawing.Size(114, 28);
+            this.btnOrders.TabIndex = 21;
+            this.btnOrders.Text = "Orders";
+            this.btnOrders.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCustomers.FlatAppearance.BorderSize = 0;
+            this.btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomers.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCustomers.Location = new System.Drawing.Point(391, 3);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(114, 28);
+            this.btnCustomers.TabIndex = 20;
+            this.btnCustomers.Text = "Customers";
+            this.btnCustomers.UseVisualStyleBackColor = true;
             // 
             // btnStocks
             // 
@@ -238,35 +255,19 @@
             this.btnStocks.UseVisualStyleBackColor = true;
             this.btnStocks.Click += new System.EventHandler(this.btnStocks_Click);
             // 
-            // btnCustomers
+            // btnItems
             // 
-            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCustomers.FlatAppearance.BorderSize = 0;
-            this.btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCustomers.Location = new System.Drawing.Point(391, 3);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(114, 28);
-            this.btnCustomers.TabIndex = 20;
-            this.btnCustomers.Text = "Customers";
-            this.btnCustomers.UseVisualStyleBackColor = true;
-            // 
-            // btnOrders
-            // 
-            this.btnOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOrders.FlatAppearance.BorderSize = 0;
-            this.btnOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrders.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOrders.Location = new System.Drawing.Point(494, 3);
-            this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(114, 28);
-            this.btnOrders.TabIndex = 21;
-            this.btnOrders.Text = "Orders";
-            this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnItems.FlatAppearance.BorderSize = 0;
+            this.btnItems.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnItems.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItems.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnItems.Location = new System.Drawing.Point(22, 3);
+            this.btnItems.Name = "btnItems";
+            this.btnItems.Size = new System.Drawing.Size(114, 28);
+            this.btnItems.TabIndex = 18;
+            this.btnItems.Text = "Items";
+            this.btnItems.UseVisualStyleBackColor = true;
             // 
             // FrmReports
             // 

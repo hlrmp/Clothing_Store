@@ -41,6 +41,7 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panelRSide = new System.Windows.Forms.Panel();
+            this.btnArchives = new System.Windows.Forms.Button();
             this.btnItemStatus = new System.Windows.Forms.Button();
             this.btnDeliveriesStatus = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,6 +70,7 @@
             this.panelRSide.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mainpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).BeginInit();
@@ -267,49 +269,69 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(18, 183);
+            this.monthCalendar1.Location = new System.Drawing.Point(15, 34);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
             // 
             // panelRSide
             // 
             this.panelRSide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelRSide.BackColor = System.Drawing.SystemColors.Control;
+            this.panelRSide.BackColor = System.Drawing.Color.White;
             this.panelRSide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRSide.Controls.Add(this.btnArchives);
             this.panelRSide.Controls.Add(this.btnItemStatus);
             this.panelRSide.Controls.Add(this.btnDeliveriesStatus);
-            this.panelRSide.Location = new System.Drawing.Point(1043, 183);
+            this.panelRSide.Location = new System.Drawing.Point(1015, 34);
             this.panelRSide.Name = "panelRSide";
             this.panelRSide.Size = new System.Drawing.Size(199, 193);
             this.panelRSide.TabIndex = 3;
             // 
+            // btnArchives
+            // 
+            this.btnArchives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnArchives.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btnArchives.FlatAppearance.BorderSize = 0;
+            this.btnArchives.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnArchives.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArchives.Location = new System.Drawing.Point(-2, 63);
+            this.btnArchives.Name = "btnArchives";
+            this.btnArchives.Size = new System.Drawing.Size(200, 21);
+            this.btnArchives.TabIndex = 2;
+            this.btnArchives.Text = "Archives";
+            this.btnArchives.UseVisualStyleBackColor = true;
+            // 
             // btnItemStatus
             // 
             this.btnItemStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnItemStatus.BackColor = System.Drawing.Color.White;
             this.btnItemStatus.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnItemStatus.FlatAppearance.BorderSize = 3;
+            this.btnItemStatus.FlatAppearance.BorderSize = 0;
             this.btnItemStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnItemStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnItemStatus.Location = new System.Drawing.Point(-2, 19);
+            this.btnItemStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnItemStatus.Location = new System.Drawing.Point(-2, 32);
             this.btnItemStatus.Name = "btnItemStatus";
-            this.btnItemStatus.Size = new System.Drawing.Size(200, 23);
+            this.btnItemStatus.Size = new System.Drawing.Size(200, 25);
             this.btnItemStatus.TabIndex = 1;
             this.btnItemStatus.Text = "Item Status";
-            this.btnItemStatus.UseVisualStyleBackColor = true;
+            this.btnItemStatus.UseVisualStyleBackColor = false;
             // 
             // btnDeliveriesStatus
             // 
             this.btnDeliveriesStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeliveriesStatus.BackColor = System.Drawing.Color.White;
             this.btnDeliveriesStatus.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnDeliveriesStatus.FlatAppearance.BorderSize = 3;
+            this.btnDeliveriesStatus.FlatAppearance.BorderSize = 0;
             this.btnDeliveriesStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnDeliveriesStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDeliveriesStatus.Location = new System.Drawing.Point(-2, -1);
+            this.btnDeliveriesStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeliveriesStatus.Location = new System.Drawing.Point(-2, 3);
             this.btnDeliveriesStatus.Name = "btnDeliveriesStatus";
             this.btnDeliveriesStatus.Size = new System.Drawing.Size(200, 23);
             this.btnDeliveriesStatus.TabIndex = 0;
             this.btnDeliveriesStatus.Text = "Deliveries";
-            this.btnDeliveriesStatus.UseVisualStyleBackColor = true;
+            this.btnDeliveriesStatus.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -350,6 +372,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainpanel.BackColor = System.Drawing.Color.Teal;
+            this.mainpanel.Controls.Add(this.lblTotalTshirt);
+            this.mainpanel.Controls.Add(this.lblTotalPoloShirt);
+            this.mainpanel.Controls.Add(this.lblTotalPants);
+            this.mainpanel.Controls.Add(this.panelRSide);
+            this.mainpanel.Controls.Add(this.monthCalendar1);
             this.mainpanel.Location = new System.Drawing.Point(12, 149);
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(1230, 548);
@@ -430,9 +457,10 @@
             // lblTotalTshirt
             // 
             this.lblTotalTshirt.AutoSize = true;
+            this.lblTotalTshirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTotalTshirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalTshirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalTshirt.Location = new System.Drawing.Point(332, 380);
+            this.lblTotalTshirt.Location = new System.Drawing.Point(341, 231);
             this.lblTotalTshirt.Name = "lblTotalTshirt";
             this.lblTotalTshirt.Size = new System.Drawing.Size(19, 19);
             this.lblTotalTshirt.TabIndex = 9;
@@ -441,9 +469,10 @@
             // lblTotalPoloShirt
             // 
             this.lblTotalPoloShirt.AutoSize = true;
+            this.lblTotalPoloShirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTotalPoloShirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPoloShirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPoloShirt.Location = new System.Drawing.Point(582, 380);
+            this.lblTotalPoloShirt.Location = new System.Drawing.Point(591, 231);
             this.lblTotalPoloShirt.Name = "lblTotalPoloShirt";
             this.lblTotalPoloShirt.Size = new System.Drawing.Size(19, 19);
             this.lblTotalPoloShirt.TabIndex = 11;
@@ -463,9 +492,10 @@
             // lblTotalPants
             // 
             this.lblTotalPants.AutoSize = true;
+            this.lblTotalPants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPants.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPants.Location = new System.Drawing.Point(828, 380);
+            this.lblTotalPants.Location = new System.Drawing.Point(837, 231);
             this.lblTotalPants.Name = "lblTotalPants";
             this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
             this.lblTotalPants.TabIndex = 13;
@@ -561,19 +591,14 @@
             this.Controls.Add(this.lblTotalShorts);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pboxCollecton);
-            this.Controls.Add(this.lblTotalPants);
             this.Controls.Add(this.pboxPolo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pboxShorts);
-            this.Controls.Add(this.lblTotalPoloShirt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblTotalTshirt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pboxTshirt);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelRSide);
             this.Controls.Add(this.pboxPants);
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pboxPoloshirt);
             this.Controls.Add(this.panel1buttonCollections);
             this.Controls.Add(this.mainpanel);
@@ -585,6 +610,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.mainpanel.ResumeLayout(false);
+            this.mainpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).EndInit();
@@ -634,5 +661,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnDelivery;
+        private System.Windows.Forms.Button btnArchives;
     }
 }
