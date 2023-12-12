@@ -13,5 +13,13 @@ namespace Clothing_Store
         public static string age = @"^[0-9]{1,3}$";
         public static string schar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
         public static string mix = @"^[A-Za-z0-9]";
+
+ 
+
+
+
+
+
     }
+   
 }

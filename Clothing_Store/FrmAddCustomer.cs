@@ -41,6 +41,7 @@ namespace Clothing_Store
         {
             public StringFormatException(string str) : base(str) { }
         }
+    
         public string Fname(string FirstName )
         {
             if (Regex.IsMatch(FirstName, regexClass.letters))
