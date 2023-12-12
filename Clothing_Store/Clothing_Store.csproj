@@ -63,42 +63,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionClass.cs" />
-    <Compile Include="customerClass.cs" />
+    <Compile Include="classes\ConnectionClass.cs" />
+    <Compile Include="classes\customerClass.cs" />
     <Compile Include="FrmAccounts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAccounts.Designer.cs">
       <DependentUpon>FrmAccounts.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddCustomer.cs">
+    <Compile Include="frmAddStocks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddCustomer.Designer.cs">
+    <Compile Include="frmAddStocks.Designer.cs">
+      <DependentUpon>frmAddStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frms adds\FrmAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frms adds\FrmAddCustomer.Designer.cs">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddDelivery.cs">
+    <Compile Include="frms adds\FrmAddDelivery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddDelivery.Designer.cs">
+    <Compile Include="frms adds\FrmAddDelivery.Designer.cs">
       <DependentUpon>FrmAddDelivery.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddNewStaffs.cs">
+    <Compile Include="frms adds\FrmAddNewStaffs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddNewStaffs.Designer.cs">
+    <Compile Include="frms adds\FrmAddNewStaffs.Designer.cs">
       <DependentUpon>FrmAddNewStaffs.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddOrders.cs">
+    <Compile Include="frms adds\FrmAddOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddOrders.Designer.cs">
+    <Compile Include="frms adds\FrmAddOrders.Designer.cs">
       <DependentUpon>FrmAddOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddUser.cs">
+    <Compile Include="frms adds\FrmAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddUser.Designer.cs">
+    <Compile Include="frms adds\FrmAddUser.Designer.cs">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBackup.cs">
@@ -161,7 +167,7 @@
     <Compile Include="FrmStocks.Designer.cs">
       <DependentUpon>FrmStocks.cs</DependentUpon>
     </Compile>
-    <Compile Include="itemsClass.cs" />
+    <Compile Include="classes\itemsClass.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,25 +176,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="regexClass.cs" />
-    <Compile Include="supplierClass.cs" />
-    <Compile Include="userClass.cs" />
+    <Compile Include="classes\regexClass.cs" />
+    <Compile Include="classes\supplierClass.cs" />
+    <Compile Include="classes\userClass.cs" />
     <EmbeddedResource Include="FrmAccounts.resx">
       <DependentUpon>FrmAccounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddCustomer.resx">
+    <EmbeddedResource Include="frmAddStocks.resx">
+      <DependentUpon>frmAddStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frms adds\FrmAddCustomer.resx">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddDelivery.resx">
+    <EmbeddedResource Include="frms adds\FrmAddDelivery.resx">
       <DependentUpon>FrmAddDelivery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddNewStaffs.resx">
+    <EmbeddedResource Include="frms adds\FrmAddNewStaffs.resx">
       <DependentUpon>FrmAddNewStaffs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddOrders.resx">
+    <EmbeddedResource Include="frms adds\FrmAddOrders.resx">
       <DependentUpon>FrmAddOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddUser.resx">
+    <EmbeddedResource Include="frms adds\FrmAddUser.resx">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBackup.resx">
