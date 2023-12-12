@@ -41,38 +41,38 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblsearch = new System.Windows.Forms.Label();
             this.dataGridViewManage = new System.Windows.Forms.DataGridView();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panelEdit = new System.Windows.Forms.Panel();
-            this.txtFname = new System.Windows.Forms.TextBox();
-            this.txtLname = new System.Windows.Forms.TextBox();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtContact = new System.Windows.Forms.TextBox();
-            this.txtDeliveryAdd = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveryAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelEdit = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDeliveryAdd = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtLname = new System.Windows.Forms.TextBox();
+            this.txtFname = new System.Windows.Forms.TextBox();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
-            this.panelEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
+            this.panelEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidepanelitems
@@ -206,6 +206,7 @@
             this.lblsearch.AutoSize = true;
             this.lblsearch.BackColor = System.Drawing.Color.White;
             this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblsearch.Location = new System.Drawing.Point(634, 43);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(41, 13);
@@ -239,116 +240,6 @@
             this.dataGridViewManage.TabIndex = 40;
             this.dataGridViewManage.Visible = false;
             this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
-            // 
-            // cbFilter
-            // 
-            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbFilter.BackColor = System.Drawing.Color.White;
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(681, 40);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(74, 21);
-            this.cbFilter.TabIndex = 41;
-            this.cbFilter.Text = "Filter";
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Edit
-            // 
-            this.Edit.DataPropertyName = "Edit";
-            this.Edit.FillWeight = 50F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.FillWeight = 50F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 5;
-            // 
-            // panelEdit
-            // 
-            this.panelEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelEdit.Controls.Add(this.btnCancel);
-            this.panelEdit.Controls.Add(this.btnSave);
-            this.panelEdit.Controls.Add(this.label7);
-            this.panelEdit.Controls.Add(this.label6);
-            this.panelEdit.Controls.Add(this.label5);
-            this.panelEdit.Controls.Add(this.label4);
-            this.panelEdit.Controls.Add(this.label3);
-            this.panelEdit.Controls.Add(this.label2);
-            this.panelEdit.Controls.Add(this.label1);
-            this.panelEdit.Controls.Add(this.txtEmail);
-            this.panelEdit.Controls.Add(this.txtDeliveryAdd);
-            this.panelEdit.Controls.Add(this.txtContact);
-            this.panelEdit.Controls.Add(this.txtAddress);
-            this.panelEdit.Controls.Add(this.txtLname);
-            this.panelEdit.Controls.Add(this.txtFname);
-            this.panelEdit.Location = new System.Drawing.Point(138, 306);
-            this.panelEdit.Name = "panelEdit";
-            this.panelEdit.Size = new System.Drawing.Size(617, 190);
-            this.panelEdit.TabIndex = 42;
-            this.panelEdit.Visible = false;
-            // 
-            // txtFname
-            // 
-            this.txtFname.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtFname.Location = new System.Drawing.Point(31, 42);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(132, 20);
-            this.txtFname.TabIndex = 0;
-            // 
-            // txtLname
-            // 
-            this.txtLname.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtLname.Location = new System.Drawing.Point(180, 42);
-            this.txtLname.Name = "txtLname";
-            this.txtLname.Size = new System.Drawing.Size(160, 20);
-            this.txtLname.TabIndex = 1;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtAddress.Location = new System.Drawing.Point(120, 148);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(410, 20);
-            this.txtAddress.TabIndex = 2;
-            // 
-            // txtContact
-            // 
-            this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtContact.Location = new System.Drawing.Point(375, 42);
-            this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(186, 20);
-            this.txtContact.TabIndex = 3;
-            // 
-            // txtDeliveryAdd
-            // 
-            this.txtDeliveryAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtDeliveryAdd.Location = new System.Drawing.Point(120, 119);
-            this.txtDeliveryAdd.Name = "txtDeliveryAdd";
-            this.txtDeliveryAdd.Size = new System.Drawing.Size(410, 20);
-            this.txtDeliveryAdd.TabIndex = 4;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtEmail.Location = new System.Drawing.Point(118, 90);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(410, 20);
-            this.txtEmail.TabIndex = 5;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -392,81 +283,72 @@
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Edit";
+            this.Edit.FillWeight = 50F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.FillWeight = 50F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 5;
+            // 
             // customerClassBindingSource
             // 
             this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
             // 
-            // label1
+            // cbFilter
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "First Name";
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFilter.BackColor = System.Drawing.Color.White;
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(681, 40);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(74, 21);
+            this.cbFilter.TabIndex = 41;
+            this.cbFilter.Text = "Filter";
             // 
-            // label2
+            // timer1
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(230, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Last Name";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label3
+            // panelEdit
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(433, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Contact No.";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Email";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(67, 126);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Address";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 151);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Delivery Address";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label7.Location = new System.Drawing.Point(165, 11);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(272, 28);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Edit Customer Information";
+            this.panelEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEdit.Controls.Add(this.btnCancel);
+            this.panelEdit.Controls.Add(this.btnSave);
+            this.panelEdit.Controls.Add(this.label7);
+            this.panelEdit.Controls.Add(this.label6);
+            this.panelEdit.Controls.Add(this.label5);
+            this.panelEdit.Controls.Add(this.label4);
+            this.panelEdit.Controls.Add(this.label3);
+            this.panelEdit.Controls.Add(this.label2);
+            this.panelEdit.Controls.Add(this.label1);
+            this.panelEdit.Controls.Add(this.txtEmail);
+            this.panelEdit.Controls.Add(this.txtDeliveryAdd);
+            this.panelEdit.Controls.Add(this.txtContact);
+            this.panelEdit.Controls.Add(this.txtAddress);
+            this.panelEdit.Controls.Add(this.txtLname);
+            this.panelEdit.Controls.Add(this.txtFname);
+            this.panelEdit.Location = new System.Drawing.Point(138, 306);
+            this.panelEdit.Name = "panelEdit";
+            this.panelEdit.Size = new System.Drawing.Size(617, 190);
+            this.panelEdit.TabIndex = 42;
+            this.panelEdit.Visible = false;
             // 
             // btnCancel
             // 
@@ -501,6 +383,132 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label7.Location = new System.Drawing.Point(165, 11);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(272, 28);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Edit Customer Information";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label6.Location = new System.Drawing.Point(28, 151);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Delivery Address";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label5.Location = new System.Drawing.Point(67, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Address";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label4.Location = new System.Drawing.Point(80, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Email";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label3.Location = new System.Drawing.Point(433, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Contact No.";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label2.Location = new System.Drawing.Point(230, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Last Name";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(67, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "First Name";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtEmail.Location = new System.Drawing.Point(118, 90);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(410, 20);
+            this.txtEmail.TabIndex = 5;
+            // 
+            // txtDeliveryAdd
+            // 
+            this.txtDeliveryAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtDeliveryAdd.Location = new System.Drawing.Point(120, 119);
+            this.txtDeliveryAdd.Name = "txtDeliveryAdd";
+            this.txtDeliveryAdd.Size = new System.Drawing.Size(410, 20);
+            this.txtDeliveryAdd.TabIndex = 4;
+            // 
+            // txtContact
+            // 
+            this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtContact.Location = new System.Drawing.Point(375, 42);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(186, 20);
+            this.txtContact.TabIndex = 3;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtAddress.Location = new System.Drawing.Point(120, 148);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(410, 20);
+            this.txtAddress.TabIndex = 2;
+            // 
+            // txtLname
+            // 
+            this.txtLname.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtLname.Location = new System.Drawing.Point(180, 42);
+            this.txtLname.Name = "txtLname";
+            this.txtLname.Size = new System.Drawing.Size(160, 20);
+            this.txtLname.TabIndex = 1;
+            // 
+            // txtFname
+            // 
+            this.txtFname.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtFname.Location = new System.Drawing.Point(31, 42);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(132, 20);
+            this.txtFname.TabIndex = 0;
+            // 
             // FrmCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -522,9 +530,9 @@
             this.sidepanelitems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

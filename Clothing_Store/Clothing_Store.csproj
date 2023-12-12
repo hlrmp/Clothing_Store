@@ -71,12 +71,6 @@
     <Compile Include="FrmAccounts.Designer.cs">
       <DependentUpon>FrmAccounts.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddStocks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddStocks.Designer.cs">
-      <DependentUpon>frmAddStocks.cs</DependentUpon>
-    </Compile>
     <Compile Include="frms adds\FrmAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +94,12 @@
     </Compile>
     <Compile Include="frms adds\FrmAddOrders.Designer.cs">
       <DependentUpon>FrmAddOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frms adds\frmAddStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frms adds\frmAddStocks.Designer.cs">
+      <DependentUpon>frmAddStocks.cs</DependentUpon>
     </Compile>
     <Compile Include="frms adds\FrmAddUser.cs">
       <SubType>Form</SubType>
@@ -182,9 +182,6 @@
     <EmbeddedResource Include="FrmAccounts.resx">
       <DependentUpon>FrmAccounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddStocks.resx">
-      <DependentUpon>frmAddStocks.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frms adds\FrmAddCustomer.resx">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frms adds\FrmAddOrders.resx">
       <DependentUpon>FrmAddOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frms adds\frmAddStocks.resx">
+      <DependentUpon>frmAddStocks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frms adds\FrmAddUser.resx">
       <DependentUpon>FrmAddUser.cs</DependentUpon>
@@ -245,6 +245,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\customerClass.datasource" />
+    <None Include="Properties\DataSources\itemsClass.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

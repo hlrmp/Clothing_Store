@@ -28,70 +28,150 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStocks));
             this.sidepanelitems = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnHomeCustomers = new System.Windows.Forms.Button();
+            this.btnManage = new System.Windows.Forms.Button();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.btnTotal = new System.Windows.Forms.Button();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
             this.lblsearch = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewManage = new System.Windows.Forms.DataGridView();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sidepanelitems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(138, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(617, 431);
-            this.dataGridView1.TabIndex = 1;
             // 
             // sidepanelitems
             // 
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
+            this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.sidepanelitems.Controls.Add(this.btnTotal);
+            this.sidepanelitems.Controls.Add(this.lbltotal);
+            this.sidepanelitems.Controls.Add(this.btnManage);
+            this.sidepanelitems.Controls.Add(this.btnHomeCustomers);
             this.sidepanelitems.Controls.Add(this.btnAddStock);
             this.sidepanelitems.Location = new System.Drawing.Point(12, 81);
             this.sidepanelitems.Name = "sidepanelitems";
             this.sidepanelitems.Size = new System.Drawing.Size(120, 431);
             this.sidepanelitems.TabIndex = 3;
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(482, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 20);
-            this.textBox1.TabIndex = 4;
-            // 
             // btnAddStock
             // 
+            this.btnAddStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnAddStock.FlatAppearance.BorderSize = 0;
             this.btnAddStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddStock.Location = new System.Drawing.Point(3, 3);
+            this.btnAddStock.Location = new System.Drawing.Point(3, 141);
             this.btnAddStock.Name = "btnAddStock";
             this.btnAddStock.Size = new System.Drawing.Size(114, 63);
             this.btnAddStock.TabIndex = 11;
             this.btnAddStock.Text = "Add";
-            this.btnAddStock.UseVisualStyleBackColor = true;
+            this.btnAddStock.UseVisualStyleBackColor = false;
+            this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblTitle.Location = new System.Drawing.Point(12, 29);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(288, 39);
             this.lblTitle.TabIndex = 11;
             this.lblTitle.Text = "Stocks Management";
+            // 
+            // btnHomeCustomers
+            // 
+            this.btnHomeCustomers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnHomeCustomers.FlatAppearance.BorderSize = 0;
+            this.btnHomeCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnHomeCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeCustomers.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeCustomers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHomeCustomers.Location = new System.Drawing.Point(3, 3);
+            this.btnHomeCustomers.Name = "btnHomeCustomers";
+            this.btnHomeCustomers.Size = new System.Drawing.Size(114, 63);
+            this.btnHomeCustomers.TabIndex = 39;
+            this.btnHomeCustomers.Text = "Home";
+            this.btnHomeCustomers.UseVisualStyleBackColor = false;
+            this.btnHomeCustomers.Click += new System.EventHandler(this.btnHomeCustomers_Click);
+            // 
+            // btnManage
+            // 
+            this.btnManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnManage.FlatAppearance.BorderSize = 0;
+            this.btnManage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnManage.Location = new System.Drawing.Point(3, 72);
+            this.btnManage.Name = "btnManage";
+            this.btnManage.Size = new System.Drawing.Size(114, 63);
+            this.btnManage.TabIndex = 40;
+            this.btnManage.Text = "Manage";
+            this.btnManage.UseVisualStyleBackColor = false;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(45, 286);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(19, 20);
+            this.lbltotal.TabIndex = 41;
+            this.lbltotal.Text = "0";
+            // 
+            // btnTotal
+            // 
+            this.btnTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnTotal.FlatAppearance.BorderSize = 0;
+            this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnTotal.Location = new System.Drawing.Point(3, 210);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(114, 63);
+            this.btnTotal.TabIndex = 42;
+            this.btnTotal.Text = "Total";
+            this.btnTotal.UseVisualStyleBackColor = false;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFilter.BackColor = System.Drawing.Color.White;
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(681, 40);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(74, 21);
+            this.cbFilter.TabIndex = 44;
+            this.cbFilter.Text = "Filter";
             // 
             // lblsearch
             // 
@@ -99,39 +179,202 @@
             this.lblsearch.AutoSize = true;
             this.lblsearch.BackColor = System.Drawing.Color.White;
             this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsearch.Location = new System.Drawing.Point(705, 43);
+            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblsearch.Location = new System.Drawing.Point(643, 43);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(41, 13);
-            this.lblsearch.TabIndex = 12;
+            this.lblsearch.TabIndex = 43;
             this.lblsearch.Text = "Search";
+            this.lblsearch.Click += new System.EventHandler(this.lblsearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(441, 40);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(243, 20);
+            this.txtSearch.TabIndex = 42;
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(138, 81);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(617, 431);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // dataGridViewManage
+            // 
+            this.dataGridViewManage.AllowUserToAddRows = false;
+            this.dataGridViewManage.AllowUserToDeleteRows = false;
+            this.dataGridViewManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewManage.AutoGenerateColumns = false;
+            this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.sizeDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.colorDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.Edit,
+            this.Delete});
+            this.dataGridViewManage.DataSource = this.itemsClassBindingSource;
+            this.dataGridViewManage.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewManage.Name = "dataGridViewManage";
+            this.dataGridViewManage.ReadOnly = true;
+            this.dataGridViewManage.Size = new System.Drawing.Size(617, 431);
+            this.dataGridViewManage.TabIndex = 45;
+            this.dataGridViewManage.Visible = false;
+            this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick_1);
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Edit";
+            this.Edit.FillWeight = 50F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.FillWeight = 50F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 50;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sizeDataGridViewTextBoxColumn
+            // 
+            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "size";
+            this.sizeDataGridViewTextBoxColumn.HeaderText = "Size";
+            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
+            this.sizeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colorDataGridViewTextBoxColumn
+            // 
+            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
+            this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
+            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
+            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itemsClassBindingSource
+            // 
+            this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
             // 
             // FrmStocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.dataGridViewManage);
+            this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.sidepanelitems);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmStocks";
             this.Text = "FrmStocks";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmStocks_Load);
             this.sidepanelitems.ResumeLayout(false);
+            this.sidepanelitems.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel sidepanelitems;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnHomeCustomers;
+        private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.Button btnTotal;
+        private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label lblsearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewManage;
+        private System.Windows.Forms.BindingSource itemsClassBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
