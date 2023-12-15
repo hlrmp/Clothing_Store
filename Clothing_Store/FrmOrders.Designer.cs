@@ -48,8 +48,9 @@
             // 
             this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblsearch.AutoSize = true;
-            this.lblsearch.BackColor = System.Drawing.Color.White;
+            this.lblsearch.BackColor = System.Drawing.Color.WhiteSmoke;
             this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblsearch.Location = new System.Drawing.Point(705, 43);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(41, 13);
@@ -79,7 +80,7 @@
             // 
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
+            this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.sidepanelitems.Controls.Add(this.btnHomeOrders);
             this.sidepanelitems.Controls.Add(this.btnTotal);
             this.sidepanelitems.Controls.Add(this.btnManage);
@@ -91,6 +92,7 @@
             // 
             // btnHomeOrders
             // 
+            this.btnHomeOrders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnHomeOrders.FlatAppearance.BorderSize = 0;
             this.btnHomeOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHomeOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -101,10 +103,11 @@
             this.btnHomeOrders.Size = new System.Drawing.Size(114, 63);
             this.btnHomeOrders.TabIndex = 14;
             this.btnHomeOrders.Text = "Home";
-            this.btnHomeOrders.UseVisualStyleBackColor = true;
+            this.btnHomeOrders.UseVisualStyleBackColor = false;
             // 
             // btnTotal
             // 
+            this.btnTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnTotal.FlatAppearance.BorderSize = 0;
             this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -115,36 +118,38 @@
             this.btnTotal.Size = new System.Drawing.Size(114, 63);
             this.btnTotal.TabIndex = 13;
             this.btnTotal.Text = "Total";
-            this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.UseVisualStyleBackColor = false;
             // 
             // btnManage
             // 
+            this.btnManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnManage.FlatAppearance.BorderSize = 0;
             this.btnManage.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnManage.Location = new System.Drawing.Point(3, 141);
+            this.btnManage.Location = new System.Drawing.Point(3, 72);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(114, 63);
             this.btnManage.TabIndex = 12;
             this.btnManage.Text = "Manage ";
-            this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.UseVisualStyleBackColor = false;
             this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // btnAddStock
             // 
+            this.btnAddStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnAddStock.FlatAppearance.BorderSize = 0;
             this.btnAddStock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddStock.Location = new System.Drawing.Point(3, 72);
+            this.btnAddStock.Location = new System.Drawing.Point(3, 141);
             this.btnAddStock.Name = "btnAddStock";
             this.btnAddStock.Size = new System.Drawing.Size(114, 63);
             this.btnAddStock.TabIndex = 11;
             this.btnAddStock.Text = "Add";
-            this.btnAddStock.UseVisualStyleBackColor = true;
+            this.btnAddStock.UseVisualStyleBackColor = false;
             this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
             // dataGridView1

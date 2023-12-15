@@ -30,8 +30,10 @@
         {
             this.btnBackup = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lb2 = new System.Windows.Forms.ListBox();
+            this.lb1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBackup
@@ -44,7 +46,7 @@
             this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnBackup.ImageKey = "(none)";
-            this.btnBackup.Location = new System.Drawing.Point(246, 277);
+            this.btnBackup.Location = new System.Drawing.Point(246, 364);
             this.btnBackup.Name = "btnBackup";
             this.btnBackup.Size = new System.Drawing.Size(114, 45);
             this.btnBackup.TabIndex = 14;
@@ -68,17 +70,6 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(77, 65);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(453, 188);
-            this.textBox1.TabIndex = 16;
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -86,23 +77,55 @@
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblTitle.Location = new System.Drawing.Point(34, 23);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(194, 39);
+            this.lblTitle.Size = new System.Drawing.Size(209, 39);
             this.lblTitle.TabIndex = 40;
-            this.lblTitle.Text = "Backup File";
+            this.lblTitle.Text = "Backup Files";
+            // 
+            // lb2
+            // 
+            this.lb2.FormattingEnabled = true;
+            this.lb2.Location = new System.Drawing.Point(81, 127);
+            this.lb2.Name = "lb2";
+            this.lb2.Size = new System.Drawing.Size(453, 225);
+            this.lb2.TabIndex = 41;
+            this.lb2.Visible = false;
+            this.lb2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lb1_MouseClick);
+            // 
+            // lb1
+            // 
+            this.lb1.FormattingEnabled = true;
+            this.lb1.Location = new System.Drawing.Point(81, 127);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(453, 225);
+            this.lb1.TabIndex = 42;
+            this.lb1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lb1_MouseDoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(76, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 28);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Backup list :";
             // 
             // FrmBackup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 354);
+            this.ClientSize = new System.Drawing.Size(614, 435);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb1);
+            this.Controls.Add(this.lb2);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnBackup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmBackup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBackup";
+            this.Text = "los";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,7 +135,9 @@
 
         private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ListBox lb2;
+        private System.Windows.Forms.ListBox lb1;
+        private System.Windows.Forms.Label label1;
     }
 }

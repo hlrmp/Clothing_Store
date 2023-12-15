@@ -84,7 +84,7 @@
             // 
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
+            this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.sidepanelitems.Controls.Add(this.btnTotal);
             this.sidepanelitems.Controls.Add(this.btnYearly);
             this.sidepanelitems.Controls.Add(this.btnHomeReports);
@@ -98,20 +98,22 @@
             // 
             // btnTotal
             // 
+            this.btnTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnTotal.FlatAppearance.BorderSize = 0;
             this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTotal.Location = new System.Drawing.Point(3, 339);
+            this.btnTotal.Location = new System.Drawing.Point(3, 348);
             this.btnTotal.Name = "btnTotal";
             this.btnTotal.Size = new System.Drawing.Size(114, 63);
             this.btnTotal.TabIndex = 16;
             this.btnTotal.Text = "Total";
-            this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.UseVisualStyleBackColor = false;
             // 
             // btnYearly
             // 
+            this.btnYearly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnYearly.FlatAppearance.BorderSize = 0;
             this.btnYearly.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnYearly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -122,10 +124,11 @@
             this.btnYearly.Size = new System.Drawing.Size(114, 63);
             this.btnYearly.TabIndex = 15;
             this.btnYearly.Text = "Yearly";
-            this.btnYearly.UseVisualStyleBackColor = true;
+            this.btnYearly.UseVisualStyleBackColor = false;
             // 
             // btnHomeReports
             // 
+            this.btnHomeReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnHomeReports.FlatAppearance.BorderSize = 0;
             this.btnHomeReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHomeReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -136,10 +139,11 @@
             this.btnHomeReports.Size = new System.Drawing.Size(114, 63);
             this.btnHomeReports.TabIndex = 14;
             this.btnHomeReports.Text = "Home";
-            this.btnHomeReports.UseVisualStyleBackColor = true;
+            this.btnHomeReports.UseVisualStyleBackColor = false;
             // 
             // btnWeekly
             // 
+            this.btnWeekly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnWeekly.FlatAppearance.BorderSize = 0;
             this.btnWeekly.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnWeekly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -150,11 +154,12 @@
             this.btnWeekly.Size = new System.Drawing.Size(114, 63);
             this.btnWeekly.TabIndex = 13;
             this.btnWeekly.Text = "Weekly";
-            this.btnWeekly.UseVisualStyleBackColor = true;
+            this.btnWeekly.UseVisualStyleBackColor = false;
             this.btnWeekly.Click += new System.EventHandler(this.btnWeekly_Click);
             // 
             // btnmonthly
             // 
+            this.btnmonthly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnmonthly.FlatAppearance.BorderSize = 0;
             this.btnmonthly.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnmonthly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -165,10 +170,11 @@
             this.btnmonthly.Size = new System.Drawing.Size(114, 63);
             this.btnmonthly.TabIndex = 12;
             this.btnmonthly.Text = "Monthly";
-            this.btnmonthly.UseVisualStyleBackColor = true;
+            this.btnmonthly.UseVisualStyleBackColor = false;
             // 
             // btnDaily
             // 
+            this.btnDaily.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnDaily.FlatAppearance.BorderSize = 0;
             this.btnDaily.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnDaily.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -179,7 +185,7 @@
             this.btnDaily.Size = new System.Drawing.Size(114, 63);
             this.btnDaily.TabIndex = 11;
             this.btnDaily.Text = "Daily";
-            this.btnDaily.UseVisualStyleBackColor = true;
+            this.btnDaily.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -199,7 +205,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.panel1.Controls.Add(this.btnOrders);
             this.panel1.Controls.Add(this.btnCustomers);
             this.panel1.Controls.Add(this.btnStocks);

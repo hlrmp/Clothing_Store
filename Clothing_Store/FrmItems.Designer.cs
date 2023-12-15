@@ -76,7 +76,7 @@
             // 
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.sidepanelitems.BackColor = System.Drawing.Color.Teal;
+            this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.sidepanelitems.Controls.Add(this.btnHome);
             this.sidepanelitems.Controls.Add(this.panel1);
             this.sidepanelitems.Controls.Add(this.btnWomens);
@@ -89,6 +89,7 @@
             // 
             // btnHome
             // 
+            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -99,7 +100,7 @@
             this.btnHome.Size = new System.Drawing.Size(114, 63);
             this.btnHome.TabIndex = 20;
             this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panel1
@@ -135,6 +136,7 @@
             // 
             // btnWomens
             // 
+            this.btnWomens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnWomens.FlatAppearance.BorderSize = 0;
             this.btnWomens.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnWomens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -145,11 +147,12 @@
             this.btnWomens.Size = new System.Drawing.Size(114, 63);
             this.btnWomens.TabIndex = 9;
             this.btnWomens.Text = "Womens";
-            this.btnWomens.UseVisualStyleBackColor = true;
+            this.btnWomens.UseVisualStyleBackColor = false;
             this.btnWomens.Click += new System.EventHandler(this.btnWomens_Click);
             // 
             // btnUnisex
             // 
+            this.btnUnisex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnUnisex.FlatAppearance.BorderSize = 0;
             this.btnUnisex.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnUnisex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -160,11 +163,12 @@
             this.btnUnisex.Size = new System.Drawing.Size(114, 63);
             this.btnUnisex.TabIndex = 8;
             this.btnUnisex.Text = "Unisex";
-            this.btnUnisex.UseVisualStyleBackColor = true;
+            this.btnUnisex.UseVisualStyleBackColor = false;
             this.btnUnisex.Click += new System.EventHandler(this.btnUnisex_Click);
             // 
             // btnMens
             // 
+            this.btnMens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnMens.FlatAppearance.BorderSize = 0;
             this.btnMens.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnMens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -175,7 +179,7 @@
             this.btnMens.Size = new System.Drawing.Size(114, 63);
             this.btnMens.TabIndex = 7;
             this.btnMens.Text = "Mens";
-            this.btnMens.UseVisualStyleBackColor = true;
+            this.btnMens.UseVisualStyleBackColor = false;
             this.btnMens.Click += new System.EventHandler(this.btnMens_Click);
             // 
             // lblTitle
@@ -193,7 +197,7 @@
             // 
             this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblsearch.AutoSize = true;
-            this.lblsearch.BackColor = System.Drawing.Color.White;
+            this.lblsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblsearch.Location = new System.Drawing.Point(705, 43);
             this.lblsearch.Name = "lblsearch";
