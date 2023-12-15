@@ -40,16 +40,10 @@
             this.btnMens = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblsearch = new System.Windows.Forms.Label();
-            this.checkBoxPrice = new System.Windows.Forms.CheckBox();
-            this.checkBoxName = new System.Windows.Forms.CheckBox();
-            this.checkBoxSize = new System.Windows.Forms.CheckBox();
-            this.panelFilter = new System.Windows.Forms.Panel();
-            this.btnFilter = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagridItems)).BeginInit();
             this.sidepanelitems.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // datagridItems
@@ -66,9 +60,9 @@
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(482, 40);
+            this.txtSearch.Location = new System.Drawing.Point(438, 40);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(273, 20);
+            this.txtSearch.Size = new System.Drawing.Size(243, 20);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
@@ -197,8 +191,9 @@
             // 
             this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblsearch.AutoSize = true;
-            this.lblsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblsearch.BackColor = System.Drawing.Color.White;
             this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblsearch.Location = new System.Drawing.Point(705, 43);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(41, 13);
@@ -206,69 +201,12 @@
             this.lblsearch.Text = "Search";
             this.lblsearch.Click += new System.EventHandler(this.lblsearch_Click);
             // 
-            // checkBoxPrice
-            // 
-            this.checkBoxPrice.AutoSize = true;
-            this.checkBoxPrice.Location = new System.Drawing.Point(9, 15);
-            this.checkBoxPrice.Name = "checkBoxPrice";
-            this.checkBoxPrice.Size = new System.Drawing.Size(50, 17);
-            this.checkBoxPrice.TabIndex = 12;
-            this.checkBoxPrice.Text = "Price";
-            this.checkBoxPrice.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxName
-            // 
-            this.checkBoxName.AutoSize = true;
-            this.checkBoxName.Location = new System.Drawing.Point(85, 15);
-            this.checkBoxName.Name = "checkBoxName";
-            this.checkBoxName.Size = new System.Drawing.Size(54, 17);
-            this.checkBoxName.TabIndex = 13;
-            this.checkBoxName.Text = "Name";
-            this.checkBoxName.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxSize
-            // 
-            this.checkBoxSize.AutoSize = true;
-            this.checkBoxSize.Location = new System.Drawing.Point(181, 15);
-            this.checkBoxSize.Name = "checkBoxSize";
-            this.checkBoxSize.Size = new System.Drawing.Size(46, 17);
-            this.checkBoxSize.TabIndex = 16;
-            this.checkBoxSize.Text = "Size";
-            this.checkBoxSize.UseVisualStyleBackColor = true;
-            // 
-            // panelFilter
-            // 
-            this.panelFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelFilter.Controls.Add(this.checkBoxPrice);
-            this.panelFilter.Controls.Add(this.checkBoxSize);
-            this.panelFilter.Controls.Add(this.checkBoxName);
-            this.panelFilter.Location = new System.Drawing.Point(482, 81);
-            this.panelFilter.Name = "panelFilter";
-            this.panelFilter.Size = new System.Drawing.Size(273, 63);
-            this.panelFilter.TabIndex = 17;
-            this.panelFilter.Visible = false;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFilter.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnFilter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Location = new System.Drawing.Point(696, 9);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(59, 25);
-            this.btnFilter.TabIndex = 18;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
-            // 
             // cbFilter
             // 
             this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(614, 59);
+            this.cbFilter.Location = new System.Drawing.Point(681, 40);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(141, 21);
+            this.cbFilter.Size = new System.Drawing.Size(74, 21);
             this.cbFilter.TabIndex = 19;
             this.cbFilter.Text = "Filter";
             // 
@@ -281,8 +219,6 @@
             this.AutoScrollMinSize = new System.Drawing.Size(3, 3);
             this.ClientSize = new System.Drawing.Size(800, 524);
             this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.btnFilter);
-            this.Controls.Add(this.panelFilter);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.sidepanelitems);
@@ -296,8 +232,6 @@
             this.sidepanelitems.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelFilter.ResumeLayout(false);
-            this.panelFilter.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,11 +247,6 @@
         private System.Windows.Forms.Button btnUnisex;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblsearch;
-        private System.Windows.Forms.CheckBox checkBoxPrice;
-        private System.Windows.Forms.CheckBox checkBoxName;
-        private System.Windows.Forms.CheckBox checkBoxSize;
-        private System.Windows.Forms.Panel panelFilter;
-        private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTotalNumber;
