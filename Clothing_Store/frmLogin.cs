@@ -56,6 +56,7 @@ namespace Clothing_Store
 
             log();
 
+
             //FrmLoading ffl = new FrmLoading();
            //ffl.ShowDialog();
 
@@ -63,7 +64,7 @@ namespace Clothing_Store
         } // lig in button end
 
         userClass uc = new userClass();
-        MainForm mf = new MainForm();
+
         public void log() // login begin
         {
 
@@ -73,8 +74,9 @@ namespace Clothing_Store
                 uc.username = txtUserName.Text;
                 uc.userpas = txtPassword.Text;
 
-
-                if (string.IsNullOrEmpty(txtUserName.Text) ||
+            MainForm mf = new MainForm();
+           
+            if (string.IsNullOrEmpty(txtUserName.Text) ||
                             string.IsNullOrEmpty(txtPassword.Text))
                 {
                         if (txtUserName.Text == "")
@@ -107,19 +109,21 @@ namespace Clothing_Store
                         string username = reader[0].ToString();
                         string pass = reader[1].ToString();
                         string pos = reader[2].ToString();
-
                         uc.StaffPosition = reader[2].ToString();
 
 
                                    if (username == uc.username && pass == uc.userpas && pos == "Cashier")
                                    {
                                        MessageBox.Show("c");
-                                       mf.Show();
+                                        mf.ShowDialog();
+                                        this.Hide();
+
                                    }
                                    else if (username == uc.username && pass == uc.userpas && pos == "Admin")
                                    {
                                        MessageBox.Show("A");
-                                       mf.Show();
+                                        mf.ShowDialog();
+                                        this.Hide();
 
                                    }
                                    else
