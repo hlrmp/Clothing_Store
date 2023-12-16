@@ -30,11 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1buttonCollections = new System.Windows.Forms.Panel();
+            this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
+            this.lblAccount = new System.Windows.Forms.Label();
+            this.btnLogoutAccount = new System.Windows.Forms.Button();
             this.btnDelivery = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnproducts = new System.Windows.Forms.Button();
-            this.btnlogout = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnStock = new System.Windows.Forms.Button();
@@ -48,6 +50,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.mainpanel = new System.Windows.Forms.Panel();
+            this.lblTotalTshirt = new System.Windows.Forms.Label();
+            this.lblTotalPoloShirt = new System.Windows.Forms.Label();
+            this.lblTotalPants = new System.Windows.Forms.Label();
             this.pboxTshirt = new System.Windows.Forms.PictureBox();
             this.pboxPoloshirt = new System.Windows.Forms.PictureBox();
             this.pboxPants = new System.Windows.Forms.PictureBox();
@@ -55,10 +60,7 @@
             this.pboxPolo = new System.Windows.Forms.PictureBox();
             this.pboxCollecton = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblTotalTshirt = new System.Windows.Forms.Label();
-            this.lblTotalPoloShirt = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblTotalPants = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotalCollection = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -66,7 +68,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblTotalShorts = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panelAccount = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel1buttonCollections.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panelRSide.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxShorts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPolo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCollecton)).BeginInit();
+            this.panelAccount.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1buttonCollections
@@ -85,11 +91,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1buttonCollections.BackColor = System.Drawing.Color.White;
             this.panel1buttonCollections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1buttonCollections.Controls.Add(this.pictureBoxProfile);
+            this.panel1buttonCollections.Controls.Add(this.lblAccount);
+            this.panel1buttonCollections.Controls.Add(this.btnLogoutAccount);
             this.panel1buttonCollections.Controls.Add(this.btnDelivery);
             this.panel1buttonCollections.Controls.Add(this.btnCustomers);
             this.panel1buttonCollections.Controls.Add(this.btnReports);
             this.panel1buttonCollections.Controls.Add(this.btnproducts);
-            this.panel1buttonCollections.Controls.Add(this.btnlogout);
             this.panel1buttonCollections.Controls.Add(this.btnAccount);
             this.panel1buttonCollections.Controls.Add(this.btnOrders);
             this.panel1buttonCollections.Controls.Add(this.btnStock);
@@ -99,6 +107,50 @@
             this.panel1buttonCollections.Name = "panel1buttonCollections";
             this.panel1buttonCollections.Size = new System.Drawing.Size(1261, 56);
             this.panel1buttonCollections.TabIndex = 0;
+            // 
+            // pictureBoxProfile
+            // 
+            this.pictureBoxProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBoxProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxProfile.Location = new System.Drawing.Point(1209, 6);
+            this.pictureBoxProfile.Name = "pictureBoxProfile";
+            this.pictureBoxProfile.Size = new System.Drawing.Size(44, 43);
+            this.pictureBoxProfile.TabIndex = 12;
+            this.pictureBoxProfile.TabStop = false;
+            this.pictureBoxProfile.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxProfile_MouseClick);
+            // 
+            // lblAccount
+            // 
+            this.lblAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAccount.AutoSize = true;
+            this.lblAccount.BackColor = System.Drawing.Color.Transparent;
+            this.lblAccount.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblAccount.Location = new System.Drawing.Point(1039, 19);
+            this.lblAccount.Name = "lblAccount";
+            this.lblAccount.Size = new System.Drawing.Size(137, 18);
+            this.lblAccount.TabIndex = 11;
+            this.lblAccount.Text = "Name(Position)";
+            this.lblAccount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblAccount_MouseClick);
+            // 
+            // btnLogoutAccount
+            // 
+            this.btnLogoutAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogoutAccount.BackColor = System.Drawing.Color.White;
+            this.btnLogoutAccount.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogoutAccount.FlatAppearance.BorderSize = 3;
+            this.btnLogoutAccount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLogoutAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLogoutAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogoutAccount.Font = new System.Drawing.Font("Matura MT Script Capitals", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogoutAccount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLogoutAccount.Location = new System.Drawing.Point(1021, 6);
+            this.btnLogoutAccount.Name = "btnLogoutAccount";
+            this.btnLogoutAccount.Size = new System.Drawing.Size(232, 44);
+            this.btnLogoutAccount.TabIndex = 10;
+            this.btnLogoutAccount.UseVisualStyleBackColor = false;
+            this.btnLogoutAccount.Click += new System.EventHandler(this.btnLogoutAccount_Click);
             // 
             // btnDelivery
             // 
@@ -110,7 +162,8 @@
             this.btnDelivery.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelivery.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelivery.Location = new System.Drawing.Point(694, 7);
+            this.btnDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnDelivery.Location = new System.Drawing.Point(682, 6);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(146, 44);
             this.btnDelivery.TabIndex = 9;
@@ -128,8 +181,8 @@
             this.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCustomers.Location = new System.Drawing.Point(425, 6);
+            this.btnCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnCustomers.Location = new System.Drawing.Point(406, 6);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(146, 44);
             this.btnCustomers.TabIndex = 3;
@@ -147,8 +200,8 @@
             this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnReports.Location = new System.Drawing.Point(834, 6);
+            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnReports.Location = new System.Drawing.Point(821, 6);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(146, 44);
             this.btnReports.TabIndex = 8;
@@ -166,32 +219,14 @@
             this.btnproducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnproducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnproducts.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnproducts.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnproducts.Location = new System.Drawing.Point(145, 6);
+            this.btnproducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnproducts.Location = new System.Drawing.Point(135, 6);
             this.btnproducts.Name = "btnproducts";
             this.btnproducts.Size = new System.Drawing.Size(146, 44);
             this.btnproducts.TabIndex = 1;
             this.btnproducts.Text = "Products";
             this.btnproducts.UseVisualStyleBackColor = false;
             this.btnproducts.Click += new System.EventHandler(this.btnproducts_Click);
-            // 
-            // btnlogout
-            // 
-            this.btnlogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnlogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnlogout.FlatAppearance.BorderSize = 3;
-            this.btnlogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnlogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnlogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnlogout.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnlogout.Location = new System.Drawing.Point(1116, 7);
-            this.btnlogout.Name = "btnlogout";
-            this.btnlogout.Size = new System.Drawing.Size(126, 44);
-            this.btnlogout.TabIndex = 6;
-            this.btnlogout.Text = "Logout";
-            this.btnlogout.UseVisualStyleBackColor = true;
-            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
             // 
             // btnAccount
             // 
@@ -203,11 +238,12 @@
             this.btnAccount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccount.Location = new System.Drawing.Point(973, 7);
+            this.btnAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnAccount.Location = new System.Drawing.Point(960, 6);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(146, 44);
+            this.btnAccount.Size = new System.Drawing.Size(156, 44);
             this.btnAccount.TabIndex = 5;
-            this.btnAccount.Text = "Account";
+            this.btnAccount.Text = "Accounts";
             this.btnAccount.UseVisualStyleBackColor = false;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
@@ -221,7 +257,8 @@
             this.btnOrders.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrders.Location = new System.Drawing.Point(556, 7);
+            this.btnOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnOrders.Location = new System.Drawing.Point(542, 6);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(146, 44);
             this.btnOrders.TabIndex = 4;
@@ -239,8 +276,8 @@
             this.btnStock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStock.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStock.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnStock.Location = new System.Drawing.Point(287, 6);
+            this.btnStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnStock.Location = new System.Drawing.Point(273, 6);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(146, 44);
             this.btnStock.TabIndex = 2;
@@ -258,10 +295,10 @@
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnHome.Location = new System.Drawing.Point(2, 4);
+            this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnHome.Location = new System.Drawing.Point(3, 6);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(146, 44);
+            this.btnHome.Size = new System.Drawing.Size(175, 44);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -269,7 +306,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(15, 34);
+            this.monthCalendar1.Location = new System.Drawing.Point(18, 183);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
             // 
@@ -281,9 +318,9 @@
             this.panelRSide.Controls.Add(this.btnArchives);
             this.panelRSide.Controls.Add(this.btnItemStatus);
             this.panelRSide.Controls.Add(this.btnDeliveriesStatus);
-            this.panelRSide.Location = new System.Drawing.Point(1015, 34);
+            this.panelRSide.Location = new System.Drawing.Point(1056, 192);
             this.panelRSide.Name = "panelRSide";
-            this.panelRSide.Size = new System.Drawing.Size(199, 193);
+            this.panelRSide.Size = new System.Drawing.Size(186, 278);
             this.panelRSide.TabIndex = 3;
             // 
             // btnArchives
@@ -294,7 +331,7 @@
             this.btnArchives.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnArchives.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnArchives.Location = new System.Drawing.Point(-2, 63);
+            this.btnArchives.Location = new System.Drawing.Point(-15, 63);
             this.btnArchives.Name = "btnArchives";
             this.btnArchives.Size = new System.Drawing.Size(200, 21);
             this.btnArchives.TabIndex = 2;
@@ -310,7 +347,7 @@
             this.btnItemStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnItemStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnItemStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnItemStatus.Location = new System.Drawing.Point(-2, 32);
+            this.btnItemStatus.Location = new System.Drawing.Point(-15, 32);
             this.btnItemStatus.Name = "btnItemStatus";
             this.btnItemStatus.Size = new System.Drawing.Size(200, 25);
             this.btnItemStatus.TabIndex = 1;
@@ -326,7 +363,7 @@
             this.btnDeliveriesStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnDeliveriesStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDeliveriesStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeliveriesStatus.Location = new System.Drawing.Point(-2, 3);
+            this.btnDeliveriesStatus.Location = new System.Drawing.Point(-15, 3);
             this.btnDeliveriesStatus.Name = "btnDeliveriesStatus";
             this.btnDeliveriesStatus.Size = new System.Drawing.Size(200, 23);
             this.btnDeliveriesStatus.TabIndex = 0;
@@ -375,13 +412,47 @@
             this.mainpanel.Controls.Add(this.lblTotalTshirt);
             this.mainpanel.Controls.Add(this.lblTotalPoloShirt);
             this.mainpanel.Controls.Add(this.lblTotalPants);
-            this.mainpanel.Controls.Add(this.panelRSide);
-            this.mainpanel.Controls.Add(this.monthCalendar1);
             this.mainpanel.Location = new System.Drawing.Point(12, 149);
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(1230, 548);
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Visible = false;
+            // 
+            // lblTotalTshirt
+            // 
+            this.lblTotalTshirt.AutoSize = true;
+            this.lblTotalTshirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTotalTshirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTshirt.ForeColor = System.Drawing.Color.White;
+            this.lblTotalTshirt.Location = new System.Drawing.Point(341, 231);
+            this.lblTotalTshirt.Name = "lblTotalTshirt";
+            this.lblTotalTshirt.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalTshirt.TabIndex = 9;
+            this.lblTotalTshirt.Text = "0";
+            // 
+            // lblTotalPoloShirt
+            // 
+            this.lblTotalPoloShirt.AutoSize = true;
+            this.lblTotalPoloShirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTotalPoloShirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPoloShirt.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPoloShirt.Location = new System.Drawing.Point(591, 231);
+            this.lblTotalPoloShirt.Name = "lblTotalPoloShirt";
+            this.lblTotalPoloShirt.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalPoloShirt.TabIndex = 11;
+            this.lblTotalPoloShirt.Text = "0";
+            // 
+            // lblTotalPants
+            // 
+            this.lblTotalPants.AutoSize = true;
+            this.lblTotalPants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPants.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPants.Location = new System.Drawing.Point(837, 231);
+            this.lblTotalPants.Name = "lblTotalPants";
+            this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalPants.TabIndex = 13;
+            this.lblTotalPants.Text = "0";
             // 
             // pboxTshirt
             // 
@@ -454,30 +525,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Total : ";
             // 
-            // lblTotalTshirt
-            // 
-            this.lblTotalTshirt.AutoSize = true;
-            this.lblTotalTshirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTotalTshirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTshirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalTshirt.Location = new System.Drawing.Point(341, 231);
-            this.lblTotalTshirt.Name = "lblTotalTshirt";
-            this.lblTotalTshirt.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalTshirt.TabIndex = 9;
-            this.lblTotalTshirt.Text = "0";
-            // 
-            // lblTotalPoloShirt
-            // 
-            this.lblTotalPoloShirt.AutoSize = true;
-            this.lblTotalPoloShirt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTotalPoloShirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPoloShirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPoloShirt.Location = new System.Drawing.Point(591, 231);
-            this.lblTotalPoloShirt.Name = "lblTotalPoloShirt";
-            this.lblTotalPoloShirt.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPoloShirt.TabIndex = 11;
-            this.lblTotalPoloShirt.Text = "0";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -488,18 +535,6 @@
             this.label2.Size = new System.Drawing.Size(68, 19);
             this.label2.TabIndex = 10;
             this.label2.Text = "Total : ";
-            // 
-            // lblTotalPants
-            // 
-            this.lblTotalPants.AutoSize = true;
-            this.lblTotalPants.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPants.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPants.Location = new System.Drawing.Point(837, 231);
-            this.lblTotalPants.Name = "lblTotalPants";
-            this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPants.TabIndex = 13;
-            this.lblTotalPants.Text = "0";
             // 
             // label3
             // 
@@ -578,15 +613,48 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Total : ";
             // 
+            // panelAccount
+            // 
+            this.panelAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAccount.BackColor = System.Drawing.Color.White;
+            this.panelAccount.Controls.Add(this.btnLogout);
+            this.panelAccount.Location = new System.Drawing.Point(1056, 144);
+            this.panelAccount.Name = "panelAccount";
+            this.panelAccount.Size = new System.Drawing.Size(186, 225);
+            this.panelAccount.TabIndex = 20;
+            this.panelAccount.Visible = false;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackColor = System.Drawing.Color.White;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogout.FlatAppearance.BorderSize = 3;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnLogout.Location = new System.Drawing.Point(-14, 0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(197, 42);
+            this.btnLogout.TabIndex = 7;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1254, 709);
+            this.Controls.Add(this.panelAccount);
             this.Controls.Add(this.lblTotalCollection);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.panelRSide);
             this.Controls.Add(this.lblTotalPolo);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblTotalShorts);
             this.Controls.Add(this.label4);
@@ -604,8 +672,11 @@
             this.Controls.Add(this.mainpanel);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1buttonCollections.ResumeLayout(false);
             this.panel1buttonCollections.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
             this.panelRSide.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -618,6 +689,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pboxShorts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPolo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCollecton)).EndInit();
+            this.panelAccount.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -630,7 +702,6 @@
         private System.Windows.Forms.Button btnproducts;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnCustomers;
-        private System.Windows.Forms.Button btnlogout;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
@@ -662,5 +733,10 @@
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnDelivery;
         private System.Windows.Forms.Button btnArchives;
+        private System.Windows.Forms.Button btnLogoutAccount;
+        private System.Windows.Forms.Panel panelAccount;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.PictureBox pictureBoxProfile;
+        private System.Windows.Forms.Label lblAccount;
     }
 }

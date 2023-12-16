@@ -17,7 +17,7 @@ namespace Clothing_Store
         {
             InitializeComponent();
 
-            employee();
+          
             totalShorts();
             totalPolo();
             totalTshirt();
@@ -34,6 +34,8 @@ namespace Clothing_Store
         FrmReports fr = new FrmReports();
         FrmDelivery fd = new FrmDelivery();
         frmLogin flog = new frmLogin();
+        userClass uc = new userClass();
+
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -46,7 +48,8 @@ namespace Clothing_Store
                 btnAccount.BackColor = Color.White;
                 btnReports.BackColor = Color.White;
                 btnDelivery.BackColor = Color.White;
-
+                btnLogoutAccount.BackColor = Color.White;
+  
 
             // forms
             fc.Hide();
@@ -63,6 +66,8 @@ namespace Clothing_Store
 
             panelRSide.Show();
             monthCalendar1.Show();
+            panelAccount.Hide();
+
 
             // picture boxes
             pboxTshirt.Show();
@@ -103,6 +108,8 @@ namespace Clothing_Store
             btnAccount.BackColor = Color.White;
             btnReports.BackColor = Color.White;
             btnDelivery.BackColor = Color.White;
+            btnLogoutAccount.BackColor = Color.White;
+           
 
             // forms
             fc.Hide();
@@ -125,6 +132,9 @@ namespace Clothing_Store
 
             panelRSide.Hide();
             monthCalendar1.Hide();
+            panelAccount.Hide();
+
+
 
             // picture boxes
             pboxTshirt.Hide();
@@ -161,6 +171,8 @@ namespace Clothing_Store
             btnAccount.BackColor = Color.White;
             btnReports.BackColor = Color.White;
             btnDelivery.BackColor = Color.White;
+            btnLogoutAccount.BackColor = Color.White;
+          
 
             // forms
             i.Hide();
@@ -184,6 +196,8 @@ namespace Clothing_Store
           
             panelRSide.Hide();
             monthCalendar1.Hide();
+            panelAccount.Hide();
+
 
 
             // picture boxes
@@ -223,6 +237,8 @@ namespace Clothing_Store
             btnAccount.BackColor = Color.White;
             btnReports.BackColor = Color.White;
             btnDelivery.BackColor = Color.White;
+            btnLogoutAccount.BackColor = Color.White;
+
 
 
             // form
@@ -247,6 +263,8 @@ namespace Clothing_Store
 
             panelRSide.Hide();
             monthCalendar1.Hide();
+            panelAccount.Hide();
+
 
 
             // picture boxes
@@ -287,6 +305,8 @@ namespace Clothing_Store
             btnAccount.BackColor = Color.White;
             btnReports.BackColor = Color.White;
             btnDelivery.BackColor = Color.White;
+            btnLogoutAccount.BackColor = Color.White;
+          
 
             // form
             i.Hide();
@@ -310,6 +330,8 @@ namespace Clothing_Store
 
             panelRSide.Hide();
             monthCalendar1.Hide();
+            panelAccount.Hide();
+
 
 
             // picture boxes
@@ -348,6 +370,8 @@ namespace Clothing_Store
             btnproducts.BackColor = Color.White;
             btnReports.BackColor = Color.White;
             btnDelivery.BackColor = Color.White;
+            btnLogoutAccount.BackColor = Color.White;
+           
 
             // form
             i.Hide();
@@ -371,6 +395,8 @@ namespace Clothing_Store
 
             panelRSide.Hide();
             monthCalendar1.Hide();
+            panelAccount.Hide();
+
 
 
             // picture boxes
@@ -410,7 +436,8 @@ namespace Clothing_Store
             btnStock.BackColor = Color.White;
             btnproducts.BackColor = Color.White;
             btnDelivery.BackColor = Color.White;
-
+            btnLogoutAccount.BackColor = Color.White;
+           
 
             // form
             i.Hide();
@@ -435,6 +462,8 @@ namespace Clothing_Store
 
             panelRSide.Hide();
             monthCalendar1.Hide();
+            panelAccount.Hide();
+
 
 
             // picture boxes
@@ -464,7 +493,10 @@ namespace Clothing_Store
    
         private void btnDelivery_Click(object sender, EventArgs e) // button delivery begin
         {
+            
+
             // buton color
+        
             btnDelivery.BackColor = Color.Salmon;
             btnReports.BackColor = Color.White;
             btnAccount.BackColor = Color.White;
@@ -473,7 +505,7 @@ namespace Clothing_Store
             btnHome.BackColor = Color.White;
             btnStock.BackColor = Color.White;
             btnproducts.BackColor = Color.White;
-
+            btnLogoutAccount.BackColor = Color.White;
 
 
             // form
@@ -498,6 +530,7 @@ namespace Clothing_Store
 
             panelRSide.Hide();
             monthCalendar1.Hide();
+            panelAccount.Hide();
 
 
             // picture boxes
@@ -524,38 +557,24 @@ namespace Clothing_Store
         } // button delivery end
 
 
-
-
-        private void btnlogout_Click(object sender, EventArgs e)    // log out begin
-        {
-            DialogResult dialogResult = MessageBox.Show("Do you want to Exit ? ", "Log out", MessageBoxButtons.YesNo);
-
-            if (dialogResult == DialogResult.Yes)
-            {
-             
-                flog.Show();
-                this.Hide();
-            }
-            else
-            {
-
-            }
-
-        } // logout end 
-
         string emp;
+      
         public void employee()    // emp condition begin
         {
-            emp = "Manager";
+           emp = frmLogin.pos1;     
+         //  emp = "Cashier";
+            if (emp == "Cashier")
+            {
+                btnAccount.Visible = false; 
+                lblAccount.Text = frmLogin.name + "  (" + emp + ")";
 
-            if ( emp == "Cashier")
-            {
-                btnAccount.Hide();
             }
-            else if (emp == "Manager")
+            else if (emp == "Admin" || emp == "Manager")
             {
-                btnAccount.Show();
+                btnAccount.Visible = true;
+                lblAccount.Text = frmLogin.name + "  (" + emp + ")";
             }
+
         } // emp condition begin
 
         public void totalShorts()  // total  - string
@@ -606,6 +625,54 @@ namespace Clothing_Store
             lblTotalTshirt.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
+
+        private void MainForm_Load(object sender, EventArgs e)  // frm load begin
+        {
+            employee();
+        }  // frm load end
+
+       
+        private void btnLogoutAccount_Click(object sender, EventArgs e)  // log out account begin
+        {
+            panelAccount.Visible = true;
+
+
+        }  // log out account  end
+
+        private void btnLogout_Click(object sender, EventArgs e) // log out begin
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you want to Exit ? ", "Log out", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                flog.Show();
+                this.Hide();
+                panelAccount.Visible = false;
+            }
+            else
+            {
+
+            }
+        }// log out end
+
+        private void pictureBoxProfile_MouseClick(object sender, MouseEventArgs e) // PictureBox click begin
+        {
+            panelAccount.Visible = true;
+
+
+
+         
+
+        } // PictureBox click end
+
+        private void lblAccount_MouseClick(object sender, MouseEventArgs e) // label name click beginn
+        {
+            panelAccount.Visible = true;
+
+           
+
+        } // label name click end
 
 
     } // class end 

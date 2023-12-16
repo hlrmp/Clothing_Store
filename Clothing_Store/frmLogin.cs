@@ -35,6 +35,7 @@ namespace Clothing_Store
         private void btnClose_Click(object sender, EventArgs e)  // close button begin
         {
             this.Close();
+
         }  // close button end
 
 
@@ -64,7 +65,8 @@ namespace Clothing_Store
         } // lig in button end
 
         userClass uc = new userClass();
-
+        public static string pos1;
+        public static string name;
         public void log() // login begin
         {
 
@@ -73,6 +75,7 @@ namespace Clothing_Store
 
                 uc.username = txtUserName.Text;
                 uc.userpas = txtPassword.Text;
+
 
             MainForm mf = new MainForm();
            
@@ -97,7 +100,7 @@ namespace Clothing_Store
                 {    
                             cn.Open();
                         
-                            string quer = "SELECT u.User_Name , u.Password ,s.Position FROM Staffs AS s INNER JOIN Users AS u ON(s.Staff_Id = u.Staff_Id) Where User_Name = '"+uc.username+"' and Password = '"+uc.userpas+"' and u.Status = 1 ;";
+                            string quer = "SELECT u.User_Name , u.Password ,s.Position ,s.First_Name , s.Last_Name FROM Staffs AS s INNER JOIN Users AS u ON(s.Staff_Id = u.Staff_Id) Where User_Name = '" + uc.username+"' and Password = '"+uc.userpas+"' and u.Status = 1 ;";
 
                             SqlCommand command = new SqlCommand();
                             command = new SqlCommand(quer, cn);
@@ -109,12 +112,17 @@ namespace Clothing_Store
                         string username = reader[0].ToString();
                         string pass = reader[1].ToString();
                         string pos = reader[2].ToString();
-                        uc.StaffPosition = reader[2].ToString();
 
+                        uc.StaffFirstName = reader[3].ToString();
+                        uc.StaffLastName = reader[4].ToString();
+
+                        uc.StaffPosition = reader[2].ToString();
+                        pos1 = reader[2].ToString();
+                        name = uc.StaffFirstName + " " + uc.StaffLastName;
 
                                    if (username == uc.username && pass == uc.userpas && pos == "Cashier")
                                    {
-                                       MessageBox.Show("c");
+                                       MessageBox.Show("c" + name);
                                         mf.ShowDialog();
                                         this.Hide();
 
