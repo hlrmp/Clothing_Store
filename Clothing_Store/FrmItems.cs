@@ -38,10 +38,8 @@ namespace Clothing_Store
             buttonWomensWasClicked = false;
             buttonUnisexWasClicked = false;
 
-            btnHome.BackColor = Color.Teal;
-            btnMens.BackColor = Color.Blue;
-            btnWomens.BackColor = Color.Teal;
-            btnUnisex.BackColor = Color.Teal;
+       
+          
 
             seeItemsMens();
             
@@ -54,10 +52,7 @@ namespace Clothing_Store
             buttonWomensWasClicked = true;
             buttonUnisexWasClicked = false;
 
-            btnHome.BackColor = Color.Teal;
-            btnMens.BackColor = Color.Teal;
-            btnWomens.BackColor = Color.Blue;
-            btnUnisex.BackColor = Color.Teal;
+          
 
             seeItemsWomens();
 
@@ -71,10 +66,7 @@ namespace Clothing_Store
             buttonWomensWasClicked = false;
             buttonUnisexWasClicked = true;
 
-            btnHome.BackColor = Color.Teal;
-            btnMens.BackColor = Color.Teal;
-            btnWomens.BackColor = Color.Teal;
-            btnUnisex.BackColor = Color.Blue;
+          
 
             seeItemsUnisex();
 
@@ -84,11 +76,7 @@ namespace Clothing_Store
             buttonMensWasClicked = false;
             buttonWomensWasClicked = false;
             buttonUnisexWasClicked = false;
-            
-            btnHome.BackColor = Color.Blue;
-            btnMens.BackColor = Color.Teal;
-            btnWomens.BackColor = Color.Teal;
-            btnUnisex.BackColor = Color.Teal;
+       
 
             seeTotalItems();
 
@@ -826,7 +814,10 @@ namespace Clothing_Store
 
         } // unisex search
 
-      
+        private void label1_Click(object sender, EventArgs e)// label search Begin
+        {
+            sc();
+        }// label search end
 
     } // class end
 } // name space end 

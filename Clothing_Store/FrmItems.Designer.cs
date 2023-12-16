@@ -41,6 +41,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblsearch = new System.Windows.Forms.Label();
             this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagridItems)).BeginInit();
             this.sidepanelitems.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -203,12 +204,28 @@
             // 
             // cbFilter
             // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.cbFilter.FormattingEnabled = true;
             this.cbFilter.Location = new System.Drawing.Point(681, 40);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(74, 21);
             this.cbFilter.TabIndex = 19;
             this.cbFilter.Text = "Filter";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(640, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Search";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FrmItems
             // 
@@ -218,6 +235,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(3, 3);
             this.AutoScrollMinSize = new System.Drawing.Size(3, 3);
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.lblTitle);
@@ -252,5 +270,6 @@
         private System.Windows.Forms.Label lblTotalNumber;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.Label label1;
     }
 }
