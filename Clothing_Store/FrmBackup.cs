@@ -113,7 +113,5 @@ namespace Clothing_Store
             string backup = "BACKUP DATABASE ClotingStoreDatabase TO DISK = 'C:\\Users\\reichel domingo\\Contacts\\Desktop\\MSSQL14.SQLEXPRESS02\\MSSQL\\Backup\\"+ TimeandDate  + ".bak' ";
 
         } // back up button end
-
-
     } // class end
 } // name space end

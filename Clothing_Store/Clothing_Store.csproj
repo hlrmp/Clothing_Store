@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\backupRecoveryClass.cs" />
     <Compile Include="classes\ConnectionClass.cs" />
     <Compile Include="classes\customerClass.cs" />
     <Compile Include="classes\ordersClass.cs" />
@@ -245,6 +246,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Clothing_Store.classes.backupRecoveryClass.datasource" />
     <None Include="Properties\DataSources\customerClass.datasource" />
     <None Include="Properties\DataSources\itemsClass.datasource" />
     <None Include="Properties\Settings.settings">
@@ -262,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Edit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
