@@ -125,6 +125,7 @@
             this.lblAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAccount.AutoSize = true;
             this.lblAccount.BackColor = System.Drawing.Color.Transparent;
+            this.lblAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblAccount.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblAccount.Location = new System.Drawing.Point(1039, 19);
@@ -239,9 +240,9 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnAccount.Location = new System.Drawing.Point(960, 6);
+            this.btnAccount.Location = new System.Drawing.Point(947, 6);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(156, 44);
+            this.btnAccount.Size = new System.Drawing.Size(153, 44);
             this.btnAccount.TabIndex = 5;
             this.btnAccount.Text = "Accounts";
             this.btnAccount.UseVisualStyleBackColor = false;
