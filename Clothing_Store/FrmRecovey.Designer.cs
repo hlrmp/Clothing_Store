@@ -233,7 +233,7 @@
             this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
-            this.Delete.Width = 20;
+            this.Delete.Width = 50;
             // 
             // FrmRecovey
             // 

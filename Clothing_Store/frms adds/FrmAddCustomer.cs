@@ -123,12 +123,12 @@ namespace Clothing_Store
         {
             public NumberFormatException(string num) : base(num) { }
         }
-        public long ContactNo(string contact)
+        public string ContactNo(string contact)
         {
 
             if (Regex.IsMatch(contact,regexClass.numbers))
             {
-                cs.Contact_No = long.Parse(contact);
+                cs.Contact_No = contact;
 
             }
             else

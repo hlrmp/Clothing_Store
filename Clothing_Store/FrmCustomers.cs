@@ -11,6 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Clothing_Store
@@ -23,8 +24,9 @@ namespace Clothing_Store
             seecustomers(); // see cutomers on the datagrid - load form
             total(); // total customers string lbltotal
             filter();// search filter
+            searcCustomers();
 
-          
+
 
 
         }
@@ -41,6 +43,8 @@ namespace Clothing_Store
         {
             seecustomers();  // see cutomers on the datagrid - home button
             dataGridViewManage.Hide();
+            dataGridView1.Hide();
+            datagridviewHome.Show();
 
         } //  home button end
 
@@ -50,15 +54,17 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
           
                
-                string sj = "select concat(First_Name,' ', Last_Name) AS Name, Contact_No, Email,  Address, Delivery_Address from Customers";
+                string sj = "select concat(First_Name,' ', Last_Name) AS Name, Contact_No, Email,  Address, Delivery_Address from Customers where Status = 1";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
                 data.Fill(table);
               
-                dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridView1.DataSource = table;
-           
+                datagridviewHome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                datagridviewHome.DataSource = table;
+
+              
+
         } // see customers end - datagrid
 
         public void manageCustomers() // manage cusstomers begin - datagrid
@@ -67,7 +73,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "select First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address from Customers";
+            string sj = "select First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address from Customers where Status = 1 ";
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
 
@@ -76,11 +82,28 @@ namespace Clothing_Store
             dataGridViewManage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewManage.DataSource = table;
 
-          
+
+
         } // manage cusstomers end - datagrid
 
+        public void searcCustomers() // search cusstomers begin - datagrid
+        {
 
-      
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+
+            string sj = "select First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address from Customers where Status = 1 ";
+            SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+          
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = table;
+
+        } // search cusstomers end - datagrid
+
 
         public void seetotalcustomers()   // total customers begin - datagrid
         {
@@ -94,8 +117,8 @@ namespace Clothing_Store
 
             data.Fill(table);
 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.DataSource = table;
+            datagridviewHome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            datagridviewHome.DataSource = table;
 
         } // total customers end - datagrid
 
@@ -117,12 +140,18 @@ namespace Clothing_Store
         {
             seetotalcustomers(); // see numbers of customers - total 
             dataGridViewManage.Hide();
+            datagridviewHome.Show();
+            dataGridView1.Hide();
+            
+         
 
         } // total  button end
 
         private void btnManage_Click(object sender, EventArgs e) // manage button beginn
         {
             dataGridViewManage.Show();
+            dataGridView1.Hide();
+            datagridviewHome.Hide();
             manageCustomers();
 
            
@@ -144,7 +173,7 @@ namespace Clothing_Store
 
                 string sch = txtSearch.Text;
 
-                string query = "Select *  from Customers where First_Name LIKE '" + sch + '%' + "'   ";
+                string query = " SELECT  First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address FROM Customers WHERE First_Name LIKE '" + sch + '%' + "' and Status = 1";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -169,7 +198,7 @@ namespace Clothing_Store
 
                 string sch = txtSearch.Text;
 
-                string query = "Select *  from Customers where Last_Name LIKE '" + sch + '%' + "'   ";
+                string query = " SELECT  First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address FROM Customers WHERE Last_Name LIKE '" + sch + '%' + "' and Status = 1";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -194,7 +223,7 @@ namespace Clothing_Store
 
                 string sch = txtSearch.Text;
 
-                string query = "Select *  from Customers where Address LIKE '" + sch + '%' + "'   ";
+                string query = " SELECT  First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address FROM Customers WHERE Address LIKE '" + sch + '%' + "' and Status = 1";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -219,7 +248,7 @@ namespace Clothing_Store
 
                 string sch = txtSearch.Text;
 
-                string query = "Select *  from Customers where Contact_No LIKE '" + sch + '%' + "'   ";
+                string query = " SELECT  First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address FROM Customers WHERE Contact_No LIKE '" + sch + '%' + "' and Status = 1";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -244,7 +273,7 @@ namespace Clothing_Store
 
                 string sch = txtSearch.Text;
 
-                string query = "Select *  from Customers where Email LIKE '" + sch + '%' + "'   ";
+                string query = " SELECT  First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address FROM Customers WHERE Email LIKE '" + sch + '%' + "' and Status = 1";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -270,8 +299,9 @@ namespace Clothing_Store
 
                 string sch = txtSearch.Text;
 
-                string query = "Select *  from Customers where First_Name LIKE '" + sch + '%' + "'   ";
+                string query = " SELECT  First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address FROM Customers WHERE First_Name LIKE '" + sch + '%' + "' and Status = 1";
 
+               
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
                 SqlCommand command = new SqlCommand();
@@ -295,6 +325,7 @@ namespace Clothing_Store
         {
             search();
 
+
         }  // search click end
 
 
@@ -307,6 +338,8 @@ namespace Clothing_Store
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)// text box mouse click begin
         {
             dataGridViewManage.Hide();
+            datagridviewHome.Hide();
+            dataGridView1.Show();
 
         } // text box mouse click end
 
@@ -346,7 +379,7 @@ namespace Clothing_Store
             
 
             Timer timer = new Timer();
-            timer.Interval = (1 * 1000);
+            timer.Interval = (5 * 1000);
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
 
@@ -355,22 +388,50 @@ namespace Clothing_Store
         private void timer1_Tick(object sender, EventArgs e) // timer begin
         {
             total();
+            manageCustomers();
+            dataGridViewManage.Refresh();
             lbltotal.Refresh();
 
         } // timer end
 
         private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e)  // datagrid view button begin
         {
+            customerClass cs = new customerClass();
+            cs.First_Name = dataGridViewManage.CurrentRow.Cells["firstNameDataGridViewTextBoxColumn"].Value.ToString();
+            cs.Last_Name = dataGridViewManage.CurrentRow.Cells["lastNameDataGridViewTextBoxColumn"].Value.ToString();
+            cs.Contact_No = dataGridViewManage.CurrentRow.Cells["contactNoDataGridViewTextBoxColumn"].Value.ToString();
+            cs.email = dataGridViewManage.CurrentRow.Cells["emailDataGridViewTextBoxColumn"].Value.ToString();
+            cs.address = dataGridViewManage.CurrentRow.Cells["addressDataGridViewTextBoxColumn"].Value.ToString();
+            cs.Delivery_Address = dataGridViewManage.CurrentRow.Cells["deliveryAddressDataGridViewTextBoxColumn"].Value.ToString();
+
+
             if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Edit")
             {
                 MessageBox.Show("EDIT");
 
                 panelEdit.Visible = true;
 
+                txtFname.Text = cs.First_Name;
+                txtLname.Text = cs.Last_Name;
+                txtContact.Text = cs.Contact_No;
+                txtEmail.Text = cs.email;
+                txtAddress.Text = cs.address;
+                txtDeliveryAdd.Text = cs.Delivery_Address;
+
+              
+
             }
-            if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
+            else if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
             {
                 MessageBox.Show("DELETE");
+
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                cn.Open();
+
+                string quer = "UPDATE Customers SET Status = 2 WHERE First_Name ='"+cs.First_Name+"' and Last_Name ='"+cs.Last_Name+"'";
+                SqlCommand command = new SqlCommand(quer, cn);
+                command.ExecuteNonQuery();
+                cn.Close();
             }
 
         } // datagrid view button end
@@ -381,6 +442,6 @@ namespace Clothing_Store
 
         } // panel edit button cancel end 
 
-
+     
     } // class end
 } // namespace end

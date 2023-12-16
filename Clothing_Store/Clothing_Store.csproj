@@ -73,6 +73,12 @@
     <Compile Include="FrmAccounts.Designer.cs">
       <DependentUpon>FrmAccounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmArchives.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmArchives.Designer.cs">
+      <DependentUpon>frmArchives.cs</DependentUpon>
+    </Compile>
     <Compile Include="frms adds\FrmAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     <Compile Include="classes\userClass.cs" />
     <EmbeddedResource Include="FrmAccounts.resx">
       <DependentUpon>FrmAccounts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmArchives.resx">
+      <DependentUpon>frmArchives.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frms adds\FrmAddCustomer.resx">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
