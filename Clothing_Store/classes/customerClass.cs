@@ -17,6 +17,8 @@ namespace Clothing_Store
         private string Contact;
         private string Email;
 
+
+
         public customerClass()
         {
             this.FirstName = " ";

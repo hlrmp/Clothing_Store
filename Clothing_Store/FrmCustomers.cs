@@ -7,12 +7,15 @@ using System.Data.Odbc;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using Microsoft.SqlServer.Server;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Clothing_Store
 {
@@ -73,7 +76,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "select First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address from Customers where Status = 1 ";
+            string sj = "select Customer_Id, First_Name, Last_Name, Contact_No, Email,  Address, Delivery_Address from Customers where Status = 1 ";
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
 
@@ -390,6 +393,7 @@ namespace Clothing_Store
             total();
             manageCustomers();
             dataGridViewManage.Refresh();
+           
             lbltotal.Refresh();
 
         } // timer end
@@ -418,7 +422,7 @@ namespace Clothing_Store
                 txtAddress.Text = cs.address;
                 txtDeliveryAdd.Text = cs.Delivery_Address;
 
-              
+                save();
 
             }
             else if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
@@ -442,6 +446,75 @@ namespace Clothing_Store
 
         } // panel edit button cancel end 
 
-     
+        private void btnSave_Click(object sender, EventArgs e)  // save btn begin
+        {
+            string fn = txtFname.Text;
+            string ln = txtLname.Text;
+            string cont = txtContact.Text;
+            string add = txtAddress.Text;
+            string del = txtDeliveryAdd.Text;
+            string em = txtEmail.Text;
+
+            updateCustomers(fn,ln,em,cont,add,del);
+
+
+            txtFname.Clear();
+            txtLname.Clear();
+            txtContact.Clear();
+            txtAddress.Clear();
+            txtDeliveryAdd.Clear();
+            txtEmail.Clear();
+
+            panelEdit.Hide();
+
+        } // save btn end 
+        string customerId;
+        public void save()  //  save begin
+        {
+            customerClass cs = new customerClass();
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+
+            string sj = "select Customer_Id from Customers where Status = 1 and First_Name = '" + txtFname.Text + "' and  Last_Name = '" + txtLname.Text + "'  " +
+              "and Contact_No = '" + txtContact.Text + "'  and Email = '" + txtEmail.Text + "' and  Address = '" + txtAddress.Text + "' and Delivery_Address = '" + txtDeliveryAdd.Text + "' ";
+
+            con.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, con);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            customerId = reader[0].ToString();
+            con.Close();
+
+
+
+        } // save end
+
+        public bool updateCustomers(string FirstName, string LastName, string Email, string ContactNo, string Address, string DelAddress) // update the customer info begin
+        {
+            
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Parameters.Clear();
+            sqlCommand.Connection = con;
+            sqlCommand.CommandText = "Update  Customers Set First_Name = @FirstName, Last_Name = @LastName, Contact_No =  @Contact, Email = @Email,  Address = @Address, Delivery_Address = @DelAddress where Customer_id = "+customerId+" ";
+
+            sqlCommand.Parameters.Add("@FirstName", FirstName);
+            sqlCommand.Parameters.Add("@LastName", LastName);
+            sqlCommand.Parameters.Add("@Email", Email);
+            sqlCommand.Parameters.Add("@Contact", ContactNo);
+            sqlCommand.Parameters.Add("@Address", Address );
+            sqlCommand.Parameters.Add("@DelAddress", DelAddress);
+
+            con.Open();
+            sqlCommand.ExecuteNonQuery();
+            con.Close();
+
+            return true;
+        } // update the customer info end
+
+
     } // class end
 } // namespace end
