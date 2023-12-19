@@ -618,6 +618,7 @@
             // 
             this.panelAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAccount.BackColor = System.Drawing.Color.White;
+            this.panelAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAccount.Controls.Add(this.btnLogout);
             this.panelAccount.Location = new System.Drawing.Point(1056, 144);
             this.panelAccount.Name = "panelAccount";
@@ -636,7 +637,7 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnLogout.Location = new System.Drawing.Point(0, 0);
+            this.btnLogout.Location = new System.Drawing.Point(-2, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(183, 42);
             this.btnLogout.TabIndex = 7;
