@@ -427,14 +427,31 @@ namespace Clothing_Store
             }
             else if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
             {
+                    DialogResult result = MessageBox.Show("Do you want to Remove "+ cs.First_Name +" "+ cs.Last_Name + "?", "Delete", MessageBoxButtons.YesNo);
 
-                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
-                cn.Open();
+                    if (result == DialogResult.Yes)
+                    {
+                        SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                        cn.Open();
 
-                string quer = "UPDATE Customers SET Status = 2 WHERE First_Name ='"+cs.First_Name+"' and Last_Name ='"+cs.Last_Name+"'";
-                SqlCommand command = new SqlCommand(quer, cn);
-                command.ExecuteNonQuery();
-                cn.Close();
+                        string quer = "UPDATE Customers SET Status = 2 WHERE First_Name = '" + cs.First_Name + "' and  Last_Name = '" +cs.Last_Name + "'  " +"and Contact_No = '" + cs.Contact_No + "'  and Email = '" + cs.email + "' and  Address = '" + cs.address + "' and Delivery_Address = '" + cs.Delivery_Address + "' ";               
+
+                        SqlCommand command = new SqlCommand(quer, cn);                  
+                        command.ExecuteNonQuery();
+                        cn.Close();
+
+                        // activity logs begin
+
+                        string desc = "Delete Customer Information";
+                        ConnectionClass.activity(frmLogin.userId, desc);
+
+                        // activity logs end
+                    }
+                    else
+                    {
+
+                    }
+
             }
 
         } // datagrid view button end
@@ -580,9 +597,9 @@ namespace Clothing_Store
                     cs.Contact_No = ContactNo(txtContact.Text);
                     cs.email = Email(txtEmail.Text);
 
-                    updateCustomers(cs.First_Name, cs.Last_Name, cs.email, cs.Contact_No, cs.address, cs.Delivery_Address);
+                    updateCustomers(cs.First_Name, cs.Last_Name, cs.email, cs.Contact_No, cs.address, cs.Delivery_Address); // update customers 
 
-                    MessageBox.Show("Suessfully Updated", "New Customer", MessageBoxButtons.OK);
+                    MessageBox.Show("Customer information was Updated", "Update  Customer", MessageBoxButtons.OK);
 
                     txtFname.Clear();
                     txtLname.Clear();
@@ -592,6 +609,14 @@ namespace Clothing_Store
                     txtEmail.Clear();
 
                     panelEdit.Hide();
+
+
+                    // activity logs begin
+
+                    string desc = "Update Customer Information";
+                    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
 
                 }
 
@@ -634,8 +659,6 @@ namespace Clothing_Store
 
             customerId = reader[0].ToString();
             con.Close();
-
-
 
         } // save end
 

@@ -220,7 +220,7 @@ namespace Clothing_Store
 
                     // activity logs begin
 
-                    string desc = "New Austomer Added";
+                    string desc = "New Customer Added";
                     ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
