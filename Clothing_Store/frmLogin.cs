@@ -55,18 +55,30 @@ namespace Clothing_Store
         private void btnLogin_Click(object sender, EventArgs e) // log in button begin
         {
 
+
+
             log();
+
+            // activity logs begin
+
+            string desc = "Log in - " + frmLogin.name;
+            ConnectionClass.activity(frmLogin.userId, desc);
+
+            // activity logs end
 
 
             //FrmLoading ffl = new FrmLoading();
-           //ffl.ShowDialog();
+            //ffl.ShowDialog();
 
 
         } // lig in button end
 
         userClass uc = new userClass();
+
         public static string pos1;
         public static string name;
+        public static int userId;
+
         public void log() // login begin
         {
 
@@ -100,7 +112,7 @@ namespace Clothing_Store
                 {    
                             cn.Open();
                         
-                            string quer = "SELECT u.User_Name , u.Password ,s.Position ,s.First_Name , s.Last_Name FROM Staffs AS s INNER JOIN Users AS u ON(s.Staff_Id = u.Staff_Id) Where User_Name = '" + uc.username+"' and Password = '"+uc.userpas+"' and u.Status = 1 ;";
+                            string quer = "SELECT u.User_Id, u.User_Name , u.Password ,s.Position ,s.First_Name , s.Last_Name FROM Staffs AS s INNER JOIN Users AS u ON(s.Staff_Id = u.Staff_Id) Where User_Name = '" + uc.username+"' and Password = '"+uc.userpas+"' and u.Status = 1 ;";
 
                             SqlCommand command = new SqlCommand();
                             command = new SqlCommand(quer, cn);
@@ -109,28 +121,30 @@ namespace Clothing_Store
                         if (reader.Read())         
                         {
 
-                        string username = reader[0].ToString();
-                        string pass = reader[1].ToString();
-                        string pos = reader[2].ToString();
+                        string username = reader[1].ToString();
+                        string pass = reader[2].ToString();
+                        string pos = reader[3].ToString();
 
-                        uc.StaffFirstName = reader[3].ToString();
-                        uc.StaffLastName = reader[4].ToString();
+                        uc.StaffFirstName = reader[4].ToString();
+                        uc.StaffLastName = reader[5].ToString();
 
-                        uc.StaffPosition = reader[2].ToString();
-                        pos1 = reader[2].ToString();
+                        uc.StaffPosition = reader[3].ToString();
+
+                        pos1 = reader[3].ToString();
                         name = uc.StaffFirstName + " " + uc.StaffLastName;
+                        userId = Convert.ToInt32(reader[0].ToString());
 
                                    if (username == uc.username && pass == uc.userpas && pos == "Cashier")
                                    {
-                                       MessageBox.Show("c" + name);
-                                        mf.ShowDialog();
+                                       MessageBox.Show("C");
+                                        mf.Show();
                                         this.Hide();
-
+                             
                                    }
                                    else if (username == uc.username && pass == uc.userpas && pos == "Admin")
                                    {
                                        MessageBox.Show("A");
-                                        mf.ShowDialog();
+                                        mf.Show();
                                         this.Hide();
 
                                    }

@@ -22,6 +22,7 @@ namespace Clothing_Store
         }
 
             customerClass cs = new customerClass();
+            ConnectionClass con = new ConnectionClass();
 
         private void btnAdd_Click(object sender, EventArgs e) // add button begin
         {
@@ -178,17 +179,6 @@ namespace Clothing_Store
         {
             SqlConnection cnn = new SqlConnection(ConnectionClass.conn);
 
-            /*    string sj = "select count(*)  AS 'Total Customers' from customers";
-                cnn.Open();
-                SqlCommand cmd;
-                cmd = new SqlCommand(sj, cnn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();
-
-                n = Convert.ToInt32(reader[0]) +1 ;  // - total numbers +1 
-
-
-                cnn.Close();*/
 
             try
             {
@@ -228,6 +218,13 @@ namespace Clothing_Store
 
                     MessageBox.Show("Suessfully added", "New Customer", MessageBoxButtons.OK);
 
+                    // activity logs begin
+
+                    string desc = "New Austomer Added";
+                    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+
                     this.Hide();
 
                     txtFname.Clear();
@@ -236,6 +233,9 @@ namespace Clothing_Store
                     txtContactNo.Clear();
                     txtEmail.Clear();
                     txtDeliveryAddress.Clear();
+
+
+
 
                 }
                 

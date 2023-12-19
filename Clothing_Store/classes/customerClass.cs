@@ -19,6 +19,8 @@ namespace Clothing_Store
 
 
 
+
+
         public customerClass()
         {
             this.FirstName = " ";
@@ -27,15 +29,20 @@ namespace Clothing_Store
             this.DeliveryAddress = " ";
             this.Contact = "";
             this.Email = " ";
+
+
+
     }
-        public customerClass(string first_Name, string last_Name, string address, string deliveryAddress, string contact, string enali)
+
+        public customerClass(string firstName, string lastName, string address, string deliveryAddress, string contact, string email)
         {
-            FirstName = first_Name;
-            LastName = last_Name;
+            FirstName = firstName;
+            LastName = lastName;
             Address = address;
             DeliveryAddress = deliveryAddress;
             Contact = contact;
             Email = email;
+
         }
 
         public string First_Name
@@ -68,6 +75,10 @@ namespace Clothing_Store
             get { return Email; }
             set { Email = value; }
         }
+
+
+
+
 
     }
 

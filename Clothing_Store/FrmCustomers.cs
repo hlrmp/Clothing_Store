@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -139,7 +140,7 @@ namespace Clothing_Store
 
         }  // total customers - string
 
-        private void btnTotal_Click(object sender, EventArgs e) // total button begin
+        private void btnTotal_Click(object sender, EventArgs e) // total button begin // no event 
         {
             seetotalcustomers(); // see numbers of customers - total 
             dataGridViewManage.Hide();
@@ -148,7 +149,7 @@ namespace Clothing_Store
             
          
 
-        } // total  button end
+        } // total  button end // no event
 
         private void btnManage_Click(object sender, EventArgs e) // manage button beginn
         {
@@ -411,7 +412,6 @@ namespace Clothing_Store
 
             if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Edit")
             {
-                MessageBox.Show("EDIT");
 
                 panelEdit.Visible = true;
 
@@ -427,7 +427,6 @@ namespace Clothing_Store
             }
             else if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
             {
-                MessageBox.Show("DELETE");
 
                 SqlConnection cn = new SqlConnection(ConnectionClass.conn);
                 cn.Open();
@@ -446,28 +445,177 @@ namespace Clothing_Store
 
         } // panel edit button cancel end 
 
+
+       // reg ex begin
+
+        customerClass cs = new customerClass();
+
+        class nullExceptiom : Exception
+        {
+            public nullExceptiom(string str) : base(str) { }
+        }
+        class StringFormatException : Exception
+        {
+            public StringFormatException(string str) : base(str) { }
+        }
+
+        public string Fname(string FirstName)
+        {
+            if (Regex.IsMatch(FirstName, regexClass.letters))
+            {
+
+                FirstName = Char.ToUpper(FirstName[0]) + FirstName.Substring(1);
+
+                cs.First_Name = FirstName;
+            }
+
+            else
+            {
+                throw new StringFormatException("please enter your First Name Correctly");
+            }
+
+            return cs.First_Name;
+        }
+        public string Lname(string LastName)
+        {
+            if (Regex.IsMatch(LastName, regexClass.letters))
+            {
+                LastName = Char.ToUpper(LastName[0]) + LastName.Substring(1);
+
+                cs.Last_Name = LastName;
+
+
+            }
+            else
+            {
+                throw new StringFormatException("please enter your Last Name Correctly");
+            }
+
+            return cs.Last_Name;
+        }
+        public string Address(string address)
+        {
+            if (Regex.IsMatch(address, regexClass.mix))
+            {
+
+                cs.address = address;
+            }
+            else
+            {
+                throw new StringFormatException("please enter your Address Correctly");
+            }
+
+            return cs.address;
+        }
+        public string delAddress(string deladdress)
+        {
+            if (Regex.IsMatch(deladdress, regexClass.mix))
+            {
+
+                cs.Delivery_Address = deladdress;
+            }
+            else
+            {
+                throw new StringFormatException("please enter your Address Correctly");
+            }
+
+            return cs.Delivery_Address;
+        }
+        public string Email(string email)
+        {
+            if (Regex.IsMatch(email, regexClass.mix))
+            {
+
+                cs.email = email;
+            }
+            else
+            {
+                throw new StringFormatException("please enter your Address Correctly");
+            }
+
+            return cs.email;
+        }
+
+        class NumberFormatException : Exception
+        {
+            public NumberFormatException(string num) : base(num) { }
+        }
+        public string ContactNo(string contact)
+        {
+
+            if (Regex.IsMatch(contact, regexClass.numbers))
+            {
+                cs.Contact_No = contact;
+
+            }
+            else
+            {
+                throw new NumberFormatException("put contact number correctly");
+            }
+            return cs.Contact_No;
+        }
+
+        // reg ex end
+
         private void btnSave_Click(object sender, EventArgs e)  // save btn begin
         {
-            string fn = txtFname.Text;
-            string ln = txtLname.Text;
-            string cont = txtContact.Text;
-            string add = txtAddress.Text;
-            string del = txtDeliveryAdd.Text;
-            string em = txtEmail.Text;
-
-            updateCustomers(fn,ln,em,cont,add,del);
 
 
-            txtFname.Clear();
-            txtLname.Clear();
-            txtContact.Clear();
-            txtAddress.Clear();
-            txtDeliveryAdd.Clear();
-            txtEmail.Clear();
+            try
+            {
+                if (string.IsNullOrEmpty(txtFname.Text) || string.IsNullOrEmpty(txtLname.Text)
+                    || string.IsNullOrEmpty(txtAddress.Text) || string.IsNullOrEmpty(txtDeliveryAdd.Text)
+                    || string.IsNullOrEmpty(txtContact.Text) || string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    throw new nullExceptiom("Please fill up the FF.");
+                }
+                else
+                {
 
-            panelEdit.Hide();
+
+                    cs.First_Name = Fname(txtFname.Text);
+                    cs.Last_Name = Lname(txtLname.Text);
+                    cs.address = Address(txtAddress.Text);
+                    cs.Delivery_Address = delAddress(txtDeliveryAdd.Text);
+                    cs.Contact_No = ContactNo(txtContact.Text);
+                    cs.email = Email(txtEmail.Text);
+
+                    updateCustomers(cs.First_Name, cs.Last_Name, cs.email, cs.Contact_No, cs.address, cs.Delivery_Address);
+
+                    MessageBox.Show("Suessfully Updated", "New Customer", MessageBoxButtons.OK);
+
+                    txtFname.Clear();
+                    txtLname.Clear();
+                    txtContact.Clear();
+                    txtAddress.Clear();
+                    txtDeliveryAdd.Clear();
+                    txtEmail.Clear();
+
+                    panelEdit.Hide();
+
+                }
+
+
+            }
+            catch (NumberFormatException ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            catch (StringFormatException le)
+            {
+                MessageBox.Show(le.Message);
+            }
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            // end of catch 
+
+      
 
         } // save btn end 
+
+
         string customerId;
         public void save()  //  save begin
         {

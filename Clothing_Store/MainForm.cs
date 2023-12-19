@@ -649,6 +649,14 @@ namespace Clothing_Store
                 flog.Show();
                 this.Hide();
                 panelAccount.Visible = false;
+
+                // activity logs begin
+
+                string desc = "Log out - " + frmLogin.name;
+                ConnectionClass.activity(frmLogin.userId, desc);
+
+                // activity logs end
+
             }
             else
             {
