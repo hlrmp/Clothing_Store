@@ -109,6 +109,7 @@
             this.btnActivitylog.TabIndex = 10;
             this.btnActivitylog.Text = "Activity log\r\n";
             this.btnActivitylog.UseVisualStyleBackColor = false;
+            this.btnActivitylog.Click += new System.EventHandler(this.btnActivitylog_Click);
             // 
             // btnUserLog
             // 

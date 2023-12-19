@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -71,9 +72,35 @@ namespace Clothing_Store
         {
             fuser.ShowDialog();
             panelAdd.Hide();
+         
 
         } // panel add user end
 
+        private void btnActivitylog_Click(object sender, EventArgs e) // btn activyity logs Begin
+        {
+            seeActivity();
+
+        } // btn activyity logs end
+
+
+        public void seeActivity() // see customers begin - datagrid
+        {
+
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+
+            string sj = " select Activity_Id as 'Activity No.' , User_Id as 'UserId', Description as 'Activity' , Date from Activity_Logs";
+            SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = table;
+
+
+
+        } // see customers end - datagrid
 
     } // class end
 } // name space end

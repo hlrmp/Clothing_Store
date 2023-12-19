@@ -34,10 +34,12 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelButtons = new System.Windows.Forms.Panel();
-            this.btnCustomers = new System.Windows.Forms.Button();
-            this.btnBackups = new System.Windows.Forms.Button();
-            this.btnOrders = new System.Windows.Forms.Button();
             this.btnItems = new System.Windows.Forms.Button();
+            this.btnOrders = new System.Windows.Forms.Button();
+            this.btnBackups = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnStaffs = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelButtons.SuspendLayout();
             this.SuspendLayout();
@@ -100,34 +102,26 @@
             // 
             this.panelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelButtons.Controls.Add(this.btnUsers);
+            this.panelButtons.Controls.Add(this.btnStaffs);
+            this.panelButtons.Controls.Add(this.btnCustomers);
             this.panelButtons.Controls.Add(this.btnItems);
             this.panelButtons.Controls.Add(this.btnOrders);
             this.panelButtons.Controls.Add(this.btnBackups);
-            this.panelButtons.Controls.Add(this.btnCustomers);
             this.panelButtons.Location = new System.Drawing.Point(38, 83);
             this.panelButtons.Name = "panelButtons";
             this.panelButtons.Size = new System.Drawing.Size(736, 34);
             this.panelButtons.TabIndex = 50;
             // 
-            // btnCustomers
+            // btnItems
             // 
-            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 3);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(63, 28);
-            this.btnCustomers.TabIndex = 51;
-            this.btnCustomers.Text = "Customers";
-            this.btnCustomers.UseVisualStyleBackColor = true;
-            // 
-            // btnBackups
-            // 
-            this.btnBackups.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBackups.Location = new System.Drawing.Point(69, 3);
-            this.btnBackups.Name = "btnBackups";
-            this.btnBackups.Size = new System.Drawing.Size(63, 28);
-            this.btnBackups.TabIndex = 52;
-            this.btnBackups.Text = "Backup";
-            this.btnBackups.UseVisualStyleBackColor = true;
+            this.btnItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnItems.Location = new System.Drawing.Point(207, 3);
+            this.btnItems.Name = "btnItems";
+            this.btnItems.Size = new System.Drawing.Size(63, 28);
+            this.btnItems.TabIndex = 54;
+            this.btnItems.Text = "Items";
+            this.btnItems.UseVisualStyleBackColor = true;
             // 
             // btnOrders
             // 
@@ -139,15 +133,45 @@
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
             // 
-            // btnItems
+            // btnBackups
             // 
-            this.btnItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnItems.Location = new System.Drawing.Point(207, 3);
-            this.btnItems.Name = "btnItems";
-            this.btnItems.Size = new System.Drawing.Size(63, 28);
-            this.btnItems.TabIndex = 54;
-            this.btnItems.Text = "Items";
-            this.btnItems.UseVisualStyleBackColor = true;
+            this.btnBackups.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBackups.Location = new System.Drawing.Point(69, 3);
+            this.btnBackups.Name = "btnBackups";
+            this.btnBackups.Size = new System.Drawing.Size(63, 28);
+            this.btnBackups.TabIndex = 52;
+            this.btnBackups.Text = "Backup";
+            this.btnBackups.UseVisualStyleBackColor = true;
+            // 
+            // btnCustomers
+            // 
+            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCustomers.Location = new System.Drawing.Point(0, 3);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(63, 28);
+            this.btnCustomers.TabIndex = 55;
+            this.btnCustomers.Text = "Customer";
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            // 
+            // btnStaffs
+            // 
+            this.btnStaffs.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnStaffs.Location = new System.Drawing.Point(276, 3);
+            this.btnStaffs.Name = "btnStaffs";
+            this.btnStaffs.Size = new System.Drawing.Size(63, 28);
+            this.btnStaffs.TabIndex = 56;
+            this.btnStaffs.Text = "Staffs";
+            this.btnStaffs.UseVisualStyleBackColor = true;
+            // 
+            // btnUsers
+            // 
+            this.btnUsers.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnUsers.Location = new System.Drawing.Point(345, 3);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(63, 28);
+            this.btnUsers.TabIndex = 57;
+            this.btnUsers.Text = "Users";
+            this.btnUsers.UseVisualStyleBackColor = true;
             // 
             // frmArchives
             // 
@@ -179,8 +203,10 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panelButtons;
         private System.Windows.Forms.Button btnBackups;
-        private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.Button btnItems;
         private System.Windows.Forms.Button btnOrders;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Button btnStaffs;
+        private System.Windows.Forms.Button btnCustomers;
     }
 }
