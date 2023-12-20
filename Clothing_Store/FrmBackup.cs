@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace Clothing_Store
         DirectoryInfo dinfo;
         public void files()
         {
-            dinfo =  new DirectoryInfo(@"C:\Users\reichel domingo\Contacts\Desktop\MSSQL14.SQLEXPRESS02\MSSQL\Backup");
+            dinfo =  new DirectoryInfo(@"C:\Users\reichel domingo\Contacts\Desktop\MSSQL14.SQLEXPRESS02\MSSQL\Sample_Backup");
 
             FileInfo[] Files = dinfo.GetFiles();
 
@@ -59,7 +60,7 @@ namespace Clothing_Store
 
         private void lb1_MouseClick(object sender, MouseEventArgs e)
         {
-            string path = @"C:\Users\reichel domingo\Contacts\Desktop\MSSQL14.SQLEXPRESS02\MSSQL\Backup\"+ getFileName;
+            string path = @"C:\Users\reichel domingo\Contacts\Desktop\MSSQL14.SQLEXPRESS02\MSSQL\Sample_Backup\"+ getFileName;
 
             using (StreamReader streamReader = new StreamReader(path))
             {
@@ -73,18 +74,14 @@ namespace Clothing_Store
 
                 }
 
-                DialogResult dialog = MessageBox.Show("Do you want to Restore : " + getFileName,"Backup and Restore",MessageBoxButtons.YesNo);
-                if(dialog == DialogResult.Yes)
-                {
-                    FrmRecovey fr = new FrmRecovey();
-                    fr.ShowDialog();
-                }
+
+                
             }
         }
 
         private void lb1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string path = @"C:\Users\reichel domingo\Contacts\Desktop\MSSQL14.SQLEXPRESS02\MSSQL\Backup\" + getFileName;
+            string path = @"C:\Users\reichel domingo\Contacts\Desktop\MSSQL14.SQLEXPRESS02\MSSQL\Sample_Backup\" + getFileName;
 
             using (StreamReader streamReader = new StreamReader(path))
             {
@@ -100,18 +97,48 @@ namespace Clothing_Store
 
             }
         }
-// mouse click for the list box end
+        // mouse click for the list box end
 
+        public void backup() // back up begin
+        {
+            string TimeandDate = DateTime.Now.ToString("yyyy-MM-ddT-HH:mm:ssss");
+            string n = "bac";
+
+            SqlConnection Conn = new SqlConnection(ConnectionClass.conn);
+
+            string backup = "BACKUP DATABASE ClothingStoreDatabase TO DISK = 'C:\\Users\\reichel domingo\\Contacts\\Desktop\\MSSQL14.SQLEXPRESS02\\MSSQL\\Sample_Backup\\" + TimeandDate + ".bak' ";
+            SqlCommand command1 = new SqlCommand(backup, Conn);
+
+            string insBackup = "insert into BackupList (Name, Date,User_Id,Status) values (@Name, getDate(), @UserId, @Status)";
+            SqlCommand command = new SqlCommand(insBackup, Conn);
+
+            command.Parameters.AddWithValue("@Name", TimeandDate);
+            command.Parameters.AddWithValue("@Status", 1);
+            command.Parameters.AddWithValue("@UserId", frmLogin.userId);
+
+            Conn.Open();
+
+            command1.ExecuteNonQuery();
+            command.ExecuteNonQuery();
+
+            Conn.Close();
+
+
+        } // back up end 
         private void btnBackup_Click(object sender, EventArgs e) // backup button begin
         {
-            //  DateTime currentDateTime = DateTime.Now;
-            string TimeandDate = DateTime.Now.ToString("yyyy-MM-dd_T-HH:mm:ssss.fffffffK");
+            backup();
 
+            // activity logs begin
 
-            MessageBox.Show(TimeandDate);
+            string desc = "Backup Data - " + frmLogin.name;
+            ConnectionClass.activity(frmLogin.userId, desc);
 
-            string backup = "BACKUP DATABASE ClotingStoreDatabase TO DISK = 'C:\\Users\\reichel domingo\\Contacts\\Desktop\\MSSQL14.SQLEXPRESS02\\MSSQL\\Backup\\"+ TimeandDate  + ".bak' ";
+            // activity logs end
+
 
         } // back up button end
+
+
     } // class end
 } // name space end

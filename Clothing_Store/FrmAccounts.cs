@@ -102,5 +102,23 @@ namespace Clothing_Store
 
         } // see customers end - datagrid
 
+        private void btnUserLog_Click(object sender, EventArgs e) // btn user logs 
+        {
+
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+            string logs = " select Activity_Id as 'Activity No.' , Description as 'Activity' , Date from Activity_Logs where User_Id = " + frmLogin.userId + "";
+
+            SqlDataAdapter data = new SqlDataAdapter(logs, con);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = table;
+
+
+        } // btn user logs 
+
+
     } // class end
 } // name space end

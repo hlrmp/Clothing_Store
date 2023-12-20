@@ -75,7 +75,7 @@
             this.btnRecovery.Name = "btnRecovery";
             this.btnRecovery.Size = new System.Drawing.Size(114, 63);
             this.btnRecovery.TabIndex = 12;
-            this.btnRecovery.Text = "Recovery";
+            this.btnRecovery.Text = "Backup and Recovery";
             this.btnRecovery.UseVisualStyleBackColor = false;
             this.btnRecovery.Click += new System.EventHandler(this.btnRecovery_Click);
             // 
@@ -125,6 +125,7 @@
             this.btnUserLog.TabIndex = 9;
             this.btnUserLog.Text = "User log\r\n";
             this.btnUserLog.UseVisualStyleBackColor = false;
+            this.btnUserLog.Click += new System.EventHandler(this.btnUserLog_Click);
             // 
             // btnCreate
             // 
