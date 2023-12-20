@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,19 +52,9 @@ namespace Clothing_Store
         userClass uc = new userClass();
         private void btnAdd_Click(object sender, EventArgs e)  // add button begin
         {
-            
+            unames();
+            add();
 
-            DialogResult dialogResult = MessageBox.Show("Doyou wnat to Add this to the Users ", "Confirm", MessageBoxButtons.YesNo);
-
-            if (dialogResult == DialogResult.Yes)
-            {
-                MessageBox.Show("succesfully added", "Confirmation", MessageBoxButtons.OK);
-                this.Hide();
-            }
-            else
-            {
-
-            }
 
         } //  add button end
 
@@ -81,6 +72,68 @@ namespace Clothing_Store
 
         } // show pass end
 
-     
+
+        public void add() // add begin
+        {
+            uc.username = txtUserName.Text;
+            uc.userpas = txtUserName.Text;
+            string con = txtConfirmPass.Text;
+            if (txtUserName.Text == "" || txtUserPass.Text == "" || txtConfirmPass.Text == "")
+            {
+
+            }
+            else
+            {
+                    if (uc.username.Equals(username))
+                    {
+                        MessageBox.Show("User Name Already Exist", "Confirmation", MessageBoxButtons.OK);
+
+                    }
+                    else
+                    {
+                            if (uc.userpas == con)
+                            {
+                                DialogResult dialogResult = MessageBox.Show("Doyou wnat to Add this to the Users ", "Confirm", MessageBoxButtons.YesNo);
+
+                                        if (dialogResult == DialogResult.Yes)
+                                        {
+
+
+                                            MessageBox.Show("succesfully added", "Confirmation", MessageBoxButtons.OK);
+                                            this.Hide();
+                                        }
+                                        else
+                                        {
+
+                                        }
+                            }
+
+                    }
+            }
+
+       
+            
+        }  //add end 
+
+        string username;
+        public void unames()  //  user names begin
+        {
+            customerClass cs = new customerClass();
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string sj = "  select * from Users";
+            con.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, con);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            username = reader[2].ToString();
+            con.Close();
+
+        } // user names end
+
+
+
     }// class end
 } // name space end
