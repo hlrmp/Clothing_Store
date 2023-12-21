@@ -225,8 +225,8 @@ namespace Clothing_Store
 
                     // activity logs begin
 
-                    //   string desc = "Add New Staff";
-                    //   ConnectionClass.activity(frmLogin.userId, desc);
+                       string desc = "Add New Staff";
+                       ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
 
