@@ -18,6 +18,8 @@ namespace Clothing_Store
         {
             InitializeComponent();
             StaffName();
+            
+
         }
         protected override void OnPaint(PaintEventArgs e)    // border color begin
         {
@@ -54,10 +56,11 @@ namespace Clothing_Store
         userClass uc = new userClass();
         private void btnAdd_Click(object sender, EventArgs e)  // add button begin
         {
-            unames();
+            
             uid();
+            MessageBox.Show(userId);
             add();
-
+          
 
         } //  add button end
 
@@ -75,73 +78,101 @@ namespace Clothing_Store
 
         } // show pass end
 
+        class nullExceptiom : Exception
+        {
+            public nullExceptiom(string str) : base(str) { }
+        }
+        class simlarException : Exception
+        {
+            public simlarException(string str) : base(str) { }
+        }
 
         public void add() // add begin
         {
-            uc.username = txtUserName.Text;
-            uc.userpas = txtUserName.Text;
-            string con = txtConfirmPass.Text;
-            if (txtUserName.Text == "" || txtUserPass.Text == "" || txtConfirmPass.Text == "")
-            {
 
-            }
-            else
+            try
             {
+                uc.username = txtUserName.Text;
+                uc.userpas = txtUserPass.Text;
+                string con = txtConfirmPass.Text;
+
+               
+
+                if (txtUserName.Text == "" || txtUserPass.Text == "" || txtConfirmPass.Text == "")
+                {
+                    throw new nullExceptiom("Please fillup the ff.");
+                }
+               else
+                {
+               //      unames();
+
                     if (uc.username.Equals(username))
                     {
-                        MessageBox.Show("User Name Already Exist", "Confirmation", MessageBoxButtons.OK);
+                        throw new simlarException("User Name Already Exist");
 
                     }
+
                     else
                     {
-                            if (uc.userpas == con)
+                        if (uc.userpas == con)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Doyou wnat to Add this to the Users ", "Confirm", MessageBoxButtons.YesNo);
+
+                            if (dialogResult == DialogResult.Yes)
                             {
-                                DialogResult dialogResult = MessageBox.Show("Doyou wnat to Add this to the Users ", "Confirm", MessageBoxButtons.YesNo);
 
-                                        if (dialogResult == DialogResult.Yes)
-                                        {
-                                           
-                                                    SqlConnection cnn = new SqlConnection(ConnectionClass.conn);
+                                SqlConnection cnn = new SqlConnection(ConnectionClass.conn);
 
-                                                    string quer1 = "insert into UsersUsers(Staff_Id, User_Name,Password,Status) values (@Staffid, @UserName, @Pass, @Status)";
-                                                    SqlCommand command = new SqlCommand(quer1, cnn);
+                                string quer1 = "insert into Users (Staff_Id, User_Name,Password,Status) values (@Staffid, @UserName, @Pass, @Status)";
+                                SqlCommand command = new SqlCommand(quer1, cnn);
 
-                                                    command.Parameters.AddWithValue("@Staffid", userId);
-                                                    command.Parameters.AddWithValue("@UserName", uc.username);
-                                                    command.Parameters.AddWithValue("@Pass", uc.userpas);
-                                                    command.Parameters.AddWithValue("@Status", 1);
-                                                    cnn.Open();
-                                                    command.ExecuteNonQuery();
-                                                    cnn.Open();
+                                command.Parameters.AddWithValue("@Staffid", userId);
+                                command.Parameters.AddWithValue("@UserName", uc.username);
+                                command.Parameters.AddWithValue("@Pass", uc.userpas);
+                                command.Parameters.AddWithValue("@Status", 1);
+                                cnn.Open();
+                                command.ExecuteNonQuery();
+                                cnn.Open();
 
-                                                    MessageBox.Show("succesfully added", "Confirmation", MessageBoxButtons.OK);
+                                MessageBox.Show("succesfully added", "Confirmation", MessageBoxButtons.OK);
 
-                                                    // activity logs begin
+                                // activity logs begin
 
-                                                  //  string desc = "New User Added";
-                                                 //   ConnectionClass.activity(frmLogin.userId, desc);
+                                //  string desc = "New User Added";
+                                //   ConnectionClass.activity(frmLogin.userId, desc);
 
-                                                    // activity logs end
+                                // activity logs end
 
-                                                    this.Hide();
+                                this.Hide();
 
-                                                    txtUserName.Clear();
-                                                    txtUserPass.Clear();
-                                                    txtConfirmPass.Clear();
+                                txtUserName.Clear();
+                                txtUserPass.Clear();
+                                txtConfirmPass.Clear();
 
 
-                                        }
-                                        else
-                                        {
-
-                                        }
                             }
+                            else
+                            {
+
+                            }
+                        }
 
                     }
+                }
+            }
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message , "Required");
+            }
+            catch (simlarException se)
+            {
+                MessageBox.Show(se.Message , "Existing");
             }
 
-       
-            
+
+
+
+
         }  //add end 
 
         string userId;
@@ -150,7 +181,7 @@ namespace Clothing_Store
             customerClass cs = new customerClass();
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string n = "select Staff_id from Staffs where status = 1 and First_Name = 'dan' and Last_Name = 'dg'";
+            string n = "SELECT Staff_id FROM Staffs  WHERE CONCAT(TRIM(Staffs.First_Name), ' ', TRIM(Staffs.Last_Name)) LIKE '"+cbStaffName.Text+"' and Status = 1";
 
             con.Open();
             SqlCommand command;
@@ -168,7 +199,7 @@ namespace Clothing_Store
         {
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string names = "SELECT (First_Name + ' ' + Last_Name) AS NAME FROM Staffs where Status = 1 ";
+            string names = "SELECT (First_Name + ' ' + Last_Name) AS NAME FROM Staffs where Status = 1";
             SqlDataAdapter adapt = new SqlDataAdapter(names, con);
 
             DataTable dataTable = new DataTable();
@@ -189,20 +220,23 @@ namespace Clothing_Store
         }  // display staff name end
 
         string username;
-        public void unames()  //  user names begin
+        public bool unames()  //  user names begin
         {
             customerClass cs = new customerClass();
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string sj = "  select * from Users";
+            string sj = "select User_Name from users where User_Name = '"+uc.username+"'";
             con.Open();
             SqlCommand command;
             command = new SqlCommand(sj, con);
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            username = reader[2].ToString();
+            username = reader[0].ToString();
+
             con.Close();
+
+            return true;
 
         } // user names end
 
