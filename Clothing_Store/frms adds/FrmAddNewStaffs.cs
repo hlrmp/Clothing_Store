@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -79,7 +80,7 @@ namespace Clothing_Store
 
             return uc.StaffLastName;
         }
-        public string Pos(string position)
+        public string Position(string position)
         {
             if (Regex.IsMatch(position, regexClass.letters))
             {
@@ -195,59 +196,84 @@ namespace Clothing_Store
                 {
 
 
-                    uc.StaffFirstName = txtFname.Text;
-                    uc.StaffLastName = txtLname.Text;
-                    uc.staffEmail = txtEmail.Text;
-                    uc.StaffAddress = txtAddress.Text;
-                    uc.StaffConntacNo = txtContactNo.Text;
-                    uc.StaffPosition = cbPosition.Text;
+                    uc.StaffFirstName = Fname(txtFname.Text);
+                    uc.StaffLastName = Lname(txtLname.Text);
+                    uc.staffEmail = Email(txtEmail.Text);
+                    uc.StaffAddress = Address(txtAddress.Text);
+                    uc.StaffConntacNo = ContactNo(txtContactNo.Text);
+                    uc.StaffPosition = Position(cbPosition.Text);
+
+                    SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+                    string quer1 = "insert into Staffs ( First_Name, Last_Name, Address, Position, Contact_No, Email ,Status) values ( @First_Name,  @Last_Name, @Address, @Position, @Contact_No, @Email,  @Status) ";
+                    SqlCommand command = new SqlCommand(quer1, con);
+
+
+
+                    command.Parameters.AddWithValue("@First_Name", uc.StaffFirstName);
+                    command.Parameters.AddWithValue("@Last_Name", uc.StaffLastName);
+                    command.Parameters.AddWithValue("@Address", uc.StaffAddress);
+                    command.Parameters.AddWithValue("@Position", uc.StaffPosition);
+                    command.Parameters.AddWithValue("@Contact_No", uc.StaffConntacNo);
+                    command.Parameters.AddWithValue("@Email", uc.staffEmail);
+                    command.Parameters.AddWithValue("@Status", "1");
+                    con.Open();
+                    command.ExecuteNonQuery();
+                    con.Close();
+
+                    
+
+                    // activity logs begin
+
+                    //   string desc = "Add New Staff";
+                    //   ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+
 
 
                     DialogResult dialogResult = MessageBox.Show("Doyou wnat to Add this New Staff", "Confirm", MessageBoxButtons.YesNo);
 
-                    if (dialogResult == DialogResult.Yes) // outer if begin
-                    {
+                            if (dialogResult == DialogResult.Yes) // outer if begin
+                            {
 
-                                    DialogResult dialogResult1 = MessageBox.Show("Doyou wnat to make an account for this Staff  ", "Confirm", MessageBoxButtons.YesNo);
-
-                                    if (dialogResult1 == DialogResult.Yes) // inner if begin
-                                    {
-                                                addu.ShowDialog();
-                                                this.Hide();
-
-                                    } // inner if end
-                                    else // inner else begin
-
-                                    {
-                                                MessageBox.Show("Staff sucessfully added", "Confirmation", MessageBoxButtons.OK);
-                                                this.Hide();
-
-                                                // activity logs begin
-
-                                                string desc = "Add New Staff";
-                                                ConnectionClass.activity(frmLogin.userId, desc);
-
-                                                // activity logs end
+                                    MessageBox.Show("Staff sucessfully added", "Confirmation", MessageBoxButtons.OK);
 
 
 
 
-                                    } // inner else
+
+                                     DialogResult dialogResult1 = MessageBox.Show("Doyou wnat to make an account for this Staff  ", "Confirm", MessageBoxButtons.YesNo);
+
+                                            if (dialogResult1 == DialogResult.Yes) // inner if begin
+                                            {
+                                                        addu.ShowDialog();
+                                                        this.Hide();
+
+                                            } // inner if end
+                                            else // inner else begin
+
+                                            {
+                                                     
 
 
-                    }   // outer iff end
-                    else  // outer else begin
-                    {
 
-                    } // outer else end
+                                            } // inner else
 
 
-                  
+                            }  
+                            else 
+                            {
 
-                }
+                            }
 
 
-            }
+                   
+
+                }// outer else end
+
+
+            } // try
             catch (NumberFormatException ne)
             {
                 MessageBox.Show(ne.Message);
