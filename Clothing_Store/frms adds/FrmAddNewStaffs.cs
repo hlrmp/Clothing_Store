@@ -92,7 +92,7 @@ namespace Clothing_Store
 
             else
             {
-                throw new StringFormatException("please enter your First Name Correctly");
+                throw new StringFormatException("please enter your Position Correctly");
             }
 
             return uc.StaffPosition;
