@@ -114,6 +114,7 @@
             this.txtUserPass.Name = "txtUserPass";
             this.txtUserPass.Size = new System.Drawing.Size(207, 20);
             this.txtUserPass.TabIndex = 40;
+            this.txtUserPass.UseSystemPasswordChar = true;
             // 
             // txtUserName
             // 
@@ -191,6 +192,7 @@
             this.Name = "FrmAddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddUser";
+            this.ResumeLayout(false);
             this.PerformLayout();
 
         }

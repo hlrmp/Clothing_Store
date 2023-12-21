@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Clothing_Store
 {
@@ -16,6 +17,7 @@ namespace Clothing_Store
         public FrmAddUser()
         {
             InitializeComponent();
+            StaffName();
         }
         protected override void OnPaint(PaintEventArgs e)    // border color begin
         {
@@ -53,6 +55,7 @@ namespace Clothing_Store
         private void btnAdd_Click(object sender, EventArgs e)  // add button begin
         {
             unames();
+            uid();
             add();
 
 
@@ -97,10 +100,36 @@ namespace Clothing_Store
 
                                         if (dialogResult == DialogResult.Yes)
                                         {
+                                           
+                                                    SqlConnection cnn = new SqlConnection(ConnectionClass.conn);
+
+                                                    string quer1 = "insert into UsersUsers(Staff_Id, User_Name,Password,Status) values (@Staffid, @UserName, @Pass, @Status)";
+                                                    SqlCommand command = new SqlCommand(quer1, cnn);
+
+                                                    command.Parameters.AddWithValue("@Staffid", userId);
+                                                    command.Parameters.AddWithValue("@UserName", uc.username);
+                                                    command.Parameters.AddWithValue("@Pass", uc.userpas);
+                                                    command.Parameters.AddWithValue("@Status", 1);
+                                                    cnn.Open();
+                                                    command.ExecuteNonQuery();
+                                                    cnn.Open();
+
+                                                    MessageBox.Show("succesfully added", "Confirmation", MessageBoxButtons.OK);
+
+                                                    // activity logs begin
+
+                                                  //  string desc = "New User Added";
+                                                 //   ConnectionClass.activity(frmLogin.userId, desc);
+
+                                                    // activity logs end
+
+                                                    this.Hide();
+
+                                                    txtUserName.Clear();
+                                                    txtUserPass.Clear();
+                                                    txtConfirmPass.Clear();
 
 
-                                            MessageBox.Show("succesfully added", "Confirmation", MessageBoxButtons.OK);
-                                            this.Hide();
                                         }
                                         else
                                         {
@@ -114,6 +143,50 @@ namespace Clothing_Store
        
             
         }  //add end 
+
+        string userId;
+        public void uid()  //  uid begin
+        {
+            customerClass cs = new customerClass();
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string n = "select Staff_id from Staffs where status = 1 and First_Name = 'dan' and Last_Name = 'dg'";
+
+            con.Open();
+            SqlCommand command;
+            command = new SqlCommand(n, con);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            userId = reader[0].ToString();
+            con.Close();
+
+        } // uid end
+
+
+        public void StaffName()  // display staff name
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string names = "SELECT (First_Name + ' ' + Last_Name) AS NAME FROM Staffs where Status = 1 ";
+            SqlDataAdapter adapt = new SqlDataAdapter(names, con);
+
+            DataTable dataTable = new DataTable();
+            BindingSource bindingSource = new BindingSource();
+            dataTable.Clear();
+            adapt.Fill(dataTable);
+            bindingSource.DataSource = dataTable;
+
+            con.Open();
+            SqlCommand command = new SqlCommand(names, con);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+            con.Close();
+
+            cbStaffName.DataSource = dataTable;
+            cbStaffName.DisplayMember = "Name";
+
+        }  // display staff name end
 
         string username;
         public void unames()  //  user names begin
