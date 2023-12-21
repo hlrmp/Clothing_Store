@@ -138,8 +138,8 @@ namespace Clothing_Store
 
                                 // activity logs begin
 
-                                //  string desc = "New User Added";
-                                //   ConnectionClass.activity(frmLogin.userId, desc);
+                                  string desc = "New User Added";
+                                  ConnectionClass.activity(frmLogin.userId, desc);
 
                                 // activity logs end
 
