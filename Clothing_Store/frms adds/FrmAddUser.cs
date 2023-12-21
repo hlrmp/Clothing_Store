@@ -104,7 +104,7 @@ namespace Clothing_Store
                 }
                else
                 {
-               //      unames();
+                   unames();
 
                     if (uc.username.Equals(username))
                     {
@@ -225,15 +225,22 @@ namespace Clothing_Store
             customerClass cs = new customerClass();
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string sj = "select User_Name from users where User_Name = '"+uc.username+"'";
+            string sj = "select User_Name from users where User_Name = '"+txtUserName.Text+"'";
             con.Open();
             SqlCommand command;
             command = new SqlCommand(sj, con);
             SqlDataReader reader = command.ExecuteReader();
-            reader.Read();
+            if (reader.Read())
+            {
+                username = reader[0].ToString();
+            }
+            else
+            {
 
-            username = reader[0].ToString();
+            }
 
+            
+            
             con.Close();
 
             return true;

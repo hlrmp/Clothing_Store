@@ -136,5 +136,20 @@ namespace Clothing_Store
         {
 
         } // add btn end 
+
+        private void btnClear_Click(object sender, EventArgs e)  //clear btn begin
+        {
+            cbItemCode.Refresh();
+            cbCategory.Refresh();
+            cbColor.Refresh();
+            cbType.Refresh();
+            cbSize.Refresh();
+            txtItemName.Clear();
+            txtPrice.Clear();
+            numQuantity.Refresh();
+
+        } //  clear btn end
+
+    
     }// class end
 }// namespace end 
