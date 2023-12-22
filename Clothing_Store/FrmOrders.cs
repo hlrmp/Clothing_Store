@@ -55,7 +55,11 @@ namespace Clothing_Store
             // detailed 
             //    string sj = "select concat( c.First_Name ,' ', c.Last_Name) as Customer ,o.quantity, p.Product_Name,concat(s.First_Name ,' ', s.Last_Name) as 'Staff Name'from  Inventory as i,Orders as o inner join Customers as c on o.Customer_Id = c.Customer_Id inner join Products as p on  p.Product_id = o.Product_Id inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1"; 
             // just orders
-            string sj = "select * from Orders";
+            string sj = "select  o.Order_Id, concat(c.First_Name,' ',c.Last_Name)as 'Name' ,p.Product_Id, p.Product_Name,p.Price, o.Quantity ," +
+                "concat(s.First_Name ,' ', s.Last_Name) as 'Staff', o.Status " +
+                "from Customers as c inner join Orders as o on o.Customer_Id = c.Customer_Id " +
+                "inner join Products as p on p.Product_Id = o.Product_Id " +
+                "inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1";
 
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();

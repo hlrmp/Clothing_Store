@@ -26,7 +26,13 @@ namespace Clothing_Store
             size();
             color();
             cname();
+            itemslist();
+            ordersList();
+            names();
+
+           lst = new BindingSource();
         }
+        BindingSource lst;
         protected override void OnPaint(PaintEventArgs e)    // border color begin
         {
             //  base.OnPaint(e);
@@ -66,10 +72,12 @@ namespace Clothing_Store
         public void clear()
         {
             cbCustomerName.ResetText();
-            cbCategory.ResetText();
             cbItem.ResetText();
             txtQuantity.Clear();
             cbCategory.ResetText();
+            cbSize.ResetText();
+            cbType.ResetText();
+            cbColor.ResetText();
         }
         public void size() // size method begin
         {
@@ -127,7 +135,7 @@ namespace Clothing_Store
             ArrayList arr = new ArrayList();
             arr.Add("Tshirt");
             arr.Add("Polo");
-            arr.Add("Polo-Shirt");
+            arr.Add("PoloShirt");
             arr.Add("Pants");
             arr.Add("Blouse");
             arr.Add("Shorts");
@@ -139,6 +147,28 @@ namespace Clothing_Store
             }
 
         } // type method end
+        public void names()
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string names = "select p.Product_Name ,s.Supplier_Name , i.Quantity ,i.Date from Supplier as s, Inventory as i INNER JOIN Products as p on p.Product_Id = i.Product_Id where i.Status = 1 and i.Quantity > 0";
+            SqlDataAdapter adapt = new SqlDataAdapter(names, con);
+
+            DataTable dataTable = new DataTable();
+            BindingSource bindingSource = new BindingSource();
+            dataTable.Clear();
+            adapt.Fill(dataTable);
+            bindingSource.DataSource = dataTable;
+
+            con.Open();
+            SqlCommand command = new SqlCommand(names, con);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+            con.Close();
+
+            cbItem.DataSource = dataTable;
+            cbItem.DisplayMember = "Product_Name";
+        }
 
         private void cbColor_SelectedValueChanged(object sender, EventArgs e) // color change begin
         {
@@ -230,15 +260,7 @@ namespace Clothing_Store
         }
         public void add() // add begin
         {
-            try
-            {
-                oc.Quantity = quan(txtQuantity.Text);
-                oc.Size = cbSize.Text;
-                oc.Type = cbType.Text;
-                oc.Category = cbCategory.Text;
-                oc.Color = cbColor.Text;
-                oc.Name = cbCustomerName.Text;
-                oc.Item = cbItem.Text;
+    
 
                 if (txtQuantity.Text == "" || cbSize.Text == "" || cbType.Text == ""  || cbCategory.Text == "" || cbColor.Text == ""
                     || cbCustomerName.Text == "" || cbItem.Text == "")
@@ -247,36 +269,62 @@ namespace Clothing_Store
                 }
                 else
                 {
+                    SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
+
+                    string up = "update Inventory set Quantity = Quantity - "+oc.Quantity+" where Product_Id = "+productId+" and Status = 1";
+                    SqlCommand command1 = new SqlCommand(up, con);
+                    con.Open();
+                    command1.ExecuteNonQuery();
+                    con.Close();
+
+
+                    string ins = "insert into Orders (Staff_Id,Customer_Id,Product_Id,Quantity,Status) values (@Staff_Id,@Customer_Id,@Product_Id,@Quantity,@Status)";
+                    SqlCommand command = new SqlCommand(ins, con);
+
+
+
+                    con.Open();
+                    command.Parameters.AddWithValue("@Staff_Id", 1);
+                    command.Parameters.AddWithValue("@Customer_Id", customerId);
+                    command.Parameters.AddWithValue("@Product_Id", productId);
+                    command.Parameters.AddWithValue("@Quantity", oc.Quantity);
+                    command.Parameters.AddWithValue("@Status", "1");
+                    command.ExecuteNonQuery();
+                    con.Close();
+
+
+                    MessageBox.Show("Succesfully added", "New Orders", MessageBoxButtons.OK);
+
+                    // activity logs begin
+
+                    //     string desc = " Inventory Changes becuse of Order Added ";
+                    //     ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
                 }
 
 
-            }           
-            catch (NumberFormatException ne)
-            {
-                MessageBox.Show(ne.Message);
-            }
-            catch (nullExceptiom ne)
-            {
-                MessageBox.Show(ne.Message);
-            }
-
         } // add end
 
-        int productId;
+        string productId;
         public void pId()
         {
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string ids = "select * from Products where Status = 1 and Product_Name = '"+oc.Name+"' and Category = '"+oc.Category+"' and Size = '"+oc.Size+"' and Type = '"+oc.Type+"' and Color = '"+oc.Color+"' ";
-  
+            string ids = "SELECT p.Product_Id ,p.Product_Name AS 'Name', p.Category,p.Type, p.Price,p.Size, p.Color, i.Quantity FROM Products AS p" +
+               " INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) " +
+               "where i.Quantity > 0 and p.Type = '" + oc.Type + "' and p.Category = '" + oc.Category + "' " +
+               "and p.Product_Name = '" + oc.Item + "' and p.Size = '" + oc.Size + "' and p.Color = '" + oc.Color + "' ";
+
             con.Open();
             SqlCommand command = new SqlCommand(ids, con);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                productId = int.Parse(reader[0].ToString());
+                productId = reader[0].ToString();
             }
+           
             con.Close();
         }
         public void cname() // cname beginn
@@ -321,11 +369,251 @@ namespace Clothing_Store
 
         } // uid end
 
+
+        string StaffId;
+        public void staff()  //  staff begin
+        {
+            customerClass cs = new customerClass();
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string staffs = "select Staff_Id from Users where User_id = "+frmLogin.userId+" and Status = 1";
+
+            con.Open();
+            SqlCommand command;
+            command = new SqlCommand(staffs, con);
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.Read())
+            {
+                StaffId = reader[0].ToString();
+            }
+
+            con.Close();
+
+        } // staff end
+
         private void btnAdd_Click(object sender, EventArgs e) // btn add begin
         {
-            uid();
-            MessageBox.Show(customerId);
+
+          //  staff();
+
+            try
+            {
+                oc.Quantity = quan(txtQuantity.Text);
+                oc.Size = cbSize.Text;
+                oc.Type = cbType.Text;
+                oc.Category = cbCategory.Text;
+                oc.Color = cbColor.Text;
+                oc.Name = cbCustomerName.Text;
+                oc.Item = cbItem.Text;
+
+
+
+                if (txtQuantity.Text == "" || cbSize.Text == "" || cbType.Text == "" || cbCategory.Text == "" || cbColor.Text == ""
+                    || cbCustomerName.Text == "" || cbItem.Text == "")
+                {
+                    throw new nullExceptiom("Please fill up the FF.");
+                }
+                else
+                {
+
+                    pId();
+                    uid();
+
+                    add();
+
+                 //   MessageBox.Show(customerId + " " + productId);
+
+                    // activity logs begin
+
+                    //     string desc = " Inventory Changes becuse of Order Added ";
+                    //     ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+
+
+            }
+            catch (NumberFormatException ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+
+
+        
+        
+
+            string ins = "insert into Orders (Staff_Id,Customer_Id,Product_Id,Quantity,Status) values (@Staff_Id,@Customer_Id,@Product_Id,@Quantity,@Status)";
+
+
+
         } // btn add end
+
+        public void itemslist()  // items begin
+        {
+            string item = "SELECT p.Product_Id ,p.Product_Name AS Name, p.Category,p.Type, p.Price,p.Size, p.Color, i.Quantity FROM Products AS p INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) where i.Quantity > 0";
+
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+           
+            SqlDataAdapter adapt = new SqlDataAdapter(item, con);
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = item;
+            command.Parameters.Clear();
+
+            DataTable table = new DataTable();
+            adapt.Fill(table);
+
+            dataGridViewItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewItems.DataSource = table;
+
+
+        } // items end
+        public void ordersList() // orders begin
+        {
+            string order = "select * from Orders";
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+
+            SqlDataAdapter adapt = new SqlDataAdapter(order, con);
+
+            SqlCommand command = new SqlCommand();
+            command.CommandText = order;
+            command.Parameters.Clear();
+
+            DataTable table = new DataTable();
+            adapt.Fill(table);
+
+            dataGridViewOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewOrders.DataSource = table;
+
+
+        } // orders end
+        public void search() // search begin
+        {
+            try
+            {
+                oc.Quantity = quan(txtQuantity.Text);
+                oc.Size = cbSize.Text;
+                oc.Type = cbType.Text;
+                oc.Category = cbCategory.Text;
+                oc.Color = cbColor.Text;
+                oc.Name = cbCustomerName.Text;
+                oc.Item = cbItem.Text;
+
+                if (txtQuantity.Text == "" || cbSize.Text == "" || cbType.Text == "" || cbCategory.Text == "" || cbColor.Text == ""
+                    || cbCustomerName.Text == "" || cbItem.Text == "")
+                {
+                    throw new nullExceptiom("Please fill up the FF.");
+                }
+                else
+                {
+                    string order = "SELECT p.Product_Id ,p.Product_Name AS 'Name', p.Category,p.Type, p.Price,p.Size, p.Color, i.Quantity FROM Products AS p" +
+               " INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) " +
+               "where i.Quantity > 0 and p.Type = '" + cbType.Text + "' and p.Category = '" + cbCategory.Text + "' " +
+               "and p.Product_Name = '" + cbItem.Text + "' and p.Size = '" + cbSize.Text + "' and p.Color = '" + cbColor.Text + "' ";
+
+
+                    SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+                    SqlDataAdapter adapt = new SqlDataAdapter(order, con);
+
+                    SqlCommand command = new SqlCommand();
+                    command.CommandText = order;
+                    command.Parameters.Clear();
+
+                    DataTable table = new DataTable();
+                    adapt.Fill(table);
+
+                    dataGridViewItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGridViewItems.DataSource = table;
+                }
+
+
+            }
+            catch (NumberFormatException ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+
+
+
+        } // search end
+       
+
+        private void btnClear_Click(object sender, EventArgs e) // clear btn begin
+        {
+            clear();
+        
+        }// clear btn end
+
+        private void btnSearch_Click(object sender, EventArgs e) // btn search begin
+        {
+            search();
+
+            
+
+
+        }  // btn search end
+
+        private void btnRefresh_Click(object sender, EventArgs e) // btn refresh begin
+        {
+            itemslist();
+            dataGridViewItems.Refresh();
+
+        } // btn refresh end
+
+
+
+        private void btnAddOrders_Click(object sender, EventArgs e) // btn add from textboxes to datagrid begin
+        {
+
+            try
+            {
+                oc.Quantity = quan(txtQuantity.Text);
+                oc.Size = cbSize.Text;
+                oc.Type = cbType.Text;
+                oc.Category = cbCategory.Text;
+                oc.Color = cbColor.Text;
+                oc.Name = cbCustomerName.Text;
+                oc.Item = cbItem.Text;
+
+                if (txtQuantity.Text == "" || cbSize.Text == "" || cbType.Text == "" || cbCategory.Text == "" || cbColor.Text == ""
+                    || cbCustomerName.Text == "" || cbItem.Text == "")
+                {
+                    throw new nullExceptiom("Please fill up the FF.");
+                }
+                else
+                {
+                    lst.Add(new ordersClass(cbCustomerName.Text, cbCategory.Text, cbItem.Text, txtQuantity.Text, cbSize.Text, cbColor.Text, cbType.Text));
+
+                    dataGridViewOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGridViewOrders.DataSource = lst;
+                }
+
+
+            }
+            catch (NumberFormatException ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+
+
+
+        }// add order btn rom textboxs to datagrid ennd
 
     } // calss end
 } // namespace end

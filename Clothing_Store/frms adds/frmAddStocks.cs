@@ -501,8 +501,8 @@ namespace Clothing_Store
 
                         // activity logs begin
 
-                        //     string desc = "Stocks updated";
-                        //     ConnectionClass.activity(frmLogin.userId, desc);
+                           string desc = "Stocks updated";
+                           ConnectionClass.activity(frmLogin.userId, desc);
 
                         // activity logs end
 
