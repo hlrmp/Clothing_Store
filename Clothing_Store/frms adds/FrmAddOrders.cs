@@ -444,11 +444,6 @@ namespace Clothing_Store
             }
 
 
-        
-        
-
-
-
 
         } // btn add end
 
