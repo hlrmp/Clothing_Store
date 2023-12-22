@@ -18,7 +18,7 @@ namespace Clothing_Store
             Application.SetCompatibleTextRenderingDefault(false);
           //   Application.Run(new frmLogin());
             // Application.Run(new MainForm()); 
-             Application.Run(new FrmStocks());
+             Application.Run(new FrmOrders());
             //  Application.Run(new FrmCustomers());
         }
     }
