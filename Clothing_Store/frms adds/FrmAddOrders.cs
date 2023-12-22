@@ -44,11 +44,9 @@ namespace Clothing_Store
             {
                 this.Hide();
 
-                txtCustomerName.Clear();
-                cbCategory.ResetText();
-                cbItem.ResetText();
-                numericQuantity.ResetText();
-                cbCategory.ResetText();
+                clear();
+
+
 
             }
             else
@@ -61,7 +59,14 @@ namespace Clothing_Store
 
 
 
-
+        public void clear()
+        {
+            cbCustomerName.ResetText();
+            cbCategory.ResetText();
+            cbItem.ResetText();
+            numericQuantity.ResetText();
+            cbCategory.ResetText();
+        }
         public void size() // size method begin
         {
             ArrayList arr = new ArrayList();
@@ -116,9 +121,9 @@ namespace Clothing_Store
         public void type() // type method begin
         {
             ArrayList arr = new ArrayList();
-            arr.Add("T-Shirt");
+            arr.Add("TShirt");
             arr.Add("Polo");
-            arr.Add("Polo-Shirt");
+            arr.Add("PoloShirt");
             arr.Add("Pants");
             arr.Add("Blouse");
             arr.Add("Shorts");

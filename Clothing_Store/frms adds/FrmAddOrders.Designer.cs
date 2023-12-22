@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.cbSize = new System.Windows.Forms.ComboBox();
             this.numericQuantity = new System.Windows.Forms.NumericUpDown();
@@ -45,7 +44,13 @@
             this.cbColor = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbCustomerName = new System.Windows.Forms.ComboBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -68,7 +73,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdd.Location = new System.Drawing.Point(432, 378);
+            this.btnAdd.Location = new System.Drawing.Point(30, 353);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(114, 36);
             this.btnAdd.TabIndex = 18;
@@ -84,7 +89,7 @@
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Cancel.Location = new System.Drawing.Point(582, 378);
+            this.Cancel.Location = new System.Drawing.Point(180, 353);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(114, 36);
             this.Cancel.TabIndex = 19;
@@ -147,14 +152,6 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Size :";
             // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.BackColor = System.Drawing.Color.White;
-            this.txtCustomerName.Location = new System.Drawing.Point(182, 111);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(207, 20);
-            this.txtCustomerName.TabIndex = 25;
-            // 
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
@@ -189,9 +186,9 @@
             // lbItems
             // 
             this.lbItems.FormattingEnabled = true;
-            this.lbItems.Location = new System.Drawing.Point(469, 107);
+            this.lbItems.Location = new System.Drawing.Point(48, 53);
             this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(227, 225);
+            this.lbItems.Size = new System.Drawing.Size(227, 277);
             this.lbItems.TabIndex = 31;
             // 
             // cbColor
@@ -218,39 +215,87 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label7.Location = new System.Drawing.Point(473, 65);
+            this.label7.Location = new System.Drawing.Point(32, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(122, 39);
             this.label7.TabIndex = 34;
             this.label7.Text = "item list";
             // 
+            // cbCustomerName
+            // 
+            this.cbCustomerName.FormattingEnabled = true;
+            this.cbCustomerName.Location = new System.Drawing.Point(182, 107);
+            this.cbCustomerName.Name = "cbCustomerName";
+            this.cbCustomerName.Size = new System.Drawing.Size(208, 21);
+            this.cbCustomerName.TabIndex = 35;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.BackColor = System.Drawing.Color.Teal;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClear.Location = new System.Drawing.Point(19, 279);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(114, 36);
+            this.btnClear.TabIndex = 36;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Location = new System.Drawing.Point(41, 83);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(374, 331);
+            this.panel1.TabIndex = 37;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.Cancel);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.lbItems);
+            this.panel2.Location = new System.Drawing.Point(454, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(313, 414);
+            this.panel2.TabIndex = 38;
+            // 
             // FrmAddOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 450);
-            this.Controls.Add(this.label7);
+            this.ClientSize = new System.Drawing.Size(791, 463);
+            this.Controls.Add(this.cbCustomerName);
             this.Controls.Add(this.cbColor);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.lbItems);
             this.Controls.Add(this.cbItem);
             this.Controls.Add(this.numericQuantity);
             this.Controls.Add(this.cbSize);
             this.Controls.Add(this.cbCategory);
-            this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Cancel);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAddOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddOrders";
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,7 +311,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.ComboBox cbSize;
         private System.Windows.Forms.NumericUpDown numericQuantity;
@@ -275,5 +319,9 @@
         private System.Windows.Forms.ComboBox cbColor;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbCustomerName;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
