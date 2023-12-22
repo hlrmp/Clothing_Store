@@ -40,21 +40,22 @@
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.lblsearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbltotal = new System.Windows.Forms.Label();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliveryAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Order_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Staff_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Customer_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -154,10 +155,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHome.Location = new System.Drawing.Point(138, 140);
+            this.dataGridViewHome.Location = new System.Drawing.Point(138, 81);
             this.dataGridViewHome.Name = "dataGridViewHome";
             this.dataGridViewHome.ReadOnly = true;
-            this.dataGridViewHome.Size = new System.Drawing.Size(617, 372);
+            this.dataGridViewHome.Size = new System.Drawing.Size(617, 431);
             this.dataGridViewHome.TabIndex = 18;
             // 
             // dataGridViewManage
@@ -167,18 +168,15 @@
             this.dataGridViewManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewManage.AutoGenerateColumns = false;
             this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewManage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.deliveryAddressDataGridViewTextBoxColumn,
-            this.contactNoDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
+            this.Order_Id,
+            this.Staff_Id,
+            this.Customer_Id,
+            this.Product_Id,
+            this.Quantity,
             this.Edit,
             this.Delete});
-            this.dataGridViewManage.DataSource = this.customerClassBindingSource;
             this.dataGridViewManage.Location = new System.Drawing.Point(138, 81);
             this.dataGridViewManage.Name = "dataGridViewManage";
             this.dataGridViewManage.ReadOnly = true;
@@ -219,6 +217,59 @@
             this.txtSearch.Size = new System.Drawing.Size(243, 20);
             this.txtSearch.TabIndex = 45;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(47, 291);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(19, 20);
+            this.lbltotal.TabIndex = 40;
+            this.lbltotal.Text = "0";
+            // 
+            // customerClassBindingSource
+            // 
+            this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
+            // 
+            // ordersClassBindingSource
+            // 
+            this.ordersClassBindingSource.DataSource = typeof(Clothing_Store.classes.ordersClass);
+            // 
+            // Order_Id
+            // 
+            this.Order_Id.HeaderText = "Order Id";
+            this.Order_Id.Name = "Order_Id";
+            this.Order_Id.ReadOnly = true;
+            // 
+            // Staff_Id
+            // 
+            this.Staff_Id.HeaderText = "Staaff Id";
+            this.Staff_Id.Name = "Staff_Id";
+            this.Staff_Id.ReadOnly = true;
+            // 
+            // Customer_Id
+            // 
+            this.Customer_Id.HeaderText = "Customer Id";
+            this.Customer_Id.Name = "Customer_Id";
+            this.Customer_Id.ReadOnly = true;
+            // 
+            // Product_Id
+            // 
+            this.Product_Id.HeaderText = "Product_Id";
+            this.Product_Id.Name = "Product_Id";
+            this.Product_Id.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
             // Edit
             // 
             this.Edit.FillWeight = 22F;
@@ -238,73 +289,6 @@
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             this.Delete.Width = 5;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.ForeColor = System.Drawing.Color.White;
-            this.lbltotal.Location = new System.Drawing.Point(47, 291);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(19, 20);
-            this.lbltotal.TabIndex = 40;
-            this.lbltotal.Text = "0";
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.firstNameDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastNameDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // deliveryAddressDataGridViewTextBoxColumn
-            // 
-            this.deliveryAddressDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Address";
-            this.deliveryAddressDataGridViewTextBoxColumn.HeaderText = "Delivery_Address";
-            this.deliveryAddressDataGridViewTextBoxColumn.Name = "deliveryAddressDataGridViewTextBoxColumn";
-            this.deliveryAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.deliveryAddressDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // contactNoDataGridViewTextBoxColumn
-            // 
-            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
-            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contactNoDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // customerClassBindingSource
-            // 
-            this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
             // 
             // FrmOrders
             // 
@@ -327,6 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,15 +330,15 @@
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Order_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Customer_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.BindingSource ordersClassBindingSource;
     }
 }
