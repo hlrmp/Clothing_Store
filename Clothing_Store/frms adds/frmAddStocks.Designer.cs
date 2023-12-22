@@ -56,9 +56,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnClearUdate = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.lbItems = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -81,7 +85,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Location = new System.Drawing.Point(790, 378);
+            this.btnCancel.Location = new System.Drawing.Point(65, 329);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(154, 36);
             this.btnCancel.TabIndex = 41;
@@ -288,7 +292,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.btnClear);
@@ -323,7 +327,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.btnClearUdate);
@@ -346,9 +350,9 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.label11.Location = new System.Drawing.Point(9, 17);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(170, 32);
+            this.label11.Size = new System.Drawing.Size(153, 32);
             this.label11.TabIndex = 68;
-            this.label11.Text = "Update Items";
+            this.label11.Text = "Add Stocks";
             // 
             // btnClearUdate
             // 
@@ -384,24 +388,50 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // lbItems
+            // dataGridView1
             // 
-            this.lbItems.FormattingEnabled = true;
-            this.lbItems.Location = new System.Drawing.Point(772, 74);
-            this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(188, 290);
-            this.lbItems.TabIndex = 66;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.MenuBar;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 64);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(262, 259);
+            this.dataGridView1.TabIndex = 66;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Location = new System.Drawing.Point(769, 74);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(290, 380);
+            this.panel3.TabIndex = 67;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Matura MT Script Capitals", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label12.Location = new System.Drawing.Point(22, 17);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 32);
+            this.label12.TabIndex = 69;
+            this.label12.Text = "list :";
             // 
             // frmAddStocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 467);
-            this.Controls.Add(this.lbItems);
-            this.Controls.Add(this.btnCancel);
+            this.ClientSize = new System.Drawing.Size(1083, 493);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(400, 200);
             this.Name = "frmAddStocks";
@@ -410,6 +440,9 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,6 +478,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnClearUdate;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.ListBox lbItems;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label12;
     }
 }

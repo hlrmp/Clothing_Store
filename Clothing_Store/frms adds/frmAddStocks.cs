@@ -112,8 +112,9 @@ namespace Clothing_Store
         } // type method end
         private void btnCancel_Click(object sender, EventArgs e) // cancel btn begin
         {
-            this.Hide();
+           
             clear();
+            this.Hide();
 
         }// cancel btn end
 
@@ -312,6 +313,8 @@ namespace Clothing_Store
                             comm.ExecuteNonQuery();
                             cnn.Close();
 
+
+                            MessageBox.Show("Succesfully added","New Item",MessageBoxButtons.OK);
                             // activity logs begin
 
                             //     string desc = "New Item Added";
@@ -460,6 +463,12 @@ namespace Clothing_Store
 
         private void btnUpdate_Click(object sender, EventArgs e) // item update begin
         {
+
+            update();
+
+        } // item update end 
+        public void update()
+        {
             try
             {
                 if (txtQuantity.Text == "" || cbItemCode.Text == "" || cbSupplier.Text == "")
@@ -469,7 +478,7 @@ namespace Clothing_Store
                 else
                 {
                     SupplierId();
-                  
+
 
                     it.quantity = quan(txtQuantity.Text);
                     it.Code = cbItemCode.Text;
@@ -488,6 +497,8 @@ namespace Clothing_Store
                         command.ExecuteNonQuery();
                         con.Close();
 
+                        MessageBox.Show("Succesfully added", "Update", MessageBoxButtons.OK);
+
                         // activity logs begin
 
                         //     string desc = "Stocks updated";
@@ -499,7 +510,7 @@ namespace Clothing_Store
                     }
                     else if (ProductIdCodition == "notsame")
                     {
-                
+
 
                         string invent = "insert into Inventory(Product_Id, Supplier_Id, Date, Quantity, Status )  values (@Product_Id, @Supplier_Id, getDate(), @Quantity, @Status)";
                         SqlCommand comm = new SqlCommand(invent, con);
@@ -510,6 +521,8 @@ namespace Clothing_Store
                         con.Open();
                         comm.ExecuteNonQuery();
                         con.Close();
+
+                        MessageBox.Show("Succesfully added", "New Stocks", MessageBoxButtons.OK);
 
                         // activity logs begin
 
@@ -524,7 +537,8 @@ namespace Clothing_Store
 
 
                 }
-
+                dataGridView1.Refresh();
+                item();
             }
 
             catch (NumberFormatException ne)
@@ -540,14 +554,12 @@ namespace Clothing_Store
                 MessageBox.Show(ne.Message);
             }
 
-
-        } // item update end 
-
+        }
         public void item() // item begin
         {
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string names = "select * from Inventory where status = 1 and Product_Id = "+cbItemCode.Text+" ";
+            string names = "select p.Product_Name as 'Item',s.Supplier_Name as 'Supplier' , i.Quantity ,i.Date from Supplier as s, Inventory as i INNER JOIN Products as p on p.Product_Id = i.Product_Id where i.Status = 1 and i.Product_Id = "+cbItemCode.Text+" ";
             SqlDataAdapter adapt = new SqlDataAdapter(names, con);
 
             DataTable dataTable = new DataTable();
@@ -556,11 +568,9 @@ namespace Clothing_Store
             adapt.Fill(dataTable);
             bindingSource.DataSource = dataTable;
 
-          
 
-            lbItems.DataSource = dataTable.DefaultView;
-          
-            lbItems.DisplayMember = "Quantity";
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.DataSource = dataTable;
 
         } // item end
 
