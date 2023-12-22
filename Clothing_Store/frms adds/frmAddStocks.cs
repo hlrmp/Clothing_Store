@@ -547,7 +547,7 @@ namespace Clothing_Store
         {
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string names = "select * from Inventory where status = 1 and Product_Id = "+it.Code+" ";
+            string names = "select * from Inventory where status = 1 and Product_Id = "+cbItemCode.Text+" ";
             SqlDataAdapter adapt = new SqlDataAdapter(names, con);
 
             DataTable dataTable = new DataTable();
@@ -583,6 +583,14 @@ namespace Clothing_Store
 
         } // item end
 
+        private void cbItemCode_MouseClick(object sender, MouseEventArgs e)
+        {
+            item();
+        }
 
+        private void txtQuantity_MouseClick(object sender, MouseEventArgs e)
+        {
+            item();
+        }
     }// class end
 }// namespace end 

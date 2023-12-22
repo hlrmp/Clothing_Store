@@ -114,6 +114,7 @@
             this.cbItemCode.Name = "cbItemCode";
             this.cbItemCode.Size = new System.Drawing.Size(200, 23);
             this.cbItemCode.TabIndex = 42;
+            this.cbItemCode.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cbItemCode_MouseClick);
             // 
             // cbSize
             // 
@@ -265,6 +266,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(115, 21);
             this.txtQuantity.TabIndex = 60;
+            this.txtQuantity.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtQuantity_MouseClick);
             // 
             // cbSupplier
             // 
