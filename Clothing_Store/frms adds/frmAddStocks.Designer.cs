@@ -114,7 +114,6 @@
             this.cbItemCode.Name = "cbItemCode";
             this.cbItemCode.Size = new System.Drawing.Size(200, 23);
             this.cbItemCode.TabIndex = 42;
-            this.cbItemCode.SelectedIndexChanged += new System.EventHandler(this.cbItemCode_SelectedIndexChanged);
             // 
             // cbSize
             // 

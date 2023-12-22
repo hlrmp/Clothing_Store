@@ -583,9 +583,6 @@ namespace Clothing_Store
 
         } // item end
 
-        private void cbItemCode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            item();
-        }
+
     }// class end
 }// namespace end 
