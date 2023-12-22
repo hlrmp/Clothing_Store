@@ -45,10 +45,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.txtItemName = new System.Windows.Forms.TextBox();
-            this.numQuantity = new System.Windows.Forms.NumericUpDown();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).BeginInit();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -223,14 +222,6 @@
             this.txtItemName.Size = new System.Drawing.Size(199, 21);
             this.txtItemName.TabIndex = 55;
             // 
-            // numQuantity
-            // 
-            this.numQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numQuantity.Location = new System.Drawing.Point(94, 203);
-            this.numQuantity.Name = "numQuantity";
-            this.numQuantity.Size = new System.Drawing.Size(115, 21);
-            this.numQuantity.TabIndex = 56;
-            // 
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -255,16 +246,23 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(115, 21);
             this.txtPrice.TabIndex = 59;
-            this.txtPrice.Text = "0";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(94, 200);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(115, 21);
+            this.txtQuantity.TabIndex = 60;
             // 
             // frmAddStocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 450);
+            this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.numQuantity);
             this.Controls.Add(this.txtItemName);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.label8);
@@ -286,7 +284,6 @@
             this.Location = new System.Drawing.Point(400, 200);
             this.Name = "frmAddStocks";
             this.Text = "frmAddStocks";
-            ((System.ComponentModel.ISupportInitialize)(this.numQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,8 +308,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.TextBox txtItemName;
-        private System.Windows.Forms.NumericUpDown numQuantity;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtQuantity;
     }
 }

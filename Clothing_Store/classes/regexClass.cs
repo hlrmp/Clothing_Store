@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Clothing_Store
@@ -13,8 +14,9 @@ namespace Clothing_Store
         public static string age = @"^[0-9]{1,3}$";
         public static string schar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
         public static string mix = @"^[A-Za-z0-9]";
+        public static string Intg = @"^[0-9]+$";
+        public static string doub = @"^[0-9]+[.[0-9]{0,2}]?";
 
- 
 
 
 

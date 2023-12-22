@@ -13,24 +13,26 @@ namespace Clothing_Store
         private string Type;
         private string Category;
         private string Size;
-        private int Quantity;
-        private double Price;
+        private string Quantity;
+        private string Price;
         private string Date;
         private string color;
+        private string code;
         public itemsClass()
         {
             this.ItemName = "";
             this.Type = "";
             this.Category = "";
             this.Size = "";
-            this.Quantity = 0;
-            this.Price = 0;
+            this.Quantity = "";
+            this.Price = "";
             this.Date = "";
             this.color = "";
+            this.code = "";
 
         }
 
-        public itemsClass(string itemName, string type, string category, string size, int quantity, double price, string date, string color)
+        public itemsClass(string itemName, string type, string category, string size, string quantity, string price, string date, string color, string code)
         {
             ItemName = itemName;
             Type = type;
@@ -40,8 +42,8 @@ namespace Clothing_Store
             Price = price;
             Date = date;
             this.color = color;
+            this.code = code;
         }
-
         public string type
         {
             get { return Type; }
@@ -62,12 +64,12 @@ namespace Clothing_Store
             get { return Size; }
             set { Size = value; }
         }
-        public int quantity
+        public string quantity
         {
             get { return Quantity; }
             set { Quantity = value; }
         }
-        public double price
+        public string price
         {
             get { return Price; }
             set { Price = value; }
@@ -81,6 +83,11 @@ namespace Clothing_Store
         {
             get { return color; }
             set { color = value; }
+        }
+        public string Code
+        {
+            get { return code; }
+            set { code = value; }
         }
 
 

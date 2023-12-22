@@ -187,9 +187,12 @@ namespace Clothing_Store
             SqlCommand command;
             command = new SqlCommand(n, con);
             SqlDataReader reader = command.ExecuteReader();
-            reader.Read();
-
-            userId = reader[0].ToString();
+           
+            if (reader.Read())
+            {
+                userId = reader[0].ToString();
+            }
+           
             con.Close();
 
         } // uid end
