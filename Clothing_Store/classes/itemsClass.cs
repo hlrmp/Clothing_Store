@@ -18,6 +18,7 @@ namespace Clothing_Store
         private string Date;
         private string color;
         private string code;
+        private string supplier;
         public itemsClass()
         {
             this.ItemName = "";
@@ -29,10 +30,10 @@ namespace Clothing_Store
             this.Date = "";
             this.color = "";
             this.code = "";
-
+            this.supplier = "";
         }
 
-        public itemsClass(string itemName, string type, string category, string size, string quantity, string price, string date, string color, string code)
+        public itemsClass(string itemName, string type, string category, string size, string quantity, string price, string date, string color, string code, string supplier)
         {
             ItemName = itemName;
             Type = type;
@@ -43,6 +44,7 @@ namespace Clothing_Store
             Date = date;
             this.color = color;
             this.code = code;
+            this.supplier = supplier;
         }
         public string type
         {
@@ -88,6 +90,11 @@ namespace Clothing_Store
         {
             get { return code; }
             set { code = value; }
+        }
+        public string Supplier
+        {
+            get { return supplier; }
+            set { supplier = value; }
         }
 
 

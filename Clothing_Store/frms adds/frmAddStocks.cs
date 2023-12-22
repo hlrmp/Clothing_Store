@@ -24,6 +24,7 @@ namespace Clothing_Store
             color();
             category();
             size();
+            SupplierName();
         }
 
 
@@ -260,6 +261,7 @@ namespace Clothing_Store
             txtItemName.Clear();
             txtPrice.Clear();
             txtQuantity.ResetText();
+            cbSupplier.ResetText();
         }
 
         string condition;
@@ -274,7 +276,8 @@ namespace Clothing_Store
                         "from Products where Product_id = "+it.Code+ " and Product_Name = '"+it.Name+ "'" +
                         " and Category = '"+it.category+"' and Type = '"+it.type+"' and Size = '"+it.size+"' and Price = '"+it.price+"' " +
                         "and Color = '"+it.Color+"' and Status = 1 ";
-                con.Open();
+
+            con.Open();
             SqlCommand command;
             command = new SqlCommand(sj, con);
             SqlDataReader reader = command.ExecuteReader();
@@ -315,7 +318,7 @@ namespace Clothing_Store
                     it.type = cbType.Text;
                     it.category = cbCategory.Text;
                     it.Color = cbColor.Text;
-
+                    it.Supplier = cbSupplier.Text;
 
                     if (condition == "same")
                         {
@@ -390,6 +393,31 @@ namespace Clothing_Store
 
 
         } // add Stocks 
+
+        public void SupplierName()  // display Supplier name
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string names = "select Supplier_Name from Supplier where status = 1";
+            SqlDataAdapter adapt = new SqlDataAdapter(names, con);
+
+            DataTable dataTable = new DataTable();
+            BindingSource bindingSource = new BindingSource();
+            dataTable.Clear();
+            adapt.Fill(dataTable);
+            bindingSource.DataSource = dataTable;
+
+            con.Open();
+            SqlCommand command = new SqlCommand(names, con);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+            con.Close();
+
+            cbSupplier.DataSource = dataTable;
+            cbSupplier.DisplayMember = "Supplier_Name";
+
+        }  // display supplier name end
+
 
 
 
