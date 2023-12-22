@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -25,6 +26,7 @@ namespace Clothing_Store
             category();
             size();
             SupplierName();
+            itemCode();
         }
 
 
@@ -238,9 +240,10 @@ namespace Clothing_Store
         private void btnAdd_Click(object sender, EventArgs e) // add btn begin
         {
            
-           // comfirmation();
+           
+            SupplierId();
             add();
-
+           
 
 
         } // add btn end 
@@ -253,47 +256,17 @@ namespace Clothing_Store
          
         public void clear()
         {
-            cbItemCode.ResetText();
-            cbCategory.Refresh();
-            cbColor.Refresh();
-            cbType.Refresh();
-            cbSize.Refresh();
+            cbCategory.ResetText();
+            cbColor.ResetText();
+            cbType.ResetText();
+            cbSize.ResetText();
             txtItemName.Clear();
             txtPrice.Clear();
-            txtQuantity.ResetText();
-            cbSupplier.ResetText();
+
+          
         }
 
-        string condition;
       
-        public void comfirmation()  // confirmaion begin
-        {
-
-            customerClass cs = new customerClass();
-            SqlConnection con = new SqlConnection(ConnectionClass.conn);
-
-            string sj = "select Product_Id ,Product_Name , Category , Type , Size, Price , Color , Status " +
-                        "from Products where Product_id = "+it.Code+ " and Product_Name = '"+it.Name+ "'" +
-                        " and Category = '"+it.category+"' and Type = '"+it.type+"' and Size = '"+it.size+"' and Price = '"+it.price+"' " +
-                        "and Color = '"+it.Color+"' and Status = 1 ";
-
-            con.Open();
-            SqlCommand command;
-            command = new SqlCommand(sj, con);
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                MessageBox.Show("Exist");
-                condition = "same";
-            }
-            else
-            {
-                MessageBox.Show("dont");
-                condition = "notsame";
-            }
-
-            con.Close();
-        } // confirmation end
 
         public void add()  // add Stocks 
         {
@@ -302,73 +275,56 @@ namespace Clothing_Store
 
             try
             {
-                if (txtItemName.Text == "" || txtPrice.Text == "" || txtPrice.Text == ""  || 
-                    cbItemCode.Text == "" || cbCategory.Text == "" || cbColor.Text == "" ||
+                if (txtItemName.Text == "" || txtPrice.Text == "" || 
+                    cbCategory.Text == "" || cbColor.Text == "" ||
                     cbSize.Text == "" || cbType.Text ==  "")
                 {
                     throw new nullExceptiom("Please fill up the FF.");
                 }
                 else
                 {
-                    it.Code = cbCategory.Text;
+                    
                     it.Name = ItemName(txtItemName.Text);
-                    it.quantity = quan(txtQuantity.Text);
                     it.price = price(txtPrice.Text);
                     it.size = cbSize.Text;
                     it.type = cbType.Text;
                     it.category = cbCategory.Text;
                     it.Color = cbColor.Text;
-                    it.Supplier = cbSupplier.Text;
+
+                    comfirmation();
 
                     if (condition == "same")
                         {
-
-                           
-                            string quer1 = " ";
-                            SqlCommand command = new SqlCommand(quer1, cnn);
-
-
-                            command.Parameters.AddWithValue("@Status", "1");
-                            cnn.Open();
-                            command.ExecuteNonQuery();
-                            cnn.Close();
-
-                            // activity logs begin
-
-                            //     string desc = "Stocks updated";
-                            //     ConnectionClass.activity(frmLogin.userId, desc);
-
-                            // activity logs end
-
-                            this.Hide();
-
-
-                                clear();
-
+                            throw new nullExceptiom("Item Existing");
                         }
                         else if (condition == "notsame")
                         {
-                           
-                            string quer1 = " ";
-                            SqlCommand command = new SqlCommand(quer1, cnn);
-
-
-                            command.Parameters.AddWithValue("@Status", "1");
+                            string ins = "insert into Products(Product_Name,Category,Type,Size,Price,Color,Status)values(@Product_Name,@Category,@Type,@Size,@Price,@Color,@Status)";
+                            SqlCommand comm = new SqlCommand(ins, cnn);
+                            comm.Parameters.AddWithValue("@Product_Name", it.Name);
+                            comm.Parameters.AddWithValue("@Category", it.category);
+                            comm.Parameters.AddWithValue("@Type", it.type);
+                            comm.Parameters.AddWithValue("@Size", it.size);
+                            comm.Parameters.AddWithValue("@Price", it.price);
+                            comm.Parameters.AddWithValue("@Color", it.Color);
+                            comm.Parameters.AddWithValue("@Status", "1");
                             cnn.Open();
-                            command.ExecuteNonQuery();
+                            comm.ExecuteNonQuery();
                             cnn.Close();
 
                             // activity logs begin
 
-                            //     string desc = "New Stocks Added";
+                            //     string desc = "New Item Added";
                             //     ConnectionClass.activity(frmLogin.userId, desc);
 
                             // activity logs end
 
-                            this.Hide();
+
+                           
+                         //   this.Hide();
 
 
-                            clear();
+                           
                         }
 
 
@@ -393,6 +349,57 @@ namespace Clothing_Store
 
 
         } // add Stocks 
+        string condition;
+
+        public void comfirmation()  // confirmaion begin
+        {
+
+            customerClass cs = new customerClass();
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string sj = "select Product_Id ,Product_Name , Category , Type , Size, Price , Color , Status from Products where Product_Name = '"+it.Name+"' and Category = '"+it.category+"' and Type = '"+it.type+"' and Size = '"+it.size+"' and Price = "+it.price+" and Color = '"+it.Color+"' and Status = 1 ";
+
+            con.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, con);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                MessageBox.Show("Exist");
+                condition = "same";
+            }
+            else
+            {
+                MessageBox.Show("dont");
+                condition = "notsame";
+            }
+
+            con.Close();
+        } // confirmation end
+        string ProductIdCodition;
+        public void itemIdCodition()  // itemIdCodition begin
+        {
+
+            customerClass cs = new customerClass();
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string sj = "select Product_Id from Inventory where Product_Id = "+it.Code+" and Supplier_Id = "+suppId+" and status = 1";
+
+            con.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, con);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                ProductIdCodition = "same";
+            }
+            else
+            {
+                ProductIdCodition = "notsame";
+            }
+
+            con.Close();
+        } // itemIdCodition end
 
         public void SupplierName()  // display Supplier name
         {
@@ -417,9 +424,168 @@ namespace Clothing_Store
             cbSupplier.DisplayMember = "Supplier_Name";
 
         }  // display supplier name end
+        int suppId;
+        public void SupplierId()  // display Supplier name
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string names = "select Supplier_Id from Supplier where Supplier_Name = '"+cbSupplier.Text+"'";
+            SqlDataAdapter adapt = new SqlDataAdapter(names, con);
+
+            DataTable dataTable = new DataTable();
+            BindingSource bindingSource = new BindingSource();
+            dataTable.Clear();
+            adapt.Fill(dataTable);
+            bindingSource.DataSource = dataTable;
+
+            con.Open();
+            SqlCommand command = new SqlCommand(names, con);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                suppId = int.Parse(reader[0].ToString()); 
+            }
+            con.Close();
+
+        }  // display supplier name end
+
+        private void btnClearUdate_Click(object sender, EventArgs e)  // btn clear in update begin
+        {
+            cbItemCode.ResetText();
+            txtQuantity.ResetText();
+            cbSupplier.ResetText();
+
+
+        } // btn clear in update end
+
+        private void btnUpdate_Click(object sender, EventArgs e) // item update begin
+        {
+            try
+            {
+                if (txtQuantity.Text == "" || cbItemCode.Text == "" || cbSupplier.Text == "")
+                {
+                    throw new nullExceptiom("Please fill up the ff. to update");
+                }
+                else
+                {
+                    SupplierId();
+                  
+
+                    it.quantity = quan(txtQuantity.Text);
+                    it.Code = cbItemCode.Text;
+                    it.Supplier = cbSupplier.Text;
+
+                    itemIdCodition();
+
+
+                    SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+                    if (ProductIdCodition == "same")
+                    {
+                        string quer1 = "update Inventory set Quantity = Quantity + " + it.quantity + ", Date = getdate() where Product_Id = " + it.Code + " and Supplier_Id = " + suppId + " and  Status = 1";
+                        SqlCommand command = new SqlCommand(quer1, con);
+                        con.Open();
+                        command.ExecuteNonQuery();
+                        con.Close();
+
+                        // activity logs begin
+
+                        //     string desc = "Stocks updated";
+                        //     ConnectionClass.activity(frmLogin.userId, desc);
+
+                        // activity logs end
+
+                        // this.Hide();
+                    }
+                    else if (ProductIdCodition == "notsame")
+                    {
+                
+
+                        string invent = "insert into Inventory(Product_Id, Supplier_Id, Date, Quantity, Status )  values (@Product_Id, @Supplier_Id, getDate(), @Quantity, @Status)";
+                        SqlCommand comm = new SqlCommand(invent, con);
+                        comm.Parameters.AddWithValue("@Product_Id", it.Code);
+                        comm.Parameters.AddWithValue("@Supplier_Id", suppId);
+                        comm.Parameters.AddWithValue("@quantity", it.quantity);
+                        comm.Parameters.AddWithValue("@Status", "1");
+                        con.Open();
+                        comm.ExecuteNonQuery();
+                        con.Close();
+
+                        // activity logs begin
+
+                        //     string desc = "New Stocks Added";
+                        //     ConnectionClass.activity(frmLogin.userId, desc);
+
+                        // activity logs end
+
+                    }
 
 
 
 
+                }
+
+            }
+
+            catch (NumberFormatException ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            catch (StringFormatException le)
+            {
+                MessageBox.Show(le.Message);
+            }
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+
+
+        } // item update end 
+
+        public void item() // item begin
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string names = "select * from Inventory where status = 1 and Product_Id = "+it.Code+" ";
+            SqlDataAdapter adapt = new SqlDataAdapter(names, con);
+
+            DataTable dataTable = new DataTable();
+            BindingSource bindingSource = new BindingSource();
+            dataTable.Clear();
+            adapt.Fill(dataTable);
+            bindingSource.DataSource = dataTable;
+
+          
+
+            lbItems.DataSource = dataTable.DefaultView;
+          
+            lbItems.DisplayMember = "Quantity";
+
+        } // item end
+
+        public void itemCode() // item begin
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string names = "select * from Products where Status = 1";
+            SqlDataAdapter adapt = new SqlDataAdapter(names, con);
+
+            DataTable dataTable = new DataTable();
+            BindingSource bindingSource = new BindingSource();
+            dataTable.Clear();
+            adapt.Fill(dataTable);
+            bindingSource.DataSource = dataTable;
+
+
+            cbItemCode.DataSource = dataTable;
+            cbItemCode.DisplayMember = "Product_Id";
+
+        } // item end
+
+        private void cbItemCode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            item();
+        }
     }// class end
 }// namespace end 
