@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOrders));
-            this.lblsearch = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.sidepanelitems = new System.Windows.Forms.Panel();
             this.btnHomeOrders = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
             this.btnAddStock = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewHome = new System.Windows.Forms.DataGridView();
+            this.dataGridViewManage = new System.Windows.Forms.DataGridView();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.lblsearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deliveryAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sidepanelitems.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblsearch
-            // 
-            this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblsearch.AutoSize = true;
-            this.lblsearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblsearch.Location = new System.Drawing.Point(705, 43);
-            this.lblsearch.Name = "lblsearch";
-            this.lblsearch.Size = new System.Drawing.Size(41, 13);
-            this.lblsearch.TabIndex = 17;
-            this.lblsearch.Text = "Search";
             // 
             // lblTitle
             // 
@@ -68,19 +68,12 @@
             this.lblTitle.TabIndex = 16;
             this.lblTitle.Text = "Orders Management";
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(482, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 20);
-            this.textBox1.TabIndex = 15;
-            // 
             // sidepanelitems
             // 
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.sidepanelitems.Controls.Add(this.lbltotal);
             this.sidepanelitems.Controls.Add(this.btnHomeOrders);
             this.sidepanelitems.Controls.Add(this.btnTotal);
             this.sidepanelitems.Controls.Add(this.btnManage);
@@ -104,6 +97,7 @@
             this.btnHomeOrders.TabIndex = 14;
             this.btnHomeOrders.Text = "Home";
             this.btnHomeOrders.UseVisualStyleBackColor = false;
+            this.btnHomeOrders.Click += new System.EventHandler(this.btnHomeOrders_Click);
             // 
             // btnTotal
             // 
@@ -152,73 +146,214 @@
             this.btnAddStock.UseVisualStyleBackColor = false;
             this.btnAddStock.Click += new System.EventHandler(this.btnAddStock_Click);
             // 
-            // dataGridView1
+            // dataGridViewHome
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewHome.AllowUserToAddRows = false;
+            this.dataGridViewHome.AllowUserToDeleteRows = false;
+            this.dataGridViewHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHome.Location = new System.Drawing.Point(138, 140);
+            this.dataGridViewHome.Name = "dataGridViewHome";
+            this.dataGridViewHome.ReadOnly = true;
+            this.dataGridViewHome.Size = new System.Drawing.Size(617, 372);
+            this.dataGridViewHome.TabIndex = 18;
+            // 
+            // dataGridViewManage
+            // 
+            this.dataGridViewManage.AllowUserToAddRows = false;
+            this.dataGridViewManage.AllowUserToDeleteRows = false;
+            this.dataGridViewManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewManage.AutoGenerateColumns = false;
+            this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.deliveryAddressDataGridViewTextBoxColumn,
+            this.contactNoDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
             this.Edit,
             this.Delete});
-            this.dataGridView1.Location = new System.Drawing.Point(138, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(617, 431);
-            this.dataGridView1.TabIndex = 13;
+            this.dataGridViewManage.DataSource = this.customerClassBindingSource;
+            this.dataGridViewManage.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewManage.Name = "dataGridViewManage";
+            this.dataGridViewManage.ReadOnly = true;
+            this.dataGridViewManage.Size = new System.Drawing.Size(617, 431);
+            this.dataGridViewManage.TabIndex = 44;
+            this.dataGridViewManage.Visible = false;
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFilter.BackColor = System.Drawing.Color.White;
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(680, 40);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(74, 21);
+            this.cbFilter.TabIndex = 47;
+            this.cbFilter.Text = "Filter";
+            // 
+            // lblsearch
+            // 
+            this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblsearch.AutoSize = true;
+            this.lblsearch.BackColor = System.Drawing.Color.White;
+            this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblsearch.Location = new System.Drawing.Point(633, 43);
+            this.lblsearch.Name = "lblsearch";
+            this.lblsearch.Size = new System.Drawing.Size(41, 13);
+            this.lblsearch.TabIndex = 46;
+            this.lblsearch.Text = "Search";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(437, 40);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(243, 20);
+            this.txtSearch.TabIndex = 45;
             // 
             // Edit
             // 
+            this.Edit.FillWeight = 22F;
             this.Edit.HeaderText = "Edit";
             this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
             this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
+            this.Edit.Width = 5;
             // 
             // Delete
             // 
+            this.Delete.FillWeight = 25F;
             this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
             this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
+            this.Delete.Width = 5;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(47, 291);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(19, 20);
+            this.lbltotal.TabIndex = 40;
+            this.lbltotal.Text = "0";
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First_Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // deliveryAddressDataGridViewTextBoxColumn
+            // 
+            this.deliveryAddressDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Address";
+            this.deliveryAddressDataGridViewTextBoxColumn.HeaderText = "Delivery_Address";
+            this.deliveryAddressDataGridViewTextBoxColumn.Name = "deliveryAddressDataGridViewTextBoxColumn";
+            this.deliveryAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.deliveryAddressDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // contactNoDataGridViewTextBoxColumn
+            // 
+            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
+            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.contactNoDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 94;
+            // 
+            // customerClassBindingSource
+            // 
+            this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
             // 
             // FrmOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.dataGridViewHome);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.sidepanelitems);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewManage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmOrders";
             this.Text = "FrmOrders";
+            this.Load += new System.EventHandler(this.FrmOrders_Load);
             this.sidepanelitems.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.sidepanelitems.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel sidepanelitems;
         private System.Windows.Forms.Button btnAddStock;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnHomeOrders;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.DataGridView dataGridViewHome;
+        private System.Windows.Forms.DataGridView dataGridViewManage;
+        private System.Windows.Forms.BindingSource customerClassBindingSource;
+        private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.Label lblsearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbltotal;
     }
 }

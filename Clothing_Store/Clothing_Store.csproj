@@ -256,6 +256,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Clothing_Store.classes.backupRecoveryClass.datasource" />
+    <None Include="Properties\DataSources\Clothing_Store.classes.ordersClass.datasource" />
     <None Include="Properties\DataSources\customerClass.datasource" />
     <None Include="Properties\DataSources\itemsClass.datasource" />
     <None Include="Properties\Settings.settings">
