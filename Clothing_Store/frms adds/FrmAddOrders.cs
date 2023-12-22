@@ -285,7 +285,7 @@ namespace Clothing_Store
 
 
                     con.Open();
-                    command.Parameters.AddWithValue("@Staff_Id", 1);
+                    command.Parameters.AddWithValue("@Staff_Id", StaffId);
                     command.Parameters.AddWithValue("@Customer_Id", customerId);
                     command.Parameters.AddWithValue("@Product_Id", productId);
                     command.Parameters.AddWithValue("@Quantity", oc.Quantity);
@@ -395,7 +395,7 @@ namespace Clothing_Store
         private void btnAdd_Click(object sender, EventArgs e) // btn add begin
         {
 
-          //  staff();
+                staff();
 
             try
             {
@@ -426,8 +426,8 @@ namespace Clothing_Store
 
                     // activity logs begin
 
-                    //     string desc = " Inventory Changes becuse of Order Added ";
-                    //     ConnectionClass.activity(frmLogin.userId, desc);
+                   //      string desc = " Inventory Changes becuse of Order Added ";
+                   //      ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
                 }
@@ -447,7 +447,6 @@ namespace Clothing_Store
         
         
 
-            string ins = "insert into Orders (Staff_Id,Customer_Id,Product_Id,Quantity,Status) values (@Staff_Id,@Customer_Id,@Product_Id,@Quantity,@Status)";
 
 
 
