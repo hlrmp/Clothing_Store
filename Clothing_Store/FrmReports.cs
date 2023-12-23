@@ -22,9 +22,16 @@ namespace Clothing_Store
 
         }
 
-        private void btnWeekly_Click(object sender, EventArgs e)
+        private void btnWeekly_Click(object sender, EventArgs e)  // btn weekly Begin
         {
 
-        }
+        } // btn weekly end
+
+        private void FrmReports_Load(object sender, EventArgs e) // frm load begin
+        {
+            this.txtSearch.AutoSize = false;
+            this.txtSearch.Size = new System.Drawing.Size(243, 21);
+
+        } // frm load end
     }
 }

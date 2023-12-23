@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblsearch = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.sidepanelitems = new System.Windows.Forms.Panel();
             this.btnTotal = new System.Windows.Forms.Button();
             this.btnYearly = new System.Windows.Forms.Button();
@@ -44,22 +42,13 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnStocks = new System.Windows.Forms.Button();
             this.btnItems = new System.Windows.Forms.Button();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.lblsearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblsearch
-            // 
-            this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblsearch.AutoSize = true;
-            this.lblsearch.BackColor = System.Drawing.Color.White;
-            this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsearch.Location = new System.Drawing.Point(705, 43);
-            this.lblsearch.Name = "lblsearch";
-            this.lblsearch.Size = new System.Drawing.Size(41, 13);
-            this.lblsearch.TabIndex = 22;
-            this.lblsearch.Text = "Search";
             // 
             // lblTitle
             // 
@@ -71,14 +60,6 @@
             this.lblTitle.Size = new System.Drawing.Size(300, 39);
             this.lblTitle.TabIndex = 21;
             this.lblTitle.Text = "Reports Management";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(482, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 20);
-            this.textBox1.TabIndex = 20;
             // 
             // sidepanelitems
             // 
@@ -205,7 +186,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.btnOrders);
             this.panel1.Controls.Add(this.btnCustomers);
             this.panel1.Controls.Add(this.btnStocks);
@@ -275,20 +256,55 @@
             this.btnItems.Text = "Items";
             this.btnItems.UseVisualStyleBackColor = true;
             // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFilter.BackColor = System.Drawing.Color.White;
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(681, 40);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(74, 21);
+            this.cbFilter.TabIndex = 50;
+            this.cbFilter.Text = "Filter";
+            // 
+            // lblsearch
+            // 
+            this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblsearch.AutoSize = true;
+            this.lblsearch.BackColor = System.Drawing.Color.White;
+            this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblsearch.Location = new System.Drawing.Point(634, 43);
+            this.lblsearch.Name = "lblsearch";
+            this.lblsearch.Size = new System.Drawing.Size(41, 13);
+            this.lblsearch.TabIndex = 49;
+            this.lblsearch.Text = "Search";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(438, 40);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(243, 20);
+            this.txtSearch.TabIndex = 48;
+            // 
             // FrmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.sidepanelitems);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReports";
             this.Text = "FrmReports";
+            this.Load += new System.EventHandler(this.FrmReports_Load);
             this.sidepanelitems.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -298,10 +314,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel sidepanelitems;
         private System.Windows.Forms.Button btnHomeReports;
         private System.Windows.Forms.Button btnWeekly;
@@ -315,5 +328,8 @@
         private System.Windows.Forms.Button btnItems;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.Label lblsearch;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
