@@ -279,12 +279,13 @@ namespace Clothing_Store
                     con.Close();
 
 
-                    string ins = "insert into Orders (Staff_Id,Customer_Id,Product_Id,Quantity,Status) values (@Staff_Id,@Customer_Id,@Product_Id,@Quantity,@Status)";
+                    string ins = "insert into Orders (Staff_Id,Customer_Id,Product_Id,Quantity,Status,Date) values (@Staff_Id,@Customer_Id,@Product_Id,@Quantity,@Status,getDate())";
                     SqlCommand command = new SqlCommand(ins, con);
 
 
 
                     con.Open();
+
                     command.Parameters.AddWithValue("@Staff_Id", StaffId);
                     command.Parameters.AddWithValue("@Customer_Id", customerId);
                     command.Parameters.AddWithValue("@Product_Id", productId);

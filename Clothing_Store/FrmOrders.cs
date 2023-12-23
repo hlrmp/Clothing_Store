@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clothing_Store.classes;
 
 namespace Clothing_Store
 {
@@ -18,6 +20,7 @@ namespace Clothing_Store
             InitializeComponent();
             see();
             total();
+            filter();
 
         }
         FrmAddOrders fao = new FrmAddOrders();
@@ -34,6 +37,7 @@ namespace Clothing_Store
         {
             dataGridViewManage.Show();
             dataGridViewHome.Hide();
+            dataGridViewSearch.Hide();
             manageOrders();
 
 
@@ -45,7 +49,7 @@ namespace Clothing_Store
             see();
             dataGridViewManage.Hide();
             dataGridViewHome.Show();
-
+            dataGridViewSearch.Hide();
         } // btn home end
 
         public void see() // see begin
@@ -55,9 +59,11 @@ namespace Clothing_Store
             // detailed 
             //    string sj = "select concat( c.First_Name ,' ', c.Last_Name) as Customer ,o.quantity, p.Product_Name,concat(s.First_Name ,' ', s.Last_Name) as 'Staff Name'from  Inventory as i,Orders as o inner join Customers as c on o.Customer_Id = c.Customer_Id inner join Products as p on  p.Product_id = o.Product_Id inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1"; 
             // just orders
-            string sj = "select  o.Order_Id, concat(c.First_Name,' ',c.Last_Name)as 'Name' ,p.Product_Id, p.Product_Name,p.Price, o.Quantity ," +
-                "concat(s.First_Name ,' ', s.Last_Name) as 'Staff', o.Status " +
-                "from Customers as c inner join Orders as o on o.Customer_Id = c.Customer_Id " +
+            string sj = "select  o.Order_Id as 'Order Id', concat(c.First_Name,' ',c.Last_Name)as 'Customer Name' ," +
+                "p.Product_Id as 'Product Id', p.Product_Name as 'Product Name',p.Price, o.Quantity ," +
+                "(p.Price * o.Quantity)as 'Total'," +
+                "concat(s.First_Name ,' ', s.Last_Name) as 'Staff',o.Date, o.Status from Customers as c " +
+                "inner join Orders as o on o.Customer_Id = c.Customer_Id " +
                 "inner join Products as p on p.Product_Id = o.Product_Id " +
                 "inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1";
 
@@ -77,7 +83,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "select * from Orders";
+            string sj = "select  o.Order_Id , concat(c.First_Name,' ',c.Last_Name)as 'Customer_Name' ,p.Product_Id , p.Product_Name,p.Price as Product_Price, o.Quantity ,(p.Price * o.Quantity)as 'Total_Item',concat(s.First_Name ,' ', s.Last_Name) as 'Staffs',o.Date as 'Order_Date', o.Status from Customers as c inner join Orders as o on o.Customer_Id = c.Customer_Id inner join Products as p on p.Product_Id = o.Product_Id inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1";
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
 
@@ -123,6 +129,205 @@ namespace Clothing_Store
             total();
 
         } // timer end 
+
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e) // txt search begin
+        {
+            see();
+            dataGridViewManage.Hide();
+            dataGridViewHome.Show();
+          
+        } // txt search end
+
+        private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            ordersClass oc = new ordersClass();
+
+            oc.Order_Id = dataGridViewManage.CurrentRow.Cells["orderIdDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Customer_Name = dataGridViewManage.CurrentRow.Cells["customerNameDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Product_Id = dataGridViewManage.CurrentRow.Cells["productIdDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Product_Name = dataGridViewManage.CurrentRow.Cells["productNameDataGridViewTextBoxColumn"].Value.ToString();
+
+            oc.Product_Price = dataGridViewManage.CurrentRow.Cells["productPriceDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Total_Item = dataGridViewManage.CurrentRow.Cells["totalItemDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Staffs = dataGridViewManage.CurrentRow.Cells["staffsDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Order_Date = dataGridViewManage.CurrentRow.Cells["Date"].Value.ToString();
+            oc.Quantity = dataGridViewManage.CurrentRow.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString();
+
+
+            if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Remove Order # "+oc.Order_Id+" by: "+oc.Customer_Name+"  ?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Orders set Status = 2 where Order_Id = "+oc.Order_Id+" ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = "Remove/Delete Order "+oc.Order_Id+" by: "+oc.Customer_Name+" ";
+
+                    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)  // enter on txt search begin
+        {
+           
+            dataGridViewSearch.Show();
+            search();
+
+        }// enter on txt search end
+
+        private void lblsearch_MouseClick(object sender, MouseEventArgs e) // search label cick begin
+        {
+           
+            dataGridViewSearch.Show();
+            search();
+
+
+        } // search label click end 
+
+        public void search() // search method begin
+        {
+
+
+            if (cbFilter.Text.ToString() == "Product Name")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "select  o.Order_Id as 'Order Id', concat(c.First_Name,' ',c.Last_Name)as 'Customer Name' ,p.Product_Id as 'Product Id', p.Product_Name as 'Product Name',p.Price, o.Quantity ,(p.Price * o.Quantity)as 'Total',concat(s.First_Name ,' ', s.Last_Name) as 'Staff',o.Date, o.Status from Customers as c inner join Orders as o on o.Customer_Id = c.Customer_Id inner join Products as p on p.Product_Id = o.Product_Id inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1 and p.Product_Name LIKE '" + sch + '%' + "'";
+ 
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+                dataGridViewSearch.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewSearch.DataSource = table;
+
+
+                cn.Close();
+            }
+           else if (cbFilter.Text.ToString() == "Customer Name")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "select  o.Order_Id as 'Order Id', concat(c.First_Name,' ',c.Last_Name)as 'Customer Name' ,p.Product_Id as 'Product Id', p.Product_Name as 'Product Name',p.Price, o.Quantity ,(p.Price * o.Quantity)as 'Total',concat(s.First_Name ,' ', s.Last_Name) as 'Staff',o.Date, o.Status from Customers as c inner join Orders as o on o.Customer_Id = c.Customer_Id inner join Products as p on p.Product_Id = o.Product_Id inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1 and CONCAT(TRIM(c.First_Name), ' ', TRIM(c.Last_Name))  LIKE '" + sch + '%' + "'";
+
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+                dataGridViewSearch.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewSearch.DataSource = table;
+
+
+                cn.Close();
+            }
+            if (cbFilter.Text.ToString() == "Order Id")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "select  o.Order_Id as 'Order Id', concat(c.First_Name,' ',c.Last_Name)as 'Customer Name' ,p.Product_Id as 'Product Id', p.Product_Name as 'Product Name',p.Price, o.Quantity ,(p.Price * o.Quantity)as 'Total',concat(s.First_Name ,' ', s.Last_Name) as 'Staff',o.Date, o.Status from Customers as c inner join Orders as o on o.Customer_Id = c.Customer_Id inner join Products as p on p.Product_Id = o.Product_Id inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1 and o.Order_Id LIKE '" + sch + '%' + "'";
+
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+                dataGridViewSearch.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewSearch.DataSource = table;
+
+
+                cn.Close();
+            }
+            if (cbFilter.Text.ToString() == "Quantity")
+            {
+                SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+                cn.Open();
+
+                string sch = txtSearch.Text;
+
+                string query = "select  o.Order_Id as 'Order Id', concat(c.First_Name,' ',c.Last_Name)as 'Customer Name' ,p.Product_Id as 'Product Id', p.Product_Name as 'Product Name',p.Price, o.Quantity ,(p.Price * o.Quantity)as 'Total',concat(s.First_Name ,' ', s.Last_Name) as 'Staff',o.Date, o.Status from Customers as c inner join Orders as o on o.Customer_Id = c.Customer_Id inner join Products as p on p.Product_Id = o.Product_Id inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1 and o.Quantity LIKE '" + sch + '%' + "'";
+
+                SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
+
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                command.Parameters.Clear();
+
+                DataTable table = new DataTable();
+                adapt.Fill(table);
+                dataGridViewSearch.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewSearch.DataSource = table;
+
+
+                cn.Close();
+            }
+
+
+
+        }// search method end
+
+        public void filter() // filter begin
+        {
+
+
+            ArrayList arr = new ArrayList();
+
+            arr.Add("Customer Name");
+            arr.Add("Product Name");
+            arr.Add("Order Id");
+            arr.Add("Quantity");
+           
+
+            foreach (string list in arr)
+            {
+                cbFilter.Items.Add(list);
+            }
+
+        } // filter end
+
+
 
     } // class end 
 } // name space end

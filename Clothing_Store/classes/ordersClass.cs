@@ -16,6 +16,15 @@ namespace Clothing_Store.classes
         private string color;
         private string type;
 
+        private string OrderId;
+        private string CustomerName;
+        private string ProductId;
+        private string ProductName;
+        private string Price;
+        private string Total;
+        private string Staff;
+        private string Date;
+
         public ordersClass()
         {
             name = "";
@@ -38,6 +47,59 @@ namespace Clothing_Store.classes
             this.type = type;
         }
 
+        public ordersClass(string orderId, string customerName, string productId, string productName, string price, string total, string staff, string date)
+        {
+            OrderId = orderId;
+            CustomerName = customerName;
+            ProductId = productId;
+            ProductName = productName;
+            Price = price;
+            Total = total;
+            Staff = staff;
+            Date = date;
+        }
+
+
+        public string Order_Id
+        {
+            get { return OrderId; }
+            set { OrderId = value; }
+        }
+        public string Customer_Name
+        {
+            get { return CustomerName; }
+            set { CustomerName = value; }
+        }
+        public string Product_Id
+        {
+            get { return ProductId; }
+            set { ProductId = value; }
+        }
+        public string Product_Name
+        {
+            get { return ProductName; }
+            set { ProductName = value; }
+        }
+        public string Product_Price
+        {
+            get { return Price; }
+            set { Price = value; }
+        }
+        public string Total_Item
+        {
+            get { return Total; }
+            set { Total = value; }
+        }
+        public string Staffs
+        {
+            get { return Staff; }
+            set { Staff = value; }
+        }
+        public string Order_Date
+        {
+            get { return Date; }
+            set { Date = value; }
+        }
         public string Name
         {
             get { return name; }
