@@ -17,21 +17,21 @@ namespace Clothing_Store
     //   public static string TimeandDate = DateTime.Now.ToString("yyyy-MM-dd T-HH:mm:ssss");
 
 
-        public  static void activity(int UserId , string Description) 
+        public static bool activity(int userId , string Description) 
         { 
             SqlConnection con = new SqlConnection(conn);
             SqlCommand cmd = new SqlCommand();
 
             cmd = new SqlCommand(" insert into Activity_Logs (User_id,Description,Date) values (@userId,@Description, getDate())", con);
 
-            cmd.Parameters.Add("@userId", UserId);
+            cmd.Parameters.Add("@userId", userId);
             cmd.Parameters.Add("@Description", Description);
         //    cmd.Parameters.Add("@Date", getDate());
            
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-          //  return true;
+            return true;
         }
 
 
