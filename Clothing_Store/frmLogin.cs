@@ -61,8 +61,8 @@ namespace Clothing_Store
 
             // activity logs begin
 
-            string desc = "Log in - " + frmLogin.name;
-            ConnectionClass.activity(frmLogin.userId, desc);
+        //    string desc = "Log in - " + frmLogin.name;
+      //      ConnectionClass.activity(frmLogin.userId, desc);
 
             // activity logs end
 
