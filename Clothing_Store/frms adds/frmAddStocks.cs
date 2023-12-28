@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Clothing_Store
@@ -244,8 +245,8 @@ namespace Clothing_Store
            
             SupplierId();
             add();
-           
-
+            itemCode();
+            cbItemCode.Refresh();
 
         } // add btn end 
 
@@ -454,7 +455,7 @@ namespace Clothing_Store
 
         private void btnClearUdate_Click(object sender, EventArgs e)  // btn clear in update begin
         {
-            cbItemCode.ResetText();
+            // cbItemCode.ResetText();
             txtQuantity.ResetText();
             cbSupplier.ResetText();
 
@@ -522,6 +523,10 @@ namespace Clothing_Store
                         comm.ExecuteNonQuery();
                         con.Close();
 
+
+                        dataGridView1.Refresh();
+                        item();
+
                         MessageBox.Show("Succesfully added", "New Stocks", MessageBoxButtons.OK);
 
                         // activity logs begin
@@ -537,8 +542,7 @@ namespace Clothing_Store
 
 
                 }
-                dataGridView1.Refresh();
-                item();
+               
             }
 
             catch (NumberFormatException ne)
@@ -591,16 +595,59 @@ namespace Clothing_Store
             cbItemCode.DataSource = dataTable;
             cbItemCode.DisplayMember = "Product_Id";
 
+
+
+
         } // item end
+
+        public void IName() // item Name begin
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+            string names = "select * from Products where Status = 1 and Product_Id = "+cbItemCode.Text+" ";
+
+            SqlCommand command;
+            command = new SqlCommand(names, con);
+            con.Open();
+            SqlDataReader reader = command.ExecuteReader();
+           if(reader.Read())
+            {
+                lblItemName.Text = reader[1].ToString();
+            }
+  
+            con.Close();
+
+
+        }  // item name end
 
         private void cbItemCode_MouseClick(object sender, MouseEventArgs e)
         {
             item();
+            lblItemName.Refresh();
+            IName();
         }
 
         private void txtQuantity_MouseClick(object sender, MouseEventArgs e)
         {
             item();
         }
+
+        private void timer1_Tick(object sender, EventArgs e) // timer begin
+        {
+          
+            item();
+            lblItemName.Refresh();
+            IName();
+
+        } // timer end
+
+        private void frmAddStocks_Load(object sender, EventArgs e) // frm load begin
+        {
+            Timer timer = new Timer();
+            timer.Interval = (2 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
+
+        } // frm load end
+
     }// class end
 }// namespace end 

@@ -36,18 +36,17 @@
             this.btnWeekly = new System.Windows.Forms.Button();
             this.btnmonthly = new System.Windows.Forms.Button();
             this.btnDaily = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOrders = new System.Windows.Forms.Button();
-            this.btnCustomers = new System.Windows.Forms.Button();
             this.btnStocks = new System.Windows.Forms.Button();
             this.btnItems = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.lblsearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sidepanelitems.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -106,6 +105,7 @@
             this.btnYearly.TabIndex = 15;
             this.btnYearly.Text = "Yearly";
             this.btnYearly.UseVisualStyleBackColor = false;
+            this.btnYearly.Click += new System.EventHandler(this.btnYearly_Click);
             // 
             // btnHomeReports
             // 
@@ -121,6 +121,7 @@
             this.btnHomeReports.TabIndex = 14;
             this.btnHomeReports.Text = "Home";
             this.btnHomeReports.UseVisualStyleBackColor = false;
+            this.btnHomeReports.Click += new System.EventHandler(this.btnHomeReports_Click_1);
             // 
             // btnWeekly
             // 
@@ -152,6 +153,7 @@
             this.btnmonthly.TabIndex = 12;
             this.btnmonthly.Text = "Monthly";
             this.btnmonthly.UseVisualStyleBackColor = false;
+            this.btnmonthly.Click += new System.EventHandler(this.btnmonthly_Click);
             // 
             // btnDaily
             // 
@@ -167,20 +169,7 @@
             this.btnDaily.TabIndex = 11;
             this.btnDaily.Text = "Daily";
             this.btnDaily.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(138, 121);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(617, 391);
-            this.dataGridView1.TabIndex = 18;
+            this.btnDaily.Click += new System.EventHandler(this.btnDaily_Click);
             // 
             // panel1
             // 
@@ -188,7 +177,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.btnOrders);
-            this.panel1.Controls.Add(this.btnCustomers);
             this.panel1.Controls.Add(this.btnStocks);
             this.panel1.Controls.Add(this.btnItems);
             this.panel1.Location = new System.Drawing.Point(138, 81);
@@ -204,27 +192,12 @@
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOrders.Location = new System.Drawing.Point(494, 3);
+            this.btnOrders.Location = new System.Drawing.Point(486, 3);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(114, 28);
             this.btnOrders.TabIndex = 21;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
-            // 
-            // btnCustomers
-            // 
-            this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCustomers.FlatAppearance.BorderSize = 0;
-            this.btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCustomers.Location = new System.Drawing.Point(391, 3);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(114, 28);
-            this.btnCustomers.TabIndex = 20;
-            this.btnCustomers.Text = "Customers";
-            this.btnCustomers.UseVisualStyleBackColor = true;
             // 
             // btnStocks
             // 
@@ -289,25 +262,39 @@
             this.txtSearch.Size = new System.Drawing.Size(243, 20);
             this.txtSearch.TabIndex = 48;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(141, 121);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(617, 391);
+            this.dataGridView1.TabIndex = 51;
+            // 
             // FrmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.sidepanelitems);
-            this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReports";
             this.Text = "FrmReports";
             this.Load += new System.EventHandler(this.FrmReports_Load);
             this.sidepanelitems.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,14 +309,13 @@
         private System.Windows.Forms.Button btnDaily;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnYearly;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnStocks;
         private System.Windows.Forms.Button btnItems;
         private System.Windows.Forms.Button btnOrders;
-        private System.Windows.Forms.Button btnCustomers;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
