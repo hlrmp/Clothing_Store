@@ -52,6 +52,9 @@
             this.lblCustomers = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblOrders = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,16 +62,13 @@
             this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblOrders = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
             this.panelButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCustomer)).BeginInit();
             this.panelCounts.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cbFilter
@@ -357,7 +357,7 @@
             this.lblCustomers.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblCustomers.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblCustomers.Location = new System.Drawing.Point(32, 64);
+            this.lblCustomers.Location = new System.Drawing.Point(43, 64);
             this.lblCustomers.Name = "lblCustomers";
             this.lblCustomers.Size = new System.Drawing.Size(157, 39);
             this.lblCustomers.TabIndex = 48;
@@ -392,6 +392,41 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(173, 128);
             this.panel1.TabIndex = 49;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label3.Location = new System.Drawing.Point(23, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 39);
+            this.label3.TabIndex = 50;
+            this.label3.Text = "Orders";
+            // 
+            // lblOrders
+            // 
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblOrders.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblOrders.Location = new System.Drawing.Point(45, 64);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(114, 39);
+            this.lblOrders.TabIndex = 51;
+            this.lblOrders.Text = "Orders";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblOrders);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Location = new System.Drawing.Point(219, 73);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(173, 128);
+            this.panel2.TabIndex = 50;
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -439,41 +474,6 @@
             // 
             this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label3.Location = new System.Drawing.Point(23, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 39);
-            this.label3.TabIndex = 50;
-            this.label3.Text = "Orders";
-            // 
-            // lblOrders
-            // 
-            this.lblOrders.AutoSize = true;
-            this.lblOrders.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblOrders.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblOrders.Location = new System.Drawing.Point(43, 64);
-            this.lblOrders.Name = "lblOrders";
-            this.lblOrders.Size = new System.Drawing.Size(114, 39);
-            this.lblOrders.TabIndex = 51;
-            this.lblOrders.Text = "Orders";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lblOrders);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(219, 73);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(173, 128);
-            this.panel2.TabIndex = 50;
-            // 
             // frmArchives
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,9 +500,9 @@
             this.panelCounts.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
