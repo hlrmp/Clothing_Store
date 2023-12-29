@@ -129,7 +129,7 @@ namespace Clothing_Store
         public void total()  // total customers - string
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
-            string sj = "select count(*)  AS 'Total Customers' from customers";
+            string sj = "select count(*)  AS 'Total Customers' from customers where status = 1";
             sqlcc.Open();
             SqlCommand command;
             command = new SqlCommand(sj, sqlcc);
@@ -442,8 +442,8 @@ namespace Clothing_Store
 
                         // activity logs begin
 
-                        string desc = "Delete Customer Information";
-                        ConnectionClass.activity(frmLogin.userId, desc);
+                    //    string desc = "Delete Customer Information";
+                    //    ConnectionClass.activity(frmLogin.userId, desc);
 
                         // activity logs end
                     }
