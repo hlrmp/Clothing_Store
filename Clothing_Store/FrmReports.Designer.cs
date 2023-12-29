@@ -30,7 +30,6 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.sidepanelitems = new System.Windows.Forms.Panel();
-            this.btnTotal = new System.Windows.Forms.Button();
             this.btnYearly = new System.Windows.Forms.Button();
             this.btnHomeReports = new System.Windows.Forms.Button();
             this.btnWeekly = new System.Windows.Forms.Button();
@@ -41,19 +40,26 @@
             this.btnStocks = new System.Windows.Forms.Button();
             this.btnItems = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.lblsearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panelHome = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblItems = new System.Windows.Forms.Label();
+            this.lblStocks = new System.Windows.Forms.Label();
+            this.lblOrders = new System.Windows.Forms.Label();
             this.sidepanelitems.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblTitle.Location = new System.Drawing.Point(12, 29);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(300, 39);
@@ -65,7 +71,6 @@
             this.sidepanelitems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelitems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.sidepanelitems.Controls.Add(this.btnTotal);
             this.sidepanelitems.Controls.Add(this.btnYearly);
             this.sidepanelitems.Controls.Add(this.btnHomeReports);
             this.sidepanelitems.Controls.Add(this.btnWeekly);
@@ -75,21 +80,6 @@
             this.sidepanelitems.Name = "sidepanelitems";
             this.sidepanelitems.Size = new System.Drawing.Size(120, 431);
             this.sidepanelitems.TabIndex = 19;
-            // 
-            // btnTotal
-            // 
-            this.btnTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnTotal.FlatAppearance.BorderSize = 0;
-            this.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTotal.Location = new System.Drawing.Point(3, 348);
-            this.btnTotal.Name = "btnTotal";
-            this.btnTotal.Size = new System.Drawing.Size(114, 63);
-            this.btnTotal.TabIndex = 16;
-            this.btnTotal.Text = "Total";
-            this.btnTotal.UseVisualStyleBackColor = false;
             // 
             // btnYearly
             // 
@@ -198,6 +188,7 @@
             this.btnOrders.TabIndex = 21;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnStocks
             // 
@@ -228,39 +219,20 @@
             this.btnItems.TabIndex = 18;
             this.btnItems.Text = "Items";
             this.btnItems.UseVisualStyleBackColor = true;
+            this.btnItems.Click += new System.EventHandler(this.btnItems_Click);
             // 
             // cbFilter
             // 
             this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbFilter.BackColor = System.Drawing.Color.White;
+            this.cbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(681, 40);
+            this.cbFilter.Location = new System.Drawing.Point(567, 54);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(74, 21);
+            this.cbFilter.Size = new System.Drawing.Size(188, 21);
             this.cbFilter.TabIndex = 50;
             this.cbFilter.Text = "Filter";
-            // 
-            // lblsearch
-            // 
-            this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblsearch.AutoSize = true;
-            this.lblsearch.BackColor = System.Drawing.Color.White;
-            this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblsearch.Location = new System.Drawing.Point(634, 43);
-            this.lblsearch.Name = "lblsearch";
-            this.lblsearch.Size = new System.Drawing.Size(41, 13);
-            this.lblsearch.TabIndex = 49;
-            this.lblsearch.Text = "Search";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(438, 40);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(243, 20);
-            this.txtSearch.TabIndex = 48;
             // 
             // dataGridView1
             // 
@@ -270,21 +242,121 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(141, 121);
+            this.dataGridView1.Location = new System.Drawing.Point(138, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(617, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(617, 394);
             this.dataGridView1.TabIndex = 51;
+            // 
+            // panelHome
+            // 
+            this.panelHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelHome.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panelHome.Controls.Add(this.lblOrders);
+            this.panelHome.Controls.Add(this.lblStocks);
+            this.panelHome.Controls.Add(this.lblItems);
+            this.panelHome.Controls.Add(this.label4);
+            this.panelHome.Controls.Add(this.label3);
+            this.panelHome.Controls.Add(this.label2);
+            this.panelHome.Controls.Add(this.label1);
+            this.panelHome.Location = new System.Drawing.Point(202, 153);
+            this.panelHome.Name = "panelHome";
+            this.panelHome.Size = new System.Drawing.Size(485, 241);
+            this.panelHome.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(185, 93);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 39);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Stocks";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label2.Location = new System.Drawing.Point(21, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 39);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Items";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label3.Location = new System.Drawing.Point(339, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(114, 39);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Orders";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label4.Location = new System.Drawing.Point(21, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(282, 39);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Total Numbers of :";
+            // 
+            // lblItems
+            // 
+            this.lblItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblItems.AutoSize = true;
+            this.lblItems.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblItems.Location = new System.Drawing.Point(36, 150);
+            this.lblItems.Name = "lblItems";
+            this.lblItems.Size = new System.Drawing.Size(99, 39);
+            this.lblItems.TabIndex = 26;
+            this.lblItems.Text = "Items";
+            // 
+            // lblStocks
+            // 
+            this.lblStocks.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblStocks.AutoSize = true;
+            this.lblStocks.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStocks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblStocks.Location = new System.Drawing.Point(209, 150);
+            this.lblStocks.Name = "lblStocks";
+            this.lblStocks.Size = new System.Drawing.Size(110, 39);
+            this.lblStocks.TabIndex = 27;
+            this.lblStocks.Text = "Stocks";
+            // 
+            // lblOrders
+            // 
+            this.lblOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblOrders.Location = new System.Drawing.Point(358, 150);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(114, 39);
+            this.lblOrders.TabIndex = 28;
+            this.lblOrders.Text = "Orders";
             // 
             // FrmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.panelHome);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.lblsearch);
-            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.sidepanelitems);
@@ -295,6 +367,8 @@
             this.sidepanelitems.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelHome.ResumeLayout(false);
+            this.panelHome.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,15 +381,20 @@
         private System.Windows.Forms.Button btnWeekly;
         private System.Windows.Forms.Button btnmonthly;
         private System.Windows.Forms.Button btnDaily;
-        private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Button btnYearly;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnStocks;
         private System.Windows.Forms.Button btnItems;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.ComboBox cbFilter;
-        private System.Windows.Forms.Label lblsearch;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panelHome;
+        private System.Windows.Forms.Label lblOrders;
+        private System.Windows.Forms.Label lblStocks;
+        private System.Windows.Forms.Label lblItems;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
