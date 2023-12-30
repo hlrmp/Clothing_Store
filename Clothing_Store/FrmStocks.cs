@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -396,6 +397,7 @@ namespace Clothing_Store
         private void timer1_Tick(object sender, EventArgs e) // timer begin
         {
             total();
+            
             lbltotal.Refresh();
 
         } // timer end
@@ -405,11 +407,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Price,p.Size, p.Color, " +
-                "i.Quantity , i.Date " +
-                "FROM Products AS p \r\n" +
-                "INNER JOIN Inventory AS i " +
-                "ON (p.Product_Id = i.product_Id) where i.status = 1";
+            string sj = "select i.Inventory_ID as 'Inventory_Number' ,concat(i.Product_Id ,' - ', p.Product_Name) as 'code_and_name' ,s.Supplier_Name , i.Quantity, i.Date from Inventory as  i inner join Products as p on i.Product_Id = p.Product_id inner join Supplier as s on i.Supplier_Id = s.Supplier_Id where i.status = 1";
 
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
@@ -421,18 +419,60 @@ namespace Clothing_Store
 
 
         } // manage items end - datagrid
- 
+
+
+
+        itemsClass it = new itemsClass();
+
+
         private void dataGridViewManage_CellContentClick_1(object sender, DataGridViewCellEventArgs e)  // datagrid view  btn click begin
         {
+            itemsClass it = new itemsClass();
+
+           
+            it.Supplier = dataGridViewManage.CurrentRow.Cells["Supplier_Name"].Value.ToString();
+            it.Code =  dataGridViewManage.CurrentRow.Cells["Inventory_Number"].Value.ToString();
+            it.quantity = dataGridViewManage.CurrentRow.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString();
+            string name = dataGridViewManage.CurrentRow.Cells["code_and_name"].Value.ToString();
+          
+          
             if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Edit")
             {
-                MessageBox.Show("EDIT");
+                
 
 
             }
-            if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
+            else if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
             {
-                MessageBox.Show("DELETE");
+                DialogResult result = MessageBox.Show("Do you want to Remove " + Name + "?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "update Inventory set Status = 2 where Inventory_Id = " + it.Code+" and Quantity = "+it.quantity+" ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+
+
+                    manageItems();
+
+
+                    // activity logs begin
+
+                    //    string desc = "Delete Customer Information";
+                    //    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
             }
 
         }// datagrid view btn click
