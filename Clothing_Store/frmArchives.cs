@@ -296,7 +296,7 @@ namespace Clothing_Store
 
             con.Close();
 
-            string stock = "select count(*) from Orders where status = 2";
+            string stock = "select count(*) from Inventory where status = 2";
 
             SqlCommand command2;
             command2 = new SqlCommand(stock, con);
