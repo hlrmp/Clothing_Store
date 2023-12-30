@@ -409,7 +409,7 @@ namespace Clothing_Store
                 "i.Quantity , i.Date " +
                 "FROM Products AS p \r\n" +
                 "INNER JOIN Inventory AS i " +
-                "ON (p.Product_Id = i.product_Id)";
+                "ON (p.Product_Id = i.product_Id) where i.status = 1";
 
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();

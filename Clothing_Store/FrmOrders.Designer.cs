@@ -38,12 +38,6 @@
             this.btnAddStock = new System.Windows.Forms.Button();
             this.dataGridViewHome = new System.Windows.Forms.DataGridView();
             this.dataGridViewManage = new System.Windows.Forms.DataGridView();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.lblsearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewSearch = new System.Windows.Forms.DataGridView();
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +47,18 @@
             this.staffsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.ordersClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.lblsearch = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridViewSearch = new System.Windows.Forms.DataGridView();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -204,71 +204,6 @@
             this.dataGridViewManage.Visible = false;
             this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
             // 
-            // cbFilter
-            // 
-            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbFilter.BackColor = System.Drawing.Color.White;
-            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(680, 40);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(74, 21);
-            this.cbFilter.TabIndex = 47;
-            this.cbFilter.Text = "Filter";
-            // 
-            // lblsearch
-            // 
-            this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblsearch.AutoSize = true;
-            this.lblsearch.BackColor = System.Drawing.Color.White;
-            this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblsearch.Location = new System.Drawing.Point(633, 43);
-            this.lblsearch.Name = "lblsearch";
-            this.lblsearch.Size = new System.Drawing.Size(41, 13);
-            this.lblsearch.TabIndex = 46;
-            this.lblsearch.Text = "Search";
-            this.lblsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblsearch_MouseClick);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(437, 40);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(243, 20);
-            this.txtSearch.TabIndex = 45;
-            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Delete
-            // 
-            this.Delete.FillWeight = 25F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 25;
-            // 
-            // dataGridViewSearch
-            // 
-            this.dataGridViewSearch.AllowUserToAddRows = false;
-            this.dataGridViewSearch.AllowUserToDeleteRows = false;
-            this.dataGridViewSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSearch.Location = new System.Drawing.Point(138, 81);
-            this.dataGridViewSearch.Name = "dataGridViewSearch";
-            this.dataGridViewSearch.ReadOnly = true;
-            this.dataGridViewSearch.Size = new System.Drawing.Size(617, 431);
-            this.dataGridViewSearch.TabIndex = 48;
-            this.dataGridViewSearch.Visible = false;
-            // 
             // orderIdDataGridViewTextBoxColumn
             // 
             this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "Order_Id";
@@ -332,9 +267,74 @@
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
             // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 25F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 25;
+            // 
             // ordersClassBindingSource
             // 
             this.ordersClassBindingSource.DataSource = typeof(Clothing_Store.classes.ordersClass);
+            // 
+            // cbFilter
+            // 
+            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbFilter.BackColor = System.Drawing.Color.White;
+            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Location = new System.Drawing.Point(680, 40);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(74, 21);
+            this.cbFilter.TabIndex = 47;
+            this.cbFilter.Text = "Filter";
+            // 
+            // lblsearch
+            // 
+            this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblsearch.AutoSize = true;
+            this.lblsearch.BackColor = System.Drawing.Color.White;
+            this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblsearch.Location = new System.Drawing.Point(633, 43);
+            this.lblsearch.Name = "lblsearch";
+            this.lblsearch.Size = new System.Drawing.Size(41, 13);
+            this.lblsearch.TabIndex = 46;
+            this.lblsearch.Text = "Search";
+            this.lblsearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblsearch_MouseClick);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(437, 40);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(243, 20);
+            this.txtSearch.TabIndex = 45;
+            this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // dataGridViewSearch
+            // 
+            this.dataGridViewSearch.AllowUserToAddRows = false;
+            this.dataGridViewSearch.AllowUserToDeleteRows = false;
+            this.dataGridViewSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSearch.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewSearch.Name = "dataGridViewSearch";
+            this.dataGridViewSearch.ReadOnly = true;
+            this.dataGridViewSearch.Size = new System.Drawing.Size(617, 431);
+            this.dataGridViewSearch.TabIndex = 48;
+            this.dataGridViewSearch.Visible = false;
             // 
             // FrmOrders
             // 
@@ -357,8 +357,8 @@
             this.sidepanelitems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

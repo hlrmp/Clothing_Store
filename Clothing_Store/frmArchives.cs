@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clothing_Store.classes;
 
 namespace Clothing_Store
 {
@@ -60,7 +61,8 @@ namespace Clothing_Store
             datagridCustomer.Visible = false;
             dataGridViewMain.Visible = false;
             panelCounts.Visible = true;
-
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
 
         } // home btn end
         private void btnCustomers_Click(object sender, EventArgs e) // btn customer begin
@@ -68,7 +70,8 @@ namespace Clothing_Store
             datagridCustomer.Visible = true;
             dataGridViewMain.Visible = false;
             panelCounts.Visible = false;
-
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
 
             manageCustomers();
             
@@ -92,6 +95,73 @@ namespace Clothing_Store
 
 
         } // manage cusstomers end - datagrid
+        public void manageOrders() // manage orders begin - datagrid
+        {
+
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+
+            string sj = "select  o.Order_Id , concat(c.First_Name,' ',c.Last_Name)as 'Customer_Name' ,p.Product_Id , p.Product_Name,p.Price as" +
+                " Product_Price, o.Quantity ,(p.Price * o.Quantity)as 'Total_Item',concat(s.First_Name ,' ', s.Last_Name) as 'Staffs',o.Date as 'Order_Date', " +
+                "o.Status from Customers as c inner join Orders as o on o.Customer_Id = c.Customer_Id inner join Products as p on p.Product_Id = o.Product_Id " +
+                "inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 2";
+
+            SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridViewOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewOrders.DataSource = table;
+
+
+
+        } // manage orders end - datagrid
+        private void btnOrders_Click(object sender, EventArgs e)// manage orders begin 
+        {
+            datagridCustomer.Visible = false;
+            dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = true;
+            dataGridViewStocks.Visible = false;
+
+            manageOrders();
+        }// manage orders end 
+
+        private void btnStocks_Click(object sender, EventArgs e) // btn stocks begin
+        {
+            datagridCustomer.Visible = false;
+            dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = true;
+
+            manageItems();
+
+        } // btn stocks end
+
+        public void manageItems() // manage items begin - datagrid
+        {
+
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+
+            string sj = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Price,p.Size, p.Color, " +
+                "i.Quantity , i.Date " +
+                "FROM Products AS p \r\n" +
+                "INNER JOIN Inventory AS i " +
+                "ON (p.Product_Id = i.product_Id) where i.status = 2";
+
+            SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridViewStocks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewStocks.DataSource = table;
+
+
+        } // manage items end - datagrid
 
         private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e) // customers click manage begin
         {
@@ -106,7 +176,7 @@ namespace Clothing_Store
 
             if (datagridCustomer.Columns[e.ColumnIndex].Name == "Restore")
             {
-                DialogResult result = MessageBox.Show("Do you want to Restore " + cs.First_Name + " " + cs.Last_Name + "?", "Delete", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Do you want to Restore " + cs.First_Name + " " + cs.Last_Name + "?", "Restore", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
@@ -140,7 +210,51 @@ namespace Clothing_Store
             }
 
         } // customers click manage end
+        private void dataGridViewOrders_CellContentClick(object sender, DataGridViewCellEventArgs e) // cell content click orders begin
+        {
+            ordersClass oc = new ordersClass();
 
+            oc.Order_Id = dataGridViewOrders.CurrentRow.Cells["orderIdDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Customer_Name = dataGridViewOrders.CurrentRow.Cells["customerNameDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Product_Id = dataGridViewOrders.CurrentRow.Cells["productIdDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Product_Name = dataGridViewOrders.CurrentRow.Cells["productNameDataGridViewTextBoxColumn"].Value.ToString();
+
+            oc.Product_Price = dataGridViewOrders.CurrentRow.Cells["productPriceDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Total_Item = dataGridViewOrders.CurrentRow.Cells["totalItemDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Staffs = dataGridViewOrders.CurrentRow.Cells["staffsDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Quantity = dataGridViewOrders.CurrentRow.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString();
+
+
+            if (dataGridViewOrders.Columns[e.ColumnIndex].Name == "Restore")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Restore Order # " + oc.Order_Id + " by: " + oc.Customer_Name + "  ?", "Restore", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Orders set Status = 1 where Order_Id = " + oc.Order_Id + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    //         string desc = "Restore Order " + oc.Order_Id + " by: " + oc.Customer_Name + " ";
+                    //        ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+
+        } // cell content click orders end
         private void timer1_Tick(object sender, EventArgs e) // timer begin
         {
 
@@ -182,8 +296,20 @@ namespace Clothing_Store
 
             con.Close();
 
-        } // count end
+            string stock = "select count(*) from Orders where status = 2";
 
+            SqlCommand command2;
+            command2 = new SqlCommand(stock, con);
+            con.Open();
+            SqlDataReader reader2 = command2.ExecuteReader();
+            if (reader2.Read())
+            {
+                lblStocks.Text = reader2[0].ToString();
+            }
+
+            con.Close();
+
+        } // count end
 
     }// class end
 } // name space end
