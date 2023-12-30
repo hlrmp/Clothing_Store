@@ -43,14 +43,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewManage = new System.Windows.Forms.DataGridView();
-            this.Inventory_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code_and_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelEdit = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -59,11 +51,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.Inventory_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code_and_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
             this.panelEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // sidepanelitems
@@ -246,6 +246,113 @@
             this.dataGridViewManage.Visible = false;
             this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick_1);
             // 
+            // panelEdit
+            // 
+            this.panelEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEdit.Controls.Add(this.lblId);
+            this.panelEdit.Controls.Add(this.label2);
+            this.panelEdit.Controls.Add(this.btnCancel);
+            this.panelEdit.Controls.Add(this.btnSave);
+            this.panelEdit.Controls.Add(this.label7);
+            this.panelEdit.Controls.Add(this.label1);
+            this.panelEdit.Controls.Add(this.txtQuantity);
+            this.panelEdit.Location = new System.Drawing.Point(138, 291);
+            this.panelEdit.Name = "panelEdit";
+            this.panelEdit.Size = new System.Drawing.Size(617, 205);
+            this.panelEdit.TabIndex = 46;
+            this.panelEdit.Visible = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.Teal;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancel.Location = new System.Drawing.Point(351, 161);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(64, 26);
+            this.btnCancel.TabIndex = 41;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.Teal;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSave.Location = new System.Drawing.Point(266, 161);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(65, 26);
+            this.btnSave.TabIndex = 40;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label7.Location = new System.Drawing.Point(158, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(248, 28);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Manage Stock Quantity";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtQuantity.Location = new System.Drawing.Point(284, 115);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(132, 20);
+            this.txtQuantity.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label2.Location = new System.Drawing.Point(123, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 28);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Inventory id :";
+            // 
+            // lblId
+            // 
+            this.lblId.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Matura MT Script Capitals", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblId.Location = new System.Drawing.Point(320, 74);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(54, 32);
+            this.lblId.TabIndex = 43;
+            this.lblId.Text = "     ";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(232, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Quantity";
+            // 
             // Inventory_Number
             // 
             this.Inventory_Number.DataPropertyName = "Inventory_Number";
@@ -266,20 +373,6 @@
             this.Supplier_Name.HeaderText = "Supplier Name";
             this.Supplier_Name.Name = "Supplier_Name";
             this.Supplier_Name.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Edit
             // 
@@ -303,113 +396,23 @@
             this.Delete.ReadOnly = true;
             this.Delete.Width = 50;
             // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // itemsClassBindingSource
             // 
             this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
-            // 
-            // panelEdit
-            // 
-            this.panelEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelEdit.Controls.Add(this.lblId);
-            this.panelEdit.Controls.Add(this.label2);
-            this.panelEdit.Controls.Add(this.btnCancel);
-            this.panelEdit.Controls.Add(this.btnSave);
-            this.panelEdit.Controls.Add(this.label7);
-            this.panelEdit.Controls.Add(this.label1);
-            this.panelEdit.Controls.Add(this.txtQuantity);
-            this.panelEdit.Location = new System.Drawing.Point(138, 291);
-            this.panelEdit.Name = "panelEdit";
-            this.panelEdit.Size = new System.Drawing.Size(617, 205);
-            this.panelEdit.TabIndex = 46;
-            this.panelEdit.Visible = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.Teal;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Location = new System.Drawing.Point(353, 163);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(64, 26);
-            this.btnCancel.TabIndex = 41;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.BackColor = System.Drawing.Color.Teal;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(268, 163);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(65, 26);
-            this.btnSave.TabIndex = 40;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label7.Location = new System.Drawing.Point(159, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(248, 28);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Manage Stock Quantity";
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtQuantity.Location = new System.Drawing.Point(285, 117);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(132, 20);
-            this.txtQuantity.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label2.Location = new System.Drawing.Point(124, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 28);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "Inventory ID :";
-            // 
-            // lblId
-            // 
-            this.lblId.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblId.Location = new System.Drawing.Point(321, 76);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(47, 28);
-            this.lblId.TabIndex = 43;
-            this.lblId.Text = "     ";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label1.Location = new System.Drawing.Point(233, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Quantity";
             // 
             // FrmStocks
             // 
@@ -417,12 +420,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
             this.Controls.Add(this.panelEdit);
-            this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.sidepanelitems);
+            this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmStocks";
@@ -432,9 +435,9 @@
             this.sidepanelitems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,13 +458,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridViewManage;
         private System.Windows.Forms.BindingSource itemsClassBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Inventory_Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code_and_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.Panel panelEdit;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label2;
@@ -470,5 +466,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Inventory_Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code_and_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

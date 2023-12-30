@@ -299,6 +299,7 @@
             // 
             this.panelEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelEdit.Controls.Add(this.btnCancel);
             this.panelEdit.Controls.Add(this.btnSave);
             this.panelEdit.Controls.Add(this.label7);
@@ -329,7 +330,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.Location = new System.Drawing.Point(548, 163);
+            this.btnCancel.Location = new System.Drawing.Point(546, 161);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(64, 26);
             this.btnCancel.TabIndex = 41;
@@ -346,7 +347,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSave.Location = new System.Drawing.Point(548, 128);
+            this.btnSave.Location = new System.Drawing.Point(546, 126);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(65, 26);
             this.btnSave.TabIndex = 40;
@@ -360,7 +361,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label7.Location = new System.Drawing.Point(165, 19);
+            this.label7.Location = new System.Drawing.Point(164, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(272, 28);
             this.label7.TabIndex = 39;
@@ -371,7 +372,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label6.Location = new System.Drawing.Point(28, 166);
+            this.label6.Location = new System.Drawing.Point(27, 164);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 11;
@@ -382,7 +383,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label5.Location = new System.Drawing.Point(67, 141);
+            this.label5.Location = new System.Drawing.Point(66, 139);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 13);
             this.label5.TabIndex = 10;
@@ -393,7 +394,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label4.Location = new System.Drawing.Point(80, 112);
+            this.label4.Location = new System.Drawing.Point(79, 110);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 9;
@@ -404,7 +405,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label3.Location = new System.Drawing.Point(433, 80);
+            this.label3.Location = new System.Drawing.Point(432, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 8;
@@ -415,7 +416,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label2.Location = new System.Drawing.Point(230, 80);
+            this.label2.Location = new System.Drawing.Point(229, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 7;
@@ -426,7 +427,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label1.Location = new System.Drawing.Point(67, 80);
+            this.label1.Location = new System.Drawing.Point(66, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 6;
@@ -435,7 +436,7 @@
             // txtEmail
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtEmail.Location = new System.Drawing.Point(118, 105);
+            this.txtEmail.Location = new System.Drawing.Point(117, 103);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(410, 20);
             this.txtEmail.TabIndex = 5;
@@ -443,7 +444,7 @@
             // txtDeliveryAdd
             // 
             this.txtDeliveryAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtDeliveryAdd.Location = new System.Drawing.Point(120, 134);
+            this.txtDeliveryAdd.Location = new System.Drawing.Point(119, 132);
             this.txtDeliveryAdd.Name = "txtDeliveryAdd";
             this.txtDeliveryAdd.Size = new System.Drawing.Size(410, 20);
             this.txtDeliveryAdd.TabIndex = 4;
@@ -451,7 +452,7 @@
             // txtContact
             // 
             this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtContact.Location = new System.Drawing.Point(375, 57);
+            this.txtContact.Location = new System.Drawing.Point(374, 55);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(186, 20);
             this.txtContact.TabIndex = 3;
@@ -459,7 +460,7 @@
             // txtAddress
             // 
             this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtAddress.Location = new System.Drawing.Point(120, 163);
+            this.txtAddress.Location = new System.Drawing.Point(119, 161);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(410, 20);
             this.txtAddress.TabIndex = 2;
@@ -467,7 +468,7 @@
             // txtLname
             // 
             this.txtLname.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtLname.Location = new System.Drawing.Point(180, 57);
+            this.txtLname.Location = new System.Drawing.Point(179, 55);
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(160, 20);
             this.txtLname.TabIndex = 1;
@@ -475,7 +476,7 @@
             // txtFname
             // 
             this.txtFname.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtFname.Location = new System.Drawing.Point(31, 57);
+            this.txtFname.Location = new System.Drawing.Point(30, 55);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(132, 20);
             this.txtFname.TabIndex = 0;

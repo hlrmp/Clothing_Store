@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,6 +30,7 @@ namespace Clothing_Store
         {
             seestocks();
             dataGridViewManage.Visible = false;
+            panelEdit.Visible = false;
 
         } // home button end
 
@@ -41,8 +43,9 @@ namespace Clothing_Store
 
         private void btnManage_Click(object sender, EventArgs e) // manage btn begin
         {
-            manageItems();
+          
             dataGridViewManage.Visible = true;
+            manageItems();
 
         } // manage btn end
 
@@ -55,7 +58,7 @@ namespace Clothing_Store
             string sj = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\"  " +
                 "FROM Products AS p" +
                 " \r\nINNER JOIN Inventory AS i " +
-                "ON (p.Product_Id = i.product_Id)";
+                "ON (p.Product_Id = i.product_Id) where i.status = 1";
 
 
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
@@ -336,7 +339,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "select count(*)  AS 'Total Items' from Inventory";
+            string sj = "select count(*)  AS 'Total Items' from Inventory where status = 1";
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
 
@@ -350,7 +353,7 @@ namespace Clothing_Store
         public void total()  // total customers - string
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
-            string sj = "select count(*)  AS 'Total Items' from Inventory";
+            string sj = "select count(*)  AS 'Total Items' from Inventory where status = 1";
             sqlcc.Open();
             SqlCommand command;
             command = new SqlCommand(sj, sqlcc);
@@ -423,7 +426,8 @@ namespace Clothing_Store
 
 
         itemsClass it = new itemsClass();
-
+        
+        string id;
 
         private void dataGridViewManage_CellContentClick_1(object sender, DataGridViewCellEventArgs e)  // datagrid view  btn click begin
         {
@@ -434,17 +438,24 @@ namespace Clothing_Store
             it.Code =  dataGridViewManage.CurrentRow.Cells["Inventory_Number"].Value.ToString();
             it.quantity = dataGridViewManage.CurrentRow.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString();
             string name = dataGridViewManage.CurrentRow.Cells["code_and_name"].Value.ToString();
-          
-          
+
+
+
+
             if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Edit")
             {
-                
+                panelEdit.Visible = true;
 
+
+                 id = it.Code;
+
+                lblId.Text = id;
+              
 
             }
             else if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
             {
-                DialogResult result = MessageBox.Show("Do you want to Remove " + Name + "?", "Delete", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Do you want to Remove " + name + "?", "Delete", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
@@ -476,6 +487,86 @@ namespace Clothing_Store
             }
 
         }// datagrid view btn click
+
+        private void btnCancel_Click(object sender, EventArgs e) // panel cancel begin
+        {
+            txtQuantity.Clear();
+            panelEdit.Visible = false;
+
+        } // panel cancel end
+
+        class nullExceptiom : Exception
+        {
+            public nullExceptiom(string str) : base(str) { }
+        }
+        class NumberFormatException : Exception
+        {
+            public NumberFormatException(string num) : base(num) { }
+        }
+        public string Quantity(string quan)
+        {
+
+            if (Regex.IsMatch(quan, regexClass.Intg))
+            {
+                 it.quantity= quan;
+
+            }
+            else
+            {
+                throw new NumberFormatException("put contact number correctly");
+            }
+            return it.quantity;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e) // save click begin
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtQuantity.Text))
+                {
+                    throw new nullExceptiom("Please fill up the FF.");
+                }
+                else
+                {
+                    it.quantity = Quantity(txtQuantity.Text);
+
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "update Inventory set Quantity = quantity + "+txtQuantity.Text+" where Inventory_Id = "+id+" and Status = 1";
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    MessageBox.Show("Stock was Updated", "Update  Stock", MessageBoxButtons.OK);
+
+                    txtQuantity.Clear();
+
+                    manageItems();
+                    seestocks();
+
+                    panelEdit.Hide();
+
+
+                    // activity logs begin
+
+                //   string desc = "Update Customer Information";
+                  //  ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+
+                }
+
+
+            }
+
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            // end of catch 
+
+        } // save click end
 
     }// class end
 }// cname space end
