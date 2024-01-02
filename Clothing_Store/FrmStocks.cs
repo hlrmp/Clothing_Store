@@ -492,6 +492,11 @@ namespace Clothing_Store
         {
             txtQuantity.Clear();
             panelEdit.Visible = false;
+            txtDesc.Clear();
+            txtQuantity.Clear();
+            rbAdd.Checked = false;
+            rbMinus.Checked = false;
+
 
         } // panel cancel end
 
@@ -528,32 +533,85 @@ namespace Clothing_Store
                 }
                 else
                 {
-                    it.quantity = Quantity(txtQuantity.Text);
 
-                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
-                    cn.Open();
+                    if (rbAdd.Checked)
+                    {
+                        it.quantity = Quantity(txtQuantity.Text);
 
-                    string quer = "update Inventory set Quantity = quantity + "+txtQuantity.Text+" where Inventory_Id = "+id+" and Status = 1";
-                    SqlCommand command = new SqlCommand(quer, cn);
-                    command.ExecuteNonQuery();
-                    cn.Close();
+                        SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                        cn.Open();
 
-                    MessageBox.Show("Stock was Updated", "Update  Stock", MessageBoxButtons.OK);
+                        string quer = "update Inventory set Quantity = quantity + " + txtQuantity.Text + " where Inventory_Id = " + id + " and Status = 1";
+                        SqlCommand command = new SqlCommand(quer, cn);
+                        command.ExecuteNonQuery();
+                        cn.Close();
 
-                    txtQuantity.Clear();
+                        MessageBox.Show("Stock was Updated", "Update  Stock", MessageBoxButtons.OK);
 
-                    manageItems();
-                    seestocks();
+                        txtQuantity.Clear();
 
-                    panelEdit.Hide();
+                        manageItems();
+                        seestocks();
+
+                        txtDesc.Clear();
+                        txtQuantity.Clear();
+                        rbAdd.Checked = false;
+                        rbMinus.Checked = false;
+                        panelEdit.Hide();
 
 
-                    // activity logs begin
+                        // activity logs begin
 
-                //   string desc = "Update Customer Information";
-                  //  ConnectionClass.activity(frmLogin.userId, desc);
+                        //   string desc = "Add stocks  " + id;
+                        //  ConnectionClass.activity(frmLogin.userId, desc);
 
-                    // activity logs end
+                        // activity logs end
+                    }
+                    else  if (rbMinus.Checked)
+                    {
+
+                        if (txtDesc.Text == "")
+                        {
+                            throw new nullExceptiom("Please fill up the FF.");
+                        }
+                        else
+                        {
+                            it.quantity = Quantity(txtQuantity.Text);
+
+                            SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                            cn.Open();
+
+                            string quer = "update Inventory set Quantity = quantity - " + txtQuantity.Text + " where Inventory_Id = " + id + " and Status = 1";
+                            SqlCommand command = new SqlCommand(quer, cn);
+                            command.ExecuteNonQuery();
+                            cn.Close();
+
+                            MessageBox.Show("Stock was Updated", "Update  Stock", MessageBoxButtons.OK);
+
+                            txtQuantity.Clear();
+
+                            manageItems();
+                            seestocks();
+
+                            panelEdit.Hide();
+
+                            txtDesc.Clear();
+                            txtQuantity.Clear();
+                            rbAdd.Checked = false;
+                            rbMinus.Checked = false;
+
+                            // activity logs begin
+
+                            string desc = txtDesc.Text + "Minus stock - " + id;
+                            //  ConnectionClass.activity(frmLogin.userId, desc);
+
+                            // activity logs end
+                        }
+
+                    }
+
+
+
 
                 }
 
