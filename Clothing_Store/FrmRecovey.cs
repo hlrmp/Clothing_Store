@@ -36,9 +36,7 @@ namespace Clothing_Store
         {
             this.Hide();
 
-            txtDate.Clear();
-            txtName.Clear();
-
+          
         } // cancel button end
 
 
@@ -76,8 +74,9 @@ namespace Clothing_Store
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Recover")
             {
 
-                txtName.Text = name;
-                txtDate.Text = date;
+               // txtName.Text = name;
+             //   txtDate.Text = date;
+
             }
             else if (dataGridView1.Columns[e.ColumnIndex].Name == "Delete")
             {
@@ -121,6 +120,12 @@ namespace Clothing_Store
             this.txtDate.AutoSize = false;
             this.txtDate.Size = new System.Drawing.Size(247, 25);
 
+
+
+            this.txtBrowse.AutoSize = false;
+            this.txtBrowse.Size = new System.Drawing.Size(425, 30);
+
+
         } // frm load end
 
         private void timer1_Tick(object sender, EventArgs e)// timer begin
@@ -157,40 +162,17 @@ namespace Clothing_Store
 
         } // back up end 
 
-        public void restore() // restore begin
-        {
-            string restore = "RESTORE DATABASE ClothingStoreDatabase FROM DISK = 'C:\\Users\\reichel domingo\\Contacts\\Desktop\\MSSQL14.SQLEXPRESS02\\MSSQL\\Backup\\" + name + ".bak'";
-
-            SqlConnection Conn = new SqlConnection(ConnectionClass.conn);
-            SqlCommand command = new SqlCommand(restore, Conn);
-
-            Conn.Open();
-            command.ExecuteNonQuery();
-            Conn.Close();
-        } // restorre end
-
-        private void btnBackup_Click(object sender, EventArgs e) // back up btn begin 
-        {
-            backup();
-
-            // activity logs begin
-
-            string desc = "Backup Data - " + frmLogin.name;
-            ConnectionClass.activity(frmLogin.userId, desc);
-
-            // activity logs end
-
-
-        } // back up btn end
+       
+      
 
         private void btnRecover_Click(object sender, EventArgs e) // recover or restore btn database begin
         {
-            restore();
+            
 
             // activity logs begin
 
-            string desc = "Restore - " + frmLogin.name;
-            ConnectionClass.activity(frmLogin.userId, desc);
+ //           string desc = "Restore - " + frmLogin.name;
+ //           ConnectionClass.activity(frmLogin.userId, desc);
 
             // activity logs end
 
@@ -204,5 +186,83 @@ namespace Clothing_Store
             this.Hide();
  
         } // btn close end 
+
+
+        string TimeandDate = DateTime.Now.ToString("yyyy-MM-dd--HH:mm:ss");
+
+        private void btnBrowse_Click(object sender, EventArgs e)  // btn browse begin
+        {
+         FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtBrowse.Text = folderBrowserDialog.SelectedPath;
+                txtNewName.Text = TimeandDate;
+
+            }
+                 
+        } // btn browse end
+
+
+        private void btbBackUpNew_Click(object sender, EventArgs e)  // back up btn begin
+        {
+
+            try
+            {
+
+                SqlConnection Conn = new SqlConnection(ConnectionClass.conn);
+
+                string con = Conn.Database.ToString();
+                string n = "name";
+
+                if (txtBrowse.Text == "")
+                {
+                    throw new ArgumentNullException ("Pls Browse A location");
+                }
+                else
+                {
+                    string back = "BACKUP DATABASE ClothingStoreDatabase TO DISK = N'"+txtBrowse.Text+"\\"+n+".bak'";
+
+                    string name = "DECLARE @FileName varchar(1000)\r\nSELECT @FileName = (SELECT'"+txtBrowse.Text+"\\ClothingStoreDatabase' + convert(varchar(500), GetDate(),112) + '.bak')\r\nBACKUP DATABASE ClothingStoreDatabase TO DISK=@FileName";
+                    Conn.Open();
+                    SqlCommand commamd = new SqlCommand(name , Conn);
+                    commamd.ExecuteNonQuery();
+
+                    MessageBox.Show("Database Backed Up Successfuly");
+
+                    Conn.Close();
+
+                    // activity logs begin
+
+                    //           string desc = "BackUp Database - " + " TimeandDate " + frmLogin.name;
+                    //           ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+
+                }
+
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+
+
+        } // back up btn end
+
+        private void btnRestoreBrowse_Click(object sender, EventArgs e) // restore browse begin
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtName.Text = folderBrowserDialog.SelectedPath;
+              
+
+            }
+
+        } // restore browse end
+
+         
     } // class end
 } // name space end
