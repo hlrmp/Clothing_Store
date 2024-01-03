@@ -309,6 +309,19 @@ namespace Clothing_Store
 
             con.Close();
 
+            string staffs = "select count(*) from staffs where Status = 2";
+
+            SqlCommand command3;
+            command3 = new SqlCommand(staffs, con);
+            con.Open();
+            SqlDataReader reader3 = command3.ExecuteReader();
+            if (reader3.Read())
+            {
+                lblStaffs.Text = reader3[0].ToString();
+            }
+
+            con.Close();
+
         } // count end
 
     }// class end
