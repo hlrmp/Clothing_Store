@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView1Home = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbSortby = new System.Windows.Forms.ComboBox();
-            this.btnHomeDelivery = new System.Windows.Forms.Button();
             this.btnTotal = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnHomeDelivery = new System.Windows.Forms.Button();
+            this.cbSortby = new System.Windows.Forms.ComboBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridViewManage = new System.Windows.Forms.DataGridView();
+            this.lbltotal = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1Home)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -70,17 +75,21 @@
             this.btnManage.TabIndex = 35;
             this.btnManage.Text = "Manage";
             this.btnManage.UseVisualStyleBackColor = false;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
-            // dataGridView1
+            // dataGridView1Home
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView1Home.AllowUserToAddRows = false;
+            this.dataGridView1Home.AllowUserToDeleteRows = false;
+            this.dataGridView1Home.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(138, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(617, 431);
-            this.dataGridView1.TabIndex = 36;
+            this.dataGridView1Home.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1Home.Location = new System.Drawing.Point(138, 81);
+            this.dataGridView1Home.Name = "dataGridView1Home";
+            this.dataGridView1Home.ReadOnly = true;
+            this.dataGridView1Home.Size = new System.Drawing.Size(617, 431);
+            this.dataGridView1Home.TabIndex = 36;
             // 
             // lblTitle
             // 
@@ -98,6 +107,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.panel1.Controls.Add(this.lbltotal);
             this.panel1.Controls.Add(this.btnTotal);
             this.panel1.Controls.Add(this.btnHomeDelivery);
             this.panel1.Controls.Add(this.btnAdd);
@@ -106,31 +116,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 431);
             this.panel1.TabIndex = 38;
-            // 
-            // cbSortby
-            // 
-            this.cbSortby.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSortby.FormattingEnabled = true;
-            this.cbSortby.Location = new System.Drawing.Point(515, 45);
-            this.cbSortby.Name = "cbSortby";
-            this.cbSortby.Size = new System.Drawing.Size(240, 21);
-            this.cbSortby.TabIndex = 39;
-            this.cbSortby.Text = "Sort by Status";
-            // 
-            // btnHomeDelivery
-            // 
-            this.btnHomeDelivery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnHomeDelivery.FlatAppearance.BorderSize = 0;
-            this.btnHomeDelivery.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnHomeDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHomeDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeDelivery.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHomeDelivery.Location = new System.Drawing.Point(3, 3);
-            this.btnHomeDelivery.Name = "btnHomeDelivery";
-            this.btnHomeDelivery.Size = new System.Drawing.Size(114, 63);
-            this.btnHomeDelivery.TabIndex = 36;
-            this.btnHomeDelivery.Text = "Home";
-            this.btnHomeDelivery.UseVisualStyleBackColor = false;
             // 
             // btnTotal
             // 
@@ -147,20 +132,80 @@
             this.btnTotal.Text = "Total";
             this.btnTotal.UseVisualStyleBackColor = false;
             // 
+            // btnHomeDelivery
+            // 
+            this.btnHomeDelivery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnHomeDelivery.FlatAppearance.BorderSize = 0;
+            this.btnHomeDelivery.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnHomeDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHomeDelivery.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeDelivery.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnHomeDelivery.Location = new System.Drawing.Point(3, 3);
+            this.btnHomeDelivery.Name = "btnHomeDelivery";
+            this.btnHomeDelivery.Size = new System.Drawing.Size(114, 63);
+            this.btnHomeDelivery.TabIndex = 36;
+            this.btnHomeDelivery.Text = "Home";
+            this.btnHomeDelivery.UseVisualStyleBackColor = false;
+            this.btnHomeDelivery.Click += new System.EventHandler(this.btnHomeDelivery_Click);
+            // 
+            // cbSortby
+            // 
+            this.cbSortby.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSortby.FormattingEnabled = true;
+            this.cbSortby.Location = new System.Drawing.Point(515, 45);
+            this.cbSortby.Name = "cbSortby";
+            this.cbSortby.Size = new System.Drawing.Size(240, 21);
+            this.cbSortby.TabIndex = 39;
+            this.cbSortby.Text = "Sort by Status";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // dataGridViewManage
+            // 
+            this.dataGridViewManage.AllowUserToAddRows = false;
+            this.dataGridViewManage.AllowUserToDeleteRows = false;
+            this.dataGridViewManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewManage.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManage.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewManage.Name = "dataGridViewManage";
+            this.dataGridViewManage.ReadOnly = true;
+            this.dataGridViewManage.Size = new System.Drawing.Size(617, 431);
+            this.dataGridViewManage.TabIndex = 40;
+            this.dataGridViewManage.Visible = false;
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.Color.White;
+            this.lbltotal.Location = new System.Drawing.Point(50, 276);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(19, 20);
+            this.lbltotal.TabIndex = 40;
+            this.lbltotal.Text = "0";
+            // 
             // FrmDelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.cbSortby);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridView1Home);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDelivery";
             this.Text = "FrmDelivery";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1Home)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,11 +215,14 @@
 
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnManage;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView1Home;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox cbSortby;
         private System.Windows.Forms.Button btnHomeDelivery;
         private System.Windows.Forms.Button btnTotal;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridView dataGridViewManage;
+        private System.Windows.Forms.Label lbltotal;
     }
 }

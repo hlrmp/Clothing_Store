@@ -115,7 +115,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "select count(*)  AS 'Total Customers' from customers";
+            string sj = "select count(*)  AS 'Total Customers' from customers where Status = 1";
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
 

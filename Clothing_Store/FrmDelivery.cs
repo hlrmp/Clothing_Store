@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,10 @@ namespace Clothing_Store
         public FrmDelivery()
         {
             InitializeComponent();
+            sort();
+            seeDelivery();
+            totalExisting(); 
+
         }
 
         FrmAddDelivery fadd = new FrmAddDelivery();
@@ -23,6 +29,140 @@ namespace Clothing_Store
             fadd.ShowDialog();
 
         } // buttton add end
+        public void seeDelivery() // see delivery begin - datagrid
+        {
+            if (cbSortby.Text == "Pending")
+            {
+                SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 3";
+                SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+                DataTable table = new DataTable();
+
+                data.Fill(table);
+
+                dataGridView1Home.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1Home.DataSource = table;
+
+                totalPending();
+
+            }
+            else if (cbSortby.Text == "Intransit")
+            {
+                SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 4";
+                SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+                DataTable table = new DataTable();
+
+                data.Fill(table);
+
+                dataGridView1Home.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1Home.DataSource = table;
+
+                totalIntrnsit();
+            }
+            else
+            {
+               
+                SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 1";
+                SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+                DataTable table = new DataTable();
+
+                data.Fill(table);
+
+                dataGridView1Home.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridView1Home.DataSource = table;
+
+                totalExisting();
+            }
+          
+
+
+
+        } // see delivery end - datagrid
+
+        public void sort()
+        {
+            ArrayList arr = new ArrayList();
+            arr.Add("Existing");
+            arr.Add("Pending");
+            arr.Add("Intransit");
+
+            foreach (string i in arr)
+            {
+                cbSortby.Items.Add(i);
+            }
+        }
+        Timer timer = new Timer();
+        private void btnHomeDelivery_Click(object sender, EventArgs e) // btn Home begin
+        {
+            seeDelivery();
+            dataGridViewManage.Visible = false;
+            dataGridView1Home.Visible = true;
+
+           
+            timer.Interval = (1 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
+
+        } // btn home end
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            seeDelivery();
+        }
+
+        private void btnManage_Click(object sender, EventArgs e) // btn manage begin
+        {
+            dataGridViewManage.Visible = true;
+            dataGridView1Home.Visible = false;
+            timer.Stop();
+            
+            
+        }// btn manage end
+        public void totalPending()  // total delivery - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "select count(*) as total from Delivery where Status = 3";
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lbltotal.Text = reader[0].ToString();  // - total numbers
+
+        }  // total delivery - string
+        public void totalExisting()  // total delivery - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "select count(*) as total from Delivery where Status = 1";
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lbltotal.Text = reader[0].ToString();  // - total numbers
+
+        }  // total delivery - string
+        public void totalIntrnsit()  // total delivery - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "select count(*) as total from Delivery where Status = 4";
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lbltotal.Text = reader[0].ToString();  // - total numbers
+
+        }  // total delivery - string
+
 
 
     } // class end
