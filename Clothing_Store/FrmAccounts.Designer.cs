@@ -30,7 +30,6 @@
         {
             this.sidepanelAdmin = new System.Windows.Forms.Panel();
             this.btnRecovery = new System.Windows.Forms.Button();
-            this.btnBackup = new System.Windows.Forms.Button();
             this.btnActivitylog = new System.Windows.Forms.Button();
             this.btnUserLog = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -53,7 +52,6 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.sidepanelAdmin.Controls.Add(this.btnRecovery);
-            this.sidepanelAdmin.Controls.Add(this.btnBackup);
             this.sidepanelAdmin.Controls.Add(this.btnActivitylog);
             this.sidepanelAdmin.Controls.Add(this.btnUserLog);
             this.sidepanelAdmin.Controls.Add(this.btnCreate);
@@ -71,29 +69,13 @@
             this.btnRecovery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecovery.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecovery.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRecovery.Location = new System.Drawing.Point(3, 348);
+            this.btnRecovery.Location = new System.Drawing.Point(3, 279);
             this.btnRecovery.Name = "btnRecovery";
             this.btnRecovery.Size = new System.Drawing.Size(114, 63);
             this.btnRecovery.TabIndex = 12;
             this.btnRecovery.Text = "Backup and Recovery";
             this.btnRecovery.UseVisualStyleBackColor = false;
             this.btnRecovery.Click += new System.EventHandler(this.btnRecovery_Click);
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnBackup.FlatAppearance.BorderSize = 0;
-            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnBackup.Location = new System.Drawing.Point(3, 279);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(114, 63);
-            this.btnBackup.TabIndex = 11;
-            this.btnBackup.Text = "Back Up";
-            this.btnBackup.UseVisualStyleBackColor = false;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // btnActivitylog
             // 
@@ -276,7 +258,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnHomeAccounts;
         private System.Windows.Forms.Button btnRecovery;
-        private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Button btnActivitylog;
         private System.Windows.Forms.Button btnUserLog;
         private System.Windows.Forms.Button btnCreate;

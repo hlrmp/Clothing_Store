@@ -20,7 +20,6 @@ namespace Clothing_Store
         
         // form instance
        
-        FrmBackup fback = new FrmBackup();
         FrmRecovey frec = new FrmRecovey();
         FrmAddUser fuser = new FrmAddUser();
         FrmAddNewStaffs fstaf = new FrmAddNewStaffs();
@@ -32,18 +31,6 @@ namespace Clothing_Store
 
         } //  add new user end
 
-    
-        
-
-
-        private void btnBackup_Click(object sender, EventArgs e)// btn backup begin
-        {
-            // pannel
-         
-            fback.ShowDialog();
-           
-           
-        }  // btn bacup end 
 
         private void btnHomeAccounts_Click(object sender, EventArgs e) // home button begin
         {
@@ -55,7 +42,6 @@ namespace Clothing_Store
         private void btnRecovery_Click(object sender, EventArgs e)  //  recovery button begin
         {
            
-
             frec.ShowDialog();
 
         } // recovery buton end

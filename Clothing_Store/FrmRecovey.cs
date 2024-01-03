@@ -17,7 +17,7 @@ namespace Clothing_Store
         public FrmRecovey()
         {
             InitializeComponent();
-            list();
+         //   list();
         }
 
 
@@ -39,7 +39,7 @@ namespace Clothing_Store
           
         } // cancel button end
 
-
+/*
         public void list() // search method begin
         {
             SqlConnection cn = new SqlConnection(ConnectionClass.conn);
@@ -63,8 +63,8 @@ namespace Clothing_Store
                 cn.Close();
             
 
-        }  // search method end
-        string name;
+        }  // search method end*/
+     /*   string name;
         string date;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // data grid click begin
         {
@@ -102,7 +102,7 @@ namespace Clothing_Store
 
             } 
 
-        }   // data grid click end
+        }   // data grid click end*/
 
         private void FrmRecovey_Load(object sender, EventArgs e)// frm load begin
         {
@@ -117,10 +117,6 @@ namespace Clothing_Store
             this.txtName.AutoSize = false;
             this.txtName.Size = new System.Drawing.Size(247, 25);
 
-            this.txtDate.AutoSize = false;
-            this.txtDate.Size = new System.Drawing.Size(247, 25);
-
-
 
             this.txtBrowse.AutoSize = false;
             this.txtBrowse.Size = new System.Drawing.Size(425, 30);
@@ -130,8 +126,8 @@ namespace Clothing_Store
 
         private void timer1_Tick(object sender, EventArgs e)// timer begin
         {
-            dataGridView1.Refresh();
-            list();
+           
+          //  list();
 
         } // timer end
 
