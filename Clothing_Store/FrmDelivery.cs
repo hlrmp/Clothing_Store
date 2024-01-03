@@ -21,6 +21,7 @@ namespace Clothing_Store
         private void btnAdd_Click(object sender, EventArgs e) // button add begin
         {
             fadd.ShowDialog();
+
         } // buttton add end
 
 

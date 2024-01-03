@@ -398,6 +398,7 @@ namespace Clothing_Store
 
                 staff();
 
+
             try
             {
                 oc.Quantity = quan(txtQuantity.Text);
@@ -423,12 +424,15 @@ namespace Clothing_Store
 
                     add();
 
+                    dataGridViewAdd.Visible = false;
+                    ordersList();
+
                  //   MessageBox.Show(customerId + " " + productId);
 
                     // activity logs begin
 
-                   //      string desc = " Inventory Changes becuse of Order Added ";
-                   //      ConnectionClass.activity(frmLogin.userId, desc);
+                    //      string desc = " Inventory Changes becuse of Order Added ";
+                    //      ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
                 }
@@ -548,6 +552,8 @@ namespace Clothing_Store
         private void btnClear_Click(object sender, EventArgs e) // clear btn begin
         {
             clear();
+            dataGridViewAdd.Visible = false;
+
         
         }// clear btn end
 
@@ -589,10 +595,12 @@ namespace Clothing_Store
                 }
                 else
                 {
+                    dataGridViewAdd.Visible = true;
+
                     lst.Add(new ordersClass(cbCustomerName.Text, cbCategory.Text, cbItem.Text, txtQuantity.Text, cbSize.Text, cbColor.Text, cbType.Text));
 
-                    dataGridViewOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    dataGridViewOrders.DataSource = lst;
+                    dataGridViewAdd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    dataGridViewAdd.DataSource = lst;
                 }
 
 

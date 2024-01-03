@@ -36,15 +36,15 @@ namespace Clothing_Store.classes
             type = "";
         }
 
-        public ordersClass(string name, string category, string item, string quantity, string size, string color, string type)
+        public ordersClass(string NAME, string CATEGORY, string ITEM, string QUANTITY, string SIZE, string COLOR, string TYPE)
         {
-            this.name = name;
-            this.category = category;
-            this.item = item;
-            this.quantity = quantity;
-            this.size = size;
-            this.color = color;
-            this.type = type;
+            name = NAME;
+            category = CATEGORY;
+            item = ITEM;
+            quantity = QUANTITY;
+            size = SIZE;
+            color = COLOR;
+            type = TYPE;
         }
 
         public ordersClass(string orderId, string customerName, string productId, string productName, string price, string total, string staff, string date)
