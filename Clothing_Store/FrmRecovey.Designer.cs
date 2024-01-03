@@ -69,9 +69,9 @@
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.lblTitle.Location = new System.Drawing.Point(37, 35);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(352, 39);
+            this.lblTitle.Size = new System.Drawing.Size(299, 39);
             this.lblTitle.TabIndex = 39;
-            this.lblTitle.Text = "Backup and Recovery list";
+            this.lblTitle.Text = "Backup and Recovery\r\n";
             // 
             // btnCancel
             // 
@@ -185,7 +185,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label1.Location = new System.Drawing.Point(17, 105);
+            this.label1.Location = new System.Drawing.Point(17, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 45;

@@ -167,12 +167,65 @@ namespace Clothing_Store
 
         private void btnRecover_Click(object sender, EventArgs e) // recover or restore btn database begin
         {
-            
+            try
+            {
+
+                SqlConnection Conn = new SqlConnection(ConnectionClass.conn);
+
+                string con = Conn.Database.ToString();
+                
+
+                if (txtName.Text == "")
+                {
+                    throw new ArgumentNullException("Pls Browse A location");
+                }
+                else
+                {
+                    Conn.Open();
+
+                    string res = "ALTER DATABASE "+con+" SET SINGLE_USER WITH ROLLBACK IMMEDIATE ";
+                    SqlCommand commamd = new SqlCommand(res, Conn);
+                    commamd.ExecuteNonQuery();
+
+                    string res1 = "USE MASTER RESTORE  DATABASE "+con+" FROM DISK = '"+txtName.Text+"' WITH REPLACE";
+                    SqlCommand commamd1 = new SqlCommand(res1, Conn);
+                    commamd1.ExecuteNonQuery();
+
+                    string res2 = "ALTER DATABASE "+con+" SET MULTI_USER ";
+                    SqlCommand commamd2 = new SqlCommand(res2, Conn);
+                    commamd2.ExecuteNonQuery();
+
+
+                    MessageBox.Show("Database Restore Successfuly");
+
+                    Conn.Close();
+
+                    // activity logs begin
+
+                    //           string desc = "Restore Database - " + " TimeandDate " + frmLogin.name;
+                    //           ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+
+                }
+
+
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
 
             // activity logs begin
 
- //           string desc = "Restore - " + frmLogin.name;
- //           ConnectionClass.activity(frmLogin.userId, desc);
+            //           string desc = "Restore - " + frmLogin.name;
+            //           ConnectionClass.activity(frmLogin.userId, desc);
 
             // activity logs end
 
@@ -188,7 +241,7 @@ namespace Clothing_Store
         } // btn close end 
 
 
-        string TimeandDate = DateTime.Now.ToString("yyyy-MM-dd--HH:mm:ss");
+        string TimeandDate = DateTime.Now.ToString("yyyy-MM-dd-T-HH-mm-ss");
 
         private void btnBrowse_Click(object sender, EventArgs e)  // btn browse begin
         {
@@ -196,7 +249,7 @@ namespace Clothing_Store
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 txtBrowse.Text = folderBrowserDialog.SelectedPath;
-                txtNewName.Text = TimeandDate;
+                txtNewName.Text = "ClothingStoreDatabase-" + TimeandDate;
 
             }
                  
@@ -220,11 +273,12 @@ namespace Clothing_Store
                 }
                 else
                 {
-                    string back = "BACKUP DATABASE ClothingStoreDatabase TO DISK = N'"+txtBrowse.Text+"\\"+n+".bak'";
+                    string back = "BACKUP DATABASE ClothingStoreDatabase TO DISK = N'"+txtBrowse.Text+ "\\" + txtNewName.Text+".bak'";
 
                     string name = "DECLARE @FileName varchar(1000)\r\nSELECT @FileName = (SELECT'"+txtBrowse.Text+"\\ClothingStoreDatabase' + convert(varchar(500), GetDate(),112) + '.bak')\r\nBACKUP DATABASE ClothingStoreDatabase TO DISK=@FileName";
+                  
                     Conn.Open();
-                    SqlCommand commamd = new SqlCommand(name , Conn);
+                    SqlCommand commamd = new SqlCommand(back , Conn);
                     commamd.ExecuteNonQuery();
 
                     MessageBox.Show("Database Backed Up Successfuly");
@@ -253,11 +307,14 @@ namespace Clothing_Store
 
         private void btnRestoreBrowse_Click(object sender, EventArgs e) // restore browse begin
         {
-            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            OpenFileDialog openfile = new OpenFileDialog();
+          //  openfile.Filter = "*.bak |.bak";
+            openfile.Title = "Database Restore";
+
+            if (openfile.ShowDialog() == DialogResult.OK)
             {
-                txtName.Text = folderBrowserDialog.SelectedPath;
-              
+                txtName.Text = openfile.FileName;
+                
 
             }
 
