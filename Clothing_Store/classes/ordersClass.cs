@@ -47,7 +47,7 @@ namespace Clothing_Store.classes
             type = TYPE;
         }
 
-        public ordersClass(string orderId, string customerName, string productId, string productName, string price, string total, string staff, string date)
+/*        public ordersClass(string orderId, string customerName, string productId, string productName, string price, string total, string staff, string date)
         {
             OrderId = orderId;
             CustomerName = customerName;
@@ -57,7 +57,7 @@ namespace Clothing_Store.classes
             Total = total;
             Staff = staff;
             Date = date;
-        }
+        }*/
 
 
         public string Order_Id

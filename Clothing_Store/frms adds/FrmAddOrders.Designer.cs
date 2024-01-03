@@ -51,16 +51,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridViewAdd = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
-            this.dataGridViewAdd = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -354,6 +354,19 @@
             this.panel2.Size = new System.Drawing.Size(517, 414);
             this.panel2.TabIndex = 38;
             // 
+            // dataGridViewAdd
+            // 
+            this.dataGridViewAdd.AllowUserToAddRows = false;
+            this.dataGridViewAdd.AllowUserToDeleteRows = false;
+            this.dataGridViewAdd.BackgroundColor = System.Drawing.SystemColors.MenuBar;
+            this.dataGridViewAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAdd.Location = new System.Drawing.Point(21, 227);
+            this.dataGridViewAdd.Name = "dataGridViewAdd";
+            this.dataGridViewAdd.ReadOnly = true;
+            this.dataGridViewAdd.Size = new System.Drawing.Size(474, 110);
+            this.dataGridViewAdd.TabIndex = 39;
+            this.dataGridViewAdd.Visible = false;
+            // 
             // btnRefresh
             // 
             this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -406,19 +419,6 @@
             this.dataGridViewItems.Size = new System.Drawing.Size(474, 110);
             this.dataGridViewItems.TabIndex = 35;
             // 
-            // dataGridViewAdd
-            // 
-            this.dataGridViewAdd.AllowUserToAddRows = false;
-            this.dataGridViewAdd.AllowUserToDeleteRows = false;
-            this.dataGridViewAdd.BackgroundColor = System.Drawing.SystemColors.MenuBar;
-            this.dataGridViewAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAdd.Location = new System.Drawing.Point(21, 227);
-            this.dataGridViewAdd.Name = "dataGridViewAdd";
-            this.dataGridViewAdd.ReadOnly = true;
-            this.dataGridViewAdd.Size = new System.Drawing.Size(474, 110);
-            this.dataGridViewAdd.TabIndex = 39;
-            this.dataGridViewAdd.Visible = false;
-            // 
             // FrmAddOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,9 +435,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
