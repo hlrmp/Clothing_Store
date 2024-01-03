@@ -682,6 +682,16 @@ namespace Clothing_Store
 
         } // label name click end
 
+        private void btnbackupAndRecovery_Click(object sender, EventArgs e) // backup and recovery btn begin
+        {
+            FrmRecovey frec = new FrmRecovey();
+            frec.ShowDialog();
 
+        } // backup and recovery btn end
+
+        private void btnArchives_Click(object sender, EventArgs e)
+        {
+
+        }
     } // class end 
 } // names space end

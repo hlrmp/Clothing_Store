@@ -23,7 +23,7 @@ namespace Clothing_Store
 
         private void frmArchives_Load(object sender, EventArgs e)  // frm load begin
         {
-            this.dataGridViewMain.GridColor = Color.Navy;
+         //   this.dataGridViewMain.GridColor = Color.Navy;
 
             this.txtSearch.AutoSize = false;
             this.txtSearch.Size = new System.Drawing.Size(243, 21);
@@ -59,24 +59,60 @@ namespace Clothing_Store
         private void btnHome_Click(object sender, EventArgs e) // home btn begin
         {
             datagridCustomer.Visible = false;
-            dataGridViewMain.Visible = false;
+         //   dataGridViewMain.Visible = false;
             panelCounts.Visible = true;
             dataGridViewOrders.Visible = false;
             dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
 
         } // home btn end
         private void btnCustomers_Click(object sender, EventArgs e) // btn customer begin
         {
             datagridCustomer.Visible = true;
-            dataGridViewMain.Visible = false;
+         //   dataGridViewMain.Visible = false;
             panelCounts.Visible = false;
             dataGridViewOrders.Visible = false;
             dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
 
             manageCustomers();
             
 
         } // btn customer end
+        private void btnOrders_Click(object sender, EventArgs e)// manage orders begin 
+        {
+            datagridCustomer.Visible = false;
+            //  dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = true;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+
+            manageOrders();
+        }// manage orders end 
+
+        private void btnStocks_Click(object sender, EventArgs e) // btn stocks begin
+        {
+            datagridCustomer.Visible = false;
+            // dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = true;
+            dataGridViewStaffs.Visible = false;
+
+            manageItems();
+
+        } // btn stocks end
+        private void btnStaffs_Click(object sender, EventArgs e) // btn staff begin
+        {
+            datagridCustomer.Visible = false;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = true;
+            ManageStaffs();
+        } // btn staffs end
         public void manageCustomers() // manage cusstomers begin - datagrid
         {
 
@@ -117,28 +153,26 @@ namespace Clothing_Store
 
 
         } // manage orders end - datagrid
-        private void btnOrders_Click(object sender, EventArgs e)// manage orders begin 
+        public void ManageStaffs() // manage Staffs begin - datagrid
         {
-            datagridCustomer.Visible = false;
-            dataGridViewMain.Visible = false;
-            panelCounts.Visible = false;
-            dataGridViewOrders.Visible = true;
-            dataGridViewStocks.Visible = false;
 
-            manageOrders();
-        }// manage orders end 
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
-        private void btnStocks_Click(object sender, EventArgs e) // btn stocks begin
-        {
-            datagridCustomer.Visible = false;
-            dataGridViewMain.Visible = false;
-            panelCounts.Visible = false;
-            dataGridViewOrders.Visible = false;
-            dataGridViewStocks.Visible = true;
 
-            manageItems();
+            string sj = "select Staff_Id , First_Name , Last_Name,Contact_No,Email , Address,Position from staffs where Status = 2";
 
-        } // btn stocks end
+            SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridViewStaffs.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewStaffs.DataSource = table;
+
+
+
+        } // manage Staffs end - datagrid
+
 
         public void manageItems() // manage items begin - datagrid
         {
@@ -324,5 +358,11 @@ namespace Clothing_Store
 
         } // count end
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+      
     }// class end
 } // name space end

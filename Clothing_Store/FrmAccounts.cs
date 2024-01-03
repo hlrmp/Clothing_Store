@@ -105,6 +105,11 @@ namespace Clothing_Store
 
         } // btn user logs 
 
+        private void btnArchives_Click(object sender, EventArgs e)
+        {
+            frmArchives fa = new frmArchives();
+            fa.ShowDialog();
 
+        }
     } // class end
 } // name space end

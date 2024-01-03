@@ -34,7 +34,6 @@
             this.lblsearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.dataGridViewMain = new System.Windows.Forms.DataGridView();
             this.panelButtons = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
@@ -42,10 +41,12 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnStocks = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
-            this.btnBackups = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelCounts = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblStaffs = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblStocks = new System.Windows.Forms.Label();
             this.Stocks = new System.Windows.Forms.Label();
@@ -56,16 +57,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblOrders = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.datagridCustomer = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliveryAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStocks = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnBackups = new System.Windows.Forms.Button();
+            this.dataGridViewStaffs = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,9 +73,14 @@
             this.totalItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staffsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.ordersClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewStocks = new System.Windows.Forms.DataGridView();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deliveryAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,24 +89,30 @@
             this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblStaffs = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).BeginInit();
+            this.userClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Staff_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Last_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelButtons.SuspendLayout();
             this.panelCounts.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
-            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cbFilter
@@ -148,17 +158,6 @@
             this.lblTitle.Size = new System.Drawing.Size(299, 39);
             this.lblTitle.TabIndex = 45;
             this.lblTitle.Text = "Archives Collections";
-            // 
-            // dataGridViewMain
-            // 
-            this.dataGridViewMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewMain.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMain.Location = new System.Drawing.Point(38, 182);
-            this.dataGridViewMain.Name = "dataGridViewMain";
-            this.dataGridViewMain.Size = new System.Drawing.Size(1047, 395);
-            this.dataGridViewMain.TabIndex = 49;
             // 
             // panelButtons
             // 
@@ -231,6 +230,7 @@
             this.btnStaffs.TabIndex = 56;
             this.btnStaffs.Text = "Staffs";
             this.btnStaffs.UseVisualStyleBackColor = false;
+            this.btnStaffs.Click += new System.EventHandler(this.btnStaffs_Click);
             // 
             // btnCustomers
             // 
@@ -289,24 +289,6 @@
             this.btnOrders.UseVisualStyleBackColor = false;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
-            // btnBackups
-            // 
-            this.btnBackups.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBackups.BackColor = System.Drawing.Color.Teal;
-            this.btnBackups.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBackups.FlatAppearance.BorderSize = 3;
-            this.btnBackups.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnBackups.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBackups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackups.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackups.ForeColor = System.Drawing.Color.White;
-            this.btnBackups.Location = new System.Drawing.Point(306, 14);
-            this.btnBackups.Name = "btnBackups";
-            this.btnBackups.Size = new System.Drawing.Size(150, 28);
-            this.btnBackups.TabIndex = 52;
-            this.btnBackups.Text = "Backup";
-            this.btnBackups.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -342,10 +324,45 @@
             this.panelCounts.Controls.Add(this.label2);
             this.panelCounts.Controls.Add(this.panel1);
             this.panelCounts.Controls.Add(this.panel2);
-            this.panelCounts.Location = new System.Drawing.Point(38, 182);
+            this.panelCounts.Location = new System.Drawing.Point(38, 318);
             this.panelCounts.Name = "panelCounts";
-            this.panelCounts.Size = new System.Drawing.Size(1047, 395);
+            this.panelCounts.Size = new System.Drawing.Size(1047, 259);
             this.panelCounts.TabIndex = 60;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.lblStaffs);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Location = new System.Drawing.Point(613, 73);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(173, 128);
+            this.panel4.TabIndex = 52;
+            // 
+            // lblStaffs
+            // 
+            this.lblStaffs.AutoSize = true;
+            this.lblStaffs.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblStaffs.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStaffs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblStaffs.Location = new System.Drawing.Point(45, 64);
+            this.lblStaffs.Name = "lblStaffs";
+            this.lblStaffs.Size = new System.Drawing.Size(104, 39);
+            this.lblStaffs.TabIndex = 51;
+            this.lblStaffs.Text = "Staffs";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label5.Location = new System.Drawing.Point(23, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 39);
+            this.label5.TabIndex = 50;
+            this.label5.Text = "Staffs";
             // 
             // panel3
             // 
@@ -463,17 +480,6 @@
             this.label3.TabIndex = 50;
             this.label3.Text = "Orders";
             // 
-            // Restore
-            // 
-            this.Restore.DataPropertyName = "Restore";
-            this.Restore.FillWeight = 22F;
-            this.Restore.HeaderText = "Restore";
-            this.Restore.Image = ((System.Drawing.Image)(resources.GetObject("Restore.Image")));
-            this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Restore.Name = "Restore";
-            this.Restore.ReadOnly = true;
-            this.Restore.Width = 5;
-            // 
             // datagridCustomer
             // 
             this.datagridCustomer.AllowUserToAddRows = false;
@@ -500,52 +506,6 @@
             this.datagridCustomer.TabIndex = 59;
             this.datagridCustomer.Visible = false;
             this.datagridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // deliveryAddressDataGridViewTextBoxColumn
-            // 
-            this.deliveryAddressDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Address";
-            this.deliveryAddressDataGridViewTextBoxColumn.HeaderText = "Delivery_Address";
-            this.deliveryAddressDataGridViewTextBoxColumn.Name = "deliveryAddressDataGridViewTextBoxColumn";
-            this.deliveryAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contactNoDataGridViewTextBoxColumn
-            // 
-            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
-            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // customerClassBindingSource
-            // 
-            this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
             // 
             // dataGridViewOrders
             // 
@@ -575,6 +535,112 @@
             this.dataGridViewOrders.TabIndex = 61;
             this.dataGridViewOrders.Visible = false;
             this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
+            // 
+            // dataGridViewStocks
+            // 
+            this.dataGridViewStocks.AllowUserToAddRows = false;
+            this.dataGridViewStocks.AllowUserToDeleteRows = false;
+            this.dataGridViewStocks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewStocks.AutoGenerateColumns = false;
+            this.dataGridViewStocks.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn,
+            this.typeDataGridViewTextBoxColumn,
+            this.sizeDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.colorDataGridViewTextBoxColumn,
+            this.quantityDataGridViewTextBoxColumn1,
+            this.dateDataGridViewTextBoxColumn,
+            this.dataGridViewImageColumn2});
+            this.dataGridViewStocks.DataSource = this.itemsClassBindingSource;
+            this.dataGridViewStocks.Location = new System.Drawing.Point(38, 149);
+            this.dataGridViewStocks.Name = "dataGridViewStocks";
+            this.dataGridViewStocks.ReadOnly = true;
+            this.dataGridViewStocks.Size = new System.Drawing.Size(1047, 428);
+            this.dataGridViewStocks.TabIndex = 62;
+            this.dataGridViewStocks.Visible = false;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.DataPropertyName = "Restore";
+            this.dataGridViewImageColumn2.FillWeight = 22F;
+            this.dataGridViewImageColumn2.HeaderText = "Restore";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 5;
+            // 
+            // btnBackups
+            // 
+            this.btnBackups.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBackups.BackColor = System.Drawing.Color.Teal;
+            this.btnBackups.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBackups.FlatAppearance.BorderSize = 3;
+            this.btnBackups.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnBackups.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBackups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackups.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackups.ForeColor = System.Drawing.Color.White;
+            this.btnBackups.Location = new System.Drawing.Point(306, 14);
+            this.btnBackups.Name = "btnBackups";
+            this.btnBackups.Size = new System.Drawing.Size(150, 28);
+            this.btnBackups.TabIndex = 52;
+            this.btnBackups.Text = "Backup";
+            this.btnBackups.UseVisualStyleBackColor = false;
+            // 
+            // dataGridViewStaffs
+            // 
+            this.dataGridViewStaffs.AllowUserToAddRows = false;
+            this.dataGridViewStaffs.AllowUserToDeleteRows = false;
+            this.dataGridViewStaffs.AllowUserToOrderColumns = true;
+            this.dataGridViewStaffs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewStaffs.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewStaffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStaffs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Staff_Id,
+            this.First_Name,
+            this.Last_Name,
+            this.Contact_No,
+            this.Email,
+            this.Address,
+            this.Position,
+            this.dataGridViewImageColumn3});
+            this.dataGridViewStaffs.Location = new System.Drawing.Point(38, 149);
+            this.dataGridViewStaffs.Name = "dataGridViewStaffs";
+            this.dataGridViewStaffs.ReadOnly = true;
+            this.dataGridViewStaffs.Size = new System.Drawing.Size(1047, 414);
+            this.dataGridViewStaffs.TabIndex = 63;
+            this.dataGridViewStaffs.Visible = false;
+            this.dataGridViewStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Restore";
+            this.dataGridViewImageColumn1.FillWeight = 30F;
+            this.dataGridViewImageColumn1.HeaderText = "Restore";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 30;
+            // 
+            // Restore
+            // 
+            this.Restore.DataPropertyName = "Restore";
+            this.Restore.FillWeight = 30F;
+            this.Restore.HeaderText = "Restore";
+            this.Restore.Image = ((System.Drawing.Image)(resources.GetObject("Restore.Image")));
+            this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Restore.Name = "Restore";
+            this.Restore.ReadOnly = true;
+            this.Restore.Width = 30;
             // 
             // orderIdDataGridViewTextBoxColumn
             // 
@@ -632,48 +698,55 @@
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Restore";
-            this.dataGridViewImageColumn1.FillWeight = 22F;
-            this.dataGridViewImageColumn1.HeaderText = "Restore";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 5;
-            // 
             // ordersClassBindingSource
             // 
             this.ordersClassBindingSource.DataSource = typeof(Clothing_Store.classes.ordersClass);
             // 
-            // dataGridViewStocks
+            // firstNameDataGridViewTextBoxColumn
             // 
-            this.dataGridViewStocks.AllowUserToAddRows = false;
-            this.dataGridViewStocks.AllowUserToDeleteRows = false;
-            this.dataGridViewStocks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewStocks.AutoGenerateColumns = false;
-            this.dataGridViewStocks.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewStocks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStocks.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.categoryDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn,
-            this.sizeDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.colorDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn1,
-            this.dateDataGridViewTextBoxColumn,
-            this.dataGridViewImageColumn2});
-            this.dataGridViewStocks.DataSource = this.itemsClassBindingSource;
-            this.dataGridViewStocks.Location = new System.Drawing.Point(38, 149);
-            this.dataGridViewStocks.Name = "dataGridViewStocks";
-            this.dataGridViewStocks.ReadOnly = true;
-            this.dataGridViewStocks.Size = new System.Drawing.Size(1047, 428);
-            this.dataGridViewStocks.TabIndex = 62;
-            this.dataGridViewStocks.Visible = false;
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First_Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // deliveryAddressDataGridViewTextBoxColumn
+            // 
+            this.deliveryAddressDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Address";
+            this.deliveryAddressDataGridViewTextBoxColumn.HeaderText = "Delivery_Address";
+            this.deliveryAddressDataGridViewTextBoxColumn.Name = "deliveryAddressDataGridViewTextBoxColumn";
+            this.deliveryAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactNoDataGridViewTextBoxColumn
+            // 
+            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
+            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerClassBindingSource
+            // 
+            this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -731,65 +804,83 @@
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.DataPropertyName = "Restore";
-            this.dataGridViewImageColumn2.FillWeight = 22F;
-            this.dataGridViewImageColumn2.HeaderText = "Restore";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 5;
-            // 
             // itemsClassBindingSource
             // 
             this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
             // 
-            // panel4
+            // userClassBindingSource
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.lblStaffs);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(613, 73);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(173, 128);
-            this.panel4.TabIndex = 52;
+            this.userClassBindingSource.DataSource = typeof(Clothing_Store.userClass);
             // 
-            // lblStaffs
+            // Staff_Id
             // 
-            this.lblStaffs.AutoSize = true;
-            this.lblStaffs.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStaffs.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStaffs.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblStaffs.Location = new System.Drawing.Point(45, 64);
-            this.lblStaffs.Name = "lblStaffs";
-            this.lblStaffs.Size = new System.Drawing.Size(104, 39);
-            this.lblStaffs.TabIndex = 51;
-            this.lblStaffs.Text = "Staffs";
+            this.Staff_Id.DataPropertyName = "Staff_Id";
+            this.Staff_Id.HeaderText = "#";
+            this.Staff_Id.Name = "Staff_Id";
+            this.Staff_Id.ReadOnly = true;
             // 
-            // label5
+            // First_Name
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label5.Location = new System.Drawing.Point(23, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 39);
-            this.label5.TabIndex = 50;
-            this.label5.Text = "Staffs";
+            this.First_Name.DataPropertyName = "First_Name";
+            this.First_Name.HeaderText = "First Name";
+            this.First_Name.Name = "First_Name";
+            this.First_Name.ReadOnly = true;
+            // 
+            // Last_Name
+            // 
+            this.Last_Name.DataPropertyName = "Last_Name";
+            this.Last_Name.HeaderText = "Last Name";
+            this.Last_Name.Name = "Last_Name";
+            this.Last_Name.ReadOnly = true;
+            // 
+            // Contact_No
+            // 
+            this.Contact_No.DataPropertyName = "Contact_No";
+            this.Contact_No.HeaderText = "Contact no";
+            this.Contact_No.Name = "Contact_No";
+            this.Contact_No.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Position
+            // 
+            this.Position.DataPropertyName = "Position";
+            this.Position.HeaderText = "Position";
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.DataPropertyName = "Restore";
+            this.dataGridViewImageColumn3.FillWeight = 30F;
+            this.dataGridViewImageColumn3.HeaderText = "Restore";
+            this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Width = 30;
             // 
             // frmArchives
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 611);
+            this.Controls.Add(this.dataGridViewStaffs);
             this.Controls.Add(this.panelCounts);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelButtons);
-            this.Controls.Add(this.dataGridViewMain);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.txtSearch);
@@ -802,10 +893,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmArchives";
             this.Load += new System.EventHandler(this.frmArchives_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain)).EndInit();
             this.panelButtons.ResumeLayout(false);
             this.panelCounts.ResumeLayout(false);
             this.panelCounts.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -813,13 +905,13 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -831,9 +923,7 @@
         private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.DataGridView dataGridViewMain;
         private System.Windows.Forms.Panel panelButtons;
-        private System.Windows.Forms.Button btnBackups;
         private System.Windows.Forms.Button btnStocks;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnUsers;
@@ -851,25 +941,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblOrders;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewImageColumn Restore;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView datagridCustomer;
         private System.Windows.Forms.DataGridView dataGridViewOrders;
         private System.Windows.Forms.BindingSource ordersClassBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalItemDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn staffsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridView dataGridViewStocks;
         private System.Windows.Forms.BindingSource itemsClassBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -887,5 +961,32 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblStaffs;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBackups;
+        private System.Windows.Forms.DataGridView dataGridViewStaffs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn Restore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalItemDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.BindingSource userClassBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn First_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Last_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contact_No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
     }
 }

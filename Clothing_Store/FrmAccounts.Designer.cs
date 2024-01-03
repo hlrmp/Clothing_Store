@@ -41,6 +41,7 @@
             this.panelAdd = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAddNewStaff = new System.Windows.Forms.Button();
+            this.btnArchives = new System.Windows.Forms.Button();
             this.sidepanelAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelAdd.SuspendLayout();
@@ -51,6 +52,7 @@
             this.sidepanelAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.sidepanelAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.sidepanelAdmin.Controls.Add(this.btnArchives);
             this.sidepanelAdmin.Controls.Add(this.btnRecovery);
             this.sidepanelAdmin.Controls.Add(this.btnActivitylog);
             this.sidepanelAdmin.Controls.Add(this.btnUserLog);
@@ -228,6 +230,22 @@
             this.btnAddNewStaff.UseVisualStyleBackColor = false;
             this.btnAddNewStaff.Click += new System.EventHandler(this.btnAddNewStaff_Click);
             // 
+            // btnArchives
+            // 
+            this.btnArchives.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnArchives.FlatAppearance.BorderSize = 0;
+            this.btnArchives.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnArchives.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArchives.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnArchives.Location = new System.Drawing.Point(3, 348);
+            this.btnArchives.Name = "btnArchives";
+            this.btnArchives.Size = new System.Drawing.Size(114, 63);
+            this.btnArchives.TabIndex = 14;
+            this.btnArchives.Text = "Archives Collection";
+            this.btnArchives.UseVisualStyleBackColor = false;
+            this.btnArchives.Click += new System.EventHandler(this.btnArchives_Click);
+            // 
             // FrmAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,5 +283,6 @@
         private System.Windows.Forms.Panel panelAdd;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAddNewStaff;
+        private System.Windows.Forms.Button btnArchives;
     }
 }

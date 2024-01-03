@@ -24,7 +24,7 @@ namespace Clothing_Store
 
         // user info declaration
         private string user_id;
-        private int staff_id;
+        private string staff_id;
         private string user_name;
         private string password;
         private string user_type;
@@ -34,7 +34,7 @@ namespace Clothing_Store
         {
             // users
             this.user_id = " ";
-            this.staff_id = 0;
+            this.staff_id = "";
             this.user_name = " ";
             this.password = " ";
             this.user_type = " ";
@@ -93,7 +93,7 @@ namespace Clothing_Store
         // staffs info encapsulation end
 
 
-        public userClass(string userid, int staffid, string username, // user info
+        public userClass(string userid, string staffid, string username, // user info
             string pass, string usertype)
         {
             user_id = userid;
@@ -108,7 +108,7 @@ namespace Clothing_Store
             get { return user_id; }
             set { user_id = value; }
         }
-        public int staffid
+        public string staffid
         {
             get { return staff_id; }
             set { staff_id = value; }
