@@ -52,6 +52,10 @@
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelEdit = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.rbMinus = new System.Windows.Forms.RadioButton();
+            this.rbAdd = new System.Windows.Forms.RadioButton();
             this.lblId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -59,10 +63,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.rbAdd = new System.Windows.Forms.RadioButton();
-            this.rbMinus = new System.Windows.Forms.RadioButton();
-            this.txtDesc = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
@@ -99,7 +99,6 @@
             this.btnTotal.TabIndex = 42;
             this.btnTotal.Text = "Total";
             this.btnTotal.UseVisualStyleBackColor = false;
-            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
             // 
             // lbltotal
             // 
@@ -333,6 +332,45 @@
             this.panelEdit.TabIndex = 46;
             this.panelEdit.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(302, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Description :\r\n";
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Location = new System.Drawing.Point(302, 103);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(182, 90);
+            this.txtDesc.TabIndex = 46;
+            // 
+            // rbMinus
+            // 
+            this.rbMinus.AutoSize = true;
+            this.rbMinus.Location = new System.Drawing.Point(220, 165);
+            this.rbMinus.Name = "rbMinus";
+            this.rbMinus.Size = new System.Drawing.Size(53, 17);
+            this.rbMinus.TabIndex = 45;
+            this.rbMinus.TabStop = true;
+            this.rbMinus.Text = "Minus";
+            this.rbMinus.UseVisualStyleBackColor = true;
+            // 
+            // rbAdd
+            // 
+            this.rbAdd.AutoSize = true;
+            this.rbAdd.Location = new System.Drawing.Point(170, 165);
+            this.rbAdd.Name = "rbAdd";
+            this.rbAdd.Size = new System.Drawing.Size(44, 17);
+            this.rbAdd.TabIndex = 44;
+            this.rbAdd.TabStop = true;
+            this.rbAdd.Text = "Add";
+            this.rbAdd.UseVisualStyleBackColor = true;
+            // 
             // lblId
             // 
             this.lblId.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -421,45 +459,6 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(132, 20);
             this.txtQuantity.TabIndex = 0;
-            // 
-            // rbAdd
-            // 
-            this.rbAdd.AutoSize = true;
-            this.rbAdd.Location = new System.Drawing.Point(170, 165);
-            this.rbAdd.Name = "rbAdd";
-            this.rbAdd.Size = new System.Drawing.Size(44, 17);
-            this.rbAdd.TabIndex = 44;
-            this.rbAdd.TabStop = true;
-            this.rbAdd.Text = "Add";
-            this.rbAdd.UseVisualStyleBackColor = true;
-            // 
-            // rbMinus
-            // 
-            this.rbMinus.AutoSize = true;
-            this.rbMinus.Location = new System.Drawing.Point(220, 165);
-            this.rbMinus.Name = "rbMinus";
-            this.rbMinus.Size = new System.Drawing.Size(53, 17);
-            this.rbMinus.TabIndex = 45;
-            this.rbMinus.TabStop = true;
-            this.rbMinus.Text = "Minus";
-            this.rbMinus.UseVisualStyleBackColor = true;
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Location = new System.Drawing.Point(302, 103);
-            this.txtDesc.Multiline = true;
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(182, 90);
-            this.txtDesc.TabIndex = 46;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(302, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "Description :\r\n";
             // 
             // FrmStocks
             // 
