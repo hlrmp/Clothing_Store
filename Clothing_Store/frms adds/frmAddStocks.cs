@@ -65,7 +65,7 @@ namespace Clothing_Store
             ArrayList arr = new ArrayList();
             arr.Add("Mens");
             arr.Add("Womens");
-            arr.Add("Uniex");
+            arr.Add("Unisex");
           //  arr.Add("Others");
 
             foreach (string c in arr)
@@ -301,7 +301,7 @@ namespace Clothing_Store
                         }
                         else if (condition == "notsame")
                         {
-                            string ins = "insert into Products(Product_Name,Category,Type,Size,Price,Color,Status)values(@Product_Name,@Category,@Type,@Size,@Price,@Color,@Status)";
+                            string ins = "insert into Products(Product_Name,Category,Type,Size,Price,Color,Status,Date)values(@Product_Name,@Category,@Type,@Size,@Price,@Color,@Status,getDate())";
                             SqlCommand comm = new SqlCommand(ins, cnn);
                             comm.Parameters.AddWithValue("@Product_Name", it.Name);
                             comm.Parameters.AddWithValue("@Category", it.category);

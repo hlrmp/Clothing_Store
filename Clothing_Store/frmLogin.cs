@@ -152,17 +152,7 @@ namespace Clothing_Store
                                    {
                                          MessageBox.Show("User Name / Password incorrect", "Account", MessageBoxButtons.OK);
 
-                                        pictureBox1.Visible = true;
-                                        pictureBox2.Visible = true;
-                                        pictureBox3.Visible = true;
-                                        pictureBox4.Visible = true;
-
-                                        pictureBox1.BackColor = Color.Red;
-                                        pictureBox2.BackColor = Color.Red;
-                                        pictureBox3.BackColor = Color.Red;
-                                        pictureBox4.BackColor = Color.Red;
-
-
+                                     
                                    }
 
 

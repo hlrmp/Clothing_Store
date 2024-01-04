@@ -313,9 +313,9 @@
             this.panelRSide.Controls.Add(this.btnArchives);
             this.panelRSide.Controls.Add(this.btnItemStatus);
             this.panelRSide.Controls.Add(this.btnDeliveriesStatus);
-            this.panelRSide.Location = new System.Drawing.Point(1056, 372);
+            this.panelRSide.Location = new System.Drawing.Point(1056, 375);
             this.panelRSide.Name = "panelRSide";
-            this.panelRSide.Size = new System.Drawing.Size(186, 98);
+            this.panelRSide.Size = new System.Drawing.Size(186, 95);
             this.panelRSide.TabIndex = 3;
             // 
             // btnArchives
