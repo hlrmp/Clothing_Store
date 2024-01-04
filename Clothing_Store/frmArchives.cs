@@ -357,12 +357,48 @@ namespace Clothing_Store
             con.Close();
 
         } // count end
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e) // datagrid staffs click begin 
         {
+            userClass staff = new userClass();
 
-        }
+            staff.staffid = dataGridViewStaffs.CurrentRow.Cells["Staff_Id"].Value.ToString();
+            staff.StaffFirstName = dataGridViewStaffs.CurrentRow.Cells["First_Name"].Value.ToString();
+            staff.StaffLastName = dataGridViewStaffs.CurrentRow.Cells["Last_Name"].Value.ToString();
+            staff.StaffAddress = dataGridViewStaffs.CurrentRow.Cells["Address"].Value.ToString();
+            staff.StaffConntacNo = dataGridViewStaffs.CurrentRow.Cells["Contact_No"].Value.ToString();
+            staff.staffEmail = dataGridViewStaffs.CurrentRow.Cells["Email"].Value.ToString();
+            staff.StaffPosition = dataGridViewStaffs.CurrentRow.Cells["Position"].Value.ToString();
 
-      
+            if (dataGridViewStaffs.Columns[e.ColumnIndex].Name == "Restore")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Restore Staff # " + staff.staffid + " Name: " + staff.StaffFirstName + " " + staff.StaffLastName + "  ?", "Restore", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Staffs set Status = 1 where Staff_Id = " + staff.staffid + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = " Restore Staff # " + staff.staffid + " Name: " + staff.StaffFirstName + " " + staff.StaffLastName;
+                    //        ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+        } // datagrid staff click end
+
+
     }// class end
 } // name space end

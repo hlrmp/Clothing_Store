@@ -41,6 +41,7 @@
             this.btnCustomers = new System.Windows.Forms.Button();
             this.btnStocks = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
+            this.btnBackups = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelCounts = new System.Windows.Forms.Panel();
@@ -58,13 +59,20 @@
             this.lblOrders = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.datagridCustomer = new System.Windows.Forms.DataGridView();
+            this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewStocks = new System.Windows.Forms.DataGridView();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnBackups = new System.Windows.Forms.Button();
             this.dataGridViewStaffs = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Staff_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Last_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,14 +99,6 @@
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Staff_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Last_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contact_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelButtons.SuspendLayout();
             this.panelCounts.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -288,6 +288,24 @@
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = false;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
+            // 
+            // btnBackups
+            // 
+            this.btnBackups.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBackups.BackColor = System.Drawing.Color.Teal;
+            this.btnBackups.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBackups.FlatAppearance.BorderSize = 3;
+            this.btnBackups.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnBackups.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBackups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBackups.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackups.ForeColor = System.Drawing.Color.White;
+            this.btnBackups.Location = new System.Drawing.Point(306, 14);
+            this.btnBackups.Name = "btnBackups";
+            this.btnBackups.Size = new System.Drawing.Size(150, 28);
+            this.btnBackups.TabIndex = 52;
+            this.btnBackups.Text = "Backup";
+            this.btnBackups.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -507,6 +525,17 @@
             this.datagridCustomer.Visible = false;
             this.datagridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
             // 
+            // Restore
+            // 
+            this.Restore.DataPropertyName = "Restore";
+            this.Restore.FillWeight = 30F;
+            this.Restore.HeaderText = "Restore";
+            this.Restore.Image = ((System.Drawing.Image)(resources.GetObject("Restore.Image")));
+            this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Restore.Name = "Restore";
+            this.Restore.ReadOnly = true;
+            this.Restore.Width = 30;
+            // 
             // dataGridViewOrders
             // 
             this.dataGridViewOrders.AllowUserToAddRows = false;
@@ -535,6 +564,17 @@
             this.dataGridViewOrders.TabIndex = 61;
             this.dataGridViewOrders.Visible = false;
             this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Restore";
+            this.dataGridViewImageColumn1.FillWeight = 30F;
+            this.dataGridViewImageColumn1.HeaderText = "Restore";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 30;
             // 
             // dataGridViewStocks
             // 
@@ -575,29 +615,10 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 5;
             // 
-            // btnBackups
-            // 
-            this.btnBackups.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBackups.BackColor = System.Drawing.Color.Teal;
-            this.btnBackups.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBackups.FlatAppearance.BorderSize = 3;
-            this.btnBackups.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnBackups.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnBackups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackups.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackups.ForeColor = System.Drawing.Color.White;
-            this.btnBackups.Location = new System.Drawing.Point(306, 14);
-            this.btnBackups.Name = "btnBackups";
-            this.btnBackups.Size = new System.Drawing.Size(150, 28);
-            this.btnBackups.TabIndex = 52;
-            this.btnBackups.Text = "Backup";
-            this.btnBackups.UseVisualStyleBackColor = false;
-            // 
             // dataGridViewStaffs
             // 
             this.dataGridViewStaffs.AllowUserToAddRows = false;
             this.dataGridViewStaffs.AllowUserToDeleteRows = false;
-            this.dataGridViewStaffs.AllowUserToOrderColumns = true;
             this.dataGridViewStaffs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -618,29 +639,67 @@
             this.dataGridViewStaffs.Size = new System.Drawing.Size(1047, 414);
             this.dataGridViewStaffs.TabIndex = 63;
             this.dataGridViewStaffs.Visible = false;
-            this.dataGridViewStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaffs_CellContentClick);
             // 
-            // dataGridViewImageColumn1
+            // Staff_Id
             // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Restore";
-            this.dataGridViewImageColumn1.FillWeight = 30F;
-            this.dataGridViewImageColumn1.HeaderText = "Restore";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 30;
+            this.Staff_Id.DataPropertyName = "Staff_Id";
+            this.Staff_Id.HeaderText = "#";
+            this.Staff_Id.Name = "Staff_Id";
+            this.Staff_Id.ReadOnly = true;
             // 
-            // Restore
+            // First_Name
             // 
-            this.Restore.DataPropertyName = "Restore";
-            this.Restore.FillWeight = 30F;
-            this.Restore.HeaderText = "Restore";
-            this.Restore.Image = ((System.Drawing.Image)(resources.GetObject("Restore.Image")));
-            this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Restore.Name = "Restore";
-            this.Restore.ReadOnly = true;
-            this.Restore.Width = 30;
+            this.First_Name.DataPropertyName = "First_Name";
+            this.First_Name.HeaderText = "First Name";
+            this.First_Name.Name = "First_Name";
+            this.First_Name.ReadOnly = true;
+            // 
+            // Last_Name
+            // 
+            this.Last_Name.DataPropertyName = "Last_Name";
+            this.Last_Name.HeaderText = "Last Name";
+            this.Last_Name.Name = "Last_Name";
+            this.Last_Name.ReadOnly = true;
+            // 
+            // Contact_No
+            // 
+            this.Contact_No.DataPropertyName = "Contact_No";
+            this.Contact_No.HeaderText = "Contact no";
+            this.Contact_No.Name = "Contact_No";
+            this.Contact_No.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Position
+            // 
+            this.Position.DataPropertyName = "Position";
+            this.Position.HeaderText = "Position";
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.DataPropertyName = "Restore";
+            this.dataGridViewImageColumn3.FillWeight = 30F;
+            this.dataGridViewImageColumn3.HeaderText = "Restore";
+            this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Width = 30;
             // 
             // orderIdDataGridViewTextBoxColumn
             // 
@@ -811,66 +870,6 @@
             // userClassBindingSource
             // 
             this.userClassBindingSource.DataSource = typeof(Clothing_Store.userClass);
-            // 
-            // Staff_Id
-            // 
-            this.Staff_Id.DataPropertyName = "Staff_Id";
-            this.Staff_Id.HeaderText = "#";
-            this.Staff_Id.Name = "Staff_Id";
-            this.Staff_Id.ReadOnly = true;
-            // 
-            // First_Name
-            // 
-            this.First_Name.DataPropertyName = "First_Name";
-            this.First_Name.HeaderText = "First Name";
-            this.First_Name.Name = "First_Name";
-            this.First_Name.ReadOnly = true;
-            // 
-            // Last_Name
-            // 
-            this.Last_Name.DataPropertyName = "Last_Name";
-            this.Last_Name.HeaderText = "Last Name";
-            this.Last_Name.Name = "Last_Name";
-            this.Last_Name.ReadOnly = true;
-            // 
-            // Contact_No
-            // 
-            this.Contact_No.DataPropertyName = "Contact_No";
-            this.Contact_No.HeaderText = "Contact no";
-            this.Contact_No.Name = "Contact_No";
-            this.Contact_No.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            // 
-            // Position
-            // 
-            this.Position.DataPropertyName = "Position";
-            this.Position.HeaderText = "Position";
-            this.Position.Name = "Position";
-            this.Position.ReadOnly = true;
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.DataPropertyName = "Restore";
-            this.dataGridViewImageColumn3.FillWeight = 30F;
-            this.dataGridViewImageColumn3.HeaderText = "Restore";
-            this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
-            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Width = 30;
             // 
             // frmArchives
             // 
