@@ -59,12 +59,19 @@
             this.lblOrders = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.datagridCustomer = new System.Windows.Forms.DataGridView();
-            this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewStocks = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewStaffs = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblUsers = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
+            this.User_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RestoreUser = new System.Windows.Forms.DataGridViewImageColumn();
             this.Staff_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Last_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,7 +79,10 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.RestoreStaffs = new System.Windows.Forms.DataGridViewImageColumn();
+            this.RestoreOrders = new System.Windows.Forms.DataGridViewImageColumn();
+            this.RestoreCustomers = new System.Windows.Forms.DataGridViewImageColumn();
+            this.RestoreStocks = new System.Windows.Forms.DataGridViewImageColumn();
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,6 +119,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
@@ -212,6 +224,7 @@
             this.btnUsers.TabIndex = 57;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnStaffs
             // 
@@ -337,6 +350,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCounts.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panelCounts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCounts.Controls.Add(this.panel5);
             this.panelCounts.Controls.Add(this.panel4);
             this.panelCounts.Controls.Add(this.panel3);
             this.panelCounts.Controls.Add(this.label2);
@@ -515,7 +529,7 @@
             this.deliveryAddressDataGridViewTextBoxColumn,
             this.contactNoDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.Restore});
+            this.RestoreCustomers});
             this.datagridCustomer.DataSource = this.customerClassBindingSource;
             this.datagridCustomer.Location = new System.Drawing.Point(38, 149);
             this.datagridCustomer.Name = "datagridCustomer";
@@ -524,17 +538,6 @@
             this.datagridCustomer.TabIndex = 59;
             this.datagridCustomer.Visible = false;
             this.datagridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
-            // 
-            // Restore
-            // 
-            this.Restore.DataPropertyName = "Restore";
-            this.Restore.FillWeight = 30F;
-            this.Restore.HeaderText = "Restore";
-            this.Restore.Image = ((System.Drawing.Image)(resources.GetObject("Restore.Image")));
-            this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Restore.Name = "Restore";
-            this.Restore.ReadOnly = true;
-            this.Restore.Width = 30;
             // 
             // dataGridViewOrders
             // 
@@ -555,26 +558,15 @@
             this.totalItemDataGridViewTextBoxColumn,
             this.staffsDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
-            this.dataGridViewImageColumn1});
+            this.RestoreOrders});
             this.dataGridViewOrders.DataSource = this.ordersClassBindingSource;
             this.dataGridViewOrders.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.ReadOnly = true;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(1047, 428);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(1047, 450);
             this.dataGridViewOrders.TabIndex = 61;
             this.dataGridViewOrders.Visible = false;
             this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Restore";
-            this.dataGridViewImageColumn1.FillWeight = 30F;
-            this.dataGridViewImageColumn1.HeaderText = "Restore";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 30;
             // 
             // dataGridViewStocks
             // 
@@ -595,7 +587,7 @@
             this.colorDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn1,
             this.dateDataGridViewTextBoxColumn,
-            this.dataGridViewImageColumn2});
+            this.RestoreStocks});
             this.dataGridViewStocks.DataSource = this.itemsClassBindingSource;
             this.dataGridViewStocks.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewStocks.Name = "dataGridViewStocks";
@@ -603,17 +595,7 @@
             this.dataGridViewStocks.Size = new System.Drawing.Size(1047, 428);
             this.dataGridViewStocks.TabIndex = 62;
             this.dataGridViewStocks.Visible = false;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.DataPropertyName = "Restore";
-            this.dataGridViewImageColumn2.FillWeight = 22F;
-            this.dataGridViewImageColumn2.HeaderText = "Restore";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 5;
+            this.dataGridViewStocks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStocks_CellContentClick);
             // 
             // dataGridViewStaffs
             // 
@@ -632,7 +614,7 @@
             this.Email,
             this.Address,
             this.Position,
-            this.dataGridViewImageColumn3});
+            this.RestoreStaffs});
             this.dataGridViewStaffs.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewStaffs.Name = "dataGridViewStaffs";
             this.dataGridViewStaffs.ReadOnly = true;
@@ -640,6 +622,111 @@
             this.dataGridViewStaffs.TabIndex = 63;
             this.dataGridViewStaffs.Visible = false;
             this.dataGridViewStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaffs_CellContentClick);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.lblUsers);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(813, 73);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(173, 128);
+            this.panel5.TabIndex = 53;
+            // 
+            // lblUsers
+            // 
+            this.lblUsers.AutoSize = true;
+            this.lblUsers.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblUsers.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblUsers.Location = new System.Drawing.Point(45, 64);
+            this.lblUsers.Name = "lblUsers";
+            this.lblUsers.Size = new System.Drawing.Size(103, 39);
+            this.lblUsers.TabIndex = 51;
+            this.lblUsers.Text = "Users";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label6.Location = new System.Drawing.Point(23, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(103, 39);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "Users";
+            // 
+            // dataGridViewUsers
+            // 
+            this.dataGridViewUsers.AllowUserToAddRows = false;
+            this.dataGridViewUsers.AllowUserToDeleteRows = false;
+            this.dataGridViewUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewUsers.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.User_Id,
+            this.FirstName,
+            this.LastName,
+            this.User_Name,
+            this.Password,
+            this.RestoreUser});
+            this.dataGridViewUsers.Location = new System.Drawing.Point(38, 149);
+            this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.ReadOnly = true;
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1047, 450);
+            this.dataGridViewUsers.TabIndex = 70;
+            this.dataGridViewUsers.Visible = false;
+            this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
+            // 
+            // User_Id
+            // 
+            this.User_Id.DataPropertyName = "User_Id";
+            this.User_Id.HeaderText = "#";
+            this.User_Id.Name = "User_Id";
+            this.User_Id.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "First_Name";
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "Last_Name";
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // User_Name
+            // 
+            this.User_Name.DataPropertyName = "User_Name";
+            this.User_Name.HeaderText = "User Name";
+            this.User_Name.Name = "User_Name";
+            this.User_Name.ReadOnly = true;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            // 
+            // RestoreUser
+            // 
+            this.RestoreUser.DataPropertyName = "Resotre";
+            this.RestoreUser.FillWeight = 30F;
+            this.RestoreUser.HeaderText = "Restore";
+            this.RestoreUser.Image = ((System.Drawing.Image)(resources.GetObject("RestoreUser.Image")));
+            this.RestoreUser.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.RestoreUser.Name = "RestoreUser";
+            this.RestoreUser.ReadOnly = true;
+            this.RestoreUser.Width = 30;
             // 
             // Staff_Id
             // 
@@ -690,16 +777,49 @@
             this.Position.Name = "Position";
             this.Position.ReadOnly = true;
             // 
-            // dataGridViewImageColumn3
+            // RestoreStaffs
             // 
-            this.dataGridViewImageColumn3.DataPropertyName = "Restore";
-            this.dataGridViewImageColumn3.FillWeight = 30F;
-            this.dataGridViewImageColumn3.HeaderText = "Restore";
-            this.dataGridViewImageColumn3.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn3.Image")));
-            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Width = 30;
+            this.RestoreStaffs.DataPropertyName = "Restore";
+            this.RestoreStaffs.FillWeight = 30F;
+            this.RestoreStaffs.HeaderText = "Restore";
+            this.RestoreStaffs.Image = ((System.Drawing.Image)(resources.GetObject("RestoreStaffs.Image")));
+            this.RestoreStaffs.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.RestoreStaffs.Name = "RestoreStaffs";
+            this.RestoreStaffs.ReadOnly = true;
+            this.RestoreStaffs.Width = 30;
+            // 
+            // RestoreOrders
+            // 
+            this.RestoreOrders.DataPropertyName = "Restore";
+            this.RestoreOrders.FillWeight = 30F;
+            this.RestoreOrders.HeaderText = "Restore";
+            this.RestoreOrders.Image = ((System.Drawing.Image)(resources.GetObject("RestoreOrders.Image")));
+            this.RestoreOrders.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.RestoreOrders.Name = "RestoreOrders";
+            this.RestoreOrders.ReadOnly = true;
+            this.RestoreOrders.Width = 30;
+            // 
+            // RestoreCustomers
+            // 
+            this.RestoreCustomers.DataPropertyName = "Restore";
+            this.RestoreCustomers.FillWeight = 30F;
+            this.RestoreCustomers.HeaderText = "Restore";
+            this.RestoreCustomers.Image = ((System.Drawing.Image)(resources.GetObject("RestoreCustomers.Image")));
+            this.RestoreCustomers.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.RestoreCustomers.Name = "RestoreCustomers";
+            this.RestoreCustomers.ReadOnly = true;
+            this.RestoreCustomers.Width = 30;
+            // 
+            // RestoreStocks
+            // 
+            this.RestoreStocks.DataPropertyName = "Restore";
+            this.RestoreStocks.FillWeight = 22F;
+            this.RestoreStocks.HeaderText = "Restore";
+            this.RestoreStocks.Image = ((System.Drawing.Image)(resources.GetObject("RestoreStocks.Image")));
+            this.RestoreStocks.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.RestoreStocks.Name = "RestoreStocks";
+            this.RestoreStocks.ReadOnly = true;
+            this.RestoreStocks.Width = 5;
             // 
             // orderIdDataGridViewTextBoxColumn
             // 
@@ -876,8 +996,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 611);
-            this.Controls.Add(this.dataGridViewStaffs);
+            this.Controls.Add(this.dataGridViewUsers);
             this.Controls.Add(this.panelCounts);
+            this.Controls.Add(this.dataGridViewStaffs);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.cbFilter);
@@ -907,6 +1028,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
@@ -945,15 +1069,6 @@
         private System.Windows.Forms.BindingSource ordersClassBindingSource;
         private System.Windows.Forms.DataGridView dataGridViewStocks;
         private System.Windows.Forms.BindingSource itemsClassBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblStocks;
         private System.Windows.Forms.Label Stocks;
@@ -962,13 +1077,25 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnBackups;
         private System.Windows.Forms.DataGridView dataGridViewStaffs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryAddressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn Restore;
+        private System.Windows.Forms.BindingSource userClassBindingSource;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lblUsers;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dataGridViewUsers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn User_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.DataGridViewImageColumn RestoreUser;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn First_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Last_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contact_No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
+        private System.Windows.Forms.DataGridViewImageColumn RestoreStaffs;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIdDataGridViewTextBoxColumn;
@@ -977,15 +1104,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalItemDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn staffsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.BindingSource userClassBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn First_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Last_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contact_No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn RestoreOrders;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn deliveryAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn RestoreCustomers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn RestoreStocks;
     }
 }

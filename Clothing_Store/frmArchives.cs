@@ -64,6 +64,7 @@ namespace Clothing_Store
             dataGridViewOrders.Visible = false;
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = false;
 
         } // home btn end
         private void btnCustomers_Click(object sender, EventArgs e) // btn customer begin
@@ -74,7 +75,7 @@ namespace Clothing_Store
             dataGridViewOrders.Visible = false;
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = false;
-
+            dataGridViewUsers.Visible = false;
             manageCustomers();
             
 
@@ -87,7 +88,7 @@ namespace Clothing_Store
             dataGridViewOrders.Visible = true;
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = false;
-
+            dataGridViewUsers.Visible = false;
             manageOrders();
         }// manage orders end 
 
@@ -99,7 +100,7 @@ namespace Clothing_Store
             dataGridViewOrders.Visible = false;
             dataGridViewStocks.Visible = true;
             dataGridViewStaffs.Visible = false;
-
+            dataGridViewUsers.Visible = false;
             manageItems();
 
         } // btn stocks end
@@ -111,8 +112,43 @@ namespace Clothing_Store
             dataGridViewOrders.Visible = false;
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = true;
+            dataGridViewUsers.Visible = false;
             ManageStaffs();
         } // btn staffs end
+
+        private void btnUsers_Click(object sender, EventArgs e) // btn users begin
+        {
+            datagridCustomer.Visible = false;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = true;
+
+            manageUsers();
+
+        } //btn users end
+
+        public void manageUsers() // manage Users begin - datagrid
+        {
+
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+
+            string sj = "select u.User_Id , s.First_Name , s.Last_Name , u.User_Name,u.Password from Users as u inner join Staffs as s on u.Staff_Id = s.Staff_Id where u.Status = 1";
+
+            SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewUsers.DataSource = table;
+
+
+
+        } // manage Users end - datagrid
         public void manageCustomers() // manage cusstomers begin - datagrid
         {
 
@@ -208,7 +244,7 @@ namespace Clothing_Store
             cs.Delivery_Address = datagridCustomer.CurrentRow.Cells["deliveryAddressDataGridViewTextBoxColumn"].Value.ToString();
 
 
-            if (datagridCustomer.Columns[e.ColumnIndex].Name == "Restore")
+            if (datagridCustomer.Columns[e.ColumnIndex].Name == "RestoreCustomers")
             {
                 DialogResult result = MessageBox.Show("Do you want to Restore " + cs.First_Name + " " + cs.Last_Name + "?", "Restore", MessageBoxButtons.YesNo);
 
@@ -259,7 +295,7 @@ namespace Clothing_Store
             oc.Quantity = dataGridViewOrders.CurrentRow.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString();
 
 
-            if (dataGridViewOrders.Columns[e.ColumnIndex].Name == "Restore")
+            if (dataGridViewOrders.Columns[e.ColumnIndex].Name == "RestoreOrders")
             {
                 DialogResult result = MessageBox.Show("Do you want to Restore Order # " + oc.Order_Id + " by: " + oc.Customer_Name + "  ?", "Restore", MessageBoxButtons.YesNo);
 
@@ -356,7 +392,23 @@ namespace Clothing_Store
 
             con.Close();
 
+            string user = "select count(*) from Users where Status = 2";
+
+            SqlCommand command4;
+            command4 = new SqlCommand(user, con);
+            con.Open();
+            SqlDataReader reader4 = command4.ExecuteReader();
+            if (reader4.Read())
+            {
+                lblUsers.Text = reader4[0].ToString();
+            }
+
+            con.Close();
+
         } // count end
+
+        userClass staff = new userClass();
+
         private void dataGridViewStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e) // datagrid staffs click begin 
         {
             userClass staff = new userClass();
@@ -369,7 +421,7 @@ namespace Clothing_Store
             staff.staffEmail = dataGridViewStaffs.CurrentRow.Cells["Email"].Value.ToString();
             staff.StaffPosition = dataGridViewStaffs.CurrentRow.Cells["Position"].Value.ToString();
 
-            if (dataGridViewStaffs.Columns[e.ColumnIndex].Name == "Restore")
+            if (dataGridViewStaffs.Columns[e.ColumnIndex].Name == "RestoreStaffs")
             {
                 DialogResult result = MessageBox.Show("Do you want to Restore Staff # " + staff.staffid + " Name: " + staff.StaffFirstName + " " + staff.StaffLastName + "  ?", "Restore", MessageBoxButtons.YesNo);
 
@@ -399,6 +451,49 @@ namespace Clothing_Store
             }
         } // datagrid staff click end
 
+        private void dataGridViewUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)// datagrid User click begin
+        { 
+            staff.uid = dataGridViewUsers.CurrentRow.Cells["User_Id"].Value.ToString();
+            staff.username = dataGridViewUsers.CurrentRow.Cells["User_Name"].Value.ToString();
+            staff.userpas = dataGridViewUsers.CurrentRow.Cells["Password"].Value.ToString();
+
+
+             if (dataGridViewUsers.Columns[e.ColumnIndex].Name == "RestoreUser")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Restore User # " + staff.uid + " User Name: " + staff.username + " Password: " + staff.userpas + "  ?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Users set Status = 1 where User_Id = " + staff.uid + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = "Restore User # " + staff.uid + " User Name: " + staff.username + " Password: " + staff.userpas;
+                    //        ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+        }// datagrid User click end
+
+        private void dataGridViewStocks_CellContentClick(object sender, DataGridViewCellEventArgs e) // stock cell click begin
+        {
+
+        } // stock cell click end
+
+      
 
     }// class end
 } // name space end
