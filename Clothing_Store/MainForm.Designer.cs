@@ -74,6 +74,7 @@
             this.pboxCollecton = new System.Windows.Forms.PictureBox();
             this.pboxPolo = new System.Windows.Forms.PictureBox();
             this.pboxShorts = new System.Windows.Forms.PictureBox();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.panel1buttonCollections.SuspendLayout();
             this.panelRSide.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -312,9 +313,9 @@
             this.panelRSide.Controls.Add(this.btnArchives);
             this.panelRSide.Controls.Add(this.btnItemStatus);
             this.panelRSide.Controls.Add(this.btnDeliveriesStatus);
-            this.panelRSide.Location = new System.Drawing.Point(1056, 256);
+            this.panelRSide.Location = new System.Drawing.Point(1056, 372);
             this.panelRSide.Name = "panelRSide";
-            this.panelRSide.Size = new System.Drawing.Size(186, 214);
+            this.panelRSide.Size = new System.Drawing.Size(186, 98);
             this.panelRSide.TabIndex = 3;
             // 
             // btnArchives
@@ -560,6 +561,7 @@
             this.panelAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAccount.BackColor = System.Drawing.Color.White;
             this.panelAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAccount.Controls.Add(this.btnAbout);
             this.panelAccount.Controls.Add(this.btnbackupAndRecovery);
             this.panelAccount.Controls.Add(this.btnLogout);
             this.panelAccount.Location = new System.Drawing.Point(1056, 144);
@@ -720,6 +722,24 @@
             this.pboxShorts.TabIndex = 8;
             this.pboxShorts.TabStop = false;
             // 
+            // btnAbout
+            // 
+            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbout.BackColor = System.Drawing.Color.White;
+            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAbout.FlatAppearance.BorderSize = 3;
+            this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnAbout.Location = new System.Drawing.Point(3, 128);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(178, 62);
+            this.btnAbout.TabIndex = 15;
+            this.btnAbout.Text = "Account";
+            this.btnAbout.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -804,5 +824,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblTotalBlouse;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnAbout;
     }
 }

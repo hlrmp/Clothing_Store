@@ -43,13 +43,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewManage = new System.Windows.Forms.DataGridView();
-            this.Inventory_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code_and_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelEdit = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,6 +56,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.Inventory_Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code_and_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
@@ -249,63 +249,6 @@
             this.dataGridViewManage.Visible = false;
             this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick_1);
             // 
-            // Inventory_Number
-            // 
-            this.Inventory_Number.DataPropertyName = "Inventory_Number";
-            this.Inventory_Number.HeaderText = "Inventory Number";
-            this.Inventory_Number.Name = "Inventory_Number";
-            this.Inventory_Number.ReadOnly = true;
-            // 
-            // code_and_name
-            // 
-            this.code_and_name.DataPropertyName = "code_and_name";
-            this.code_and_name.HeaderText = "Code and Name";
-            this.code_and_name.Name = "code_and_name";
-            this.code_and_name.ReadOnly = true;
-            // 
-            // Supplier_Name
-            // 
-            this.Supplier_Name.DataPropertyName = "Supplier_Name";
-            this.Supplier_Name.HeaderText = "Supplier Name";
-            this.Supplier_Name.Name = "Supplier_Name";
-            this.Supplier_Name.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.DataPropertyName = "Edit";
-            this.Edit.FillWeight = 50F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.FillWeight = 50F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 50;
-            // 
             // itemsClassBindingSource
             // 
             this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
@@ -460,6 +403,63 @@
             this.txtQuantity.Size = new System.Drawing.Size(132, 20);
             this.txtQuantity.TabIndex = 0;
             // 
+            // Inventory_Number
+            // 
+            this.Inventory_Number.DataPropertyName = "Inventory_Number";
+            this.Inventory_Number.HeaderText = "Inventory Number";
+            this.Inventory_Number.Name = "Inventory_Number";
+            this.Inventory_Number.ReadOnly = true;
+            // 
+            // code_and_name
+            // 
+            this.code_and_name.DataPropertyName = "code_and_name";
+            this.code_and_name.HeaderText = "Code and Name";
+            this.code_and_name.Name = "code_and_name";
+            this.code_and_name.ReadOnly = true;
+            // 
+            // Supplier_Name
+            // 
+            this.Supplier_Name.DataPropertyName = "Supplier_Name";
+            this.Supplier_Name.HeaderText = "Supplier Name";
+            this.Supplier_Name.Name = "Supplier_Name";
+            this.Supplier_Name.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Edit";
+            this.Edit.FillWeight = 22F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::Clothing_Store.Properties.Resources.edit_icon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 5;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.FillWeight = 25F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = ((System.Drawing.Image)(resources.GetObject("Delete.Image")));
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 5;
+            // 
             // FrmStocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,6 +512,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.RadioButton rbMinus;
+        private System.Windows.Forms.RadioButton rbAdd;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Inventory_Number;
         private System.Windows.Forms.DataGridViewTextBoxColumn code_and_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Supplier_Name;
@@ -519,9 +523,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.RadioButton rbMinus;
-        private System.Windows.Forms.RadioButton rbAdd;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDesc;
     }
 }

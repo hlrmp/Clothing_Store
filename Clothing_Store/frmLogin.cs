@@ -140,10 +140,10 @@ namespace Clothing_Store
                                         mf.Show();
                                         this.Hide();
                              
-                                   }
-                                   else if (username == uc.username && pass == uc.userpas && pos == "Admin")
+                                                   }
+                                   else if (username == uc.username && pass == uc.userpas && pos == "Admin" || username == uc.username && pass == uc.userpas && pos == "Owner")
                                    {
-                                       MessageBox.Show("A");
+                                        MessageBox.Show("A");
                                         mf.Show();
                                         this.Hide();
 
@@ -177,7 +177,29 @@ namespace Clothing_Store
                 } // outer else
         } // login end
 
-        
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblusername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }// class end
 }//  name space end 

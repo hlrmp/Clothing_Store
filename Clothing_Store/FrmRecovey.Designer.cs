@@ -46,8 +46,17 @@
             this.txtBrowse = new System.Windows.Forms.TextBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelLogin = new System.Windows.Forms.Panel();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.ckPassword = new System.Windows.Forms.CheckBox();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblusername = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnlBrowse.SuspendLayout();
+            this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -258,11 +267,105 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // panelLogin
+            // 
+            this.panelLogin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelLogin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelLogin.Controls.Add(this.label2);
+            this.panelLogin.Controls.Add(this.txtUserName);
+            this.panelLogin.Controls.Add(this.ckPassword);
+            this.panelLogin.Controls.Add(this.lblPassword);
+            this.panelLogin.Controls.Add(this.lblusername);
+            this.panelLogin.Controls.Add(this.txtPassword);
+            this.panelLogin.Controls.Add(this.btnConfirm);
+            this.panelLogin.Location = new System.Drawing.Point(347, 52);
+            this.panelLogin.Name = "panelLogin";
+            this.panelLogin.Size = new System.Drawing.Size(381, 222);
+            this.panelLogin.TabIndex = 53;
+            this.panelLogin.Visible = false;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(136, 59);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(217, 24);
+            this.txtUserName.TabIndex = 15;
+            // 
+            // ckPassword
+            // 
+            this.ckPassword.AutoSize = true;
+            this.ckPassword.Location = new System.Drawing.Point(136, 139);
+            this.ckPassword.Name = "ckPassword";
+            this.ckPassword.Size = new System.Drawing.Size(53, 17);
+            this.ckPassword.TabIndex = 14;
+            this.ckPassword.Text = "Show";
+            this.ckPassword.UseVisualStyleBackColor = true;
+            this.ckPassword.CheckedChanged += new System.EventHandler(this.ckPassword_CheckedChanged);
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(38, 103);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(93, 18);
+            this.lblPassword.TabIndex = 13;
+            this.lblPassword.Text = "Password :";
+            // 
+            // lblusername
+            // 
+            this.lblusername.AutoSize = true;
+            this.lblusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusername.Location = new System.Drawing.Point(27, 62);
+            this.lblusername.Name = "lblusername";
+            this.lblusername.Size = new System.Drawing.Size(103, 18);
+            this.lblusername.TabIndex = 12;
+            this.lblusername.Text = "User Name :";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(136, 100);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(217, 24);
+            this.txtPassword.TabIndex = 11;
+            this.txtPassword.UseSystemPasswordChar = true;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Teal;
+            this.btnConfirm.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnConfirm.FlatAppearance.BorderSize = 0;
+            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.Location = new System.Drawing.Point(235, 162);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(118, 38);
+            this.btnConfirm.TabIndex = 10;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label2.Location = new System.Drawing.Point(23, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 28);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "Authorizattion";
+            // 
             // FrmRecovey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(901, 409);
+            this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pnlBrowse);
             this.Controls.Add(this.lblTitle);
@@ -276,6 +379,8 @@
             this.panel1.PerformLayout();
             this.pnlBrowse.ResumeLayout(false);
             this.pnlBrowse.PerformLayout();
+            this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,5 +405,13 @@
         private System.Windows.Forms.Button btnRestoreBrowse;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panelLogin;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.CheckBox ckPassword;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblusername;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }

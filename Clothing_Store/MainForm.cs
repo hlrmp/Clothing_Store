@@ -39,6 +39,7 @@ namespace Clothing_Store
             {
                 btnAccount.Visible = false;
                 btnArchives.Visible = false;
+                btnAbout.Visible =  true;
 
                 lblAccount.Text = frmLogin.name + "  (" + emp + ")";
 
@@ -47,7 +48,8 @@ namespace Clothing_Store
             {
                 btnAccount.Visible = true;
                 btnArchives.Visible = true;
-              
+                btnAbout.Visible = false;
+
                 lblAccount.Text = frmLogin.name + "  (" + emp + ")";
 
 

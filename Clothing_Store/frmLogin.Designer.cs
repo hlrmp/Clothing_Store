@@ -87,6 +87,7 @@
             this.txtPassword.Size = new System.Drawing.Size(217, 24);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // lblusername
             // 
@@ -97,6 +98,7 @@
             this.lblusername.Size = new System.Drawing.Size(103, 18);
             this.lblusername.TabIndex = 5;
             this.lblusername.Text = "User Name :";
+            this.lblusername.Click += new System.EventHandler(this.lblusername_Click);
             // 
             // lblPassword
             // 
@@ -107,6 +109,7 @@
             this.lblPassword.Size = new System.Drawing.Size(93, 18);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Password :";
+            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
             // 
             // ckPassword
             // 
@@ -126,6 +129,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(217, 24);
             this.txtUserName.TabIndex = 8;
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // label1
             // 
@@ -138,6 +142,7 @@
             this.label1.Size = new System.Drawing.Size(98, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "Forgot password";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblTitle
             // 
