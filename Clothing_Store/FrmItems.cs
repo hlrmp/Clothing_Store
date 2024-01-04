@@ -285,7 +285,7 @@ namespace Clothing_Store
           
 
         } // see all items end - datagrid
-        public void Total() // see all items begin - datagrid
+        public void Total() // see all items begin - label
         {
 
             SqlConnection connection = new SqlConnection(ConnectionClass.conn);
@@ -302,7 +302,7 @@ namespace Clothing_Store
 
             connection.Close();
 
-        } // see all items end - datagrid
+        } // see all items end - label
 
 
         public void search() // search method begin
