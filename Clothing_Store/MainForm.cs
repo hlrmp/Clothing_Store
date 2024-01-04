@@ -21,8 +21,41 @@ namespace Clothing_Store
             totalShorts();
             totalPolo();
             totalTshirt();
+            totalBlouse();
+            totalCollections();
+            totalPantsJeans();
+            totalPoloShirt();
+            
 
         } // main constructor end
+
+        string emp;
+
+        public void employee()    // emp condition begin
+        {
+            emp = frmLogin.pos1;
+            //  emp = "Cashier";
+            if (emp == "Cashier")
+            {
+                btnAccount.Visible = false;
+                btnArchives.Visible = false;
+
+                lblAccount.Text = frmLogin.name + "  (" + emp + ")";
+
+            }
+            else if (emp == "Admin" || emp == "Manager")
+            {
+                btnAccount.Visible = true;
+                btnArchives.Visible = true;
+              
+                lblAccount.Text = frmLogin.name + "  (" + emp + ")";
+
+
+            }
+
+        } // emp condition begin
+
+
 
 
         // forms instance 
@@ -557,32 +590,13 @@ namespace Clothing_Store
         } // button delivery end
 
 
-        string emp;
-      
-        public void employee()    // emp condition begin
-        {
-           emp = frmLogin.pos1;     
-         //  emp = "Cashier";
-            if (emp == "Cashier")
-            {
-                btnAccount.Visible = false; 
-                lblAccount.Text = frmLogin.name + "  (" + emp + ")";
-
-            }
-            else if (emp == "Admin" || emp == "Manager")
-            {
-                btnAccount.Visible = true;
-                lblAccount.Text = frmLogin.name + "  (" + emp + ")";
-            }
-
-        } // emp condition begin
-
+       
         public void totalShorts()  // total  - string
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
             string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
                 "INNER JOIN Inventory AS i " +
-                "ON (p.Product_Id = i.product_Id) Where Type like 'shorts'";
+                "ON (p.Product_Id = i.product_Id) Where Type = 'shorts' and p.status = 1";
 
             sqlcc.Open();
             SqlCommand command;
@@ -598,7 +612,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
             string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
                 "INNER JOIN Inventory AS i " +
-                "ON (p.Product_Id = i.product_Id) Where Type like 'polo'";
+                "ON (p.Product_Id = i.product_Id) Where Type = 'polo'  and p.status = 1";
 
             sqlcc.Open();
             SqlCommand command;
@@ -614,7 +628,71 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
             string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
                 "INNER JOIN Inventory AS i " +
-                "ON (p.Product_Id = i.product_Id) Where Type like 'tshirt'";
+                "ON (p.Product_Id = i.product_Id) Where Type = 'tshirt'  and p.status = 1";
+
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lblTotalTshirt.Text = reader[0].ToString();  // - total numbers
+
+        }  // total  - string
+        public void totalPoloShirt()  // total  - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
+                "INNER JOIN Inventory AS i " +
+                "ON (p.Product_Id = i.product_Id) Where Type = 'poloshirt'  and p.status = 1";
+
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lblTotalPoloShirt.Text = reader[0].ToString();  // - total numbers
+
+        }  // total  - string
+        public void totalPantsJeans()  // total  - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
+                "INNER JOIN Inventory AS i " +
+                "ON (p.Product_Id = i.product_Id) Where Type = 'Pants/Jeans'  and p.status = 1";
+
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lblTotalTshirt.Text = reader[0].ToString();  // - total numbers
+
+        }  // total  - string
+        public void totalCollections()  // total  - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
+                "INNER JOIN Inventory AS i " +
+                "ON (p.Product_Id = i.product_Id) Where Type = 'collections'  and p.status = 1";
+
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lblTotalCollection.Text = reader[0].ToString();  // - total numbers
+
+        }  // total  - string
+        public void totalBlouse()  // total  - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "SELECT count(p.Type) FROM Products AS p \r\n" +
+                "INNER JOIN Inventory AS i " +
+                "ON (p.Product_Id = i.product_Id) Where Type = 'blouse'  and p.status = 1";
 
             sqlcc.Open();
             SqlCommand command;
@@ -689,9 +767,15 @@ namespace Clothing_Store
 
         } // backup and recovery btn end
 
-        private void btnArchives_Click(object sender, EventArgs e)
+        private void btnArchives_Click(object sender, EventArgs e) // btn archive begin
         {
+            frmArchives fa = new frmArchives();
+            fa.ShowDialog();
 
-        }
+
+        } // btn archive end
+
+ 
+
     } // class end 
 } // names space end

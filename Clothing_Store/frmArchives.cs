@@ -25,9 +25,11 @@ namespace Clothing_Store
         {
          //   this.dataGridViewMain.GridColor = Color.Navy;
 
+           /* 
+            
             this.txtSearch.AutoSize = false;
             this.txtSearch.Size = new System.Drawing.Size(243, 21);
-
+*/
             Timer timer = new Timer();
             timer.Interval = (2 * 1000);
             timer.Tick += new EventHandler(timer1_Tick);
@@ -69,6 +71,14 @@ namespace Clothing_Store
             dataGridViewItems.Visible = false;
 
 
+            btnHome.BackColor = Color.DarkBlue;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
         } // home btn end
         private void btnCustomers_Click(object sender, EventArgs e) // btn customer begin
         {
@@ -82,7 +92,15 @@ namespace Clothing_Store
             dataGridViewItems.Visible = false;
 
             manageCustomers();
-            
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.DarkBlue;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
 
         } // btn customer end
         private void btnOrders_Click(object sender, EventArgs e)// manage orders begin 
@@ -97,6 +115,15 @@ namespace Clothing_Store
             dataGridViewItems.Visible = false;
 
             manageOrders();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.DarkBlue;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
         }// manage orders end 
 
         private void btnStocks_Click(object sender, EventArgs e) // btn stocks begin
@@ -112,6 +139,14 @@ namespace Clothing_Store
 
             manageStocks();
 
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.DarkBlue;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
         } // btn stocks end
         private void btnStaffs_Click(object sender, EventArgs e) // btn staff begin
         {
@@ -124,6 +159,15 @@ namespace Clothing_Store
             dataGridViewUsers.Visible = false;
             dataGridViewItems.Visible = false;
             ManageStaffs();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.DarkBlue;
+            btnUsers.BackColor = Color.Teal;
+
         } // btn staffs end
 
         private void btnUsers_Click(object sender, EventArgs e) // btn users begin
@@ -138,6 +182,15 @@ namespace Clothing_Store
             dataGridViewItems.Visible = false;
 
             manageUsers();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.DarkBlue;
+
 
         } //btn users end
 
@@ -154,9 +207,16 @@ namespace Clothing_Store
             dataGridViewStaffs.Visible = false;
             dataGridViewUsers.Visible = false;
   
-            dataGridViewItems.Show();
-
             manageItems();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.DarkBlue;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
 
         } // btn items end
 
@@ -603,5 +663,149 @@ namespace Clothing_Store
             }
         }//datagrid item Click end
 
+        private void pbCustomer_Click(object sender, EventArgs e)
+        {
+            datagridCustomer.Visible = true;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+
+            manageCustomers();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.DarkBlue;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
+        }
+
+        private void pbOrders_Click(object sender, EventArgs e)
+        {
+            datagridCustomer.Visible = false;
+            //  dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = true;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+
+            manageOrders();
+
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.DarkBlue;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
+        }
+
+        private void pbStaffs_Click(object sender, EventArgs e)
+        {
+            datagridCustomer.Visible = false;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = true;
+            dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+
+            ManageStaffs();
+
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.DarkBlue;
+            btnUsers.BackColor = Color.Teal;
+
+        }
+
+
+        private void pbUsers_Click(object sender, EventArgs e)
+        {
+
+            datagridCustomer.Visible = false;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = true;
+            dataGridViewItems.Visible = false;
+
+            manageUsers();
+
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.DarkBlue;
+
+        }
+
+        private void pbItems_Click(object sender, EventArgs e)
+        {
+            dataGridViewItems.Visible = true;
+
+            datagridCustomer.Visible = false;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = false;
+
+            manageItems();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.DarkBlue;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
+
+        }
+
+        private void pbStocks_Click(object sender, EventArgs e)
+        {
+            datagridCustomer.Visible = false;
+            // dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = true;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+
+            manageStocks();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.DarkBlue;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
+        }
     }// class end
 } // name space end

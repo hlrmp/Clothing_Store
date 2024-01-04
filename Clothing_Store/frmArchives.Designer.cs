@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchives));
-            this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.lblsearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
             this.btnItems = new System.Windows.Forms.Button();
@@ -48,52 +45,33 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblItems = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.pbItems = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblUsers = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pbUsers = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblStaffs = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pbStaffs = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblStocks = new System.Windows.Forms.Label();
             this.Stocks = new System.Windows.Forms.Label();
+            this.pbStocks = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCustomers = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbCustomer = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblOrders = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.pbOrders = new System.Windows.Forms.PictureBox();
             this.datagridCustomer = new System.Windows.Forms.DataGridView();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliveryAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RestoreCustomers = new System.Windows.Forms.DataGridViewImageColumn();
-            this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
-            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staffsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RestoreOrders = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ordersClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewStocks = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewStaffs = new System.Windows.Forms.DataGridView();
             this.Staff_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,8 +89,7 @@
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RestoreUser = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
-            this.itemsClassBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.userClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,60 +98,59 @@
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colorDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
+            this.itemsClassBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalItemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deliveryAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelButtons.SuspendLayout();
             this.panelCounts.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItems)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsers)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStaffs)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStocks)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCustomer)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userClassBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cbFilter
-            // 
-            this.cbFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbFilter.BackColor = System.Drawing.Color.White;
-            this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(1160, 48);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(74, 21);
-            this.cbFilter.TabIndex = 48;
-            this.cbFilter.Text = "Filter";
-            // 
-            // lblsearch
-            // 
-            this.lblsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblsearch.AutoSize = true;
-            this.lblsearch.BackColor = System.Drawing.Color.White;
-            this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblsearch.Location = new System.Drawing.Point(1122, 51);
-            this.lblsearch.Name = "lblsearch";
-            this.lblsearch.Size = new System.Drawing.Size(41, 13);
-            this.lblsearch.TabIndex = 47;
-            this.lblsearch.Text = "Search";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(920, 48);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(243, 20);
-            this.txtSearch.TabIndex = 46;
             // 
             // lblTitle
             // 
@@ -192,6 +168,7 @@
             this.panelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelButtons.BackColor = System.Drawing.Color.Teal;
+            this.panelButtons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelButtons.Controls.Add(this.btnItems);
             this.panelButtons.Controls.Add(this.btnHome);
             this.panelButtons.Controls.Add(this.btnUsers);
@@ -209,13 +186,13 @@
             this.btnItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnItems.BackColor = System.Drawing.Color.Teal;
             this.btnItems.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnItems.FlatAppearance.BorderSize = 3;
+            this.btnItems.FlatAppearance.BorderSize = 4;
             this.btnItems.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnItems.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItems.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItems.ForeColor = System.Drawing.Color.White;
-            this.btnItems.Location = new System.Drawing.Point(509, 15);
+            this.btnItems.Location = new System.Drawing.Point(508, 15);
             this.btnItems.Name = "btnItems";
             this.btnItems.Size = new System.Drawing.Size(170, 28);
             this.btnItems.TabIndex = 59;
@@ -228,13 +205,13 @@
             this.btnHome.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnHome.BackColor = System.Drawing.Color.Teal;
             this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHome.FlatAppearance.BorderSize = 3;
+            this.btnHome.FlatAppearance.BorderSize = 4;
             this.btnHome.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(14, 15);
+            this.btnHome.Location = new System.Drawing.Point(13, 15);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(169, 28);
             this.btnHome.TabIndex = 58;
@@ -247,13 +224,13 @@
             this.btnUsers.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnUsers.BackColor = System.Drawing.Color.Teal;
             this.btnUsers.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnUsers.FlatAppearance.BorderSize = 3;
+            this.btnUsers.FlatAppearance.BorderSize = 4;
             this.btnUsers.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnUsers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Location = new System.Drawing.Point(1001, 15);
+            this.btnUsers.Location = new System.Drawing.Point(1000, 15);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(170, 28);
             this.btnUsers.TabIndex = 57;
@@ -266,13 +243,13 @@
             this.btnStaffs.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnStaffs.BackColor = System.Drawing.Color.Teal;
             this.btnStaffs.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnStaffs.FlatAppearance.BorderSize = 3;
+            this.btnStaffs.FlatAppearance.BorderSize = 4;
             this.btnStaffs.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnStaffs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnStaffs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaffs.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaffs.ForeColor = System.Drawing.Color.White;
-            this.btnStaffs.Location = new System.Drawing.Point(839, 15);
+            this.btnStaffs.Location = new System.Drawing.Point(838, 15);
             this.btnStaffs.Name = "btnStaffs";
             this.btnStaffs.Size = new System.Drawing.Size(170, 28);
             this.btnStaffs.TabIndex = 56;
@@ -285,13 +262,13 @@
             this.btnCustomers.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCustomers.BackColor = System.Drawing.Color.Teal;
             this.btnCustomers.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCustomers.FlatAppearance.BorderSize = 3;
+            this.btnCustomers.FlatAppearance.BorderSize = 4;
             this.btnCustomers.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(177, 15);
+            this.btnCustomers.Location = new System.Drawing.Point(176, 15);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(170, 28);
             this.btnCustomers.TabIndex = 55;
@@ -304,13 +281,13 @@
             this.btnStocks.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnStocks.BackColor = System.Drawing.Color.Teal;
             this.btnStocks.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnStocks.FlatAppearance.BorderSize = 3;
+            this.btnStocks.FlatAppearance.BorderSize = 4;
             this.btnStocks.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnStocks.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStocks.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStocks.ForeColor = System.Drawing.Color.White;
-            this.btnStocks.Location = new System.Drawing.Point(673, 15);
+            this.btnStocks.Location = new System.Drawing.Point(672, 15);
             this.btnStocks.Name = "btnStocks";
             this.btnStocks.Size = new System.Drawing.Size(170, 28);
             this.btnStocks.TabIndex = 54;
@@ -323,13 +300,13 @@
             this.btnOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnOrders.BackColor = System.Drawing.Color.Teal;
             this.btnOrders.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnOrders.FlatAppearance.BorderSize = 3;
+            this.btnOrders.FlatAppearance.BorderSize = 4;
             this.btnOrders.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnOrders.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.White;
-            this.btnOrders.Location = new System.Drawing.Point(344, 15);
+            this.btnOrders.Location = new System.Drawing.Point(343, 15);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(170, 28);
             this.btnOrders.TabIndex = 53;
@@ -385,6 +362,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.lblItems);
             this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.pbItems);
             this.panel6.Location = new System.Drawing.Point(371, 272);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(173, 128);
@@ -414,12 +392,24 @@
             this.label7.TabIndex = 50;
             this.label7.Text = "Items";
             // 
+            // pbItems
+            // 
+            this.pbItems.BackColor = System.Drawing.Color.White;
+            this.pbItems.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbItems.Location = new System.Drawing.Point(-1, -1);
+            this.pbItems.Name = "pbItems";
+            this.pbItems.Size = new System.Drawing.Size(173, 128);
+            this.pbItems.TabIndex = 56;
+            this.pbItems.TabStop = false;
+            this.pbItems.Click += new System.EventHandler(this.pbItems_Click);
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.lblUsers);
             this.panel5.Controls.Add(this.label6);
+            this.panel5.Controls.Add(this.pbUsers);
             this.panel5.Location = new System.Drawing.Point(910, 107);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(173, 128);
@@ -449,12 +439,24 @@
             this.label6.TabIndex = 50;
             this.label6.Text = "Users";
             // 
+            // pbUsers
+            // 
+            this.pbUsers.BackColor = System.Drawing.Color.White;
+            this.pbUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbUsers.Location = new System.Drawing.Point(-1, -1);
+            this.pbUsers.Name = "pbUsers";
+            this.pbUsers.Size = new System.Drawing.Size(173, 128);
+            this.pbUsers.TabIndex = 56;
+            this.pbUsers.TabStop = false;
+            this.pbUsers.Click += new System.EventHandler(this.pbUsers_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.lblStaffs);
             this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.pbStaffs);
             this.panel4.Location = new System.Drawing.Point(647, 107);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(173, 128);
@@ -484,12 +486,24 @@
             this.label5.TabIndex = 50;
             this.label5.Text = "Staffs";
             // 
+            // pbStaffs
+            // 
+            this.pbStaffs.BackColor = System.Drawing.Color.White;
+            this.pbStaffs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbStaffs.Location = new System.Drawing.Point(-1, -1);
+            this.pbStaffs.Name = "pbStaffs";
+            this.pbStaffs.Size = new System.Drawing.Size(173, 128);
+            this.pbStaffs.TabIndex = 56;
+            this.pbStaffs.TabStop = false;
+            this.pbStaffs.Click += new System.EventHandler(this.pbStaffs_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.lblStocks);
             this.panel3.Controls.Add(this.Stocks);
+            this.panel3.Controls.Add(this.pbStocks);
             this.panel3.Location = new System.Drawing.Point(647, 272);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(173, 128);
@@ -519,6 +533,17 @@
             this.Stocks.TabIndex = 50;
             this.Stocks.Text = "Stocks";
             // 
+            // pbStocks
+            // 
+            this.pbStocks.BackColor = System.Drawing.Color.White;
+            this.pbStocks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbStocks.Location = new System.Drawing.Point(-1, -1);
+            this.pbStocks.Name = "pbStocks";
+            this.pbStocks.Size = new System.Drawing.Size(173, 128);
+            this.pbStocks.TabIndex = 56;
+            this.pbStocks.TabStop = false;
+            this.pbStocks.Click += new System.EventHandler(this.pbStocks_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -536,6 +561,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblCustomers);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pbCustomer);
             this.panel1.Location = new System.Drawing.Point(98, 107);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(173, 128);
@@ -565,12 +591,24 @@
             this.label1.TabIndex = 46;
             this.label1.Text = "Customers";
             // 
+            // pbCustomer
+            // 
+            this.pbCustomer.BackColor = System.Drawing.Color.White;
+            this.pbCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCustomer.Location = new System.Drawing.Point(-1, -1);
+            this.pbCustomer.Name = "pbCustomer";
+            this.pbCustomer.Size = new System.Drawing.Size(173, 128);
+            this.pbCustomer.TabIndex = 55;
+            this.pbCustomer.TabStop = false;
+            this.pbCustomer.Click += new System.EventHandler(this.pbCustomer_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblOrders);
             this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.pbOrders);
             this.panel2.Location = new System.Drawing.Point(371, 107);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(173, 128);
@@ -600,6 +638,17 @@
             this.label3.TabIndex = 50;
             this.label3.Text = "Orders";
             // 
+            // pbOrders
+            // 
+            this.pbOrders.BackColor = System.Drawing.Color.White;
+            this.pbOrders.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbOrders.Location = new System.Drawing.Point(-1, -1);
+            this.pbOrders.Name = "pbOrders";
+            this.pbOrders.Size = new System.Drawing.Size(173, 128);
+            this.pbOrders.TabIndex = 56;
+            this.pbOrders.TabStop = false;
+            this.pbOrders.Click += new System.EventHandler(this.pbOrders_Click);
+            // 
             // datagridCustomer
             // 
             this.datagridCustomer.AllowUserToAddRows = false;
@@ -627,48 +676,6 @@
             this.datagridCustomer.Visible = false;
             this.datagridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
             // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First_Name";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // deliveryAddressDataGridViewTextBoxColumn
-            // 
-            this.deliveryAddressDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Address";
-            this.deliveryAddressDataGridViewTextBoxColumn.HeaderText = "Delivery_Address";
-            this.deliveryAddressDataGridViewTextBoxColumn.Name = "deliveryAddressDataGridViewTextBoxColumn";
-            this.deliveryAddressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contactNoDataGridViewTextBoxColumn
-            // 
-            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
-            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // RestoreCustomers
             // 
             this.RestoreCustomers.DataPropertyName = "Restore";
@@ -679,10 +686,6 @@
             this.RestoreCustomers.Name = "RestoreCustomers";
             this.RestoreCustomers.ReadOnly = true;
             this.RestoreCustomers.Width = 30;
-            // 
-            // customerClassBindingSource
-            // 
-            this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
             // 
             // dataGridViewOrders
             // 
@@ -713,62 +716,6 @@
             this.dataGridViewOrders.Visible = false;
             this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
             // 
-            // orderIdDataGridViewTextBoxColumn
-            // 
-            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "Order_Id";
-            this.orderIdDataGridViewTextBoxColumn.HeaderText = "Order_Id";
-            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
-            this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer_Name";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productIdDataGridViewTextBoxColumn
-            // 
-            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "Product_Id";
-            this.productIdDataGridViewTextBoxColumn.HeaderText = "Product_Id";
-            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
-            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product_Name";
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // productPriceDataGridViewTextBoxColumn
-            // 
-            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "Product_Price";
-            this.productPriceDataGridViewTextBoxColumn.HeaderText = "Product_Price";
-            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
-            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalItemDataGridViewTextBoxColumn
-            // 
-            this.totalItemDataGridViewTextBoxColumn.DataPropertyName = "Total_Item";
-            this.totalItemDataGridViewTextBoxColumn.HeaderText = "Total_Item";
-            this.totalItemDataGridViewTextBoxColumn.Name = "totalItemDataGridViewTextBoxColumn";
-            this.totalItemDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // staffsDataGridViewTextBoxColumn
-            // 
-            this.staffsDataGridViewTextBoxColumn.DataPropertyName = "Staffs";
-            this.staffsDataGridViewTextBoxColumn.HeaderText = "Staffs";
-            this.staffsDataGridViewTextBoxColumn.Name = "staffsDataGridViewTextBoxColumn";
-            this.staffsDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // RestoreOrders
             // 
             this.RestoreOrders.DataPropertyName = "Restore";
@@ -779,10 +726,6 @@
             this.RestoreOrders.Name = "RestoreOrders";
             this.RestoreOrders.ReadOnly = true;
             this.RestoreOrders.Width = 30;
-            // 
-            // ordersClassBindingSource
-            // 
-            this.ordersClassBindingSource.DataSource = typeof(Clothing_Store.classes.ordersClass);
             // 
             // dataGridViewStocks
             // 
@@ -810,66 +753,6 @@
             this.dataGridViewStocks.Size = new System.Drawing.Size(1196, 429);
             this.dataGridViewStocks.TabIndex = 62;
             this.dataGridViewStocks.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoryDataGridViewTextBoxColumn
-            // 
-            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "category";
-            this.categoryDataGridViewTextBoxColumn.HeaderText = "category";
-            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
-            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sizeDataGridViewTextBoxColumn
-            // 
-            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "size";
-            this.sizeDataGridViewTextBoxColumn.HeaderText = "size";
-            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
-            this.sizeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colorDataGridViewTextBoxColumn
-            // 
-            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
-            this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
-            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
-            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantityDataGridViewTextBoxColumn1
-            // 
-            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn1.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
-            this.quantityDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itemsClassBindingSource
-            // 
-            this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
             // 
             // dataGridViewStaffs
             // 
@@ -1056,13 +939,17 @@
             this.dataGridViewItems.Visible = false;
             this.dataGridViewItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItems_CellContentClick_1);
             // 
-            // itemsClassBindingSource1
+            // Restore
             // 
-            this.itemsClassBindingSource1.DataSource = typeof(Clothing_Store.itemsClass);
-            // 
-            // userClassBindingSource
-            // 
-            this.userClassBindingSource.DataSource = typeof(Clothing_Store.userClass);
+            this.Restore.FillWeight = 50F;
+            this.Restore.HeaderText = "Restore";
+            this.Restore.Image = ((System.Drawing.Image)(resources.GetObject("Restore.Image")));
+            this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Restore.Name = "Restore";
+            this.Restore.ReadOnly = true;
+            this.Restore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Restore.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Restore.Width = 5;
             // 
             // code
             // 
@@ -1120,36 +1007,195 @@
             this.dateDataGridViewTextBoxColumn1.Name = "dateDataGridViewTextBoxColumn1";
             this.dateDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // Restore
+            // itemsClassBindingSource1
             // 
-            this.Restore.FillWeight = 50F;
-            this.Restore.HeaderText = "Restore";
-            this.Restore.Image = ((System.Drawing.Image)(resources.GetObject("Restore.Image")));
-            this.Restore.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Restore.Name = "Restore";
-            this.Restore.ReadOnly = true;
-            this.Restore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Restore.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Restore.Width = 5;
+            this.itemsClassBindingSource1.DataSource = typeof(Clothing_Store.itemsClass);
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryDataGridViewTextBoxColumn
+            // 
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sizeDataGridViewTextBoxColumn
+            // 
+            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "size";
+            this.sizeDataGridViewTextBoxColumn.HeaderText = "size";
+            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
+            this.sizeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colorDataGridViewTextBoxColumn
+            // 
+            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
+            this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
+            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
+            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn1
+            // 
+            this.quantityDataGridViewTextBoxColumn1.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn1.HeaderText = "quantity";
+            this.quantityDataGridViewTextBoxColumn1.Name = "quantityDataGridViewTextBoxColumn1";
+            this.quantityDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itemsClassBindingSource
+            // 
+            this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
+            // 
+            // orderIdDataGridViewTextBoxColumn
+            // 
+            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "Order_Id";
+            this.orderIdDataGridViewTextBoxColumn.HeaderText = "Order_Id";
+            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
+            this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_Name";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer_Name";
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productIdDataGridViewTextBoxColumn
+            // 
+            this.productIdDataGridViewTextBoxColumn.DataPropertyName = "Product_Id";
+            this.productIdDataGridViewTextBoxColumn.HeaderText = "Product_Id";
+            this.productIdDataGridViewTextBoxColumn.Name = "productIdDataGridViewTextBoxColumn";
+            this.productIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product_Name";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            this.productNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productPriceDataGridViewTextBoxColumn
+            // 
+            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "Product_Price";
+            this.productPriceDataGridViewTextBoxColumn.HeaderText = "Product_Price";
+            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
+            this.productPriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalItemDataGridViewTextBoxColumn
+            // 
+            this.totalItemDataGridViewTextBoxColumn.DataPropertyName = "Total_Item";
+            this.totalItemDataGridViewTextBoxColumn.HeaderText = "Total_Item";
+            this.totalItemDataGridViewTextBoxColumn.Name = "totalItemDataGridViewTextBoxColumn";
+            this.totalItemDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // staffsDataGridViewTextBoxColumn
+            // 
+            this.staffsDataGridViewTextBoxColumn.DataPropertyName = "Staffs";
+            this.staffsDataGridViewTextBoxColumn.HeaderText = "Staffs";
+            this.staffsDataGridViewTextBoxColumn.Name = "staffsDataGridViewTextBoxColumn";
+            this.staffsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ordersClassBindingSource
+            // 
+            this.ordersClassBindingSource.DataSource = typeof(Clothing_Store.classes.ordersClass);
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "First_Name";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "First_Name";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "Last_Name";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "Last_Name";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // deliveryAddressDataGridViewTextBoxColumn
+            // 
+            this.deliveryAddressDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Address";
+            this.deliveryAddressDataGridViewTextBoxColumn.HeaderText = "Delivery_Address";
+            this.deliveryAddressDataGridViewTextBoxColumn.Name = "deliveryAddressDataGridViewTextBoxColumn";
+            this.deliveryAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // contactNoDataGridViewTextBoxColumn
+            // 
+            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
+            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // customerClassBindingSource
+            // 
+            this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
+            // 
+            // userClassBindingSource
+            // 
+            this.userClassBindingSource.DataSource = typeof(Clothing_Store.userClass);
             // 
             // frmArchives
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1275, 626);
-            this.Controls.Add(this.dataGridViewItems);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelButtons);
-            this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.lblsearch);
-            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.panelCounts);
+            this.Controls.Add(this.dataGridViewItems);
             this.Controls.Add(this.dataGridViewStocks);
             this.Controls.Add(this.dataGridViewUsers);
             this.Controls.Add(this.dataGridViewStaffs);
             this.Controls.Add(this.dataGridViewOrders);
             this.Controls.Add(this.datagridCustomer);
-            this.Controls.Add(this.panelCounts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmArchives";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1160,26 +1206,32 @@
             this.panelCounts.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbItems)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUsers)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStaffs)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStocks)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCustomer)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1187,10 +1239,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbFilter;
-        private System.Windows.Forms.Label lblsearch;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelButtons;
         private System.Windows.Forms.Button btnStocks;
@@ -1206,7 +1254,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblOrders;
         private System.Windows.Forms.Label label3;
@@ -1280,5 +1327,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewImageColumn Restore;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pbCustomer;
+        private System.Windows.Forms.PictureBox pbItems;
+        private System.Windows.Forms.PictureBox pbUsers;
+        private System.Windows.Forms.PictureBox pbStaffs;
+        private System.Windows.Forms.PictureBox pbStocks;
+        private System.Windows.Forms.PictureBox pbOrders;
     }
 }

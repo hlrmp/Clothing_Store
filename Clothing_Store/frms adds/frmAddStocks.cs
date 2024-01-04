@@ -100,7 +100,7 @@ namespace Clothing_Store
             arr.Add("Tshirt");
             arr.Add("Polo");
             arr.Add("Polo-Shirt");
-            arr.Add("Pants");
+            arr.Add("Pants/Jeans");
             arr.Add("Blouse");
             arr.Add("Shorts");
             arr.Add("Collection");
