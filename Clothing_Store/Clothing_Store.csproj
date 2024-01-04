@@ -280,6 +280,15 @@
     <None Include="Resources\delete.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\store.png" />
+    <None Include="Resources\tshirt.jpg" />
+    <None Include="Resources\shorts.jpg" />
+    <None Include="Resources\poloshirt2.jpg" />
+    <None Include="Resources\poloshirt.jpg" />
+    <None Include="Resources\polo2.jpg" />
+    <None Include="Resources\pants.jpg" />
+    <None Include="Resources\girls collection.jpg" />
+    <None Include="Resources\collections.jpg" />
     <Content Include="Resources\delete icon.jpg" />
     <None Include="Resources\edit icon1.png" />
     <None Include="Resources\delete icon1.jpg" />
