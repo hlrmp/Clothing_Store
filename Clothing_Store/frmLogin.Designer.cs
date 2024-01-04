@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -37,6 +38,8 @@
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnLogin
@@ -147,6 +150,44 @@
             this.lblTitle.TabIndex = 33;
             this.lblTitle.Text = "Log-in";
             // 
+            // circularProgressBar1
+            // 
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 100;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold);
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.Location = new System.Drawing.Point(171, 58);
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.circularProgressBar1.OuterMargin = -25;
+            this.circularProgressBar1.OuterWidth = 25;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.Teal;
+            this.circularProgressBar1.ProgressWidth = 5;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.circularProgressBar1.Size = new System.Drawing.Size(145, 123);
+            this.circularProgressBar1.StartAngle = 270;
+            this.circularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar1.SubscriptText = ".23";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "";
+            this.circularProgressBar1.TabIndex = 36;
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar1.Value = 68;
+            this.circularProgressBar1.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 20;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +195,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(450, 303);
+            this.Controls.Add(this.circularProgressBar1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUserName);
@@ -183,5 +225,7 @@
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblTitle;
+        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -17,7 +17,9 @@ namespace Clothing_Store
         public frmLogin()
         {
             InitializeComponent();
-            
+
+            circularProgressBar1.Value = 0;
+
         }
 
             protected override void OnPaint(PaintEventArgs e)    // border color begin
@@ -78,7 +80,9 @@ namespace Clothing_Store
         public static string pos1;
         public static string name;
         public static int userId;
+        string str;
 
+        MainForm mf = new MainForm();
         public void log() // login begin
         {
 
@@ -89,7 +93,6 @@ namespace Clothing_Store
                 uc.userpas = txtPassword.Text;
 
 
-            MainForm mf = new MainForm();
            
             if (string.IsNullOrEmpty(txtUserName.Text) ||
                             string.IsNullOrEmpty(txtPassword.Text))
@@ -137,15 +140,21 @@ namespace Clothing_Store
                                    if (username == uc.username && pass == uc.userpas && pos == "Cashier")
                                    {
                                        MessageBox.Show("C");
-                                        mf.Show();
-                                        this.Hide();
+
+                                       circularProgressBar1.Show();
+                                       timer1.Start();
+                                       
+                                      
                              
-                                                   }
+                                   }
                                    else if (username == uc.username && pass == uc.userpas && pos == "Admin" || username == uc.username && pass == uc.userpas && pos == "Owner")
                                    {
                                         MessageBox.Show("A");
-                                        mf.Show();
-                                        this.Hide();
+
+                                        circularProgressBar1.Show();
+                                        timer1.Start();
+
+
 
                                    }
                                    else
@@ -190,6 +199,26 @@ namespace Clothing_Store
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+           
+            if (circularProgressBar1.Value < 100)
+            {
+
+                circularProgressBar1.Value += 1;
+                circularProgressBar1.Text = circularProgressBar1.Value.ToString() + "%";
+            }
+            else
+            {
+                timer1.Stop();
+
+                mf.Show();
+                this.Hide();
+
+            }
         }
     }// class end
 }//  name space end 
