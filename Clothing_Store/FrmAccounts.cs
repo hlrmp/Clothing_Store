@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Clothing_Store
 {
@@ -38,11 +39,14 @@ namespace Clothing_Store
             PanelStafAndUser.Hide();
             dataGridViewStaffs.Visible = false;
             dataGridView1.Visible = false;
+            dataGridViewUsers.Visible = false;
 
             txtSearch.Hide();
             lblsearch.Hide();
             cbFilter.Hide();
 
+            panelEditUsers.Hide();
+            panelEdit.Hide();
 
         } //  add new user end
 
@@ -54,11 +58,17 @@ namespace Clothing_Store
             dataGridViewStaffs.Visible = false;
             dataGridView1.Visible = false;
             dataGridViewHome.Visible = true;
+            dataGridViewHome.Show();
+            dataGridViewUsers.Visible = false;
             seeStaffs();
 
             txtSearch.Show();
             lblsearch.Show();
             cbFilter.Show();
+
+            panelEditUsers.Hide();
+            panelEdit.Hide();
+
         } // home buton end
 
        
@@ -69,10 +79,15 @@ namespace Clothing_Store
             PanelStafAndUser.Hide();
             dataGridViewStaffs.Visible = false;
             dataGridView1.Visible = false;
+            dataGridViewUsers.Visible = false;
 
             txtSearch.Hide();
             lblsearch.Hide();
             cbFilter.Hide();
+
+            panelEditUsers.Hide();
+            panelEdit.Hide();
+
 
         } // recovery buton end
 
@@ -106,10 +121,14 @@ namespace Clothing_Store
             PanelStafAndUser.Hide();
             dataGridViewStaffs.Visible = false;
             dataGridView1.Visible = true;
+            dataGridViewUsers.Visible = false;
 
             txtSearch.Hide();
             lblsearch.Hide();
             cbFilter.Hide();
+
+            panelEditUsers.Hide();
+            panelEdit.Hide();
 
         } // btn activyity logs end
 
@@ -140,10 +159,15 @@ namespace Clothing_Store
             panelAdd.Hide();
             PanelStafAndUser.Hide();
             dataGridView1.Visible = false;
+            dataGridViewUsers.Visible = false;
 
             txtSearch.Hide();
             lblsearch.Hide();
             cbFilter.Hide();
+
+            panelEditUsers.Hide();
+            panelEdit.Hide();
+
         }
         private void btnUserStaffs_Click(object sender, EventArgs e)
         {
@@ -154,14 +178,29 @@ namespace Clothing_Store
             txtSearch.Hide();
             lblsearch.Hide();
             cbFilter.Hide();
+
+            panelEditUsers.Hide();
+            panelEdit.Hide();
+
         }
 
         private void btnStaffs_Click(object sender, EventArgs e)
         {
             ManageStaffs();
             dataGridViewStaffs.Visible = true;
+            dataGridViewUsers.Visible = false;
+            dataGridViewStaffs.Show();
+
         }
-            public void ManageStaffs() // manage Staffs begin - datagrid
+        private void btnUsers_Click(object sender, EventArgs e) //  manage users  btn begin
+        {
+            manageUsers();
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = true;
+            dataGridViewUsers.Show();
+
+        } //  manage users  btn end
+        public void ManageStaffs() // manage Staffs begin - datagrid
             {
 
                 SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
@@ -180,6 +219,26 @@ namespace Clothing_Store
 
 
             } // manage Staffs end - datagrid
+
+        public void manageUsers() // manage Users begin - datagrid
+        {
+
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+
+            string sj = "select u.User_Id , s.First_Name , s.Last_Name , u.User_Name,u.Password from Users as u inner join Staffs as s on u.Staff_Id = s.Staff_Id where u.Status = 1";
+
+            SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridViewUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewUsers.DataSource = table;
+
+
+
+        } // manage Users end - datagrid
         public void seeStaffs() // manage Staffs begin - datagrid
         {
 
@@ -277,6 +336,9 @@ namespace Clothing_Store
             else if (dataGridViewStaffs.Columns[e.ColumnIndex].Name == "Edit")
             {
                 panelEdit.Visible = true;
+                panelEdit.Show();
+
+                // panelEditUsers.Hide();
 
                 txtFname.Text = staff.StaffFirstName;
                 txtLname.Text = staff.StaffLastName;
@@ -453,7 +515,7 @@ namespace Clothing_Store
 
                     updateStaffs(staff.StaffFirstName, staff.StaffLastName, staff.staffEmail, staff.StaffConntacNo, staff.StaffAddress); // update staff method 
 
-                    MessageBox.Show("Staff information was Updated", "Update  Customer", MessageBoxButtons.OK);
+                    MessageBox.Show("Staff information was Updated", "Update  Staff", MessageBoxButtons.OK);
 
                     txtFname.Clear();
                     txtLname.Clear();
@@ -606,8 +668,149 @@ namespace Clothing_Store
             }
             return staff.StaffConntacNo;
         }
-
         // reg ex end
+
+        private void btnCancel_Click(object sender, EventArgs e)  // cancel edit Staff Begin
+        {
+            txtFname.Clear();
+            txtLname.Clear();
+            txtContact.Clear();
+            txtAddress.Clear();
+            txtEmail.Clear();
+
+            panelEdit.Hide();
+
+        } // cancel edit Staff end
+
+        private void button2_Click(object sender, EventArgs e) // cancel edit Users end
+        {
+            txtUserName.Clear();
+            txtPassword.Clear();
+
+            panelEditUsers.Hide();
+
+
+        } // cancel edit users end
+
+        private void button3_Click(object sender, EventArgs e) // btn save users begin
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtPassword.Text) || string.IsNullOrEmpty(txtUserName.Text))
+                {
+                    throw new nullExceptiom("Please fill up the FF.");
+                }
+                else
+                {
+
+
+                    staff.username = txtUserName.Text;
+                    staff.userpas = txtPassword.Text;
+
+                    updateuser(staff.username, staff.userpas);
+
+                    MessageBox.Show("User information was Updated", "Update  User", MessageBoxButtons.OK);
+
+                    txtUserName.Clear();
+                    txtPassword.Clear();
+
+                    panelEditUsers.Hide();
+                    
+                    // activity logs begin
+
+                    string desc = "Update User Information";
+                    //   ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+
+                }
+
+
+            }
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            // end of catch 
+
+
+        } // btn save users end
+
+        public bool updateuser(string UserName, string Pass) // update the User info begin
+        {
+
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Parameters.Clear();
+            sqlCommand.Connection = con;
+            sqlCommand.CommandText = "Update  Staffs Set User_Name = @User_Name , Password = @Password  where User_Id = " + staff.uid + " ";
+
+            sqlCommand.Parameters.Add("@User_Name", UserName);
+            sqlCommand.Parameters.Add("@Pasword", Pass);
+          
+
+            con.Open();
+            sqlCommand.ExecuteNonQuery();
+            con.Close();
+
+            return true;
+        } // update the user info end
+
+        private void DataGridViewUsers_CellContentClick(object sender, DataGridViewCellEventArgs e) // datagrid click begin 
+        {
+            staff.uid = dataGridViewUsers.CurrentRow.Cells["User_Id"].Value.ToString();
+            staff.username = dataGridViewUsers.CurrentRow.Cells["User_Name"].Value.ToString();
+            staff.userpas = dataGridViewUsers.CurrentRow.Cells["Password"].Value.ToString();
+
+         
+            if (dataGridViewUsers.Columns[e.ColumnIndex].Name == "EditUser")
+            {
+               
+                panelEditUsers.Visible = true;
+                panelEditUsers.Show();
+
+       //        panelEdit.Show();
+
+                txtPassword.Text = staff.userpas;
+                txtUserName.Text = staff.username;
+
+
+            }
+            else if (dataGridViewUsers.Columns[e.ColumnIndex].Name == "DeleteUser")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Remove User # " + staff.uid + " User Name: " + staff.username + " Password: " + staff.userpas + "  ?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Users set Status = 2 where User_Id = " + staff.uid + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = "Remove User # " + staff.uid + " User Name: " + staff.username + " Password: " + staff.userpas;
+                    //        ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+
+        }// datagrid click end 
+
+
+
+       
 
     } // class end
 } // name space end
