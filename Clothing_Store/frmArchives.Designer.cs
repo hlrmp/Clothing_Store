@@ -81,6 +81,10 @@
             this.User_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RestoreUser = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.lblItems = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
@@ -131,7 +136,7 @@
             this.cbFilter.BackColor = System.Drawing.Color.White;
             this.cbFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(1011, 48);
+            this.cbFilter.Location = new System.Drawing.Point(1102, 48);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(74, 21);
             this.cbFilter.TabIndex = 48;
@@ -144,7 +149,7 @@
             this.lblsearch.BackColor = System.Drawing.Color.White;
             this.lblsearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblsearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblsearch.Location = new System.Drawing.Point(973, 51);
+            this.lblsearch.Location = new System.Drawing.Point(1064, 51);
             this.lblsearch.Name = "lblsearch";
             this.lblsearch.Size = new System.Drawing.Size(41, 13);
             this.lblsearch.TabIndex = 47;
@@ -153,7 +158,7 @@
             // txtSearch
             // 
             this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.Location = new System.Drawing.Point(771, 48);
+            this.txtSearch.Location = new System.Drawing.Point(862, 48);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(243, 20);
             this.txtSearch.TabIndex = 46;
@@ -174,6 +179,7 @@
             this.panelButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelButtons.BackColor = System.Drawing.Color.Teal;
+            this.panelButtons.Controls.Add(this.button2);
             this.panelButtons.Controls.Add(this.btnHome);
             this.panelButtons.Controls.Add(this.btnUsers);
             this.panelButtons.Controls.Add(this.btnStaffs);
@@ -182,7 +188,7 @@
             this.panelButtons.Controls.Add(this.btnOrders);
             this.panelButtons.Location = new System.Drawing.Point(38, 87);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(1047, 56);
+            this.panelButtons.Size = new System.Drawing.Size(1138, 56);
             this.panelButtons.TabIndex = 50;
             // 
             // btnHome
@@ -196,7 +202,7 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(22, 14);
+            this.btnHome.Location = new System.Drawing.Point(-38, 14);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(169, 28);
             this.btnHome.TabIndex = 58;
@@ -215,7 +221,7 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Location = new System.Drawing.Point(845, 14);
+            this.btnUsers.Location = new System.Drawing.Point(949, 14);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(170, 28);
             this.btnUsers.TabIndex = 57;
@@ -234,7 +240,7 @@
             this.btnStaffs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaffs.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaffs.ForeColor = System.Drawing.Color.White;
-            this.btnStaffs.Location = new System.Drawing.Point(683, 14);
+            this.btnStaffs.Location = new System.Drawing.Point(787, 14);
             this.btnStaffs.Name = "btnStaffs";
             this.btnStaffs.Size = new System.Drawing.Size(170, 28);
             this.btnStaffs.TabIndex = 56;
@@ -253,7 +259,7 @@
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(185, 14);
+            this.btnCustomers.Location = new System.Drawing.Point(125, 14);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(170, 28);
             this.btnCustomers.TabIndex = 55;
@@ -272,7 +278,7 @@
             this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStocks.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStocks.ForeColor = System.Drawing.Color.White;
-            this.btnStocks.Location = new System.Drawing.Point(517, 14);
+            this.btnStocks.Location = new System.Drawing.Point(621, 14);
             this.btnStocks.Name = "btnStocks";
             this.btnStocks.Size = new System.Drawing.Size(170, 28);
             this.btnStocks.TabIndex = 54;
@@ -291,7 +297,7 @@
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.White;
-            this.btnOrders.Location = new System.Drawing.Point(352, 14);
+            this.btnOrders.Location = new System.Drawing.Point(292, 14);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(170, 28);
             this.btnOrders.TabIndex = 53;
@@ -310,7 +316,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(1069, 12);
+            this.button1.Location = new System.Drawing.Point(1115, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 28);
             this.button1.TabIndex = 58;
@@ -329,6 +335,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCounts.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panelCounts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCounts.Controls.Add(this.panel6);
             this.panelCounts.Controls.Add(this.panel5);
             this.panelCounts.Controls.Add(this.panel4);
             this.panelCounts.Controls.Add(this.panel3);
@@ -337,7 +344,7 @@
             this.panelCounts.Controls.Add(this.panel2);
             this.panelCounts.Location = new System.Drawing.Point(38, 149);
             this.panelCounts.Name = "panelCounts";
-            this.panelCounts.Size = new System.Drawing.Size(1047, 428);
+            this.panelCounts.Size = new System.Drawing.Size(1138, 465);
             this.panelCounts.TabIndex = 60;
             // 
             // panel5
@@ -346,7 +353,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.lblUsers);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(827, 151);
+            this.panel5.Location = new System.Drawing.Point(830, 107);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(173, 128);
             this.panel5.TabIndex = 53;
@@ -381,7 +388,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.lblStaffs);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Location = new System.Drawing.Point(627, 151);
+            this.panel4.Location = new System.Drawing.Point(630, 107);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(173, 128);
             this.panel4.TabIndex = 52;
@@ -416,7 +423,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.lblStocks);
             this.panel3.Controls.Add(this.Stocks);
-            this.panel3.Location = new System.Drawing.Point(428, 151);
+            this.panel3.Location = new System.Drawing.Point(431, 107);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(173, 128);
             this.panel3.TabIndex = 51;
@@ -462,7 +469,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.lblCustomers);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(37, 151);
+            this.panel1.Location = new System.Drawing.Point(40, 107);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(173, 128);
             this.panel1.TabIndex = 49;
@@ -497,7 +504,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblOrders);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(233, 151);
+            this.panel2.Location = new System.Drawing.Point(236, 107);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(173, 128);
             this.panel2.TabIndex = 50;
@@ -548,7 +555,7 @@
             this.datagridCustomer.Location = new System.Drawing.Point(38, 149);
             this.datagridCustomer.Name = "datagridCustomer";
             this.datagridCustomer.ReadOnly = true;
-            this.datagridCustomer.Size = new System.Drawing.Size(1047, 428);
+            this.datagridCustomer.Size = new System.Drawing.Size(1138, 443);
             this.datagridCustomer.TabIndex = 59;
             this.datagridCustomer.Visible = false;
             this.datagridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
@@ -588,7 +595,7 @@
             this.dataGridViewOrders.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.ReadOnly = true;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(1047, 450);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(1138, 465);
             this.dataGridViewOrders.TabIndex = 61;
             this.dataGridViewOrders.Visible = false;
             this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
@@ -627,7 +634,7 @@
             this.dataGridViewStocks.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewStocks.Name = "dataGridViewStocks";
             this.dataGridViewStocks.ReadOnly = true;
-            this.dataGridViewStocks.Size = new System.Drawing.Size(1047, 428);
+            this.dataGridViewStocks.Size = new System.Drawing.Size(1138, 443);
             this.dataGridViewStocks.TabIndex = 62;
             this.dataGridViewStocks.Visible = false;
             this.dataGridViewStocks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStocks_CellContentClick);
@@ -653,7 +660,7 @@
             this.dataGridViewStaffs.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewStaffs.Name = "dataGridViewStaffs";
             this.dataGridViewStaffs.ReadOnly = true;
-            this.dataGridViewStaffs.Size = new System.Drawing.Size(1047, 414);
+            this.dataGridViewStaffs.Size = new System.Drawing.Size(1138, 429);
             this.dataGridViewStaffs.TabIndex = 63;
             this.dataGridViewStaffs.Visible = false;
             this.dataGridViewStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaffs_CellContentClick);
@@ -737,7 +744,7 @@
             this.dataGridViewUsers.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.ReadOnly = true;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1047, 450);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1138, 465);
             this.dataGridViewUsers.TabIndex = 70;
             this.dataGridViewUsers.Visible = false;
             this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
@@ -787,6 +794,59 @@
             this.RestoreUser.Name = "RestoreUser";
             this.RestoreUser.ReadOnly = true;
             this.RestoreUser.Width = 30;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.lblItems);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Location = new System.Drawing.Point(37, 285);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(173, 128);
+            this.panel6.TabIndex = 54;
+            // 
+            // lblItems
+            // 
+            this.lblItems.AutoSize = true;
+            this.lblItems.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblItems.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblItems.Location = new System.Drawing.Point(45, 64);
+            this.lblItems.Name = "lblItems";
+            this.lblItems.Size = new System.Drawing.Size(99, 39);
+            this.lblItems.TabIndex = 51;
+            this.lblItems.Text = "Items";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label7.Location = new System.Drawing.Point(23, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 39);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "Items";
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.BackColor = System.Drawing.Color.Teal;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 3;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(457, 14);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(170, 28);
+            this.button2.TabIndex = 59;
+            this.button2.Text = "Users";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -962,7 +1022,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 611);
+            this.ClientSize = new System.Drawing.Size(1202, 626);
             this.Controls.Add(this.panelCounts);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelButtons);
@@ -998,6 +1058,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStocks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
@@ -1086,5 +1148,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label lblItems;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button2;
     }
 }

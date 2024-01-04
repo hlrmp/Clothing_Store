@@ -405,6 +405,21 @@ namespace Clothing_Store
 
             con.Close();
 
+
+            string products = "select count(*) from Products where Status = 2";
+
+            SqlCommand command5;
+            command5 = new SqlCommand(products, con);
+            con.Open();
+            SqlDataReader reader5 = command5.ExecuteReader();
+            if (reader5.Read())
+            {
+                lblItems.Text = reader5[0].ToString();
+            }
+
+            con.Close();
+
+
         } // count end
 
         userClass staff = new userClass();
