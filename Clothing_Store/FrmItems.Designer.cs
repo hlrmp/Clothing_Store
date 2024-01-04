@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItems));
             this.datagridItems = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.sidepanelitems = new System.Windows.Forms.Panel();
@@ -44,8 +45,9 @@
             this.lblsearch = new System.Windows.Forms.Label();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewManage = new System.Windows.Forms.DataGridView();
             this.panelEdit = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNewPrice = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -53,25 +55,26 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtOldPrice = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNewPrice = new System.Windows.Forms.TextBox();
-            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Poduct_Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridViewManage = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.datagridItems)).BeginInit();
             this.sidepanelitems.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
             this.panelEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -275,33 +278,6 @@
             this.label1.Text = "Search";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridViewManage
-            // 
-            this.dataGridViewManage.AllowUserToAddRows = false;
-            this.dataGridViewManage.AllowUserToDeleteRows = false;
-            this.dataGridViewManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewManage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ItemCode,
-            this.Item_Name,
-            this.Product_category,
-            this.Product_Type,
-            this.Product_Size,
-            this.Product_Price,
-            this.Poduct_Color,
-            this.Product_Date,
-            this.Edit,
-            this.Delete});
-            this.dataGridViewManage.Location = new System.Drawing.Point(138, 81);
-            this.dataGridViewManage.Name = "dataGridViewManage";
-            this.dataGridViewManage.ReadOnly = true;
-            this.dataGridViewManage.Size = new System.Drawing.Size(617, 431);
-            this.dataGridViewManage.TabIndex = 45;
-            this.dataGridViewManage.Visible = false;
-            this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
-            // 
             // panelEdit
             // 
             this.panelEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -321,6 +297,25 @@
             this.panelEdit.Size = new System.Drawing.Size(617, 221);
             this.panelEdit.TabIndex = 47;
             this.panelEdit.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label3.Location = new System.Drawing.Point(164, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "New Price";
+            // 
+            // txtNewPrice
+            // 
+            this.txtNewPrice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtNewPrice.Location = new System.Drawing.Point(226, 155);
+            this.txtNewPrice.Name = "txtNewPrice";
+            this.txtNewPrice.Size = new System.Drawing.Size(132, 20);
+            this.txtNewPrice.TabIndex = 44;
             // 
             // lblId
             // 
@@ -411,91 +406,120 @@
             this.txtOldPrice.Size = new System.Drawing.Size(132, 20);
             this.txtOldPrice.TabIndex = 0;
             // 
-            // label3
+            // timer1
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label3.Location = new System.Drawing.Point(164, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "New Price";
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // txtNewPrice
+            // dataGridViewManage
             // 
-            this.txtNewPrice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtNewPrice.Location = new System.Drawing.Point(226, 155);
-            this.txtNewPrice.Name = "txtNewPrice";
-            this.txtNewPrice.Size = new System.Drawing.Size(132, 20);
-            this.txtNewPrice.TabIndex = 44;
+            this.dataGridViewManage.AllowUserToAddRows = false;
+            this.dataGridViewManage.AllowUserToDeleteRows = false;
+            this.dataGridViewManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewManage.AutoGenerateColumns = false;
+            this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codeDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
+            this.typeDataGridViewTextBoxColumn,
+            this.categoryDataGridViewTextBoxColumn,
+            this.sizeDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.colorDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.Edit,
+            this.Delete});
+            this.dataGridViewManage.DataSource = this.itemsClassBindingSource;
+            this.dataGridViewManage.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewManage.Name = "dataGridViewManage";
+            this.dataGridViewManage.ReadOnly = true;
+            this.dataGridViewManage.Size = new System.Drawing.Size(619, 442);
+            this.dataGridViewManage.TabIndex = 72;
+            this.dataGridViewManage.Visible = false;
+            this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick_1);
             // 
-            // ItemCode
+            // dataGridViewImageColumn1
             // 
-            this.ItemCode.DataPropertyName = "Item Code";
-            this.ItemCode.HeaderText = "#";
-            this.ItemCode.Name = "ItemCode";
-            this.ItemCode.ReadOnly = true;
+            this.dataGridViewImageColumn1.HeaderText = "Edit";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
-            // Item_Name
+            // dataGridViewImageColumn2
             // 
-            this.Item_Name.DataPropertyName = "Item Name";
-            this.Item_Name.HeaderText = "Name";
-            this.Item_Name.Name = "Item_Name";
-            this.Item_Name.ReadOnly = true;
+            this.dataGridViewImageColumn2.HeaderText = "Delete";
+            this.dataGridViewImageColumn2.Image = global::Clothing_Store.Properties.Resources.delete_icon;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
-            // Product_category
+            // itemsClassBindingSource
             // 
-            this.Product_category.DataPropertyName = "Category";
-            this.Product_category.HeaderText = "Category";
-            this.Product_category.Name = "Product_category";
-            this.Product_category.ReadOnly = true;
+            this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
             // 
-            // Product_Type
+            // codeDataGridViewTextBoxColumn
             // 
-            this.Product_Type.DataPropertyName = "Type";
-            this.Product_Type.HeaderText = "Type";
-            this.Product_Type.Name = "Product_Type";
-            this.Product_Type.ReadOnly = true;
+            this.codeDataGridViewTextBoxColumn.DataPropertyName = "Code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Code";
+            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Product_Size
+            // dataGridViewTextBoxColumn1
             // 
-            this.Product_Size.DataPropertyName = "Size";
-            this.Product_Size.HeaderText = "Size";
-            this.Product_Size.Name = "Product_Size";
-            this.Product_Size.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // Product_Price
+            // typeDataGridViewTextBoxColumn
             // 
-            this.Product_Price.DataPropertyName = "Price";
-            this.Product_Price.HeaderText = "Price";
-            this.Product_Price.Name = "Product_Price";
-            this.Product_Price.ReadOnly = true;
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Poduct_Color
+            // categoryDataGridViewTextBoxColumn
             // 
-            this.Poduct_Color.DataPropertyName = "Color";
-            this.Poduct_Color.HeaderText = "Color";
-            this.Poduct_Color.Name = "Poduct_Color";
-            this.Poduct_Color.ReadOnly = true;
+            this.categoryDataGridViewTextBoxColumn.DataPropertyName = "category";
+            this.categoryDataGridViewTextBoxColumn.HeaderText = "category";
+            this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
+            this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Product_Date
+            // sizeDataGridViewTextBoxColumn
             // 
-            this.Product_Date.DataPropertyName = "Date";
-            this.Product_Date.HeaderText = "Date";
-            this.Product_Date.Name = "Product_Date";
-            this.Product_Date.ReadOnly = true;
+            this.sizeDataGridViewTextBoxColumn.DataPropertyName = "size";
+            this.sizeDataGridViewTextBoxColumn.HeaderText = "size";
+            this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
+            this.sizeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colorDataGridViewTextBoxColumn
+            // 
+            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
+            this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
+            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
+            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Edit
             // 
             this.Edit.FillWeight = 25F;
             this.Edit.HeaderText = "Edit";
-            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
+            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
             this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Edit.Width = 5;
             // 
             // Delete
@@ -503,20 +527,9 @@
             this.Delete.FillWeight = 30F;
             this.Delete.HeaderText = "Delete";
             this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Width = 5;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // itemsClassBindingSource
-            // 
-            this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
             // 
             // FrmItems
             // 
@@ -526,15 +539,15 @@
             this.AutoScrollMargin = new System.Drawing.Size(3, 3);
             this.AutoScrollMinSize = new System.Drawing.Size(3, 3);
             this.ClientSize = new System.Drawing.Size(800, 524);
-            this.Controls.Add(this.panelEdit);
+            this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.sidepanelitems);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.datagridItems);
+            this.Controls.Add(this.panelEdit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmItems";
             this.Text = "FrmItems";
@@ -543,9 +556,9 @@
             this.sidepanelitems.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -569,7 +582,6 @@
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnManage;
-        private System.Windows.Forms.DataGridView dataGridViewManage;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
@@ -589,16 +601,19 @@
         private System.Windows.Forms.TextBox txtOldPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNewPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product_category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Poduct_Color;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product_Date;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridView dataGridViewManage;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private System.Windows.Forms.Timer timer1;
     }
 }

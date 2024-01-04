@@ -172,7 +172,7 @@ namespace Clothing_Store
             SqlConnection connection = new SqlConnection(ConnectionClass.conn);
             connection.Open();
 
-            string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Type, Category , Price , Color,Size FROM Products where Category = 'mens' and Status = 1 ";
+            string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date  FROM Products where Category = 'mens' and Status = 1";
             SqlDataAdapter data = new SqlDataAdapter(quer, connection);
             DataTable table = new DataTable();
 
@@ -205,7 +205,7 @@ namespace Clothing_Store
             SqlConnection connection = new SqlConnection(ConnectionClass.conn);
             connection.Open();
 
-            string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Type, Category , Price ,Color, Size FROM Products where Category = 'womens' and status = 1";
+            string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date  FROM Products where Category = 'womens' and Status = 1";
             SqlDataAdapter data = new SqlDataAdapter(quer, connection);
             DataTable table = new DataTable();
 
@@ -238,7 +238,7 @@ namespace Clothing_Store
             SqlConnection connection = new SqlConnection(ConnectionClass.conn);
             connection.Open();
 
-            string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Type, Category , Price ,Color, Size FROM Products where Category = 'unisex' and Status = 1 ";
+            string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date  FROM Products where Category = 'unisex' and Status = 1";
             SqlDataAdapter data = new SqlDataAdapter(quer, connection);
             DataTable table = new DataTable();
 
@@ -878,7 +878,7 @@ namespace Clothing_Store
                 SqlConnection connection = new SqlConnection(ConnectionClass.conn);
                 connection.Open();
 
-                string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Type, Category , Price , Color,Size FROM Products where Category = 'mens' and Status = 1";
+                string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date  FROM Products where Category = 'mens' and Status = 1";
                 SqlDataAdapter data = new SqlDataAdapter(quer, connection);
                 DataTable table = new DataTable();
 
@@ -897,7 +897,7 @@ namespace Clothing_Store
                 SqlConnection connection = new SqlConnection(ConnectionClass.conn);
                 connection.Open();
 
-                string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Type, Category , Price ,Color, Size FROM Products where Category = 'womens' and Status = 1";
+                string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date FROM Products where Category = 'womens' and Status = 1";
                 SqlDataAdapter data = new SqlDataAdapter(quer, connection);
                 DataTable table = new DataTable();
 
@@ -915,7 +915,7 @@ namespace Clothing_Store
                 SqlConnection connection = new SqlConnection(ConnectionClass.conn);
                 connection.Open();
 
-                string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Type, Category , Price ,Color, Size FROM Products where Category = 'unisex' and Status = 1";
+                string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date FROM Products where Category = 'unisex' and Status = 1";
                 SqlDataAdapter data = new SqlDataAdapter(quer, connection);
                 DataTable table = new DataTable();
 
@@ -931,7 +931,7 @@ namespace Clothing_Store
                 SqlConnection connection = new SqlConnection(ConnectionClass.conn);
                 connection.Open();
 
-                string quer = "SELECT Product_id as 'Item Code' , Product_Name as 'Item Name', Type, Category , Price ,Color, Size FROM Products where Status = 1";
+                string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date FROM Products where Status = 2";
                 SqlDataAdapter data = new SqlDataAdapter(quer, connection);
                 DataTable table = new DataTable();
 
@@ -949,55 +949,7 @@ namespace Clothing_Store
         string itemid;
         itemsClass it = new itemsClass();
 
-        private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e) // manage click begin
-        {
-           
-
-            it.Code = dataGridViewManage.CurrentRow.Cells["ItemCode"].Value.ToString();
-            it.Name = dataGridViewManage.CurrentRow.Cells["Item_Name"].Value.ToString();
-            it.price = dataGridViewManage.CurrentRow.Cells["Product_Price"].Value.ToString();
-
-            if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Edit")
-            {
-                panelEdit.Visible = true;
-
-
-                itemid = it.Code;
-
-                lblId.Text = itemid;
-                txtOldPrice.Text = it.price;
-
-            }
-            else if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
-            {
-                DialogResult result = MessageBox.Show("Do you want to Remove " + it.Name + "?", "Delete", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
-                {
-                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
-                    cn.Open();
-
-                    string quer = "update Products set Status = 2 where Product_Id = " + it.Code  +" ";
-
-                    SqlCommand command = new SqlCommand(quer, cn);
-                    command.ExecuteNonQuery();
-                    cn.Close();
-
-                    manage();
-
-                    // activity logs begin
-
-                    string desc = "Delete Item " + it.Code ;
-                    //    ConnectionClass.activity(frmLogin.userId, desc);
-
-                    // activity logs end
-                }
-                else
-                {
-
-                }
-            }
-        } // manage click end
+       
 
         private void btnCancel_Click(object sender, EventArgs e) // cancel begin
         {
@@ -1052,6 +1004,55 @@ namespace Clothing_Store
 
         } // timer end
 
+        private void dataGridViewManage_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
+                it.Code = dataGridViewManage.CurrentRow.Cells["code"].Value.ToString();
+                it.Name = dataGridViewManage.CurrentRow.Cells["name"].Value.ToString();
+                it.price = dataGridViewManage.CurrentRow.Cells["price"].Value.ToString();
+
+                if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Edit")
+                {
+                    panelEdit.Visible = true;
+
+
+                    itemid = it.Code;
+
+                    lblId.Text = itemid;
+                    txtOldPrice.Text = it.price;
+
+                }
+                else if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Delete")
+                {
+                    DialogResult result = MessageBox.Show("Do you want to Remove  : Code " + it.Code + " - " + it.Name + "?", "Restore", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                        cn.Open();
+
+                        string quer = "update Products set Status = 2 where Product_Id = " + it.Code + " ";
+
+                        SqlCommand command = new SqlCommand(quer, cn);
+                        command.ExecuteNonQuery();
+                        cn.Close();
+
+                        manage();
+
+                        // activity logs begin
+
+                        string desc = "Delete Item " + it.Code;
+                        //    ConnectionClass.activity(frmLogin.userId, desc);
+
+                        // activity logs end
+                    }
+                    else
+                    {
+
+                    }
+                }
+            } // manage click end
+
+        
     } // class end
 } // name space end 

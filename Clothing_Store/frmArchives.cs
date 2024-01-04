@@ -65,6 +65,9 @@ namespace Clothing_Store
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = false;
             dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+            dataGridViewItems.Visible = false;
+
 
         } // home btn end
         private void btnCustomers_Click(object sender, EventArgs e) // btn customer begin
@@ -76,6 +79,8 @@ namespace Clothing_Store
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = false;
             dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+
             manageCustomers();
             
 
@@ -89,6 +94,8 @@ namespace Clothing_Store
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = false;
             dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+
             manageOrders();
         }// manage orders end 
 
@@ -101,7 +108,9 @@ namespace Clothing_Store
             dataGridViewStocks.Visible = true;
             dataGridViewStaffs.Visible = false;
             dataGridViewUsers.Visible = false;
-            manageItems();
+            dataGridViewItems.Visible = false;
+
+            manageStocks();
 
         } // btn stocks end
         private void btnStaffs_Click(object sender, EventArgs e) // btn staff begin
@@ -113,6 +122,7 @@ namespace Clothing_Store
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = true;
             dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
             ManageStaffs();
         } // btn staffs end
 
@@ -125,10 +135,47 @@ namespace Clothing_Store
             dataGridViewStocks.Visible = false;
             dataGridViewStaffs.Visible = false;
             dataGridViewUsers.Visible = true;
+            dataGridViewItems.Visible = false;
 
             manageUsers();
 
         } //btn users end
+
+        private void btnItems_Click(object sender, EventArgs e)  // btn Items begin
+        {
+
+            dataGridViewItems.Visible = true;
+
+            datagridCustomer.Visible = false;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = false;
+  
+            dataGridViewItems.Show();
+
+            manageItems();
+
+        } // btn items end
+
+        public void manageItems()
+        {
+            SqlConnection connection = new SqlConnection(ConnectionClass.conn);
+            connection.Open();
+
+            string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date FROM Products where Status = 2";
+            SqlDataAdapter data = new SqlDataAdapter(quer, connection);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridViewItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewItems.DataSource = table;
+
+            connection.Close();
+        }
 
         public void manageUsers() // manage Users begin - datagrid
         {
@@ -210,7 +257,7 @@ namespace Clothing_Store
         } // manage Staffs end - datagrid
 
 
-        public void manageItems() // manage items begin - datagrid
+        public void manageStocks() // manage items begin - datagrid
         {
 
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
@@ -233,108 +280,7 @@ namespace Clothing_Store
 
         } // manage items end - datagrid
 
-        private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e) // customers click manage begin
-        {
-            customerClass cs = new customerClass();
-            cs.First_Name = datagridCustomer.CurrentRow.Cells["firstNameDataGridViewTextBoxColumn"].Value.ToString();
-            cs.Last_Name = datagridCustomer.CurrentRow.Cells["lastNameDataGridViewTextBoxColumn"].Value.ToString();
-            cs.Contact_No = datagridCustomer.CurrentRow.Cells["contactNoDataGridViewTextBoxColumn"].Value.ToString();
-            cs.email = datagridCustomer.CurrentRow.Cells["emailDataGridViewTextBoxColumn"].Value.ToString();
-            cs.address = datagridCustomer.CurrentRow.Cells["addressDataGridViewTextBoxColumn"].Value.ToString();
-            cs.Delivery_Address = datagridCustomer.CurrentRow.Cells["deliveryAddressDataGridViewTextBoxColumn"].Value.ToString();
 
-
-            if (datagridCustomer.Columns[e.ColumnIndex].Name == "RestoreCustomers")
-            {
-                DialogResult result = MessageBox.Show("Do you want to Restore " + cs.First_Name + " " + cs.Last_Name + "?", "Restore", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
-                {
-                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
-                    cn.Open();
-
-                    string quer = "UPDATE Customers SET Status = 1 WHERE First_Name = '" + cs.First_Name + "' and  Last_Name = '" + cs.Last_Name + "'  " + "and Contact_No = '" + cs.Contact_No + "'  and Email = '" + cs.email + "' and  Address = '" + cs.address + "' and Delivery_Address = '" + cs.Delivery_Address + "' ";
-
-                    SqlCommand command = new SqlCommand(quer, cn);
-                    command.ExecuteNonQuery();
-                    cn.Close();
-
-
-                    manageCustomers();
-                    datagridCustomer.Refresh();
-
-
-                    // activity logs begin
-
-                    //  string desc = "Restore Customer Information";
-                    //  ConnectionClass.activity(frmLogin.userId, desc);
-
-                    // activity logs end
-                }
-             
-
-            }
-            else
-            {
-
-            }
-
-        } // customers click manage end
-        private void dataGridViewOrders_CellContentClick(object sender, DataGridViewCellEventArgs e) // cell content click orders begin
-        {
-            ordersClass oc = new ordersClass();
-
-            oc.Order_Id = dataGridViewOrders.CurrentRow.Cells["orderIdDataGridViewTextBoxColumn"].Value.ToString();
-            oc.Customer_Name = dataGridViewOrders.CurrentRow.Cells["customerNameDataGridViewTextBoxColumn"].Value.ToString();
-            oc.Product_Id = dataGridViewOrders.CurrentRow.Cells["productIdDataGridViewTextBoxColumn"].Value.ToString();
-            oc.Product_Name = dataGridViewOrders.CurrentRow.Cells["productNameDataGridViewTextBoxColumn"].Value.ToString();
-
-            oc.Product_Price = dataGridViewOrders.CurrentRow.Cells["productPriceDataGridViewTextBoxColumn"].Value.ToString();
-            oc.Total_Item = dataGridViewOrders.CurrentRow.Cells["totalItemDataGridViewTextBoxColumn"].Value.ToString();
-            oc.Staffs = dataGridViewOrders.CurrentRow.Cells["staffsDataGridViewTextBoxColumn"].Value.ToString();
-            oc.Quantity = dataGridViewOrders.CurrentRow.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString();
-
-
-            if (dataGridViewOrders.Columns[e.ColumnIndex].Name == "RestoreOrders")
-            {
-                DialogResult result = MessageBox.Show("Do you want to Restore Order # " + oc.Order_Id + " by: " + oc.Customer_Name + "  ?", "Restore", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
-                {
-                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
-                    cn.Open();
-
-                    string quer = "UPDATE Orders set Status = 1 where Order_Id = " + oc.Order_Id + " ";
-
-                    SqlCommand command = new SqlCommand(quer, cn);
-                    command.ExecuteNonQuery();
-                    cn.Close();
-
-                    // activity logs begin
-
-                    //         string desc = "Restore Order " + oc.Order_Id + " by: " + oc.Customer_Name + " ";
-                    //        ConnectionClass.activity(frmLogin.userId, desc);
-
-                    // activity logs end
-                }
-                else
-                {
-
-                }
-
-            }
-
-        } // cell content click orders end
-        private void timer1_Tick(object sender, EventArgs e) // timer begin
-        {
-
-            /*  manageCustomers();
-              datagridCustomer.Refresh();
-            */
-
-            counts();
-
-        } // timer end
         public void counts() // counts begin
         {
 
@@ -422,6 +368,112 @@ namespace Clothing_Store
 
         } // count end
 
+
+        private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e) // customers click manage begin
+        {
+            customerClass cs = new customerClass();
+            cs.First_Name = datagridCustomer.CurrentRow.Cells["firstNameDataGridViewTextBoxColumn"].Value.ToString();
+            cs.Last_Name = datagridCustomer.CurrentRow.Cells["lastNameDataGridViewTextBoxColumn"].Value.ToString();
+            cs.Contact_No = datagridCustomer.CurrentRow.Cells["contactNoDataGridViewTextBoxColumn"].Value.ToString();
+            cs.email = datagridCustomer.CurrentRow.Cells["emailDataGridViewTextBoxColumn"].Value.ToString();
+            cs.address = datagridCustomer.CurrentRow.Cells["addressDataGridViewTextBoxColumn"].Value.ToString();
+            cs.Delivery_Address = datagridCustomer.CurrentRow.Cells["deliveryAddressDataGridViewTextBoxColumn"].Value.ToString();
+
+
+            if (datagridCustomer.Columns[e.ColumnIndex].Name == "RestoreCustomers")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Restore " + cs.First_Name + " " + cs.Last_Name + "?", "Restore", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Customers SET Status = 1 WHERE First_Name = '" + cs.First_Name + "' and  Last_Name = '" + cs.Last_Name + "'  " + "and Contact_No = '" + cs.Contact_No + "'  and Email = '" + cs.email + "' and  Address = '" + cs.address + "' and Delivery_Address = '" + cs.Delivery_Address + "' ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+
+                    manageCustomers();
+                    MessageBox.Show("Succesfully Restore ","Restore",MessageBoxButtons.OK);
+
+                    // activity logs begin
+
+                    //  string desc = "Restore Customer Information";
+                    //  ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+             
+
+            }
+            else
+            {
+
+            }
+
+        } // customers click manage end
+        private void dataGridViewOrders_CellContentClick(object sender, DataGridViewCellEventArgs e) // cell content click orders begin
+        {
+            ordersClass oc = new ordersClass();
+
+            oc.Order_Id = dataGridViewOrders.CurrentRow.Cells["orderIdDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Customer_Name = dataGridViewOrders.CurrentRow.Cells["customerNameDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Product_Id = dataGridViewOrders.CurrentRow.Cells["productIdDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Product_Name = dataGridViewOrders.CurrentRow.Cells["productNameDataGridViewTextBoxColumn"].Value.ToString();
+
+            oc.Product_Price = dataGridViewOrders.CurrentRow.Cells["productPriceDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Total_Item = dataGridViewOrders.CurrentRow.Cells["totalItemDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Staffs = dataGridViewOrders.CurrentRow.Cells["staffsDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Quantity = dataGridViewOrders.CurrentRow.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString();
+
+
+            if (dataGridViewOrders.Columns[e.ColumnIndex].Name == "RestoreOrders")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Restore Order # " + oc.Order_Id + " by: " + oc.Customer_Name + "  ?", "Restore", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Orders set Status = 1 where Order_Id = " + oc.Order_Id + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    manageOrders();
+                    MessageBox.Show("Succesfully Restore ", "Restore", MessageBoxButtons.OK);
+
+                    // activity logs begin
+
+                    string desc = "Restore Order " + oc.Order_Id + " by: " + oc.Customer_Name + " ";
+                    //        ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+
+        } // cell content click orders end
+        private void timer1_Tick(object sender, EventArgs e) // timer begin
+        {
+
+            /*  manageCustomers();
+              datagridCustomer.Refresh();
+            */
+
+            counts();
+
+        } // timer end
+
         userClass staff = new userClass();
 
         private void dataGridViewStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e) // datagrid staffs click begin 
@@ -450,6 +502,9 @@ namespace Clothing_Store
                     SqlCommand command = new SqlCommand(quer, cn);
                     command.ExecuteNonQuery();
                     cn.Close();
+
+                    ManageStaffs();
+                    MessageBox.Show("Succesfully Restore ", "Restore", MessageBoxButtons.OK);
 
                     // activity logs begin
 
@@ -488,6 +543,10 @@ namespace Clothing_Store
                     command.ExecuteNonQuery();
                     cn.Close();
 
+
+                    manageUsers();
+                    MessageBox.Show("Succesfully Restore ", "Restore", MessageBoxButtons.OK);
+
                     // activity logs begin
 
                     string desc = "Restore User # " + staff.uid + " User Name: " + staff.username + " Password: " + staff.userpas;
@@ -503,12 +562,46 @@ namespace Clothing_Store
             }
         }// datagrid User click end
 
-        private void dataGridViewStocks_CellContentClick(object sender, DataGridViewCellEventArgs e) // stock cell click begin
+        private void dataGridViewItems_CellContentClick_1(object sender, DataGridViewCellEventArgs e)   //datagrid item Click begin
         {
+            itemsClass it = new itemsClass();
 
-        } // stock cell click end
+            it.Code = dataGridViewItems.CurrentRow.Cells["code"].Value.ToString();
+            it.Name = dataGridViewItems.CurrentRow.Cells["name"].Value.ToString();
+            it.price = dataGridViewItems.CurrentRow.Cells["price"].Value.ToString();
 
-      
+            if (dataGridViewItems.Columns[e.ColumnIndex].Name == "Restore")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Restore : Code "+it.Code+" - " + it.Name + "?", "Restore", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "update Products set Status = 1 where Product_Id = " + it.Code + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+
+                    manageItems();
+                    MessageBox.Show("Succesfully Restore ", "Restore", MessageBoxButtons.OK);
+
+                    // activity logs begin
+
+                    string desc = "Restore Item " + it.Code;
+                    //    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+            }
+        }//datagrid item Click end
 
     }// class end
 } // name space end
