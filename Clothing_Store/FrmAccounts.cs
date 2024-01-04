@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -231,9 +232,11 @@ namespace Clothing_Store
 ;            }
         } // filter end
 
+        userClass staff = new userClass();
+
         private void dataGridViewStaffs_CellContentClick(object sender, DataGridViewCellEventArgs e) // datagrid staffs click begin 
         {
-            userClass staff = new userClass();
+         
 
             staff.staffid = dataGridViewStaffs.CurrentRow.Cells["Staff_Id"].Value.ToString();
             staff.StaffFirstName = dataGridViewStaffs.CurrentRow.Cells["First_Name"].Value.ToString();
@@ -245,30 +248,42 @@ namespace Clothing_Store
 
             if (dataGridViewStaffs.Columns[e.ColumnIndex].Name == "Delete")
             {
-                DialogResult result = MessageBox.Show("Do you want to Remove Staff # " + staff.staffid + " Name: " + staff.StaffFirstName + " " + staff.StaffLastName + "  ?", "Delete", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Do you want to Remove Staff # " + staff.staffid + " Name: " + staff.StaffFirstName + " " + staff.StaffLastName + "  ?", "Delete", MessageBoxButtons.YesNo);
 
-                if (result == DialogResult.Yes)
-                {
-                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
-                    cn.Open();
+                    if (result == DialogResult.Yes)
+                    {
+                        SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                        cn.Open();
 
-                    string quer = "UPDATE Staffs set Status = 2 where Staff_Id = " + staff.staffid + " ";
+                        string quer = "UPDATE Staffs set Status = 2 where Staff_Id = " + staff.staffid + " ";
 
-                    SqlCommand command = new SqlCommand(quer, cn);
-                    command.ExecuteNonQuery();
-                    cn.Close();
+                        SqlCommand command = new SqlCommand(quer, cn);
+                        command.ExecuteNonQuery();
+                        cn.Close();
 
-                    // activity logs begin
+                        // activity logs begin
 
-                    string desc = " Restore Staff # " + staff.staffid + " Name: " + staff.StaffFirstName + " " + staff.StaffLastName;
-                    //        ConnectionClass.activity(frmLogin.userId, desc);
+                        string desc = " Restore Staff # " + staff.staffid + " Name: " + staff.StaffFirstName + " " + staff.StaffLastName;
+                        //        ConnectionClass.activity(frmLogin.userId, desc);
 
-                    // activity logs end
-                }
-                else
-                {
+                        // activity logs end
+                    }          
+                    else
+                    {
 
-                }
+                    }
+
+            }
+            else if (dataGridViewStaffs.Columns[e.ColumnIndex].Name == "Edit")
+            {
+                panelEdit.Visible = true;
+
+                txtFname.Text = staff.StaffFirstName;
+                txtLname.Text = staff.StaffLastName;
+                txtContact.Text = staff.StaffConntacNo;
+                txtEmail.Text = staff.staffEmail;
+                txtAddress.Text = staff.StaffAddress;
+
 
             }
         } // datagrid staff click end
@@ -415,6 +430,184 @@ namespace Clothing_Store
             search();
 
         }// search click end
+
+        private void btnSave_Click(object sender, EventArgs e) //save btn begin
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(txtFname.Text) || string.IsNullOrEmpty(txtLname.Text)
+                    || string.IsNullOrEmpty(txtAddress.Text) 
+                    || string.IsNullOrEmpty(txtContact.Text) || string.IsNullOrEmpty(txtEmail.Text))
+                {
+                    throw new nullExceptiom("Please fill up the FF.");
+                }
+                else
+                {
+
+
+                    staff.StaffFirstName = Fname(txtFname.Text);
+                    staff.StaffLastName = Lname(txtLname.Text);
+                    staff.StaffAddress = Add(txtAddress.Text);       
+                    staff.StaffConntacNo = ContactNo(txtContact.Text);
+                    staff.staffEmail = Em(txtEmail.Text);
+
+                    updateStaffs(staff.StaffFirstName, staff.StaffLastName, staff.staffEmail, staff.StaffConntacNo, staff.StaffAddress); // update staff method 
+
+                    MessageBox.Show("Staff information was Updated", "Update  Customer", MessageBoxButtons.OK);
+
+                    txtFname.Clear();
+                    txtLname.Clear();
+                    txtContact.Clear();
+                    txtAddress.Clear();           
+                    txtEmail.Clear();
+
+                    panelEdit.Hide();
+
+
+                    // activity logs begin
+
+                    string desc = "Update staff Information";
+                 //   ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+
+                }
+
+
+            }
+            catch (NumberFormatException ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            catch (StringFormatException le)
+            {
+                MessageBox.Show(le.Message);
+            }
+            catch (nullExceptiom ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            // end of catch 
+
+
+        } // save btn end
+        public bool updateStaffs(string FirstName, string LastName, string Email, string ContactNo, string Address) // update the Staff info begin
+        {
+
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+            SqlCommand sqlCommand = new SqlCommand();
+
+            sqlCommand.Parameters.Clear();
+            sqlCommand.Connection = con;
+            sqlCommand.CommandText = "Update  Staffs Set First_Name = @FirstName, Last_Name = @LastName, Contact_No =  @Contact, Email = @Email,  Address = @Address where Staff_Id = " + staff.staffid + " ";
+
+            sqlCommand.Parameters.Add("@FirstName", FirstName);
+            sqlCommand.Parameters.Add("@LastName", LastName);
+            sqlCommand.Parameters.Add("@Email", Email);
+            sqlCommand.Parameters.Add("@Contact", ContactNo);
+            sqlCommand.Parameters.Add("@Address", Address);
+      
+            con.Open();
+            sqlCommand.ExecuteNonQuery();
+            con.Close();
+
+            return true;
+        } // update the Staff info end
+
+        //  reg ex starting
+        class nullExceptiom : Exception
+        {
+            public nullExceptiom(string str) : base(str) { }
+        }
+        class StringFormatException : Exception
+        {
+            public StringFormatException(string str) : base(str) { }
+        }
+
+        public string Fname(string FirstName)
+        {
+            if (Regex.IsMatch(FirstName, regexClass.letters))
+            {
+
+                FirstName = Char.ToUpper(FirstName[0]) + FirstName.Substring(1);
+
+                 staff.StaffFirstName = FirstName;
+            }
+
+            else
+            {
+                throw new StringFormatException("please enter your First Name Correctly");
+            }
+
+            return staff.StaffFirstName;
+        }
+        public string Lname(string LastName)
+        {
+            if (Regex.IsMatch(LastName, regexClass.letters))
+            {
+                LastName = Char.ToUpper(LastName[0]) + LastName.Substring(1);
+
+                staff.StaffLastName = LastName;
+
+
+            }
+            else
+            {
+                throw new StringFormatException("please enter your Last Name Correctly");
+            }
+
+            return staff.StaffLastName;
+        }
+        public string Add(string address)
+        {
+            if (Regex.IsMatch(address, regexClass.mix))
+            {
+
+                staff.StaffAddress = address;
+            }
+            else
+            {
+                throw new StringFormatException("please enter your Address Correctly");
+            }
+
+            return staff.StaffAddress;
+        }
+      
+        public string Em(string email)
+        {
+            if (Regex.IsMatch(email, regexClass.mix))
+            {
+
+                staff.staffEmail = email;
+            }
+            else
+            {
+                throw new StringFormatException("please enter your Address Correctly");
+            }
+
+            return staff.staffEmail;
+        }
+
+        class NumberFormatException : Exception
+        {
+            public NumberFormatException(string num) : base(num) { }
+        }
+        public string ContactNo(string contact)
+        {
+
+            if (Regex.IsMatch(contact, regexClass.numbers))
+            {
+                staff.StaffConntacNo = contact;
+
+            }
+            else
+            {
+                throw new NumberFormatException("put contact number correctly");
+            }
+            return staff.StaffConntacNo;
+        }
+
+        // reg ex end
 
     } // class end
 } // name space end

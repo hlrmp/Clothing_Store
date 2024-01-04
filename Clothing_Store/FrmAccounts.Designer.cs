@@ -60,12 +60,27 @@
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.lblsearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.panelEdit = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
+            this.txtLname = new System.Windows.Forms.TextBox();
+            this.txtFname = new System.Windows.Forms.TextBox();
             this.sidepanelAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).BeginInit();
             this.PanelStafAndUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
+            this.panelEdit.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidepanelAdmin
@@ -437,11 +452,176 @@
             this.txtSearch.TabIndex = 49;
             this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
+            // panelEdit
+            // 
+            this.panelEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelEdit.Controls.Add(this.btnCancel);
+            this.panelEdit.Controls.Add(this.btnSave);
+            this.panelEdit.Controls.Add(this.label7);
+            this.panelEdit.Controls.Add(this.label5);
+            this.panelEdit.Controls.Add(this.label4);
+            this.panelEdit.Controls.Add(this.label3);
+            this.panelEdit.Controls.Add(this.label2);
+            this.panelEdit.Controls.Add(this.label1);
+            this.panelEdit.Controls.Add(this.txtEmail);
+            this.panelEdit.Controls.Add(this.txtAddress);
+            this.panelEdit.Controls.Add(this.txtContact);
+            this.panelEdit.Controls.Add(this.txtLname);
+            this.panelEdit.Controls.Add(this.txtFname);
+            this.panelEdit.Location = new System.Drawing.Point(138, 291);
+            this.panelEdit.Name = "panelEdit";
+            this.panelEdit.Size = new System.Drawing.Size(618, 221);
+            this.panelEdit.TabIndex = 67;
+            this.panelEdit.Visible = false;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.Teal;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancel.Location = new System.Drawing.Point(319, 174);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(64, 26);
+            this.btnCancel.TabIndex = 41;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.BackColor = System.Drawing.Color.Teal;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSave.Location = new System.Drawing.Point(233, 174);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(65, 26);
+            this.btnSave.TabIndex = 40;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label7.Location = new System.Drawing.Point(191, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(233, 28);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Edit Staff Information";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label5.Location = new System.Drawing.Point(67, 155);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Address";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label4.Location = new System.Drawing.Point(80, 126);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Email";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label3.Location = new System.Drawing.Point(433, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Contact No.";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label2.Location = new System.Drawing.Point(230, 94);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Last Name";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(67, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "First Name";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtEmail.Location = new System.Drawing.Point(118, 119);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(410, 20);
+            this.txtEmail.TabIndex = 5;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtAddress.Location = new System.Drawing.Point(120, 148);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(410, 20);
+            this.txtAddress.TabIndex = 4;
+            // 
+            // txtContact
+            // 
+            this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtContact.Location = new System.Drawing.Point(375, 71);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(186, 20);
+            this.txtContact.TabIndex = 3;
+            // 
+            // txtLname
+            // 
+            this.txtLname.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtLname.Location = new System.Drawing.Point(180, 71);
+            this.txtLname.Name = "txtLname";
+            this.txtLname.Size = new System.Drawing.Size(160, 20);
+            this.txtLname.TabIndex = 1;
+            // 
+            // txtFname
+            // 
+            this.txtFname.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtFname.Location = new System.Drawing.Point(31, 71);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(132, 20);
+            this.txtFname.TabIndex = 0;
+            // 
             // FrmAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
+            this.Controls.Add(this.panelEdit);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.PanelStafAndUser);
             this.Controls.Add(this.lblsearch);
@@ -462,6 +642,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).EndInit();
             this.PanelStafAndUser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).EndInit();
+            this.panelEdit.ResumeLayout(false);
+            this.panelEdit.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -499,5 +681,19 @@
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Panel panelEdit;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.TextBox txtLname;
+        private System.Windows.Forms.TextBox txtFname;
     }
 }
