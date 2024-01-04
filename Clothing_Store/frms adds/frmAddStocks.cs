@@ -66,7 +66,7 @@ namespace Clothing_Store
             arr.Add("Mens");
             arr.Add("Womens");
             arr.Add("Uniex");
-            arr.Add("Kids");
+          //  arr.Add("Others");
 
             foreach (string c in arr)
             {
