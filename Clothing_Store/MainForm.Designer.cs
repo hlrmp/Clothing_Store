@@ -48,23 +48,24 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.mainpanel = new System.Windows.Forms.Panel();
-            this.lblTotalTshirt = new System.Windows.Forms.Label();
-            this.lblTotalPoloShirt = new System.Windows.Forms.Label();
-            this.lblTotalPants = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalBlouse = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotalCollection = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblTotalCollection = new System.Windows.Forms.Label();
+            this.lblTotalTshirt = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalPoloShirt = new System.Windows.Forms.Label();
             this.lblTotalPolo = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblTotalShorts = new System.Windows.Forms.Label();
+            this.lblTotalPants = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblTotalShorts = new System.Windows.Forms.Label();
             this.panelAccount = new System.Windows.Forms.Panel();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.btnbackupAndRecovery = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalBlouse = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -74,7 +75,6 @@
             this.pboxCollecton = new System.Windows.Forms.PictureBox();
             this.pboxPolo = new System.Windows.Forms.PictureBox();
             this.pboxShorts = new System.Windows.Forms.PictureBox();
-            this.btnAbout = new System.Windows.Forms.Button();
             this.panel1buttonCollections.SuspendLayout();
             this.panelRSide.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -421,41 +421,49 @@
             this.mainpanel.Size = new System.Drawing.Size(1230, 548);
             this.mainpanel.TabIndex = 2;
             // 
-            // lblTotalTshirt
+            // label7
             // 
-            this.lblTotalTshirt.AutoSize = true;
-            this.lblTotalTshirt.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalTshirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTshirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalTshirt.Location = new System.Drawing.Point(355, 223);
-            this.lblTotalTshirt.Name = "lblTotalTshirt";
-            this.lblTotalTshirt.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalTshirt.TabIndex = 9;
-            this.lblTotalTshirt.Text = "0";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(70, 501);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 19);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Total : ";
             // 
-            // lblTotalPoloShirt
+            // lblTotalBlouse
             // 
-            this.lblTotalPoloShirt.AutoSize = true;
-            this.lblTotalPoloShirt.BackColor = System.Drawing.Color.Teal;
-            this.lblTotalPoloShirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPoloShirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPoloShirt.Location = new System.Drawing.Point(623, 223);
-            this.lblTotalPoloShirt.Name = "lblTotalPoloShirt";
-            this.lblTotalPoloShirt.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPoloShirt.TabIndex = 11;
-            this.lblTotalPoloShirt.Text = "0";
+            this.lblTotalBlouse.AutoSize = true;
+            this.lblTotalBlouse.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBlouse.ForeColor = System.Drawing.Color.White;
+            this.lblTotalBlouse.Location = new System.Drawing.Point(133, 501);
+            this.lblTotalBlouse.Name = "lblTotalBlouse";
+            this.lblTotalBlouse.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalBlouse.TabIndex = 23;
+            this.lblTotalBlouse.Text = "0";
             // 
-            // lblTotalPants
+            // label5
             // 
-            this.lblTotalPants.AutoSize = true;
-            this.lblTotalPants.BackColor = System.Drawing.Color.Teal;
-            this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPants.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPants.Location = new System.Drawing.Point(894, 223);
-            this.lblTotalPants.Name = "lblTotalPants";
-            this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPants.TabIndex = 13;
-            this.lblTotalPants.Text = "0";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(574, 489);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 19);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Total : ";
+            // 
+            // lblTotalCollection
+            // 
+            this.lblTotalCollection.AutoSize = true;
+            this.lblTotalCollection.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCollection.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCollection.Location = new System.Drawing.Point(894, 489);
+            this.lblTotalCollection.Name = "lblTotalCollection";
+            this.lblTotalCollection.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalCollection.TabIndex = 19;
+            this.lblTotalCollection.Text = "0";
             // 
             // label1
             // 
@@ -490,16 +498,17 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Total : ";
             // 
-            // lblTotalCollection
+            // lblTotalTshirt
             // 
-            this.lblTotalCollection.AutoSize = true;
-            this.lblTotalCollection.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCollection.ForeColor = System.Drawing.Color.White;
-            this.lblTotalCollection.Location = new System.Drawing.Point(894, 489);
-            this.lblTotalCollection.Name = "lblTotalCollection";
-            this.lblTotalCollection.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalCollection.TabIndex = 19;
-            this.lblTotalCollection.Text = "0";
+            this.lblTotalTshirt.AutoSize = true;
+            this.lblTotalTshirt.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalTshirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTshirt.ForeColor = System.Drawing.Color.White;
+            this.lblTotalTshirt.Location = new System.Drawing.Point(355, 223);
+            this.lblTotalTshirt.Name = "lblTotalTshirt";
+            this.lblTotalTshirt.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalTshirt.TabIndex = 9;
+            this.lblTotalTshirt.Text = "0";
             // 
             // label6
             // 
@@ -512,6 +521,18 @@
             this.label6.TabIndex = 18;
             this.label6.Text = "Total : ";
             // 
+            // lblTotalPoloShirt
+            // 
+            this.lblTotalPoloShirt.AutoSize = true;
+            this.lblTotalPoloShirt.BackColor = System.Drawing.Color.Teal;
+            this.lblTotalPoloShirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPoloShirt.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPoloShirt.Location = new System.Drawing.Point(623, 223);
+            this.lblTotalPoloShirt.Name = "lblTotalPoloShirt";
+            this.lblTotalPoloShirt.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalPoloShirt.TabIndex = 11;
+            this.lblTotalPoloShirt.Text = "0";
+            // 
             // lblTotalPolo
             // 
             this.lblTotalPolo.AutoSize = true;
@@ -523,27 +544,17 @@
             this.lblTotalPolo.TabIndex = 17;
             this.lblTotalPolo.Text = "0";
             // 
-            // label5
+            // lblTotalPants
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(574, 489);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 19);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Total : ";
-            // 
-            // lblTotalShorts
-            // 
-            this.lblTotalShorts.AutoSize = true;
-            this.lblTotalShorts.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalShorts.ForeColor = System.Drawing.Color.White;
-            this.lblTotalShorts.Location = new System.Drawing.Point(369, 489);
-            this.lblTotalShorts.Name = "lblTotalShorts";
-            this.lblTotalShorts.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalShorts.TabIndex = 15;
-            this.lblTotalShorts.Text = "0";
+            this.lblTotalPants.AutoSize = true;
+            this.lblTotalPants.BackColor = System.Drawing.Color.Teal;
+            this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPants.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPants.Location = new System.Drawing.Point(894, 223);
+            this.lblTotalPants.Name = "lblTotalPants";
+            this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalPants.TabIndex = 13;
+            this.lblTotalPants.Text = "0";
             // 
             // label4
             // 
@@ -555,6 +566,17 @@
             this.label4.Size = new System.Drawing.Size(68, 19);
             this.label4.TabIndex = 14;
             this.label4.Text = "Total : ";
+            // 
+            // lblTotalShorts
+            // 
+            this.lblTotalShorts.AutoSize = true;
+            this.lblTotalShorts.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalShorts.ForeColor = System.Drawing.Color.White;
+            this.lblTotalShorts.Location = new System.Drawing.Point(369, 489);
+            this.lblTotalShorts.Name = "lblTotalShorts";
+            this.lblTotalShorts.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalShorts.TabIndex = 15;
+            this.lblTotalShorts.Text = "0";
             // 
             // panelAccount
             // 
@@ -569,6 +591,25 @@
             this.panelAccount.Size = new System.Drawing.Size(186, 225);
             this.panelAccount.TabIndex = 20;
             this.panelAccount.Visible = false;
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbout.BackColor = System.Drawing.Color.White;
+            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAbout.FlatAppearance.BorderSize = 3;
+            this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnAbout.Location = new System.Drawing.Point(3, 128);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(178, 62);
+            this.btnAbout.TabIndex = 15;
+            this.btnAbout.Text = "Account";
+            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
             // btnbackupAndRecovery
             // 
@@ -607,28 +648,6 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(70, 501);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 19);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Total : ";
-            // 
-            // lblTotalBlouse
-            // 
-            this.lblTotalBlouse.AutoSize = true;
-            this.lblTotalBlouse.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBlouse.ForeColor = System.Drawing.Color.White;
-            this.lblTotalBlouse.Location = new System.Drawing.Point(133, 501);
-            this.lblTotalBlouse.Name = "lblTotalBlouse";
-            this.lblTotalBlouse.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalBlouse.TabIndex = 23;
-            this.lblTotalBlouse.Text = "0";
             // 
             // pictureBox1
             // 
@@ -721,24 +740,6 @@
             this.pboxShorts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxShorts.TabIndex = 8;
             this.pboxShorts.TabStop = false;
-            // 
-            // btnAbout
-            // 
-            this.btnAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbout.BackColor = System.Drawing.Color.White;
-            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAbout.FlatAppearance.BorderSize = 3;
-            this.btnAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnAbout.Location = new System.Drawing.Point(3, 128);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(178, 62);
-            this.btnAbout.TabIndex = 15;
-            this.btnAbout.Text = "Account";
-            this.btnAbout.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 

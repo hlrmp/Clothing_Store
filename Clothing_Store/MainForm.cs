@@ -48,7 +48,7 @@ namespace Clothing_Store
             {
                 btnAccount.Visible = true;
                 btnArchives.Visible = true;
-                btnAbout.Visible = false;
+                btnAbout.Visible = true;
 
                 lblAccount.Text = frmLogin.name + "  (" + emp + ")";
 
@@ -777,7 +777,11 @@ namespace Clothing_Store
 
         } // btn archive end
 
- 
+        private void btnAbout_Click(object sender, EventArgs e) // btn Account in settings begin
+        {
+            frmUserAccountManagement fu = new frmUserAccountManagement();
+            fu.ShowDialog();
 
+        } // btn Account in settings end
     } // class end 
 } // names space end

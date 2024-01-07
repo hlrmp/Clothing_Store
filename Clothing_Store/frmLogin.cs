@@ -78,6 +78,8 @@ namespace Clothing_Store
         public static string pos1;
         public static string name;
         public static int userId;
+        public static string us;
+        public static string pas;
 
         public void log() // login begin
         {
@@ -130,9 +132,15 @@ namespace Clothing_Store
 
                     uc.StaffPosition = reader[3].ToString();
 
+
+
                     pos1 = reader[3].ToString();
                     name = uc.StaffFirstName + " " + uc.StaffLastName;
                     userId = Convert.ToInt32(reader[0].ToString());
+                    us = username;
+                    pas = pass;
+
+
 
                     if (username == uc.username && pass == uc.userpas && pos == "Cashier")
                     {
@@ -177,25 +185,7 @@ namespace Clothing_Store
             } // outer else
         } // login end
 
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblusername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -220,5 +210,7 @@ namespace Clothing_Store
 
             }
         }
+
+    
     }// class end
 }//  name space end 

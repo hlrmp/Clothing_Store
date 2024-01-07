@@ -711,6 +711,9 @@ namespace Clothing_Store
 
                     MessageBox.Show("User information was Updated", "Update  User", MessageBoxButtons.OK);
 
+                    manageUsers();
+
+
                     txtUserName.Clear();
                     txtPassword.Clear();
 
@@ -744,10 +747,10 @@ namespace Clothing_Store
 
             sqlCommand.Parameters.Clear();
             sqlCommand.Connection = con;
-            sqlCommand.CommandText = "Update  Staffs Set User_Name = @User_Name , Password = @Password  where User_Id = " + staff.uid + " ";
+            sqlCommand.CommandText = "Update  Users Set User_Name = @User_Name , Password = @Password  where User_Id = " + staff.uid + " ";
 
             sqlCommand.Parameters.Add("@User_Name", UserName);
-            sqlCommand.Parameters.Add("@Pasword", Pass);
+            sqlCommand.Parameters.Add("@Password", Pass);
           
 
             con.Open();
