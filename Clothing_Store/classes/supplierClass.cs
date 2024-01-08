@@ -9,38 +9,34 @@ namespace Clothing_Store
     internal class supplierClass
     {
 
-        private string FirstName;
-        private string LastName;
+        private string Name;
+
         private string Address;
         private long Contact;
         private string Email;
 
         public supplierClass()
         {
-            this.FirstName = " ";
-            this.LastName = " ";
+        
+            this.Name = " ";
             this.Address = " ";
             this.Contact = 0;
             this.Email = " ";
         }
 
-        public supplierClass(string firstName, string lastName, string address, long contact, string email)
+        public supplierClass(string name , string address, long contact, string email)
         {
-            FirstName = firstName;
-            LastName = lastName;
+           
+            Name = name;
             Address = address;
             Contact = contact;
             Email = email;
         }
-        public string First_Name
+      
+        public string Supplier_Name
         {
-            get { return FirstName; }
-            set { FirstName = value; }
-        }
-        public string Last_Name
-        {
-            get { return LastName; }
-            set { LastName = value; }
+            get { return Name; }
+            set {   = value; }
         }
         public string address
         {
