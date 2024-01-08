@@ -589,7 +589,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
             this.Controls.Add(this.panelEdit);
-            this.Controls.Add(this.datagridviewHome);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.lblsearch);
@@ -597,6 +596,7 @@
             this.Controls.Add(this.sidepanelitems);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datagridviewHome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCustomers";
             this.Text = "FrmCustomers";

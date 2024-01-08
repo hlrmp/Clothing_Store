@@ -10,9 +10,9 @@ namespace Clothing_Store
     {
 
         private string Name;
-
+        private string id;
         private string Address;
-        private long Contact;
+        private string Contact;
         private string Email;
 
         public supplierClass()
@@ -20,17 +20,19 @@ namespace Clothing_Store
         
             this.Name = " ";
             this.Address = " ";
-            this.Contact = 0;
+            this.Contact = "";
             this.Email = " ";
+            this.id = "";
         }
 
-        public supplierClass(string name , string address, long contact, string email)
+        public supplierClass(string name , string address, string contact, string email,string ID)
         {
            
             Name = name;
             Address = address;
             Contact = contact;
             Email = email;
+            id = id;
         }
       
         public string Supplier_Name
@@ -43,7 +45,7 @@ namespace Clothing_Store
             get { return Address; }
             set { Address = value; }
         }
-        public long Contact_No
+        public string Contact_No
         {
             get { return Contact; }
             set { Contact = value; }
@@ -52,6 +54,11 @@ namespace Clothing_Store
         {
             get { return Email; }
             set { Email = value; }
+        }
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
         }
 
     }
