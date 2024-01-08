@@ -47,18 +47,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelEdit = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEditName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCaancelEdit = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnConfirm = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txtEditEmail = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtEditAddress = new System.Windows.Forms.TextBox();
+            this.txtEditContact = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnManage = new System.Windows.Forms.Button();
@@ -288,18 +285,15 @@
             this.panelEdit.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panelEdit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelEdit.Controls.Add(this.label2);
-            this.panelEdit.Controls.Add(this.textBox1);
+            this.panelEdit.Controls.Add(this.txtEditName);
             this.panelEdit.Controls.Add(this.label6);
             this.panelEdit.Controls.Add(this.btnCaancelEdit);
-            this.panelEdit.Controls.Add(this.textBox2);
             this.panelEdit.Controls.Add(this.btnConfirm);
-            this.panelEdit.Controls.Add(this.label8);
-            this.panelEdit.Controls.Add(this.textBox3);
-            this.panelEdit.Controls.Add(this.label11);
+            this.panelEdit.Controls.Add(this.txtEditEmail);
             this.panelEdit.Controls.Add(this.label12);
             this.panelEdit.Controls.Add(this.label13);
-            this.panelEdit.Controls.Add(this.textBox4);
-            this.panelEdit.Controls.Add(this.textBox5);
+            this.panelEdit.Controls.Add(this.txtEditAddress);
+            this.panelEdit.Controls.Add(this.txtEditContact);
             this.panelEdit.Controls.Add(this.label14);
             this.panelEdit.Controls.Add(this.pictureBox1);
             this.panelEdit.Location = new System.Drawing.Point(45, 73);
@@ -320,13 +314,13 @@
             this.label2.TabIndex = 80;
             this.label2.Text = "Edit Supplier";
             // 
-            // textBox1
+            // txtEditName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(128, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 20);
-            this.textBox1.TabIndex = 80;
+            this.txtEditName.BackColor = System.Drawing.Color.White;
+            this.txtEditName.Location = new System.Drawing.Point(128, 77);
+            this.txtEditName.Name = "txtEditName";
+            this.txtEditName.Size = new System.Drawing.Size(208, 20);
+            this.txtEditName.TabIndex = 80;
             // 
             // label6
             // 
@@ -356,14 +350,6 @@
             this.btnCaancelEdit.UseVisualStyleBackColor = false;
             this.btnCaancelEdit.Click += new System.EventHandler(this.btnCaancelEdit_Click);
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(128, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 20);
-            this.textBox2.TabIndex = 82;
-            // 
             // btnConfirm
             // 
             this.btnConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -380,40 +366,20 @@
             this.btnConfirm.Text = "Confrim";
             this.btnConfirm.UseVisualStyleBackColor = false;
             // 
-            // label8
+            // txtEditEmail
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label8.Location = new System.Drawing.Point(184, 100);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 13);
-            this.label8.TabIndex = 83;
-            this.label8.Text = "First Name";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(128, 212);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 20);
-            this.textBox3.TabIndex = 90;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label11.Location = new System.Drawing.Point(184, 145);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 13);
-            this.label11.TabIndex = 84;
-            this.label11.Text = "Last Name";
+            this.txtEditEmail.BackColor = System.Drawing.Color.White;
+            this.txtEditEmail.Location = new System.Drawing.Point(128, 162);
+            this.txtEditEmail.Name = "txtEditEmail";
+            this.txtEditEmail.Size = new System.Drawing.Size(265, 20);
+            this.txtEditEmail.TabIndex = 90;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label12.Location = new System.Drawing.Point(67, 214);
+            this.label12.Location = new System.Drawing.Point(67, 164);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 18);
             this.label12.TabIndex = 89;
@@ -424,34 +390,34 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label13.Location = new System.Drawing.Point(26, 172);
+            this.label13.Location = new System.Drawing.Point(26, 122);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(96, 18);
             this.label13.TabIndex = 85;
             this.label13.Text = "Contact No. :";
             // 
-            // textBox4
+            // txtEditAddress
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(128, 258);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(265, 20);
-            this.textBox4.TabIndex = 88;
+            this.txtEditAddress.BackColor = System.Drawing.Color.White;
+            this.txtEditAddress.Location = new System.Drawing.Point(128, 208);
+            this.txtEditAddress.Name = "txtEditAddress";
+            this.txtEditAddress.Size = new System.Drawing.Size(265, 20);
+            this.txtEditAddress.TabIndex = 88;
             // 
-            // textBox5
+            // txtEditContact
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Location = new System.Drawing.Point(128, 173);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(265, 20);
-            this.textBox5.TabIndex = 86;
+            this.txtEditContact.BackColor = System.Drawing.Color.White;
+            this.txtEditContact.Location = new System.Drawing.Point(128, 123);
+            this.txtEditContact.Name = "txtEditContact";
+            this.txtEditContact.Size = new System.Drawing.Size(265, 20);
+            this.txtEditContact.TabIndex = 86;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label14.Location = new System.Drawing.Point(52, 257);
+            this.label14.Location = new System.Drawing.Point(52, 207);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(70, 18);
             this.label14.TabIndex = 87;
@@ -671,18 +637,15 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panelEdit;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEditName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCaancelEdit;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtEditEmail;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtEditAddress;
+        private System.Windows.Forms.TextBox txtEditContact;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
