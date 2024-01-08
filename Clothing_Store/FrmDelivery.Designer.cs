@@ -50,7 +50,7 @@
             this.Pending = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Intransit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Delivered = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1Home)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
@@ -280,9 +280,14 @@
             // 
             // Delete
             // 
+            this.Delete.FillWeight = 25F;
             this.Delete.HeaderText = "Delete";
+            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete_icon;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.Width = 5;
             // 
             // FrmDelivery
             // 
@@ -320,6 +325,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridView dataGridViewManage;
         private System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.BindingSource deliveryClassBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliveryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
@@ -329,7 +335,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Pending;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Intransit;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Delivered;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Delete;
-        private System.Windows.Forms.BindingSource deliveryClassBindingSource;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }

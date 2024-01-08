@@ -69,7 +69,7 @@ namespace Clothing_Store
             }
             else
             {
-                string desc = txtComany.Text + " - Rider: " + txtRider.Text + " Contact " + txtRiderContact.Text;
+                string desc = txtComany.Text + "  -  Rider: " + txtRider.Text + "    Contact " + txtRiderContact.Text;
                 cont = ContactNo(txtRiderContact.Text);
 
                 SqlConnection con = new SqlConnection(ConnectionClass.conn);
