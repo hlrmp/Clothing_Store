@@ -69,7 +69,7 @@ namespace Clothing_Store
             }
             else
             {
-                string desc = txtComany.Text + " - Rider: " + txtRider.Text + "_Contact " + txtRiderContact.Text;
+                string desc = txtComany.Text + " - Rider: " + txtRider.Text + " Contact " + txtRiderContact.Text;
                 cont = ContactNo(txtRiderContact.Text);
 
                 SqlConnection con = new SqlConnection(ConnectionClass.conn);
@@ -97,13 +97,14 @@ namespace Clothing_Store
                 command.ExecuteNonQuery();
                 con.Close();
 
+                clear();
 
                 MessageBox.Show("Succesfully added", "Delivery", MessageBoxButtons.OK);
 
                 // activity logs begin
 
-                //     string desc = " Inventory Changes becuse of Order Added ";
-                //     ConnectionClass.activity(frmLogin.userId, desc);
+                     string des = " delivery added ";
+                     ConnectionClass.activity(frmLogin.userId, des);
 
                 // activity logs end
             }
@@ -126,7 +127,7 @@ namespace Clothing_Store
             if (dialogResult == DialogResult.Yes)
             {
                 this.Hide();
-
+                clear();
             }
             else
             {
@@ -205,7 +206,7 @@ namespace Clothing_Store
        
         private void timer1_Tick(object sender, EventArgs e)
         {
-           // info();
+            info();
         }
 
         private void FrmAddDelivery_Load(object sender, EventArgs e)
@@ -216,9 +217,26 @@ namespace Clothing_Store
             timer.Start();
         }
 
-        private void cbOrdersId_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtxCustomerName_MouseClick(object sender, MouseEventArgs e)// click event to show name begin
         {
-           // info();
-        }
+            info();
+
+        }// click event to show name end
+
+        public void clear() // clear begin
+        {
+            txtComany.Clear();
+            txtxCustomerName.Clear();
+            txtRider.Clear();
+        
+            txtCustomerContact.Clear();
+            txtDeliveryAddress.Clear();
+            txtEmail.Clear();
+            txtRiderContact.Clear();
+
+
+
+        } //clear end
+
     } // class end
 } // namespace  end

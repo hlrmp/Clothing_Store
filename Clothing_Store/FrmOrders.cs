@@ -21,7 +21,7 @@ namespace Clothing_Store
             see();
             total();
             filter();
-
+            see();
         }
         FrmAddOrders fao = new FrmAddOrders();
         private void btnAddStock_Click(object sender, EventArgs e)

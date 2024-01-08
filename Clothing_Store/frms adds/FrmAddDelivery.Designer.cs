@@ -153,6 +153,7 @@
             this.txtxCustomerName.Name = "txtxCustomerName";
             this.txtxCustomerName.Size = new System.Drawing.Size(256, 20);
             this.txtxCustomerName.TabIndex = 60;
+            this.txtxCustomerName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtxCustomerName_MouseClick);
             // 
             // cbOrdersId
             // 
@@ -161,7 +162,6 @@
             this.cbOrdersId.Name = "cbOrdersId";
             this.cbOrdersId.Size = new System.Drawing.Size(256, 21);
             this.cbOrdersId.TabIndex = 59;
-            this.cbOrdersId.SelectedIndexChanged += new System.EventHandler(this.cbOrdersId_SelectedIndexChanged);
             // 
             // label3
             // 
