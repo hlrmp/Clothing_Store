@@ -126,11 +126,11 @@
             // 
             this.lblForgotPasword.AutoSize = true;
             this.lblForgotPasword.BackColor = System.Drawing.SystemColors.Control;
-            this.lblForgotPasword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPasword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblForgotPasword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblForgotPasword.Location = new System.Drawing.Point(254, 184);
             this.lblForgotPasword.Name = "lblForgotPasword";
-            this.lblForgotPasword.Size = new System.Drawing.Size(98, 15);
+            this.lblForgotPasword.Size = new System.Drawing.Size(108, 16);
             this.lblForgotPasword.TabIndex = 9;
             this.lblForgotPasword.Text = "Forgot password";
             this.lblForgotPasword.Click += new System.EventHandler(this.lblForgotPasword_Click);
