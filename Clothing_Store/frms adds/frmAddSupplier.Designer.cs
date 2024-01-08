@@ -277,7 +277,7 @@
             this.panel1.Controls.Add(this.dataGridViewHome);
             this.panel1.Location = new System.Drawing.Point(500, 73);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(682, 346);
+            this.panel1.Size = new System.Drawing.Size(701, 346);
             this.panel1.TabIndex = 94;
             // 
             // panelEdit
@@ -442,9 +442,9 @@
             this.btnManage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManage.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnManage.Location = new System.Drawing.Point(576, 88);
+            this.btnManage.Location = new System.Drawing.Point(586, 95);
             this.btnManage.Name = "btnManage";
-            this.btnManage.Size = new System.Drawing.Size(85, 34);
+            this.btnManage.Size = new System.Drawing.Size(101, 34);
             this.btnManage.TabIndex = 94;
             this.btnManage.Text = "Manage";
             this.btnManage.UseVisualStyleBackColor = false;
@@ -459,9 +459,9 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHome.Location = new System.Drawing.Point(576, 38);
+            this.btnHome.Location = new System.Drawing.Point(586, 45);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(85, 34);
+            this.btnHome.Size = new System.Drawing.Size(101, 34);
             this.btnHome.TabIndex = 93;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -476,9 +476,9 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExit.Location = new System.Drawing.Point(576, 141);
+            this.btnExit.Location = new System.Drawing.Point(586, 148);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(85, 34);
+            this.btnExit.Size = new System.Drawing.Size(101, 34);
             this.btnExit.TabIndex = 95;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
