@@ -247,7 +247,7 @@ namespace Clothing_Store
             add();
             itemCode();
             cbItemCode.Refresh();
-
+           
         } // add btn end 
 
         private void btnClear_Click(object sender, EventArgs e)  //clear btn begin
@@ -316,20 +316,23 @@ namespace Clothing_Store
 
 
                             MessageBox.Show("Succesfully added","New Item",MessageBoxButtons.OK);
-                            // activity logs begin
 
-                            //     string desc = "New Item Added";
-                            //     ConnectionClass.activity(frmLogin.userId, desc);
+                        clear();
 
-                            // activity logs end
+                        // activity logs begin
+
+                             string desc = "New Item Added";
+                             ConnectionClass.activity(frmLogin.userId, desc);
+
+                        // activity logs end
 
 
-                           
-                         //   this.Hide();
+
+                        //   this.Hide();
 
 
-                           
-                        }
+
+                    }
 
 
                 }
@@ -369,12 +372,12 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                MessageBox.Show("Exist");
+               
                 condition = "same";
             }
             else
             {
-                MessageBox.Show("dont");
+              
                 condition = "notsame";
             }
 
@@ -621,9 +624,9 @@ namespace Clothing_Store
 
         private void cbItemCode_MouseClick(object sender, MouseEventArgs e)
         {
-            item();
+       //     item();
             lblItemName.Refresh();
-            IName();
+       //     IName();
         }
 
         private void txtQuantity_MouseClick(object sender, MouseEventArgs e)

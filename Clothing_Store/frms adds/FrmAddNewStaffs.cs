@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace Clothing_Store
         public FrmAddNewStaffs()
         {
             InitializeComponent();
+            position();
         }
 
         protected override void OnPaint(PaintEventArgs e)    // border color begin
@@ -32,6 +34,14 @@ namespace Clothing_Store
 
         private void FrmAddNewStaffs_Load(object sender, EventArgs e)
         {
+
+        }
+        public void position()
+        {
+            ArrayList arr = new ArrayList();
+            arr.Add("Cashier");
+            arr.Add("Admin");
+            arr.Add("Owner");
 
         }
 
@@ -173,12 +183,11 @@ namespace Clothing_Store
         // class instance
         userClass uc = new userClass();
         FrmAddUser addu = new FrmAddUser();
-        private void btnAdd_Click(object sender, EventArgs e) // add button begin 
-        {
-            add();
+       
+           
 
 
-        } // add button end
+       
         public void add() // add begin
         {
 
@@ -226,7 +235,7 @@ namespace Clothing_Store
                     // activity logs begin
 
                        string desc = "Add New Staff";
-                       ConnectionClass.activity(frmLogin.userId, desc);
+                //       ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
 
@@ -291,8 +300,24 @@ namespace Clothing_Store
 
         } // add end
 
+        private void Cancel_Click_1(object sender, EventArgs e) // cancel btn begin
+        {
+            this.Hide();
+            txtAddress.Clear();
+            txtContactNo.Clear();
+            txtEmail.Clear();
+            txtFname.Clear();
+            txtLname.Clear();
 
+            cbPosition.ResetText();
 
+        } // cancel btn end
+
+        private void btnAdd_Click_1(object sender, EventArgs e) // add btn begin
+        {
+            add();
+
+        } // ad btn end
     } // class end
 } // namespace end
 

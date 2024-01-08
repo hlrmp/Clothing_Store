@@ -151,8 +151,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label7.BackColor = System.Drawing.Color.Teal;
             this.label7.Font = new System.Drawing.Font("Matura MT Script Capitals", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(61, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(224, 25);
@@ -213,7 +214,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox2.BackColor = System.Drawing.Color.Teal;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Location = new System.Drawing.Point(-1, -1);
             this.pictureBox2.Name = "pictureBox2";
@@ -282,8 +283,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.BackColor = System.Drawing.Color.Teal;
             this.label6.Font = new System.Drawing.Font("Matura MT Script Capitals", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(32, 13);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(291, 25);
@@ -342,7 +344,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.pictureBox3.BackColor = System.Drawing.Color.Teal;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Location = new System.Drawing.Point(-1, -1);
             this.pictureBox3.Name = "pictureBox3";
