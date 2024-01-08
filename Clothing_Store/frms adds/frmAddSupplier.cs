@@ -243,6 +243,15 @@ namespace Clothing_Store.frms_adds
             manageSupplier();
 
         } // btn manage end
+        private void btnCaancelEdit_Click(object sender, EventArgs e) // btn cance edit begin
+        {
+            panelEdit.Visible = false;
+
+        } // btn cancel edit end
+        private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e)  // datagrid manage click begin
+        {
+
+        } // datagrid manage click end
         private void btnExit_Click(object sender, EventArgs e) // exit btn begin
         {
             DialogResult dl = MessageBox.Show("Do you want to Exit?","Close",MessageBoxButtons.OKCancel);
@@ -303,6 +312,6 @@ namespace Clothing_Store.frms_adds
 
         } // supplier end
 
-
+     
     } // class end
 } // name space end
