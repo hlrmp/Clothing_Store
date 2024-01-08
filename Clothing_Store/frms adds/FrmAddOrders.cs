@@ -55,7 +55,7 @@ namespace Clothing_Store
                 this.Hide();
 
                 clear();
-
+              
 
 
             }
@@ -78,6 +78,8 @@ namespace Clothing_Store
             cbSize.ResetText();
             cbType.ResetText();
             cbColor.ResetText();
+            listOrders.Items.Clear();
+
         }
         public void size() // size method begin
         {
@@ -269,46 +271,58 @@ namespace Clothing_Store
                 }
                 else
                 {
-                    SqlConnection con = new SqlConnection(ConnectionClass.conn);
+                        if (int.Parse(Quan) >= int.Parse(oc.Quantity))
+                        {
+                            SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
 
-                    string up = "update Inventory set Quantity = Quantity - "+oc.Quantity+" where Product_Id = "+productId+" and Status = 1";
-                    SqlCommand command1 = new SqlCommand(up, con);
-                    con.Open();
-                    command1.ExecuteNonQuery();
-                    con.Close();
+                            string up = "update Inventory set Quantity = Quantity - " + oc.Quantity + " where Product_Id = " + productId + " and Status = 1";
+                            SqlCommand command1 = new SqlCommand(up, con);
+                            con.Open();
+                            command1.ExecuteNonQuery();
+                            con.Close();
 
 
-                    string ins = "insert into Orders (Staff_Id,Customer_Id,Product_Id,Quantity,Status,Date) values (@Staff_Id,@Customer_Id,@Product_Id,@Quantity,@Status,getDate())";
-                    SqlCommand command = new SqlCommand(ins, con);
+                            string ins = "insert into Orders (Staff_Id,Customer_Id,Product_Id,Quantity,Status,Date) values (@Staff_Id,@Customer_Id,@Product_Id,@Quantity,@Status,getDate())";
+                            SqlCommand command = new SqlCommand(ins, con);
 
 
 
-                    con.Open();
+                            con.Open();
 
-                    command.Parameters.AddWithValue("@Staff_Id", StaffId);
-                    command.Parameters.AddWithValue("@Customer_Id", customerId);
-                    command.Parameters.AddWithValue("@Product_Id", productId);
-                    command.Parameters.AddWithValue("@Quantity", oc.Quantity);
-                    command.Parameters.AddWithValue("@Status", "1");
-                    command.ExecuteNonQuery();
-                    con.Close();
+                            command.Parameters.AddWithValue("@Staff_Id", StaffId);
+                            command.Parameters.AddWithValue("@Customer_Id", customerId);
+                            command.Parameters.AddWithValue("@Product_Id", productId);
+                            command.Parameters.AddWithValue("@Quantity", oc.Quantity);
+                            command.Parameters.AddWithValue("@Status", "1");
+                            command.ExecuteNonQuery();
+                            con.Close();
 
 
-                    MessageBox.Show("Succesfully added", "New Orders", MessageBoxButtons.OK);
+                            MessageBox.Show("Succesfully added", "New Orders", MessageBoxButtons.OK);
 
-                    // activity logs begin
+                            // activity logs begin
 
-                    //     string desc = " Inventory Changes becuse of Order Added ";
-                    //     ConnectionClass.activity(frmLogin.userId, desc);
+                                string desc = " Inventory Changes and New Order Added ";
+                                ConnectionClass.activity(frmLogin.userId, desc);
 
-                    // activity logs end
+                        // activity logs end
+                        }
+                        else
+                        {
+                           
+                            listOrders.Items.Clear();
+                            MessageBox.Show("Insuficient Stocks" ,"Stocks",MessageBoxButtons.OK);
+                            
+                        }
+
                 }
 
 
         } // add end
 
         string productId;
+        string Quan;
         public void pId()
         {
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
@@ -324,6 +338,7 @@ namespace Clothing_Store
             if (reader.Read())
             {
                 productId = reader[0].ToString();
+                Quan = reader[7].ToString();
             }
            
             con.Close();
@@ -424,15 +439,18 @@ namespace Clothing_Store
 
                     add();
 
-                    dataGridViewAdd.Visible = false;
+                  
                     ordersList();
 
-                 //   MessageBox.Show(customerId + " " + productId);
+                    listOrders.Visible = false;
+                    dataGridViewOrders.Visible = true;
+
+                    //   MessageBox.Show(customerId + " " + productId);
 
                     // activity logs begin
 
-                    //      string desc = " Inventory Changes becuse of Order Added ";
-                    //      ConnectionClass.activity(frmLogin.userId, desc);
+                //        string desc = " Inventory Changes becuse of Order Added ";
+               //         ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
                 }
@@ -552,7 +570,7 @@ namespace Clothing_Store
         private void btnClear_Click(object sender, EventArgs e) // clear btn begin
         {
             clear();
-            dataGridViewAdd.Visible = false;
+            dataGridViewOrders.Visible = false;
 
         
         }// clear btn end
@@ -595,12 +613,26 @@ namespace Clothing_Store
                 }
                 else
                 {
+                    listOrders.Visible = true;
+                    dataGridViewOrders.Visible = false;
+
+                    listOrders.Items.Add("Name:" + oc.Name );
+                    listOrders.Items.Add("Item:" + oc.Item);
+                    listOrders.Items.Add("Category:" + oc.Category);
+                    listOrders.Items.Add("Quantity:" + oc.Quantity);
+                    listOrders.Items.Add("Size:" + oc.Size);
+                    listOrders.Items.Add("Color:" + oc.Color);
+                    listOrders.Items.Add("Type:" + oc.Type);
+               
+
+                    /*
                     dataGridViewAdd.Visible = true;
 
                     lst.Add(new ordersClass(cbCustomerName.Text, cbCategory.Text, cbItem.Text, txtQuantity.Text, cbSize.Text, cbColor.Text, cbType.Text));
 
                     dataGridViewAdd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     dataGridViewAdd.DataSource = lst;
+                    */
                 }
 
 

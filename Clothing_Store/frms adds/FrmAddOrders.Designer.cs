@@ -51,14 +51,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridViewAdd = new System.Windows.Forms.DataGridView();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridViewOrders = new System.Windows.Forms.DataGridView();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
+            this.listOrders = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
             this.SuspendLayout();
@@ -341,7 +340,6 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.dataGridViewAdd);
             this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.dataGridViewOrders);
@@ -349,23 +347,11 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.Cancel);
             this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.listOrders);
             this.panel2.Location = new System.Drawing.Point(454, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(517, 414);
             this.panel2.TabIndex = 38;
-            // 
-            // dataGridViewAdd
-            // 
-            this.dataGridViewAdd.AllowUserToAddRows = false;
-            this.dataGridViewAdd.AllowUserToDeleteRows = false;
-            this.dataGridViewAdd.BackgroundColor = System.Drawing.SystemColors.MenuBar;
-            this.dataGridViewAdd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAdd.Location = new System.Drawing.Point(21, 227);
-            this.dataGridViewAdd.Name = "dataGridViewAdd";
-            this.dataGridViewAdd.ReadOnly = true;
-            this.dataGridViewAdd.Size = new System.Drawing.Size(474, 110);
-            this.dataGridViewAdd.TabIndex = 39;
-            this.dataGridViewAdd.Visible = false;
             // 
             // btnRefresh
             // 
@@ -404,7 +390,7 @@
             this.dataGridViewOrders.Location = new System.Drawing.Point(21, 227);
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.ReadOnly = true;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(474, 110);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(474, 121);
             this.dataGridViewOrders.TabIndex = 36;
             // 
             // dataGridViewItems
@@ -418,6 +404,15 @@
             this.dataGridViewItems.ReadOnly = true;
             this.dataGridViewItems.Size = new System.Drawing.Size(474, 110);
             this.dataGridViewItems.TabIndex = 35;
+            // 
+            // listOrders
+            // 
+            this.listOrders.FormattingEnabled = true;
+            this.listOrders.Location = new System.Drawing.Point(21, 227);
+            this.listOrders.Name = "listOrders";
+            this.listOrders.Size = new System.Drawing.Size(474, 121);
+            this.listOrders.TabIndex = 40;
+            this.listOrders.Visible = false;
             // 
             // FrmAddOrders
             // 
@@ -435,7 +430,6 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
             this.ResumeLayout(false);
@@ -472,6 +466,6 @@
         private System.Windows.Forms.DataGridView dataGridViewOrders;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnAddOrders;
-        private System.Windows.Forms.DataGridView dataGridViewAdd;
+        private System.Windows.Forms.ListBox listOrders;
     }
 }
