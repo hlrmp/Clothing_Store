@@ -59,13 +59,7 @@ namespace Clothing_Store
 
             log();
 
-            // activity logs begin
-
-            //    string desc = "Log in - " + frmLogin.name;
-            //      ConnectionClass.activity(frmLogin.userId, desc);
-
-            // activity logs end
-
+          
 
             //FrmLoading ffl = new FrmLoading();
             //ffl.ShowDialog();
@@ -149,12 +143,28 @@ namespace Clothing_Store
                         circularProgressBar1.Show();
                         timer1.Start();
 
+                        // activity logs begin
+
+                            string desc = "Log in - " + frmLogin.name;
+                            ConnectionClass.activity(frmLogin.userId, desc);
+
+                        // activity logs end
+
+
                     }
                     else if (username == uc.username && pass == uc.userpas && pos == "Admin" || username == uc.username && pass == uc.userpas && pos == "Owner")
                     {
                         MessageBox.Show("A");
                         circularProgressBar1.Show();
                         timer1.Start();
+
+                        // activity logs begin
+
+                            string desc = "Log in - " + frmLogin.name;
+                              ConnectionClass.activity(frmLogin.userId, desc);
+
+                        // activity logs end
+
 
                     }
                     else

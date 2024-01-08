@@ -11,8 +11,8 @@ namespace Clothing_Store
 {
     internal class ConnectionClass
     {
-        //public static string conn = @"Data Source=REICHEL28\SQLEXPRESS01;Initial Catalog=Clothing_Database;Integrated Security=True";
-       public static string conn = @"Data Source=REICHEL28\SQLEXPRESS01;Initial Catalog=ClothingStoreDatabase;Integrated Security=True";
+          public static string conn = @"Data Source=REICHEL28\SQLEXPRESS01;Initial Catalog=ClothingStoreDB;Integrated Security=True";
+       // public static string conn = @"Data Source=REICHEL28\SQLEXPRESS01;Initial Catalog=ClothingStoreDatabase;Integrated Security=True";
       
     //   public static string TimeandDate = DateTime.Now.ToString("yyyy-MM-dd T-HH:mm:ssss");
 

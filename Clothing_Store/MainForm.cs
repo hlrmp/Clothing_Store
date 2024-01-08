@@ -96,7 +96,7 @@ namespace Clothing_Store
             fd.Hide();
 
             // pannel and forms
-            mainpanel.Hide();
+            mainpanel.Show();
            
 
             panelRSide.Show();
