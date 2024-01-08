@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clothing_Store.frms_adds;
 
 namespace Clothing_Store
 {
@@ -381,7 +382,14 @@ namespace Clothing_Store
             seetotalInventory();
 
         }// totla btn end
+        private void btnAddSupplier_Click(object sender, EventArgs e) // btn add supplier begin
+        {
+            frmAddSupplier fsup = new frmAddSupplier();
 
+            fsup.ShowDialog();
+            dataGridViewManage.Visible = false; 
+
+        } // btn add supplier end
         private void FrmStocks_Load(object sender, EventArgs e) // frm load begin
         {
 
@@ -626,5 +634,6 @@ namespace Clothing_Store
 
         } // save click end
 
+       
     }// class end
 }// cname space end
