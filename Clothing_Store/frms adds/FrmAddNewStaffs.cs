@@ -254,7 +254,7 @@ namespace Clothing_Store
                                             else // inner else begin
 
                                             {
-                                                     
+                                                this.Hide();
 
 
 

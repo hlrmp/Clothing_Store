@@ -80,6 +80,7 @@ namespace Clothing_Store
         public static int userId;
         public static string us;
         public static string pas;
+        public static string UserName;
 
         public void log() // login begin
         {
@@ -89,7 +90,7 @@ namespace Clothing_Store
 
             uc.username = txtUserName.Text;
             uc.userpas = txtPassword.Text;
-
+          
 
             MainForm mf = new MainForm();
 
@@ -187,11 +188,7 @@ namespace Clothing_Store
 
      
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (circularProgressBar1.Value < 100)
@@ -211,6 +208,50 @@ namespace Clothing_Store
             }
         }
 
-    
+        private void lblForgotPasword_Click(object sender, EventArgs e) // forgot password begin
+        {
+            UserName = txtUserName.Text;
+            readUserName();
+
+
+            FrmForgotPassword fp = new FrmForgotPassword();
+
+            if (txtUserName.Text == "")
+            {
+                MessageBox.Show("Enter your User Name to Continue", "Forgot Password", MessageBoxButtons.OK);
+            }
+            else if (ok == txtUserName.Text)
+            {
+                fp.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Enter your User Name Correctly Continue", "Forgot Password", MessageBoxButtons.OK);
+            }
+
+
+        }// forgot password end
+        string ok;
+        public void readUserName()// readUserName begin
+        {
+            SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+
+            string quer = "select * from Users where User_Name = '"+txtUserName.Text+"'";
+
+            cn.Open();
+            SqlCommand command = new SqlCommand();
+            command = new SqlCommand(quer, cn);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+               ok =   reader[2].ToString();
+             
+
+
+              
+            }
+
+            } // readUserName end
+
     }// class end
 }//  name space end 

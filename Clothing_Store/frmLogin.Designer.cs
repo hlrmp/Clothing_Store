@@ -36,7 +36,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.ckPassword = new System.Windows.Forms.CheckBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblForgotPasword = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -122,18 +122,18 @@
             this.txtUserName.Size = new System.Drawing.Size(217, 24);
             this.txtUserName.TabIndex = 8;
             // 
-            // label1
+            // lblForgotPasword
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label1.Location = new System.Drawing.Point(254, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 15);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Forgot password";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblForgotPasword.AutoSize = true;
+            this.lblForgotPasword.BackColor = System.Drawing.SystemColors.Control;
+            this.lblForgotPasword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblForgotPasword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblForgotPasword.Location = new System.Drawing.Point(254, 184);
+            this.lblForgotPasword.Name = "lblForgotPasword";
+            this.lblForgotPasword.Size = new System.Drawing.Size(98, 15);
+            this.lblForgotPasword.TabIndex = 9;
+            this.lblForgotPasword.Text = "Forgot password";
+            this.lblForgotPasword.Click += new System.EventHandler(this.lblForgotPasword_Click);
             // 
             // lblTitle
             // 
@@ -193,7 +193,7 @@
             this.ClientSize = new System.Drawing.Size(450, 303);
             this.Controls.Add(this.circularProgressBar1);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblForgotPasword);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.ckPassword);
             this.Controls.Add(this.lblPassword);
@@ -219,7 +219,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.CheckBox ckPassword;
         private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblForgotPasword;
         private System.Windows.Forms.Label lblTitle;
         private CircularProgressBar.CircularProgressBar circularProgressBar1;
         private System.Windows.Forms.Timer timer1;
