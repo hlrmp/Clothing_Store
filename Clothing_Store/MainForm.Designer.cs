@@ -72,10 +72,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotalShorts = new System.Windows.Forms.Label();
             this.panelAccount = new System.Windows.Forms.Panel();
+            this.btnSettingArchives = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnbackupAndRecovery = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1buttonCollections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panelRSide.SuspendLayout();
@@ -677,7 +677,7 @@
             this.panelAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAccount.BackColor = System.Drawing.Color.White;
             this.panelAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelAccount.Controls.Add(this.button1);
+            this.panelAccount.Controls.Add(this.btnSettingArchives);
             this.panelAccount.Controls.Add(this.btnAbout);
             this.panelAccount.Controls.Add(this.btnbackupAndRecovery);
             this.panelAccount.Controls.Add(this.btnLogout);
@@ -686,6 +686,25 @@
             this.panelAccount.Size = new System.Drawing.Size(186, 272);
             this.panelAccount.TabIndex = 20;
             this.panelAccount.Visible = false;
+            // 
+            // btnSettingArchives
+            // 
+            this.btnSettingArchives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSettingArchives.BackColor = System.Drawing.Color.White;
+            this.btnSettingArchives.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSettingArchives.FlatAppearance.BorderSize = 3;
+            this.btnSettingArchives.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnSettingArchives.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSettingArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettingArchives.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettingArchives.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.btnSettingArchives.Location = new System.Drawing.Point(4, 184);
+            this.btnSettingArchives.Name = "btnSettingArchives";
+            this.btnSettingArchives.Size = new System.Drawing.Size(178, 62);
+            this.btnSettingArchives.TabIndex = 16;
+            this.btnSettingArchives.Text = "Archives";
+            this.btnSettingArchives.UseVisualStyleBackColor = false;
+            this.btnSettingArchives.Click += new System.EventHandler(this.btnSettingArchives_Click);
             // 
             // btnAbout
             // 
@@ -743,24 +762,6 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 3;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.button1.Location = new System.Drawing.Point(4, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 62);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Archives";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -846,6 +847,6 @@
         private System.Windows.Forms.Label lblTotalBlouse;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAbout;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSettingArchives;
     }
 }

@@ -776,6 +776,12 @@ namespace Clothing_Store
 
 
         } // btn archive end
+        private void btnSettingArchives_Click(object sender, EventArgs e)// btn settings archives begin
+        {
+            frmArchives fa = new frmArchives();
+            fa.ShowDialog();
+
+        } // btn settings archives end
 
         private void btnAbout_Click(object sender, EventArgs e) // btn Account in settings begin
         {
@@ -783,5 +789,7 @@ namespace Clothing_Store
             fu.ShowDialog();
 
         } // btn Account in settings end
+
+      
     } // class end 
 } // names space end
