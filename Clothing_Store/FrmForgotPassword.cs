@@ -40,6 +40,7 @@ namespace Clothing_Store
             {
                 saveInfo();
               
+               
             }
             else
             {
@@ -53,6 +54,8 @@ namespace Clothing_Store
             txtUserName.Clear();
             txtPassword.Clear();
 
+            btnCancel.Enabled = true;
+            btnConfirm.Enabled = true;
             panelEdit.Visible = false;
 
         }// btn cancel Edit pannel end
@@ -224,6 +227,9 @@ namespace Clothing_Store
 
                     panelEdit.Hide();
                     this.Hide();
+
+                    btnCancel.Enabled = true;
+                    btnConfirm.Enabled = true;
                     // activity logs begin
 
                     string desc = "Update User Information by: User - " + uc.uid + " - " + uc.username;
@@ -308,6 +314,8 @@ namespace Clothing_Store
                         {
                             panelEdit.Visible = true;
                             txtUserName.Text = uc.username;
+                            btnCancel.Enabled = false;
+                            btnConfirm.Enabled = false;
 
                         }
                         else
