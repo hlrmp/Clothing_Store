@@ -17,6 +17,7 @@ namespace Clothing_Store.frms_adds
         public frmAddSupplier()
         {
             InitializeComponent();
+            Supplier();
         }
         protected override void OnPaint(PaintEventArgs e)    // border color begin
         {
@@ -147,9 +148,10 @@ namespace Clothing_Store.frms_adds
 
             try
             {
-                if (string.IsNullOrEmpty(txtFname.Text) || string.IsNullOrEmpty(txtLname.Text)
+                if (string.IsNullOrEmpty(txtName.Text)
                     || string.IsNullOrEmpty(txtAddress.Text)
-                    || string.IsNullOrEmpty(txtContactNo.Text) || string.IsNullOrEmpty(txtEmail.Text))
+                    || string.IsNullOrEmpty(txtContactNo.Text) 
+                    || string.IsNullOrEmpty(txtEmail.Text))
                 {
 
                     throw new nullExceptiom("Please fill up the FF.");
@@ -159,22 +161,20 @@ namespace Clothing_Store.frms_adds
                 {
 
 
-                    uc.StaffFirstName = Fname(txtFname.Text);
-                    uc.StaffLastName = Lname(txtLname.Text);
+                    uc.StaffFirstName = Fname(txtName.Text);
                     uc.staffEmail = Email(txtEmail.Text);
                     uc.StaffAddress = Address(txtAddress.Text);
                     uc.StaffConntacNo = ContactNo(txtContactNo.Text);
 
-                    string name = uc.StaffFirstName + " " + uc.StaffLastName;
+                    string name = uc.StaffFirstName;
 
                     SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-                    string quer1 = "insert into Supplier ( Supplier_Name, Address, Contact_No, Email ,Status) values (  @Supplier_Name, @Address, @Position, @Contact_No, @Email,  @Status) ";
+                    string quer1 = "insert into Supplier ( Supplier_Name, Address, Contact_No, Email ,Status) values (  @Supplier_Name, @Address,  @Contact_No, @Email,  @Status) ";
                     SqlCommand command = new SqlCommand(quer1, con);
 
                     command.Parameters.AddWithValue("@Supplier_Name", Name);
                     command.Parameters.AddWithValue("@Address", uc.StaffAddress);
-                    command.Parameters.AddWithValue("@Position", uc.StaffPosition);
                     command.Parameters.AddWithValue("@Contact_No", uc.StaffConntacNo);
                     command.Parameters.AddWithValue("@Email", uc.staffEmail);
                     command.Parameters.AddWithValue("@Status", "1");
@@ -184,10 +184,14 @@ namespace Clothing_Store.frms_adds
 
 
                     MessageBox.Show("New Supplier Added succesfully" , "Supplier", MessageBoxButtons.OK);
+
+                    Supplier();
+                    clear();
+
                     // activity logs begin
 
                     string desc = "Add New Supplier";
-                    ConnectionClass.activity(frmLogin.userId, desc);
+                 //   ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
 
@@ -219,19 +223,86 @@ namespace Clothing_Store.frms_adds
 
         private void Cancel_Click(object sender, EventArgs e)  // cancel btn begin
         {
-            this.Hide();
-            txtAddress.Clear();
-            txtContactNo.Clear();
-            txtEmail.Clear();
-            txtFname.Clear();
-            txtLname.Clear();
+            clear();
+
         } // cancel btn end
 
         private void btnHome_Click(object sender, EventArgs e)  // Home btn begin
         {
+            dataGridViewHome.Visible = true;
+            dataGridViewManage.Visible = false;
             dataGridViewHome.Show();
+            Supplier();
 
-        } // Home btn end
+        } // Home btn
+        private void btnManage_Click(object sender, EventArgs e) // btn manage begin
+        {
+            dataGridViewHome.Visible = false;
+            dataGridViewManage.Visible = true;
+
+            manageSupplier();
+
+        } // btn manage end
+        private void btnExit_Click(object sender, EventArgs e) // exit btn begin
+        {
+            DialogResult dl = MessageBox.Show("Do you want to Exit?","Close",MessageBoxButtons.OKCancel);
+            if (dl == DialogResult.OK)
+            {
+                this.Hide();
+                clear();
+              
+            }
+            else
+            {
+
+            }
+           
+        } // Exit btn end
+        public void clear()
+        {
+            txtAddress.Clear();
+            txtContactNo.Clear();
+            txtEmail.Clear();
+            txtName.Clear();
+        }
+
+    public void Supplier() // Supplier begin
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string names = "select Supplier_Name , Contact_No , Email AS email , Address AS address from Supplier where Status = 1";
+            SqlDataAdapter adapt = new SqlDataAdapter(names, con);
+
+            DataTable dataTable = new DataTable();
+            BindingSource bindingSource = new BindingSource();
+            dataTable.Clear();
+            adapt.Fill(dataTable);
+            bindingSource.DataSource = dataTable;
+
+
+            dataGridViewHome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewHome.DataSource = dataTable;
+
+        } // supplier end
+        public void manageSupplier() // Supplier begin
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string names = "select Supplier_Name , Contact_No , Email AS email , Address AS address from Supplier where Status = 1";
+            SqlDataAdapter adapt = new SqlDataAdapter(names, con);
+
+            DataTable dataTable = new DataTable();
+            BindingSource bindingSource = new BindingSource();
+            dataTable.Clear();
+            adapt.Fill(dataTable);
+            bindingSource.DataSource = dataTable;
+
+
+            dataGridViewManage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewManage.DataSource = dataTable;
+
+        } // supplier end
+
 
     } // class end
 } // name space end

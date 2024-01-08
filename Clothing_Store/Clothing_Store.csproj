@@ -286,6 +286,7 @@
     <None Include="Properties\DataSources\Clothing_Store.classes.ordersClass.datasource" />
     <None Include="Properties\DataSources\customerClass.datasource" />
     <None Include="Properties\DataSources\itemsClass.datasource" />
+    <None Include="Properties\DataSources\supplierClass.datasource" />
     <None Include="Properties\DataSources\userClass.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

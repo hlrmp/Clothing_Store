@@ -36,7 +36,7 @@ namespace Clothing_Store
         public string Supplier_Name
         {
             get { return Name; }
-            set {   = value; }
+            set {   Name = value; }
         }
         public string address
         {

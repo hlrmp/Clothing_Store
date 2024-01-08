@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clothing_Store.frms_adds;
 
 namespace Clothing_Store
 {
@@ -16,7 +17,7 @@ namespace Clothing_Store
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmAddNewStaffs());
+            Application.Run(new frmAddSupplier());
             // Application.Run(new MainForm()); 
              //Application.Run(new f());
           //    Application.Run(new FrmDelivery());

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Cancel = new System.Windows.Forms.Button();
@@ -38,13 +39,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtContactNo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtFname = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtLname = new System.Windows.Forms.TextBox();
             this.dataGridViewHome = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -66,12 +64,26 @@
             this.btnManage = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.Supplier_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewManage = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -90,14 +102,11 @@
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.txtFname);
+            this.panel2.Controls.Add(this.txtName);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.Cancel);
-            this.panel2.Controls.Add(this.txtLname);
             this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtEmail);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txtAddress);
@@ -118,11 +127,11 @@
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Cancel.Location = new System.Drawing.Point(288, 289);
+            this.Cancel.Location = new System.Drawing.Point(282, 274);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(114, 36);
             this.Cancel.TabIndex = 92;
-            this.Cancel.Text = "Cancel";
+            this.Cancel.Text = "Clear";
             this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
@@ -135,7 +144,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAdd.Location = new System.Drawing.Point(138, 289);
+            this.btnAdd.Location = new System.Drawing.Point(132, 274);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(114, 36);
             this.btnAdd.TabIndex = 91;
@@ -146,7 +155,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
-            this.txtEmail.Location = new System.Drawing.Point(128, 212);
+            this.txtEmail.Location = new System.Drawing.Point(128, 162);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(265, 20);
             this.txtEmail.TabIndex = 90;
@@ -156,7 +165,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label10.Location = new System.Drawing.Point(67, 214);
+            this.label10.Location = new System.Drawing.Point(67, 164);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 18);
             this.label10.TabIndex = 89;
@@ -165,7 +174,7 @@
             // txtAddress
             // 
             this.txtAddress.BackColor = System.Drawing.Color.White;
-            this.txtAddress.Location = new System.Drawing.Point(128, 258);
+            this.txtAddress.Location = new System.Drawing.Point(128, 208);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(265, 20);
             this.txtAddress.TabIndex = 88;
@@ -175,7 +184,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label9.Location = new System.Drawing.Point(52, 257);
+            this.label9.Location = new System.Drawing.Point(52, 207);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 18);
             this.label9.TabIndex = 87;
@@ -184,7 +193,7 @@
             // txtContactNo
             // 
             this.txtContactNo.BackColor = System.Drawing.Color.White;
-            this.txtContactNo.Location = new System.Drawing.Point(128, 173);
+            this.txtContactNo.Location = new System.Drawing.Point(128, 123);
             this.txtContactNo.Name = "txtContactNo";
             this.txtContactNo.Size = new System.Drawing.Size(265, 20);
             this.txtContactNo.TabIndex = 86;
@@ -194,21 +203,11 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label7.Location = new System.Drawing.Point(26, 172);
+            this.label7.Location = new System.Drawing.Point(26, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 18);
             this.label7.TabIndex = 85;
             this.label7.Text = "Contact No. :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label4.Location = new System.Drawing.Point(184, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 83;
-            this.label4.Text = "First Name";
             // 
             // label3
             // 
@@ -221,13 +220,13 @@
             this.label3.TabIndex = 81;
             this.label3.Text = "Name :";
             // 
-            // txtFname
+            // txtName
             // 
-            this.txtFname.BackColor = System.Drawing.Color.White;
-            this.txtFname.Location = new System.Drawing.Point(128, 77);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(208, 20);
-            this.txtFname.TabIndex = 80;
+            this.txtName.BackColor = System.Drawing.Color.White;
+            this.txtName.Location = new System.Drawing.Point(128, 77);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(262, 20);
+            this.txtName.TabIndex = 80;
             // 
             // label1
             // 
@@ -251,30 +250,22 @@
             this.pictureBox3.TabIndex = 93;
             this.pictureBox3.TabStop = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label5.Location = new System.Drawing.Point(184, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 84;
-            this.label5.Text = "Last Name";
-            // 
-            // txtLname
-            // 
-            this.txtLname.BackColor = System.Drawing.Color.White;
-            this.txtLname.Location = new System.Drawing.Point(128, 122);
-            this.txtLname.Name = "txtLname";
-            this.txtLname.Size = new System.Drawing.Size(208, 20);
-            this.txtLname.TabIndex = 82;
-            // 
             // dataGridViewHome
             // 
+            this.dataGridViewHome.AllowUserToAddRows = false;
+            this.dataGridViewHome.AllowUserToDeleteRows = false;
+            this.dataGridViewHome.AutoGenerateColumns = false;
             this.dataGridViewHome.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Supplier_Name,
+            this.contactNoDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn});
+            this.dataGridViewHome.DataSource = this.supplierClassBindingSource;
             this.dataGridViewHome.Location = new System.Drawing.Point(40, 38);
             this.dataGridViewHome.Name = "dataGridViewHome";
+            this.dataGridViewHome.ReadOnly = true;
             this.dataGridViewHome.Size = new System.Drawing.Size(433, 287);
             this.dataGridViewHome.TabIndex = 80;
             // 
@@ -282,6 +273,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.dataGridViewManage);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnManage);
             this.panel1.Controls.Add(this.btnHome);
@@ -489,6 +481,7 @@
             this.btnManage.TabIndex = 94;
             this.btnManage.Text = "Manage";
             this.btnManage.UseVisualStyleBackColor = false;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // btnHome
             // 
@@ -522,6 +515,109 @@
             this.btnExit.TabIndex = 95;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // Supplier_Name
+            // 
+            this.Supplier_Name.DataPropertyName = "Supplier_Name";
+            this.Supplier_Name.HeaderText = "Supplier_Name";
+            this.Supplier_Name.Name = "Supplier_Name";
+            this.Supplier_Name.ReadOnly = true;
+            // 
+            // contactNoDataGridViewTextBoxColumn
+            // 
+            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
+            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // supplierClassBindingSource
+            // 
+            this.supplierClassBindingSource.DataSource = typeof(Clothing_Store.supplierClass);
+            // 
+            // dataGridViewManage
+            // 
+            this.dataGridViewManage.AllowUserToAddRows = false;
+            this.dataGridViewManage.AllowUserToDeleteRows = false;
+            this.dataGridViewManage.AutoGenerateColumns = false;
+            this.dataGridViewManage.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.Edit,
+            this.Delete});
+            this.dataGridViewManage.DataSource = this.supplierClassBindingSource;
+            this.dataGridViewManage.Location = new System.Drawing.Point(40, 38);
+            this.dataGridViewManage.Name = "dataGridViewManage";
+            this.dataGridViewManage.ReadOnly = true;
+            this.dataGridViewManage.Size = new System.Drawing.Size(433, 287);
+            this.dataGridViewManage.TabIndex = 96;
+            this.dataGridViewManage.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Supplier_Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Supplier_Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Contact_No";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Contact_No";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "address";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "email";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.FillWeight = 25F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::Clothing_Store.Properties.Resources.edit_icon;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 5;
+            // 
+            // Delete
+            // 
+            this.Delete.FillWeight = 25F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete_icon;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 5;
             // 
             // frmAddSupplier
             // 
@@ -543,6 +639,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,11 +651,10 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFname;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
@@ -565,8 +662,6 @@
         private System.Windows.Forms.TextBox txtContactNo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox txtLname;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridViewHome;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnExit;
@@ -588,5 +683,19 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource supplierClassBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Supplier_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridViewManage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
     }
 }
