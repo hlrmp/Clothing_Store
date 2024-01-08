@@ -66,6 +66,7 @@
     <Compile Include="classes\backupRecoveryClass.cs" />
     <Compile Include="classes\ConnectionClass.cs" />
     <Compile Include="classes\customerClass.cs" />
+    <Compile Include="classes\deliveryClass.cs" />
     <Compile Include="classes\ordersClass.cs" />
     <Compile Include="FrmAccounts.cs">
       <SubType>Form</SubType>
@@ -283,6 +284,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Clothing_Store.classes.backupRecoveryClass.datasource" />
+    <None Include="Properties\DataSources\Clothing_Store.classes.deliveryClass.datasource" />
     <None Include="Properties\DataSources\Clothing_Store.classes.ordersClass.datasource" />
     <None Include="Properties\DataSources\customerClass.datasource" />
     <None Include="Properties\DataSources\itemsClass.datasource" />

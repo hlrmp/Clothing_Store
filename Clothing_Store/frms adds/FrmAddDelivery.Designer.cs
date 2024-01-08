@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtxCustomerName = new System.Windows.Forms.TextBox();
             this.cbOrdersId = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.txtxCustomerName = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,6 +147,13 @@
             this.panel2.Size = new System.Drawing.Size(437, 363);
             this.panel2.TabIndex = 79;
             // 
+            // txtxCustomerName
+            // 
+            this.txtxCustomerName.Location = new System.Drawing.Point(153, 74);
+            this.txtxCustomerName.Name = "txtxCustomerName";
+            this.txtxCustomerName.Size = new System.Drawing.Size(256, 20);
+            this.txtxCustomerName.TabIndex = 60;
+            // 
             // cbOrdersId
             // 
             this.cbOrdersId.FormattingEnabled = true;
@@ -154,6 +161,7 @@
             this.cbOrdersId.Name = "cbOrdersId";
             this.cbOrdersId.Size = new System.Drawing.Size(256, 21);
             this.cbOrdersId.TabIndex = 59;
+            this.cbOrdersId.SelectedIndexChanged += new System.EventHandler(this.cbOrdersId_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -266,13 +274,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // txtxCustomerName
-            // 
-            this.txtxCustomerName.Location = new System.Drawing.Point(153, 74);
-            this.txtxCustomerName.Name = "txtxCustomerName";
-            this.txtxCustomerName.Size = new System.Drawing.Size(256, 20);
-            this.txtxCustomerName.TabIndex = 60;
             // 
             // FrmAddDelivery
             // 

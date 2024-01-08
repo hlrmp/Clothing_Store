@@ -38,8 +38,9 @@ namespace Clothing_Store
             if (emp == "Cashier")
             {
                 btnAccount.Visible = false;
-                btnArchives.Visible = false;
+                // btnArchives.Visible = false;
                 btnAbout.Visible =  true;
+                btnSettingArchives.Visible = false;
 
                 lblAccount.Text = frmLogin.name + "  (" + emp + ")";
 
@@ -47,8 +48,10 @@ namespace Clothing_Store
             else if (emp == "Admin" || emp == "Manager")
             {
                 btnAccount.Visible = true;
-                btnArchives.Visible = true;
+              //  btnArchives.Visible = true;
                 btnAbout.Visible = true;
+                btnSettingArchives.Visible = true;
+
 
                 lblAccount.Text = frmLogin.name + "  (" + emp + ")";
 
@@ -715,7 +718,8 @@ namespace Clothing_Store
         private void btnLogoutAccount_Click(object sender, EventArgs e)  // log out account begin
         {
             panelAccount.Visible = true;
-
+            panelAccount.Show();
+            panelRSide.Visible = false;
 
         }  // log out account  end
 
@@ -729,6 +733,7 @@ namespace Clothing_Store
                 flog.Show();
                 this.Hide();
                 panelAccount.Visible = false;
+                panelRSide.Visible = true;
 
                 // activity logs begin
 
@@ -747,18 +752,20 @@ namespace Clothing_Store
         private void pictureBoxProfile_MouseClick(object sender, MouseEventArgs e) // PictureBox click begin
         {
             panelAccount.Visible = true;
+            panelRSide.Visible = false;
 
 
 
-         
+
 
         } // PictureBox click end
 
         private void lblAccount_MouseClick(object sender, MouseEventArgs e) // label name click beginn
         {
             panelAccount.Visible = true;
+            panelRSide.Visible = false;
 
-           
+
 
         } // label name click end
 
@@ -767,19 +774,20 @@ namespace Clothing_Store
             FrmRecovey frec = new FrmRecovey();
             frec.ShowDialog();
 
+            panelAccount.Hide();
+            panelRSide.Visible = true;
+
+
         } // backup and recovery btn end
 
-        private void btnArchives_Click(object sender, EventArgs e) // btn archive begin
-        {
-            frmArchives fa = new frmArchives();
-            fa.ShowDialog();
 
-
-        } // btn archive end
         private void btnSettingArchives_Click(object sender, EventArgs e)// btn settings archives begin
         {
             frmArchives fa = new frmArchives();
             fa.ShowDialog();
+
+            panelAccount.Hide();
+            panelRSide.Visible = true;
 
         } // btn settings archives end
 
@@ -787,6 +795,9 @@ namespace Clothing_Store
         {
             frmUserAccountManagement fu = new frmUserAccountManagement();
             fu.ShowDialog();
+
+            panelAccount.Hide();
+            panelRSide.Visible = true;
 
         } // btn Account in settings end
 

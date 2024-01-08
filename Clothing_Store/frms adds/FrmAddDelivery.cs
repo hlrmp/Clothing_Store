@@ -205,7 +205,7 @@ namespace Clothing_Store
        
         private void timer1_Tick(object sender, EventArgs e)
         {
-            info();
+           // info();
         }
 
         private void FrmAddDelivery_Load(object sender, EventArgs e)
@@ -216,6 +216,9 @@ namespace Clothing_Store
             timer.Start();
         }
 
-       
+        private void cbOrdersId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // info();
+        }
     } // class end
 } // namespace  end

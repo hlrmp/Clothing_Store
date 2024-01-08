@@ -151,7 +151,7 @@ namespace Clothing_Store
         {
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string names = "select p.Product_Name ,s.Supplier_Name , i.Quantity ,i.Date from Supplier as s, Inventory as i INNER JOIN Products as p on p.Product_Id = i.Product_Id where i.Status = 1 and i.Quantity > 0";
+            string names = "SELECT p.Product_Id ,p.Product_Name AS Name, p.Category,p.Type, p.Price,p.Size, p.Color, i.Quantity FROM Products AS p INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) where i.Quantity > 0\r\n";
             SqlDataAdapter adapt = new SqlDataAdapter(names, con);
 
             DataTable dataTable = new DataTable();
@@ -167,7 +167,7 @@ namespace Clothing_Store
             con.Close();
 
             cbItem.DataSource = dataTable;
-            cbItem.DisplayMember = "Product_Name";
+            cbItem.DisplayMember = "Name";
         }
 
         private void cbColor_SelectedValueChanged(object sender, EventArgs e) // color change begin

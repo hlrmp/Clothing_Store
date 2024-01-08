@@ -7,12 +7,14 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Clothing_Store
@@ -565,8 +567,8 @@ namespace Clothing_Store
         public void item() // item begin
         {
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
-
-            string names = "select p.Product_Name as 'Item',s.Supplier_Name as 'Supplier' , i.Quantity ,i.Date from Supplier as s, Inventory as i INNER JOIN Products as p on p.Product_Id = i.Product_Id where i.Status = 1 and i.Product_Id = "+cbItemCode.Text+" ";
+             string names = "select p.Product_Name as 'Item',s.Supplier_Name as 'Supplier' , i.Quantity ,i.Date from Supplier as s inner join Inventory as i on s.Supplier_Id = i.Supplier_Id INNER JOIN Products as p on p.Product_Id = i.Product_Id where i.Status = 1 and i.Product_Id = "+cbItemCode.Text+" ";
+            
             SqlDataAdapter adapt = new SqlDataAdapter(names, con);
 
             DataTable dataTable = new DataTable();
