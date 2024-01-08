@@ -217,17 +217,17 @@ namespace Clothing_Store
 
                     updateuser(uc.username, uc.userpas);
 
-                    MessageBox.Show("User information was Updated", "Update  User", MessageBoxButtons.OK);
+                    MessageBox.Show("User information was Updated Procede to log in", "Update  User", MessageBoxButtons.OK);
 
                     txtUserName.Clear();
                     txtPassword.Clear();
 
                     panelEdit.Hide();
-
+                    this.Hide();
                     // activity logs begin
 
                     string desc = "Update User Information by: User - " + uc.uid + " - " + uc.username;
-                    //   ConnectionClass.activity(frmLogin.userId, desc);
+                    ConnectionClass.activity(int.Parse(uc.uid), desc);
 
                     // activity logs end
 
