@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchives));
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
+            this.btnSupplier = new System.Windows.Forms.Button();
             this.btnItems = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
@@ -42,6 +43,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelCounts = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.lblTotalSupplier = new System.Windows.Forms.Label();
+            this.lblSupplier = new System.Windows.Forms.Label();
+            this.pbSupplier = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblItems = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,10 +59,9 @@
             this.lblStaffs = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pbStaffs = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelStocks = new System.Windows.Forms.Panel();
             this.lblStocks = new System.Windows.Forms.Label();
             this.Stocks = new System.Windows.Forms.Label();
-            this.pbStocks = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblCustomers = new System.Windows.Forms.Label();
@@ -90,6 +94,8 @@
             this.RestoreUser = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewItems = new System.Windows.Forms.DataGridView();
             this.Restore = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewSupplier = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,17 +130,25 @@
             this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Em = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Addres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pbStocks = new System.Windows.Forms.PictureBox();
             this.panelButtons.SuspendLayout();
             this.panelCounts.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSupplier)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbItems)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUsers)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStaffs)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStocks)).BeginInit();
+            this.panelStocks.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCustomer)).BeginInit();
             this.panel2.SuspendLayout();
@@ -145,11 +159,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userClassBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStocks)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -169,6 +186,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelButtons.BackColor = System.Drawing.Color.Teal;
             this.panelButtons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelButtons.Controls.Add(this.btnSupplier);
             this.panelButtons.Controls.Add(this.btnItems);
             this.panelButtons.Controls.Add(this.btnHome);
             this.panelButtons.Controls.Add(this.btnUsers);
@@ -178,8 +196,27 @@
             this.panelButtons.Controls.Add(this.btnOrders);
             this.panelButtons.Location = new System.Drawing.Point(38, 87);
             this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(1196, 56);
+            this.panelButtons.Size = new System.Drawing.Size(1293, 56);
             this.panelButtons.TabIndex = 50;
+            // 
+            // btnSupplier
+            // 
+            this.btnSupplier.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSupplier.BackColor = System.Drawing.Color.Teal;
+            this.btnSupplier.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSupplier.FlatAppearance.BorderSize = 4;
+            this.btnSupplier.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnSupplier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupplier.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSupplier.ForeColor = System.Drawing.Color.White;
+            this.btnSupplier.Location = new System.Drawing.Point(1104, 13);
+            this.btnSupplier.Name = "btnSupplier";
+            this.btnSupplier.Size = new System.Drawing.Size(159, 28);
+            this.btnSupplier.TabIndex = 60;
+            this.btnSupplier.Text = "Suppliers";
+            this.btnSupplier.UseVisualStyleBackColor = false;
+            this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
             // 
             // btnItems
             // 
@@ -192,9 +229,9 @@
             this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItems.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnItems.ForeColor = System.Drawing.Color.White;
-            this.btnItems.Location = new System.Drawing.Point(508, 15);
+            this.btnItems.Location = new System.Drawing.Point(495, 13);
             this.btnItems.Name = "btnItems";
-            this.btnItems.Size = new System.Drawing.Size(170, 28);
+            this.btnItems.Size = new System.Drawing.Size(159, 28);
             this.btnItems.TabIndex = 59;
             this.btnItems.Text = "Items";
             this.btnItems.UseVisualStyleBackColor = false;
@@ -211,9 +248,9 @@
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(13, 15);
+            this.btnHome.Location = new System.Drawing.Point(33, 13);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(169, 28);
+            this.btnHome.Size = new System.Drawing.Size(157, 28);
             this.btnHome.TabIndex = 58;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -230,9 +267,9 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsers.ForeColor = System.Drawing.Color.White;
-            this.btnUsers.Location = new System.Drawing.Point(1000, 15);
+            this.btnUsers.Location = new System.Drawing.Point(950, 13);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(170, 28);
+            this.btnUsers.Size = new System.Drawing.Size(159, 28);
             this.btnUsers.TabIndex = 57;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
@@ -249,9 +286,9 @@
             this.btnStaffs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStaffs.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStaffs.ForeColor = System.Drawing.Color.White;
-            this.btnStaffs.Location = new System.Drawing.Point(838, 15);
+            this.btnStaffs.Location = new System.Drawing.Point(800, 13);
             this.btnStaffs.Name = "btnStaffs";
-            this.btnStaffs.Size = new System.Drawing.Size(170, 28);
+            this.btnStaffs.Size = new System.Drawing.Size(159, 28);
             this.btnStaffs.TabIndex = 56;
             this.btnStaffs.Text = "Staffs";
             this.btnStaffs.UseVisualStyleBackColor = false;
@@ -268,9 +305,9 @@
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.White;
-            this.btnCustomers.Location = new System.Drawing.Point(176, 15);
+            this.btnCustomers.Location = new System.Drawing.Point(185, 13);
             this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Size = new System.Drawing.Size(170, 28);
+            this.btnCustomers.Size = new System.Drawing.Size(159, 28);
             this.btnCustomers.TabIndex = 55;
             this.btnCustomers.Text = "Customer";
             this.btnCustomers.UseVisualStyleBackColor = false;
@@ -287,9 +324,9 @@
             this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStocks.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStocks.ForeColor = System.Drawing.Color.White;
-            this.btnStocks.Location = new System.Drawing.Point(672, 15);
+            this.btnStocks.Location = new System.Drawing.Point(647, 13);
             this.btnStocks.Name = "btnStocks";
-            this.btnStocks.Size = new System.Drawing.Size(170, 28);
+            this.btnStocks.Size = new System.Drawing.Size(159, 28);
             this.btnStocks.TabIndex = 54;
             this.btnStocks.Text = "Stocks";
             this.btnStocks.UseVisualStyleBackColor = false;
@@ -306,9 +343,9 @@
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.White;
-            this.btnOrders.Location = new System.Drawing.Point(343, 15);
+            this.btnOrders.Location = new System.Drawing.Point(340, 13);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(170, 28);
+            this.btnOrders.Size = new System.Drawing.Size(159, 28);
             this.btnOrders.TabIndex = 53;
             this.btnOrders.Text = "Orders";
             this.btnOrders.UseVisualStyleBackColor = false;
@@ -325,7 +362,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(1204, 14);
+            this.button1.Location = new System.Drawing.Point(1253, 14);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 28);
             this.button1.TabIndex = 58;
@@ -344,17 +381,65 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCounts.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panelCounts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCounts.Controls.Add(this.panel7);
             this.panelCounts.Controls.Add(this.panel6);
             this.panelCounts.Controls.Add(this.panel5);
             this.panelCounts.Controls.Add(this.panel4);
-            this.panelCounts.Controls.Add(this.panel3);
+            this.panelCounts.Controls.Add(this.panelStocks);
             this.panelCounts.Controls.Add(this.label2);
             this.panelCounts.Controls.Add(this.panel1);
             this.panelCounts.Controls.Add(this.panel2);
             this.panelCounts.Location = new System.Drawing.Point(38, 149);
             this.panelCounts.Name = "panelCounts";
-            this.panelCounts.Size = new System.Drawing.Size(1196, 429);
+            this.panelCounts.Size = new System.Drawing.Size(1293, 429);
             this.panelCounts.TabIndex = 60;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.lblTotalSupplier);
+            this.panel7.Controls.Add(this.lblSupplier);
+            this.panel7.Controls.Add(this.pbSupplier);
+            this.panel7.Location = new System.Drawing.Point(777, 270);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(173, 128);
+            this.panel7.TabIndex = 52;
+            // 
+            // lblTotalSupplier
+            // 
+            this.lblTotalSupplier.AutoSize = true;
+            this.lblTotalSupplier.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTotalSupplier.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblTotalSupplier.Location = new System.Drawing.Point(45, 64);
+            this.lblTotalSupplier.Name = "lblTotalSupplier";
+            this.lblTotalSupplier.Size = new System.Drawing.Size(127, 39);
+            this.lblTotalSupplier.TabIndex = 51;
+            this.lblTotalSupplier.Text = "Supplier";
+            // 
+            // lblSupplier
+            // 
+            this.lblSupplier.AutoSize = true;
+            this.lblSupplier.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblSupplier.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblSupplier.Location = new System.Drawing.Point(29, 14);
+            this.lblSupplier.Name = "lblSupplier";
+            this.lblSupplier.Size = new System.Drawing.Size(127, 39);
+            this.lblSupplier.TabIndex = 50;
+            this.lblSupplier.Text = "Supplier";
+            // 
+            // pbSupplier
+            // 
+            this.pbSupplier.BackColor = System.Drawing.Color.White;
+            this.pbSupplier.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbSupplier.Location = new System.Drawing.Point(-1, -1);
+            this.pbSupplier.Name = "pbSupplier";
+            this.pbSupplier.Size = new System.Drawing.Size(173, 128);
+            this.pbSupplier.TabIndex = 57;
+            this.pbSupplier.TabStop = false;
+            this.pbSupplier.Click += new System.EventHandler(this.pbSupplier_Click);
             // 
             // panel6
             // 
@@ -363,7 +448,7 @@
             this.panel6.Controls.Add(this.lblItems);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.pbItems);
-            this.panel6.Location = new System.Drawing.Point(371, 272);
+            this.panel6.Location = new System.Drawing.Point(229, 270);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(173, 128);
             this.panel6.TabIndex = 54;
@@ -497,17 +582,17 @@
             this.pbStaffs.TabStop = false;
             this.pbStaffs.Click += new System.EventHandler(this.pbStaffs_Click);
             // 
-            // panel3
+            // panelStocks
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.lblStocks);
-            this.panel3.Controls.Add(this.Stocks);
-            this.panel3.Controls.Add(this.pbStocks);
-            this.panel3.Location = new System.Drawing.Point(647, 272);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(173, 128);
-            this.panel3.TabIndex = 51;
+            this.panelStocks.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelStocks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelStocks.Controls.Add(this.lblStocks);
+            this.panelStocks.Controls.Add(this.Stocks);
+            this.panelStocks.Controls.Add(this.pbStocks);
+            this.panelStocks.Location = new System.Drawing.Point(505, 270);
+            this.panelStocks.Name = "panelStocks";
+            this.panelStocks.Size = new System.Drawing.Size(173, 128);
+            this.panelStocks.TabIndex = 51;
             // 
             // lblStocks
             // 
@@ -527,22 +612,11 @@
             this.Stocks.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Stocks.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Stocks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.Stocks.Location = new System.Drawing.Point(23, 14);
+            this.Stocks.Location = new System.Drawing.Point(29, 14);
             this.Stocks.Name = "Stocks";
             this.Stocks.Size = new System.Drawing.Size(110, 39);
             this.Stocks.TabIndex = 50;
             this.Stocks.Text = "Stocks";
-            // 
-            // pbStocks
-            // 
-            this.pbStocks.BackColor = System.Drawing.Color.White;
-            this.pbStocks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbStocks.Location = new System.Drawing.Point(-1, -1);
-            this.pbStocks.Name = "pbStocks";
-            this.pbStocks.Size = new System.Drawing.Size(173, 128);
-            this.pbStocks.TabIndex = 56;
-            this.pbStocks.TabStop = false;
-            this.pbStocks.Click += new System.EventHandler(this.pbStocks_Click);
             // 
             // label2
             // 
@@ -671,7 +745,7 @@
             this.datagridCustomer.Location = new System.Drawing.Point(38, 149);
             this.datagridCustomer.Name = "datagridCustomer";
             this.datagridCustomer.ReadOnly = true;
-            this.datagridCustomer.Size = new System.Drawing.Size(1196, 429);
+            this.datagridCustomer.Size = new System.Drawing.Size(1293, 429);
             this.datagridCustomer.TabIndex = 59;
             this.datagridCustomer.Visible = false;
             this.datagridCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
@@ -711,7 +785,7 @@
             this.dataGridViewOrders.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewOrders.Name = "dataGridViewOrders";
             this.dataGridViewOrders.ReadOnly = true;
-            this.dataGridViewOrders.Size = new System.Drawing.Size(1196, 429);
+            this.dataGridViewOrders.Size = new System.Drawing.Size(1293, 429);
             this.dataGridViewOrders.TabIndex = 61;
             this.dataGridViewOrders.Visible = false;
             this.dataGridViewOrders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOrders_CellContentClick);
@@ -750,7 +824,7 @@
             this.dataGridViewStocks.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewStocks.Name = "dataGridViewStocks";
             this.dataGridViewStocks.ReadOnly = true;
-            this.dataGridViewStocks.Size = new System.Drawing.Size(1196, 429);
+            this.dataGridViewStocks.Size = new System.Drawing.Size(1293, 429);
             this.dataGridViewStocks.TabIndex = 62;
             this.dataGridViewStocks.Visible = false;
             // 
@@ -775,7 +849,7 @@
             this.dataGridViewStaffs.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewStaffs.Name = "dataGridViewStaffs";
             this.dataGridViewStaffs.ReadOnly = true;
-            this.dataGridViewStaffs.Size = new System.Drawing.Size(1196, 429);
+            this.dataGridViewStaffs.Size = new System.Drawing.Size(1293, 429);
             this.dataGridViewStaffs.TabIndex = 63;
             this.dataGridViewStaffs.Visible = false;
             this.dataGridViewStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaffs_CellContentClick);
@@ -859,7 +933,7 @@
             this.dataGridViewUsers.Location = new System.Drawing.Point(38, 149);
             this.dataGridViewUsers.Name = "dataGridViewUsers";
             this.dataGridViewUsers.ReadOnly = true;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1196, 429);
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1293, 429);
             this.dataGridViewUsers.TabIndex = 70;
             this.dataGridViewUsers.Visible = false;
             this.dataGridViewUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsers_CellContentClick);
@@ -934,7 +1008,7 @@
             this.dataGridViewItems.Location = new System.Drawing.Point(39, 149);
             this.dataGridViewItems.Name = "dataGridViewItems";
             this.dataGridViewItems.ReadOnly = true;
-            this.dataGridViewItems.Size = new System.Drawing.Size(1196, 429);
+            this.dataGridViewItems.Size = new System.Drawing.Size(1293, 429);
             this.dataGridViewItems.TabIndex = 71;
             this.dataGridViewItems.Visible = false;
             this.dataGridViewItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewItems_CellContentClick_1);
@@ -950,6 +1024,44 @@
             this.Restore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Restore.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Restore.Width = 5;
+            // 
+            // dataGridViewSupplier
+            // 
+            this.dataGridViewSupplier.AllowUserToAddRows = false;
+            this.dataGridViewSupplier.AllowUserToDeleteRows = false;
+            this.dataGridViewSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewSupplier.AutoGenerateColumns = false;
+            this.dataGridViewSupplier.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.SupplierName,
+            this.contact,
+            this.Em,
+            this.Addres,
+            this.dataGridViewImageColumn1});
+            this.dataGridViewSupplier.DataSource = this.supplierClassBindingSource;
+            this.dataGridViewSupplier.Location = new System.Drawing.Point(38, 149);
+            this.dataGridViewSupplier.Name = "dataGridViewSupplier";
+            this.dataGridViewSupplier.ReadOnly = true;
+            this.dataGridViewSupplier.Size = new System.Drawing.Size(1294, 429);
+            this.dataGridViewSupplier.TabIndex = 72;
+            this.dataGridViewSupplier.Visible = false;
+            this.dataGridViewSupplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSupplier_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "Restore";
+            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 5;
             // 
             // code
             // 
@@ -1177,15 +1289,65 @@
             // 
             this.customerClassBindingSource.DataSource = typeof(Clothing_Store.customerClass);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.DataPropertyName = "Supplier_Name";
+            this.SupplierName.HeaderText = "Name";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.ReadOnly = true;
+            // 
+            // contact
+            // 
+            this.contact.DataPropertyName = "Contact_No";
+            this.contact.HeaderText = "Contact No";
+            this.contact.Name = "contact";
+            this.contact.ReadOnly = true;
+            // 
+            // Em
+            // 
+            this.Em.DataPropertyName = "email";
+            this.Em.HeaderText = "Email";
+            this.Em.Name = "Em";
+            this.Em.ReadOnly = true;
+            // 
+            // Addres
+            // 
+            this.Addres.DataPropertyName = "address";
+            this.Addres.HeaderText = "Address";
+            this.Addres.Name = "Addres";
+            this.Addres.ReadOnly = true;
+            // 
+            // supplierClassBindingSource
+            // 
+            this.supplierClassBindingSource.DataSource = typeof(Clothing_Store.supplierClass);
+            // 
             // userClassBindingSource
             // 
             this.userClassBindingSource.DataSource = typeof(Clothing_Store.userClass);
+            // 
+            // pbStocks
+            // 
+            this.pbStocks.BackColor = System.Drawing.Color.White;
+            this.pbStocks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbStocks.Location = new System.Drawing.Point(-1, -1);
+            this.pbStocks.Name = "pbStocks";
+            this.pbStocks.Size = new System.Drawing.Size(173, 128);
+            this.pbStocks.TabIndex = 58;
+            this.pbStocks.TabStop = false;
+            this.pbStocks.Click += new System.EventHandler(this.pbStocks_Click);
             // 
             // frmArchives
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1275, 626);
+            this.ClientSize = new System.Drawing.Size(1372, 626);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.lblTitle);
@@ -1196,6 +1358,7 @@
             this.Controls.Add(this.dataGridViewStaffs);
             this.Controls.Add(this.dataGridViewOrders);
             this.Controls.Add(this.datagridCustomer);
+            this.Controls.Add(this.dataGridViewSupplier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmArchives";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1204,6 +1367,9 @@
             this.panelButtons.ResumeLayout(false);
             this.panelCounts.ResumeLayout(false);
             this.panelCounts.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSupplier)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbItems)).EndInit();
@@ -1213,9 +1379,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbStaffs)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbStocks)).EndInit();
+            this.panelStocks.ResumeLayout(false);
+            this.panelStocks.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCustomer)).EndInit();
@@ -1228,11 +1393,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaffs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userClassBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStocks)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1262,7 +1430,7 @@
         private System.Windows.Forms.BindingSource ordersClassBindingSource;
         private System.Windows.Forms.DataGridView dataGridViewStocks;
         private System.Windows.Forms.BindingSource itemsClassBindingSource;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelStocks;
         private System.Windows.Forms.Label lblStocks;
         private System.Windows.Forms.Label Stocks;
         private System.Windows.Forms.Panel panel4;
@@ -1332,7 +1500,20 @@
         private System.Windows.Forms.PictureBox pbItems;
         private System.Windows.Forms.PictureBox pbUsers;
         private System.Windows.Forms.PictureBox pbStaffs;
-        private System.Windows.Forms.PictureBox pbStocks;
         private System.Windows.Forms.PictureBox pbOrders;
+        private System.Windows.Forms.Button btnSupplier;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lblTotalSupplier;
+        private System.Windows.Forms.Label lblSupplier;
+        private System.Windows.Forms.PictureBox pbSupplier;
+        private System.Windows.Forms.DataGridView dataGridViewSupplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Em;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Addres;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.BindingSource supplierClassBindingSource;
+        private System.Windows.Forms.PictureBox pbStocks;
     }
 }

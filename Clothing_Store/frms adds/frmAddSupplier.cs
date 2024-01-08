@@ -386,8 +386,8 @@ namespace Clothing_Store.frms_adds
 
                     // activity logs begin
 
-                        string desc = "Delete Supplier Information";
-                    //    ConnectionClass.activity(frmLogin.userId, desc);
+                        string desc = "Delete Supplier Information - " + sc.Id;
+                        ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
                 }
