@@ -139,7 +139,7 @@ namespace Clothing_Store
 
                     if (username == uc.username && pass == uc.userpas && pos == "Cashier")
                     {
-                        MessageBox.Show("C");
+                      //  MessageBox.Show("C");
                         circularProgressBar1.Show();
                         timer1.Start();
 
@@ -154,7 +154,7 @@ namespace Clothing_Store
                     }
                     else if (username == uc.username && pass == uc.userpas && pos == "Admin" || username == uc.username && pass == uc.userpas && pos == "Owner")
                     {
-                        MessageBox.Show("A");
+                      //  MessageBox.Show("A");
                         circularProgressBar1.Show();
                         timer1.Start();
 
