@@ -46,6 +46,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelAccount = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSettingArchives = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnbackupAndRecovery = new System.Windows.Forms.Button();
@@ -79,20 +83,21 @@
             this.lblTotalBlouse = new System.Windows.Forms.Label();
             this.pbBlouse = new System.Windows.Forms.PictureBox();
             this.panelRSide = new System.Windows.Forms.Panel();
+            this.btnPending = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.llblTotal = new System.Windows.Forms.Label();
             this.dataGridViewDelivery = new System.Windows.Forms.DataGridView();
             this.btnIntransit = new System.Windows.Forms.Button();
-            this.btnPending = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.panel1buttonCollections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelAccount.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelHome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOrangeTshirt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTshirtGreen)).BeginInit();
@@ -106,10 +111,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbBlouse)).BeginInit();
             this.panelRSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1buttonCollections
@@ -118,6 +119,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1buttonCollections.BackColor = System.Drawing.Color.White;
             this.panel1buttonCollections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1buttonCollections.Controls.Add(this.lblPosition);
             this.panel1buttonCollections.Controls.Add(this.pictureBoxProfile);
             this.panel1buttonCollections.Controls.Add(this.lblAccount);
             this.panel1buttonCollections.Controls.Add(this.btnLogoutAccount);
@@ -129,7 +131,7 @@
             this.panel1buttonCollections.Controls.Add(this.btnOrders);
             this.panel1buttonCollections.Controls.Add(this.btnStock);
             this.panel1buttonCollections.Controls.Add(this.btnHome);
-            this.panel1buttonCollections.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1buttonCollections.ForeColor = System.Drawing.Color.White;
             this.panel1buttonCollections.Location = new System.Drawing.Point(-1, 87);
             this.panel1buttonCollections.Name = "panel1buttonCollections";
             this.panel1buttonCollections.Size = new System.Drawing.Size(1261, 56);
@@ -156,11 +158,11 @@
             this.lblAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblAccount.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblAccount.Location = new System.Drawing.Point(1039, 19);
+            this.lblAccount.Location = new System.Drawing.Point(1039, 6);
             this.lblAccount.Name = "lblAccount";
-            this.lblAccount.Size = new System.Drawing.Size(137, 18);
+            this.lblAccount.Size = new System.Drawing.Size(56, 18);
             this.lblAccount.TabIndex = 11;
-            this.lblAccount.Text = "Name(Position)";
+            this.lblAccount.Text = "Name";
             this.lblAccount.Click += new System.EventHandler(this.lblAccount_Click);
             this.lblAccount.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblAccount_MouseClick);
             // 
@@ -175,9 +177,9 @@
             this.btnLogoutAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogoutAccount.Font = new System.Drawing.Font("Matura MT Script Capitals", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogoutAccount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLogoutAccount.Location = new System.Drawing.Point(1021, 6);
+            this.btnLogoutAccount.Location = new System.Drawing.Point(1011, 6);
             this.btnLogoutAccount.Name = "btnLogoutAccount";
-            this.btnLogoutAccount.Size = new System.Drawing.Size(232, 44);
+            this.btnLogoutAccount.Size = new System.Drawing.Size(242, 44);
             this.btnLogoutAccount.TabIndex = 10;
             this.btnLogoutAccount.UseVisualStyleBackColor = false;
             this.btnLogoutAccount.Click += new System.EventHandler(this.btnLogoutAccount_Click);
@@ -193,7 +195,7 @@
             this.btnDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelivery.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnDelivery.Location = new System.Drawing.Point(682, 6);
+            this.btnDelivery.Location = new System.Drawing.Point(660, 6);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(146, 44);
             this.btnDelivery.TabIndex = 9;
@@ -212,7 +214,7 @@
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCustomers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnCustomers.Location = new System.Drawing.Point(406, 6);
+            this.btnCustomers.Location = new System.Drawing.Point(390, 6);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(146, 44);
             this.btnCustomers.TabIndex = 3;
@@ -231,7 +233,7 @@
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnReports.Location = new System.Drawing.Point(821, 6);
+            this.btnReports.Location = new System.Drawing.Point(793, 6);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(146, 44);
             this.btnReports.TabIndex = 8;
@@ -250,7 +252,7 @@
             this.btnproducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnproducts.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnproducts.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnproducts.Location = new System.Drawing.Point(135, 6);
+            this.btnproducts.Location = new System.Drawing.Point(115, 6);
             this.btnproducts.Name = "btnproducts";
             this.btnproducts.Size = new System.Drawing.Size(146, 44);
             this.btnproducts.TabIndex = 1;
@@ -269,9 +271,9 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnAccount.Location = new System.Drawing.Point(947, 6);
+            this.btnAccount.Location = new System.Drawing.Point(924, 6);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(153, 44);
+            this.btnAccount.Size = new System.Drawing.Size(146, 44);
             this.btnAccount.TabIndex = 5;
             this.btnAccount.Text = "Accounts";
             this.btnAccount.UseVisualStyleBackColor = false;
@@ -288,7 +290,7 @@
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnOrders.Location = new System.Drawing.Point(542, 6);
+            this.btnOrders.Location = new System.Drawing.Point(525, 6);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(146, 44);
             this.btnOrders.TabIndex = 4;
@@ -307,7 +309,7 @@
             this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStock.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.btnStock.Location = new System.Drawing.Point(273, 6);
+            this.btnStock.Location = new System.Drawing.Point(254, 6);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(146, 44);
             this.btnStock.TabIndex = 2;
@@ -328,7 +330,7 @@
             this.btnHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.btnHome.Location = new System.Drawing.Point(3, 6);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(175, 44);
+            this.btnHome.Size = new System.Drawing.Size(146, 44);
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -385,6 +387,42 @@
             this.panelAccount.Size = new System.Drawing.Size(186, 272);
             this.panelAccount.TabIndex = 20;
             this.panelAccount.Visible = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBox5.Location = new System.Drawing.Point(4, 261);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(175, 10);
+            this.pictureBox5.TabIndex = 20;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBox4.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(175, 10);
+            this.pictureBox4.TabIndex = 19;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBox3.Location = new System.Drawing.Point(175, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(10, 271);
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 271);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
             // 
             // btnSettingArchives
             // 
@@ -816,6 +854,25 @@
             this.panelRSide.Size = new System.Drawing.Size(235, 548);
             this.panelRSide.TabIndex = 103;
             // 
+            // btnPending
+            // 
+            this.btnPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPending.BackColor = System.Drawing.Color.Teal;
+            this.btnPending.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnPending.FlatAppearance.BorderSize = 2;
+            this.btnPending.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnPending.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPending.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPending.ForeColor = System.Drawing.Color.White;
+            this.btnPending.Location = new System.Drawing.Point(113, 5);
+            this.btnPending.Name = "btnPending";
+            this.btnPending.Size = new System.Drawing.Size(114, 37);
+            this.btnPending.TabIndex = 98;
+            this.btnPending.Text = "Pending";
+            this.btnPending.UseVisualStyleBackColor = false;
+            this.btnPending.Click += new System.EventHandler(this.btnPending_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -872,60 +929,19 @@
             this.btnIntransit.UseVisualStyleBackColor = false;
             this.btnIntransit.Click += new System.EventHandler(this.btnIntransit_Click);
             // 
-            // btnPending
+            // lblPosition
             // 
-            this.btnPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPending.BackColor = System.Drawing.Color.Teal;
-            this.btnPending.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
-            this.btnPending.FlatAppearance.BorderSize = 2;
-            this.btnPending.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnPending.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPending.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPending.ForeColor = System.Drawing.Color.White;
-            this.btnPending.Location = new System.Drawing.Point(113, 5);
-            this.btnPending.Name = "btnPending";
-            this.btnPending.Size = new System.Drawing.Size(114, 37);
-            this.btnPending.TabIndex = 98;
-            this.btnPending.Text = "Pending";
-            this.btnPending.UseVisualStyleBackColor = false;
-            this.btnPending.Click += new System.EventHandler(this.btnPending_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.pictureBox2.Location = new System.Drawing.Point(-1, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(10, 271);
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.pictureBox3.Location = new System.Drawing.Point(175, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(10, 271);
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.pictureBox4.Location = new System.Drawing.Point(3, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(175, 10);
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.pictureBox5.Location = new System.Drawing.Point(4, 261);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(175, 10);
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
+            this.lblPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPosition.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblPosition.Location = new System.Drawing.Point(1076, 31);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(89, 18);
+            this.lblPosition.TabIndex = 13;
+            this.lblPosition.Text = "(Position)";
             // 
             // MainForm
             // 
@@ -949,6 +965,10 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelAccount.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelHome.ResumeLayout(false);
             this.panelHome.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOrangeTshirt)).EndInit();
@@ -964,10 +984,6 @@
             this.panelRSide.ResumeLayout(false);
             this.panelRSide.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1032,5 +1048,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblPosition;
     }
 }

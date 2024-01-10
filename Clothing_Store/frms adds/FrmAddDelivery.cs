@@ -69,6 +69,8 @@ namespace Clothing_Store
             }
             else
             {
+                comfirmation();
+
                 if (condition == "same")
                 {
                     throw new nullExceptiom("Item Existing");
