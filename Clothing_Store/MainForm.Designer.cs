@@ -158,7 +158,7 @@
             this.lblAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblAccount.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblAccount.Location = new System.Drawing.Point(1039, 6);
+            this.lblAccount.Location = new System.Drawing.Point(1044, 16);
             this.lblAccount.Name = "lblAccount";
             this.lblAccount.Size = new System.Drawing.Size(56, 18);
             this.lblAccount.TabIndex = 11;
@@ -935,11 +935,11 @@
             this.lblPosition.AutoSize = true;
             this.lblPosition.BackColor = System.Drawing.Color.Transparent;
             this.lblPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPosition.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblPosition.Location = new System.Drawing.Point(1076, 31);
+            this.lblPosition.Location = new System.Drawing.Point(1076, 35);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(89, 18);
+            this.lblPosition.Size = new System.Drawing.Size(74, 14);
             this.lblPosition.TabIndex = 13;
             this.lblPosition.Text = "(Position)";
             // 

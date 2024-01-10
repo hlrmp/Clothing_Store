@@ -44,7 +44,7 @@ namespace Clothing_Store
                 btnSettingArchives.Visible = false;
 
                 lblAccount.Text = frmLogin.name;
-                lblPosition.Text = emp;
+                lblPosition.Text = "(" + emp + ")";
 
             }
             else if (emp == "Admin" || emp == "Manager")
@@ -56,7 +56,7 @@ namespace Clothing_Store
 
 
                 lblAccount.Text = frmLogin.name;
-                lblPosition.Text = emp;
+                lblPosition.Text = "(" + emp + ")";
 
 
 
