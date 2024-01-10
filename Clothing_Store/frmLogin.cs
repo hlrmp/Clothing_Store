@@ -139,31 +139,37 @@ namespace Clothing_Store
 
                     if (username == uc.username && pass == uc.userpas && pos == "Cashier")
                     {
-                      //  MessageBox.Show("C");
-                        circularProgressBar1.Show();
-                        timer1.Start();
+                        //  MessageBox.Show("C");
 
                         // activity logs begin
 
-                            string desc = "Log in - " + frmLogin.name;
-                            ConnectionClass.activity(frmLogin.userId, desc);
+                        string desc = "Log in - " + frmLogin.name;
+                        ConnectionClass.activity(frmLogin.userId, desc);
 
                         // activity logs end
+
+                        circularProgressBar1.Show();
+                        timer1.Start();
+
+                       
 
 
                     }
                     else if (username == uc.username && pass == uc.userpas && pos == "Admin" || username == uc.username && pass == uc.userpas && pos == "Owner")
                     {
-                      //  MessageBox.Show("A");
-                        circularProgressBar1.Show();
-                        timer1.Start();
+                        //  MessageBox.Show("A");
 
                         // activity logs begin
 
-                            string desc = "Log in - " + frmLogin.name;
-                              ConnectionClass.activity(frmLogin.userId, desc);
+                        string desc = "Log in - " + frmLogin.name;
+                        ConnectionClass.activity(frmLogin.userId, desc);
 
                         // activity logs end
+
+                        circularProgressBar1.Show();
+                        timer1.Start();
+
+                       
 
 
                     }
