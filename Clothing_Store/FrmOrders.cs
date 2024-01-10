@@ -62,7 +62,7 @@ namespace Clothing_Store
             string sj = "select  o.Order_Id as 'Order Id', concat(c.First_Name,' ',c.Last_Name)as 'Customer Name' ," +
                 "p.Product_Id as 'Product Id', p.Product_Name as 'Product Name',p.Price, o.Quantity ," +
                 "(p.Price * o.Quantity)as 'Total'," +
-                "concat(s.First_Name ,' ', s.Last_Name) as 'Staff',o.Date, o.Status from Customers as c " +
+                "concat(s.First_Name ,' ', s.Last_Name) as 'Staff',o.Date from Customers as c " +
                 "inner join Orders as o on o.Customer_Id = c.Customer_Id " +
                 "inner join Products as p on p.Product_Id = o.Product_Id " +
                 "inner join Staffs as s on s.Staff_Id = o.Staff_Id where o.Status = 1";

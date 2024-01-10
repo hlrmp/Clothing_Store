@@ -103,8 +103,8 @@ namespace Clothing_Store
             ArrayList arr = new ArrayList();
             arr.Add("Mens");
             arr.Add("Womens");
-            arr.Add("Uniex");
-            arr.Add("Kids");
+            arr.Add("Unisex");
+          //  arr.Add("Kids");
 
             foreach (string c in arr)
             {
@@ -465,6 +465,10 @@ namespace Clothing_Store
             {
                 MessageBox.Show(ne.Message);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
 
@@ -511,6 +515,8 @@ namespace Clothing_Store
 
 
         } // orders end
+
+
         public void search() // search begin
         {
             try
@@ -549,8 +555,9 @@ namespace Clothing_Store
 
                     dataGridViewItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     dataGridViewItems.DataSource = table;
-                }
 
+                    comfirmation();
+                }
 
             }
             catch (NumberFormatException ne)
@@ -565,7 +572,36 @@ namespace Clothing_Store
 
 
         } // search end
-       
+
+        string condition;
+        public void comfirmation()  // confirmaion begin
+        {
+
+            customerClass cs = new customerClass();
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string order = "SELECT p.Product_Id ,p.Product_Name AS 'Name', p.Category,p.Type, p.Price,p.Size, p.Color, i.Quantity FROM Products AS p" +
+       " INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) " +
+       "where i.Quantity > 0 and p.Type = '" + cbType.Text + "' and p.Category = '" + cbCategory.Text + "' " +
+       "and p.Product_Name = '" + cbItem.Text + "' and p.Size = '" + cbSize.Text + "' and p.Color = '" + cbColor.Text + "' ";
+
+            con.Open();
+            SqlCommand command;
+            command = new SqlCommand(order, con);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+
+                condition = "same";
+            }
+            else
+            {
+
+                condition = "notsame";
+            }
+
+            con.Close();
+        } // confirmation end
 
         private void btnClear_Click(object sender, EventArgs e) // clear btn begin
         {
@@ -596,6 +632,8 @@ namespace Clothing_Store
         private void btnAddOrders_Click(object sender, EventArgs e) // btn add from textboxes to datagrid begin
         {
 
+         
+
             try
             {
                 oc.Quantity = quan(txtQuantity.Text);
@@ -613,17 +651,27 @@ namespace Clothing_Store
                 }
                 else
                 {
-                    listOrders.Visible = true;
-                    dataGridViewOrders.Visible = false;
+                    search();
 
-                    listOrders.Items.Add("Name:" + oc.Name );
-                    listOrders.Items.Add("Item:" + oc.Item);
-                    listOrders.Items.Add("Category:" + oc.Category);
-                    listOrders.Items.Add("Quantity:" + oc.Quantity);
-                    listOrders.Items.Add("Size:" + oc.Size);
-                    listOrders.Items.Add("Color:" + oc.Color);
-                    listOrders.Items.Add("Type:" + oc.Type);
-               
+                        if (condition == "same")
+                        {
+                            listOrders.Visible = true;
+                            dataGridViewOrders.Visible = false;
+
+                            listOrders.Items.Add("Name:" + oc.Name);
+                            listOrders.Items.Add("Item:" + oc.Item);
+                            listOrders.Items.Add("Category:" + oc.Category);
+                            listOrders.Items.Add("Quantity:" + oc.Quantity);
+                            listOrders.Items.Add("Size:" + oc.Size);
+                            listOrders.Items.Add("Color:" + oc.Color);
+                            listOrders.Items.Add("Type:" + oc.Type);
+
+                        }
+                        else if (condition == "notsame")
+                        {
+                            throw new nullExceptiom("Item Don't Exist");
+                        }
+
 
                     /*
                     dataGridViewAdd.Visible = true;

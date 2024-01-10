@@ -74,6 +74,9 @@ namespace Clothing_Store
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
 
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
+
             btnHome.BackColor = Color.DarkBlue;
             btnCustomers.BackColor = Color.Teal;
             btnOrders.BackColor = Color.Teal;
@@ -96,6 +99,10 @@ namespace Clothing_Store
 
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
+
+
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
 
             manageCustomers();
 
@@ -122,6 +129,10 @@ namespace Clothing_Store
 
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
+
+
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
 
             manageOrders();
 
@@ -150,6 +161,9 @@ namespace Clothing_Store
             btnSupplier.BackColor = Color.Teal;
 
 
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
+
             manageStocks();
 
             btnHome.BackColor = Color.Teal;
@@ -174,6 +188,10 @@ namespace Clothing_Store
 
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
+
+
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
 
             ManageStaffs();
 
@@ -200,6 +218,9 @@ namespace Clothing_Store
 
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
+
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
 
             manageUsers();
 
@@ -230,6 +251,9 @@ namespace Clothing_Store
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
 
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
+
             manageItems();
 
             btnHome.BackColor = Color.Teal;
@@ -242,6 +266,65 @@ namespace Clothing_Store
 
 
         } // btn items end
+        private void btnDelivery_Click(object sender, EventArgs e) // btn delivery begin
+        {
+
+            datagridCustomer.Visible = false;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+
+            dataGridViewSupplier.Visible = false;
+            btnSupplier.BackColor = Color.Teal;
+
+            dataGridViewDelivery.Visible = true;
+            btnDelivery.BackColor = Color.DarkBlue;
+
+            manageDelivery();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+
+          
+
+
+        } // btn delivery end
+        private void pbDelivery_Click(object sender, EventArgs e)  // pb delivery begin
+        {
+            datagridCustomer.Visible = false;
+            //   dataGridViewMain.Visible = false;
+            panelCounts.Visible = false;
+            dataGridViewOrders.Visible = false;
+            dataGridViewStocks.Visible = false;
+            dataGridViewStaffs.Visible = false;
+            dataGridViewUsers.Visible = false;
+            dataGridViewItems.Visible = false;
+
+            dataGridViewSupplier.Visible = false;
+            btnSupplier.BackColor = Color.Teal;
+
+            dataGridViewDelivery.Visible = true;
+            btnDelivery.BackColor = Color.DarkBlue;
+
+            manageDelivery();
+
+            btnHome.BackColor = Color.Teal;
+            btnCustomers.BackColor = Color.Teal;
+            btnOrders.BackColor = Color.Teal;
+            btnItems.BackColor = Color.Teal;
+            btnStocks.BackColor = Color.Teal;
+            btnStaffs.BackColor = Color.Teal;
+            btnUsers.BackColor = Color.Teal;
+        } // pb Delivery end
         private void pbCustomer_Click(object sender, EventArgs e)
         {
             datagridCustomer.Visible = true;
@@ -255,6 +338,10 @@ namespace Clothing_Store
 
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
+
+
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
 
             manageCustomers();
 
@@ -282,6 +369,9 @@ namespace Clothing_Store
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
 
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
+
             manageOrders();
 
 
@@ -308,6 +398,9 @@ namespace Clothing_Store
 
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
+
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
 
             ManageStaffs();
 
@@ -338,6 +431,9 @@ namespace Clothing_Store
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
 
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
+
             manageUsers();
 
 
@@ -366,6 +462,9 @@ namespace Clothing_Store
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
 
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
+
             manageItems();
 
             btnHome.BackColor = Color.Teal;
@@ -392,6 +491,10 @@ namespace Clothing_Store
 
             dataGridViewSupplier.Visible = false;
             btnSupplier.BackColor = Color.Teal;
+
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
+
             manageStocks();
 
             btnHome.BackColor = Color.Teal;
@@ -417,6 +520,10 @@ namespace Clothing_Store
             dataGridViewSupplier.Visible = true;
 
 
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
+
+
             btnHome.BackColor = Color.Teal;
             btnCustomers.BackColor = Color.Teal;
             btnOrders.BackColor = Color.Teal;
@@ -439,6 +546,9 @@ namespace Clothing_Store
             dataGridViewUsers.Visible = false;
             dataGridViewItems.Visible = false;
             dataGridViewSupplier.Visible = true;
+
+            dataGridViewDelivery.Visible = false;
+            btnDelivery.BackColor = Color.Teal;
 
 
             btnHome.BackColor = Color.Teal;
@@ -591,6 +701,23 @@ namespace Clothing_Store
 
 
         } // manage items end - datagrid
+        public void manageDelivery() // manage delivery begin - datagrid
+        {
+          
+                SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'deleted' ";
+                SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+                DataTable table = new DataTable();
+
+                data.Fill(table);
+
+                dataGridViewDelivery.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewDelivery.DataSource = table;
+
+
+
+        }// manage delivery end - datagrid
 
 
         public void counts() // counts begin
@@ -687,6 +814,19 @@ namespace Clothing_Store
             if (reader6.Read())
             {
                 lblTotalSupplier.Text = reader6[0].ToString();
+            }
+
+
+            con.Close();
+
+            string Delivery = "select count(*) from Delivery where Status = 'deleted' ";
+            SqlCommand command7;
+            command7 = new SqlCommand(Delivery, con);
+            con.Open();
+            SqlDataReader reader7 = command7.ExecuteReader();
+            if (reader7.Read())
+            {
+                lblDelivery.Text = reader7[0].ToString();
             }
 
             con.Close();
@@ -975,5 +1115,6 @@ namespace Clothing_Store
         } // cell click end
 
       
+
     }// class end
 } // name space end

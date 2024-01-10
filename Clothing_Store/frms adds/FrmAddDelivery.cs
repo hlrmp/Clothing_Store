@@ -58,57 +58,90 @@ namespace Clothing_Store
                 throw new NumberFormatException("put contact number correctly");
             }
             return cont;
-        }
+        } 
         string cont;
-        public void add()
+        public void add()  // add begin
         {
             if (cbOrdersId.Text == "" || txtxCustomerName.Text == "" || txtCustomerContact.Text == "" || txtDeliveryAddress.Text == "" || txtEmail.Text == ""
                    || txtRider.Text == "" || txtRiderContact.Text == "")
             {
-               throw new nullExceptiom("Please fill up the FF.");
+                throw new nullExceptiom("Please fill up the FF.");
             }
             else
             {
-                string desc = txtComany.Text + "  -  Rider: " + txtRider.Text + "    Contact " + txtRiderContact.Text;
-                cont = ContactNo(txtRiderContact.Text);
+                if (condition == "same")
+                {
+                    throw new nullExceptiom("Item Existing");
+                }
+                else if (condition == "notsame")
+                {
+                    string desc = txtComany.Text + "  -  Rider: " + txtRider.Text + "    Contact " + txtRiderContact.Text;
+                    cont = ContactNo(txtRiderContact.Text);
 
-                SqlConnection con = new SqlConnection(ConnectionClass.conn);
-
-
-                string up = "update Orders set Status = 3 where Order_Id = "+cbOrdersId.Text+" ";
-                SqlCommand command1 = new SqlCommand(up, con);
-                con.Open();
-                command1.ExecuteNonQuery();
-                con.Close();
-
-
-                string ins = "insert into Delivery (Customer_Id,Order_Id,Status,Date,Description) values (@Customer_Id,@Order_Id,@Status,getDate(),@Description) ";
-                SqlCommand command = new SqlCommand(ins, con);
+                    SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
 
+                    string up = "update Orders set Status = 3 where Order_Id = " + cbOrdersId.Text + " ";
+                    SqlCommand command1 = new SqlCommand(up, con);
+                    con.Open();
+                    command1.ExecuteNonQuery();
+                    con.Close();
 
-                con.Open();
 
-                
-                command.Parameters.AddWithValue("@Customer_Id", customerId);
-                command.Parameters.AddWithValue("@Order_Id", cbOrdersId.Text);
-                command.Parameters.AddWithValue("@Description", desc);
-                command.Parameters.AddWithValue("@Status", "pending");
-                command.ExecuteNonQuery();
-                con.Close();
+                    string ins = "insert into Delivery (Customer_Id,Order_Id,Status,Date,Description) values (@Customer_Id,@Order_Id,@Status,getDate(),@Description) ";
+                    SqlCommand command = new SqlCommand(ins, con);
 
-                clear();
+                    con.Open();
 
-                MessageBox.Show("Succesfully added", "Delivery", MessageBoxButtons.OK);
 
-                // activity logs begin
+                    command.Parameters.AddWithValue("@Customer_Id", customerId);
+                    command.Parameters.AddWithValue("@Order_Id", cbOrdersId.Text);
+                    command.Parameters.AddWithValue("@Description", desc);
+                    command.Parameters.AddWithValue("@Status", "pending");
+                    command.ExecuteNonQuery();
+                    con.Close();
 
-                     string des = " delivery added ";
-                     ConnectionClass.activity(frmLogin.userId, des);
+                    clear();
 
-                // activity logs end
+                    MessageBox.Show("Succesfully added", "Delivery", MessageBoxButtons.OK);
+
+                    // activity logs begin
+
+                    string des = " delivery added ";
+                    ConnectionClass.activity(frmLogin.userId, des);
+
+                    // activity logs end
+                }
+
             }
-        }
+        } // add end
+
+        string condition;
+
+        public void comfirmation()  // confirmaion begin
+        {
+
+            customerClass cs = new customerClass();
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+
+            string sj = "select * from Delivery where Order_id = "+cbOrdersId.Text+" ";
+            con.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, con);
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+
+                condition = "same";
+            }
+            else
+            {
+
+                condition = "notsame";
+            }
+
+            con.Close();
+        } // confirmation end
         protected override void OnPaint(PaintEventArgs e)    // border color begin
         {
             //  base.OnPaint(e);
