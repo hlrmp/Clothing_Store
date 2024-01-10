@@ -25,7 +25,8 @@ namespace Clothing_Store
             totalCollections();
             totalPantsJeans();
             totalPoloShirt();
-            
+            seeDelivery();
+
 
         } // main constructor end
 
@@ -99,8 +100,11 @@ namespace Clothing_Store
             fd.Hide();
 
             // pannel and forms
-            mainpanel.Show();
+         
            
+           
+            mainpanel.Visible = false;
+            panelHome.Visible = true;
 
             panelRSide.Show();
             monthCalendar1.Show();
@@ -114,6 +118,10 @@ namespace Clothing_Store
             pboxShorts.Show();
             pboxPolo.Show();
             pboxCollecton.Show();
+
+            pbBlouse.Show();
+            label7.Show();
+            lblTotalBlouse.Show();
 
             // labels and total
             label1.Show();
@@ -166,7 +174,8 @@ namespace Clothing_Store
             i.Dock = DockStyle.Fill;
             mainpanel.Controls.Add(i);
 
-            mainpanel.Show();
+            mainpanel.Visible = true;
+            panelHome.Visible = false;
 
             panelRSide.Hide();
             monthCalendar1.Hide();
@@ -181,6 +190,7 @@ namespace Clothing_Store
             pboxShorts.Hide();
             pboxPolo.Hide();
             pboxCollecton.Hide();
+            pbBlouse.Hide();
 
             // labels and total
             label1.Hide();
@@ -195,6 +205,9 @@ namespace Clothing_Store
             lblTotalPoloShirt.Hide();
             lblTotalShorts.Hide();
             lblTotalTshirt.Hide();
+            label7.Hide();
+            lblTotalBlouse.Hide();
+
 
         }
 
@@ -229,9 +242,10 @@ namespace Clothing_Store
             fs.Dock = DockStyle.Fill;
             mainpanel.Controls.Add(fs);
 
-            mainpanel.Show();
-            
-          
+            mainpanel.Visible = true;
+            panelHome.Visible = false;
+
+
             panelRSide.Hide();
             monthCalendar1.Hide();
             panelAccount.Hide();
@@ -260,10 +274,13 @@ namespace Clothing_Store
             lblTotalShorts.Hide();
             lblTotalTshirt.Hide();
 
+            pbBlouse.Hide();
+            label7.Hide();
+            lblTotalBlouse.Hide();
 
 
         }
-       
+
         private void btnCustomers_Click(object sender, EventArgs e) // btnCustomers begin
         {
             // button color
@@ -296,8 +313,9 @@ namespace Clothing_Store
             fc.Dock = DockStyle.Fill;
             mainpanel.Controls.Add(fc);
 
-            mainpanel.Show();
-          
+            mainpanel.Visible = true;
+            panelHome.Visible = false;
+
 
             panelRSide.Hide();
             monthCalendar1.Hide();
@@ -326,6 +344,10 @@ namespace Clothing_Store
             lblTotalPoloShirt.Hide();
             lblTotalShorts.Hide();
             lblTotalTshirt.Hide();
+
+            pbBlouse.Hide();
+            label7.Hide();
+            lblTotalBlouse.Hide();
 
 
         } // btnCustomers end 
@@ -363,8 +385,8 @@ namespace Clothing_Store
             fo.Dock = DockStyle.Fill;
             mainpanel.Controls.Add(fo);
 
-            mainpanel.Show();
-
+            mainpanel.Visible = true;
+            panelHome.Visible = false;
 
             panelRSide.Hide();
             monthCalendar1.Hide();
@@ -393,6 +415,10 @@ namespace Clothing_Store
             lblTotalPoloShirt.Hide();
             lblTotalShorts.Hide();
             lblTotalTshirt.Hide();
+
+            pbBlouse.Hide();
+            label7.Hide();
+            lblTotalBlouse.Hide();
 
 
         } //btnOrders end
@@ -428,7 +454,8 @@ namespace Clothing_Store
             fa.Dock = DockStyle.Fill;
             mainpanel.Controls.Add(fa);
 
-            mainpanel.Show();
+            mainpanel.Visible = true;
+            panelHome.Visible = false;
 
 
             panelRSide.Hide();
@@ -459,8 +486,13 @@ namespace Clothing_Store
             lblTotalShorts.Hide();
             lblTotalTshirt.Hide();
 
+            pbBlouse.Hide();
+            label7.Hide();
+            lblTotalBlouse.Hide();
+
+
         } // btnAccount end
-       
+
 
         private void btnReports_Click(object sender, EventArgs e) // button reports begin
         {
@@ -495,8 +527,8 @@ namespace Clothing_Store
             fr.Dock = DockStyle.Fill;
             mainpanel.Controls.Add(fr);
 
-            mainpanel.Show();
-
+            mainpanel.Visible = true;
+            panelHome.Visible = false;
 
             panelRSide.Hide();
             monthCalendar1.Hide();
@@ -526,9 +558,14 @@ namespace Clothing_Store
             lblTotalShorts.Hide();
             lblTotalTshirt.Hide();
 
+            pbBlouse.Hide();
+            label7.Hide();
+            lblTotalBlouse.Hide();
+
+
         } // button reports end
 
-   
+
         private void btnDelivery_Click(object sender, EventArgs e) // button delivery begin
         {
             
@@ -563,7 +600,8 @@ namespace Clothing_Store
             fd.Dock = DockStyle.Fill;
             mainpanel.Controls.Add(fd);
 
-            mainpanel.Show();
+            mainpanel.Visible = true;
+            panelHome.Visible = false;
 
 
             panelRSide.Hide();
@@ -592,10 +630,16 @@ namespace Clothing_Store
             lblTotalPoloShirt.Hide();
             lblTotalShorts.Hide();
             lblTotalTshirt.Hide();
+
+            pbBlouse.Hide();
+            label7.Hide();
+            lblTotalBlouse.Hide();
+
+
         } // button delivery end
 
 
-       
+
         public void totalShorts()  // total  - string
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
@@ -714,12 +758,18 @@ namespace Clothing_Store
             employee();
         }  // frm load end
 
-       
+        Timer timer = new Timer();
         private void btnLogoutAccount_Click(object sender, EventArgs e)  // log out account begin
         {
             panelAccount.Visible = true;
-            panelAccount.Show();
-            panelRSide.Visible = false;
+
+           // panelAccount.Show();
+            // panelRSide.Visible = false;
+
+
+            timer.Interval = (4 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
 
         }  // log out account  end
 
@@ -801,6 +851,100 @@ namespace Clothing_Store
 
         } // btn Account in settings end
 
-      
+        private void timer1_Tick(object sender, EventArgs e) // timer begin
+        {
+            panelAccount.Hide();
+            panelRSide.Visible = true;
+
+        }// timer end
+
+        private void lblAccount_Click(object sender, EventArgs e) // acc btn begin
+        {
+            panelAccount.Visible = true;
+
+           // panelAccount.Show();
+           panelRSide.Visible = true;
+
+             
+            timer.Interval = (4 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
+
+        }// acc btn end
+
+        private void pictureBoxProfile_Click(object sender, EventArgs e) // profile click begin
+        {
+            panelAccount.Visible = true;
+
+           // panelAccount.Show();
+            panelRSide.Visible = true;
+
+          
+            timer.Interval = (4 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
+
+        } // profile click end
+
+        public void totalPending()  // total delivery - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "select count(*) as total from Delivery where Status = 'pending'";
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            llblTotal.Text = reader[0].ToString();  // - total numbers
+
+        }  // total delivery - string
+        public void Delivery()  // total delivery - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "select count(*) as total from Delivery where Status = 'delivered'";
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            llblTotal.Text = reader[0].ToString();  // - total numbers
+
+        }  // total delivery - string
+        public void totalIntrnsit()  // total delivery - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "select count(*) as total from Delivery where Status = 'intransit'";
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            llblTotal.Text = reader[0].ToString();  // - total numbers
+
+        }  // total delivery - string
+
+        public void seeDelivery() // see delivery begin - datagrid
+        {
+          
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+                string sj = "select concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' ,  d.Description as 'Description' from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'intransit' ";
+                SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+                DataTable table = new DataTable();
+
+                data.Fill(table);
+
+                dataGridViewDelivery.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewDelivery.DataSource = table;
+
+                totalIntrnsit();
+         
+
+        } // see delivery end - datagrid
+
+
     } // class end 
 } // names space end
