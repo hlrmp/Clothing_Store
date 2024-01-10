@@ -31,6 +31,7 @@ namespace Clothing_Store
         {
             seestocks();
             dataGridViewManage.Visible = false;
+            dataGridView1.Visible = true;
             panelEdit.Visible = false;
 
         } // home button end
@@ -46,8 +47,10 @@ namespace Clothing_Store
         {
           
             dataGridViewManage.Visible = true;
+            dataGridView1.Visible = false;
             manageItems();
 
+            timer.Stop();
         } // manage btn end
 
         public void seestocks() // see stocks begin - datagrid
@@ -57,10 +60,9 @@ namespace Clothing_Store
 
 
             string sj = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\"  " +
-                "FROM Products AS p" +
-                " \r\nINNER JOIN Inventory AS i " +
-                "ON (p.Product_Id = i.product_Id) where i.status = 1";
-
+               "FROM Products AS p" +
+               " \r\nINNER JOIN Inventory AS i " +
+               "ON (p.Product_Id = i.product_Id) where i.status = 1  and  i.Quantity > 0";
 
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
@@ -79,7 +81,7 @@ namespace Clothing_Store
 
             arr.Add("Name");
             arr.Add("Type");
-            arr.Add("Date");
+        //    arr.Add("Date");
             arr.Add("Size");
             arr.Add("Price");
             arr.Add("Category");
@@ -108,7 +110,7 @@ namespace Clothing_Store
                 string query = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\" " +
                     " FROM Products AS p \r\n" +
                     "INNER JOIN Inventory AS i " +
-                    "ON (p.Product_Id = i.product_Id) Where Product_Name LIKE '" + sch + '%' + "'   ";
+                    "ON (p.Product_Id = i.product_Id) Where Product_Name LIKE '" + sch + '%' + "'  and i.Status = 1 and  i.Quantity > 0 ";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -137,7 +139,7 @@ namespace Clothing_Store
                 string query = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\" " +
                     " FROM Products AS p \r\n" +
                     "INNER JOIN Inventory AS i " +
-                    "ON (p.Product_Id = i.product_Id) Where Type LIKE '" + sch + '%' + "'   ";
+                    "ON (p.Product_Id = i.product_Id) Where Type LIKE '" + sch + '%' + "' and i.Status = 1 and  i.Quantity > 0 ";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -166,7 +168,7 @@ namespace Clothing_Store
                 string query = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\" " +
                     " FROM Products AS p \r\n" +
                     "INNER JOIN Inventory AS i " +
-                    "ON (p.Product_Id = i.product_Id) Where Quantity LIKE '" + sch + '%' + "'   ";
+                    "ON (p.Product_Id = i.product_Id) Where Quantity LIKE '" + sch + '%' + "'and i.Status = 1 and  i.Quantity > 0  ";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -195,7 +197,7 @@ namespace Clothing_Store
                 string query = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\" " +
                     " FROM Products AS p \r\n" +
                     "INNER JOIN Inventory AS i " +
-                    "ON (p.Product_Id = i.product_Id) Where Price LIKE '" + sch + '%' + "'   ";
+                    "ON (p.Product_Id = i.product_Id) Where Price LIKE '" + sch + '%' + "' and i.Status = 1  and  i.Quantity > 0  ";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -224,7 +226,7 @@ namespace Clothing_Store
                 string query = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\" " +
                     " FROM Products AS p \r\n" +
                     "INNER JOIN Inventory AS i " +
-                    "ON (p.Product_Id = i.product_Id) Where Size LIKE '" + sch + '%' + "'   ";
+                    "ON (p.Product_Id = i.product_Id) Where Size LIKE '" + sch + '%' + "' and i.Status = 1  and  i.Quantity > 0  ";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -253,7 +255,7 @@ namespace Clothing_Store
                 string query = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\" " +
                     " FROM Products AS p \r\n" +
                     "INNER JOIN Inventory AS i " +
-                    "ON (p.Product_Id = i.product_Id) Where Category LIKE '" + sch + '%' + "'   ";
+                    "ON (p.Product_Id = i.product_Id) Where Category LIKE '" + sch + '%' + "' and i.Status = 1 and  i.Quantity > 0  ";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -271,7 +273,7 @@ namespace Clothing_Store
                 cn.Close();
 
             }
-            else if (cbFilter.Text.ToString() == "Date")
+          /*  else if (cbFilter.Text.ToString() == "Date")
             {
                 SqlConnection cn = new SqlConnection(ConnectionClass.conn);
 
@@ -282,7 +284,7 @@ namespace Clothing_Store
                 string query = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type, p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\" " +
                     " FROM Products AS p \r\n" +
                     "INNER JOIN Inventory AS i " +
-                    "ON (p.Product_Id = i.product_Id) Where Date LIKE '" + sch + '%' + "'   ";
+                    "ON (p.Product_Id = i.product_Id) Where i.Date LIKE '" + sch + '%' + "'  and i.Status = 1 and  i.Quantity > 0 ";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -299,7 +301,7 @@ namespace Clothing_Store
 
                 cn.Close();
 
-            }
+            }*/
             else
             {
                 SqlConnection cn = new SqlConnection(ConnectionClass.conn);
@@ -311,7 +313,7 @@ namespace Clothing_Store
                 string query = "SELECT p.Product_Name AS \"Name\", p.Category,p.Type,p.Size, p.Price, p.Color, i.Quantity , i.Date AS \"Date Added\" " +
                     " FROM Products AS p \r\n" +
                     "INNER JOIN Inventory AS i " +
-                    "ON (p.Product_Id = i.product_Id) Where Product_Name LIKE '" + sch + '%' + "'   ";
+                    "ON (p.Product_Id = i.product_Id) Where Product_Name LIKE '" + sch + '%' + "'  and i.Status = 1 and  i.Quantity > 0  ";
 
                 SqlDataAdapter adapt = new SqlDataAdapter(query, cn);
 
@@ -340,7 +342,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "select count(*)  AS 'Total Items' from Inventory where status = 1";
+            string sj = "select count(*)  AS 'Total Items' from Inventory where status = 1  and Quantity > 0 ";
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();
 
@@ -354,7 +356,7 @@ namespace Clothing_Store
         public void total()  // total customers - string
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
-            string sj = "select count(*)  AS 'Total Items' from Inventory where status = 1";
+            string sj = "select count(*)  AS 'Total Items' from Inventory where status = 1 and Quantity > 0";
             sqlcc.Open();
             SqlCommand command;
             command = new SqlCommand(sj, sqlcc);
@@ -390,6 +392,9 @@ namespace Clothing_Store
             dataGridViewManage.Visible = false; 
 
         } // btn add supplier end
+
+        Timer timer = new Timer();
+
         private void FrmStocks_Load(object sender, EventArgs e) // frm load begin
         {
 
@@ -398,7 +403,7 @@ namespace Clothing_Store
 
 
 
-            Timer timer = new Timer();
+         
             timer.Interval = (1 * 1000);
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
@@ -408,7 +413,7 @@ namespace Clothing_Store
         private void timer1_Tick(object sender, EventArgs e) // timer begin
         {
             total();
-            
+            seestocks();
             lbltotal.Refresh();
 
         } // timer end
@@ -418,7 +423,7 @@ namespace Clothing_Store
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
 
-            string sj = "select i.Inventory_ID as 'Inventory_Number' ,concat(i.Product_Id ,' - ', p.Product_Name) as 'code_and_name' ,s.Supplier_Name , i.Quantity, i.Date from Inventory as  i inner join Products as p on i.Product_Id = p.Product_id inner join Supplier as s on i.Supplier_Id = s.Supplier_Id where i.status = 1";
+            string sj = "select i.Inventory_ID as 'Inventory_Number' ,concat(i.Product_Id ,' - ', p.Product_Name) as 'code_and_name' ,s.Supplier_Name , i.Quantity, i.Date from Inventory as  i inner join Products as p on i.Product_Id = p.Product_id inner join Supplier as s on i.Supplier_Id = s.Supplier_Id where i.status = 1 and i.Quantity > 0";
 
             SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
             DataTable table = new DataTable();

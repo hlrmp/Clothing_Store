@@ -57,9 +57,9 @@
             this.txtOldPrice = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewManage = new System.Windows.Forms.DataGridView();
+            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.itemsClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -439,6 +439,10 @@
             this.dataGridViewManage.Visible = false;
             this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick_1);
             // 
+            // itemsClassBindingSource
+            // 
+            this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Edit";
@@ -451,10 +455,6 @@
             this.dataGridViewImageColumn2.HeaderText = "Delete";
             this.dataGridViewImageColumn2.Image = global::Clothing_Store.Properties.Resources.delete_icon;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            // 
-            // itemsClassBindingSource
-            // 
-            this.itemsClassBindingSource.DataSource = typeof(Clothing_Store.itemsClass);
             // 
             // codeDataGridViewTextBoxColumn
             // 
@@ -516,7 +516,7 @@
             // 
             this.Edit.FillWeight = 25F;
             this.Edit.HeaderText = "Edit";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
+            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
             this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
@@ -539,15 +539,15 @@
             this.AutoScrollMargin = new System.Drawing.Size(3, 3);
             this.AutoScrollMinSize = new System.Drawing.Size(3, 3);
             this.ClientSize = new System.Drawing.Size(800, 524);
-            this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.lblsearch);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.sidepanelitems);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.datagridItems);
             this.Controls.Add(this.panelEdit);
+            this.Controls.Add(this.dataGridViewManage);
+            this.Controls.Add(this.datagridItems);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmItems";
             this.Text = "FrmItems";
