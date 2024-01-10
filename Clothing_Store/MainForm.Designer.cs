@@ -53,21 +53,6 @@
             this.mainpanel = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelHome = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblTotalCollection = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTotalPolo = new System.Windows.Forms.Label();
-            this.pboxCollecton = new System.Windows.Forms.PictureBox();
-            this.pboxPolo = new System.Windows.Forms.PictureBox();
-            this.pboxShorts = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTotalShorts = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalBlouse = new System.Windows.Forms.Label();
-            this.pbBlouse = new System.Windows.Forms.PictureBox();
-            this.panelRSide = new System.Windows.Forms.Panel();
-            this.dataGridViewDelivery = new System.Windows.Forms.DataGridView();
-            this.btnDeliveriesStatus = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pbOrangeTshirt = new System.Windows.Forms.PictureBox();
             this.pbTshirtGreen = new System.Windows.Forms.PictureBox();
@@ -81,26 +66,50 @@
             this.pboxPants = new System.Windows.Forms.PictureBox();
             this.pboxPoloshirt = new System.Windows.Forms.PictureBox();
             this.lblTotalPants = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotalCollection = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblTotalPolo = new System.Windows.Forms.Label();
+            this.pboxCollecton = new System.Windows.Forms.PictureBox();
+            this.pboxPolo = new System.Windows.Forms.PictureBox();
+            this.pboxShorts = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotalShorts = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalBlouse = new System.Windows.Forms.Label();
+            this.pbBlouse = new System.Windows.Forms.PictureBox();
+            this.panelRSide = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.llblTotal = new System.Windows.Forms.Label();
+            this.dataGridViewDelivery = new System.Windows.Forms.DataGridView();
+            this.btnIntransit = new System.Windows.Forms.Button();
+            this.btnPending = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel1buttonCollections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelAccount.SuspendLayout();
             this.panelHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCollecton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPolo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxShorts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBlouse)).BeginInit();
-            this.panelRSide.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOrangeTshirt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbTshirtGreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbRedTshirt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxCollecton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxPolo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxShorts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBlouse)).BeginInit();
+            this.panelRSide.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1buttonCollections
@@ -363,6 +372,10 @@
             this.panelAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAccount.BackColor = System.Drawing.Color.White;
             this.panelAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelAccount.Controls.Add(this.pictureBox5);
+            this.panelAccount.Controls.Add(this.pictureBox4);
+            this.panelAccount.Controls.Add(this.pictureBox3);
+            this.panelAccount.Controls.Add(this.pictureBox2);
             this.panelAccount.Controls.Add(this.btnSettingArchives);
             this.panelAccount.Controls.Add(this.btnAbout);
             this.panelAccount.Controls.Add(this.btnbackupAndRecovery);
@@ -501,8 +514,156 @@
             this.panelHome.Size = new System.Drawing.Size(1224, 550);
             this.panelHome.TabIndex = 3;
             // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(16, 32);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 104;
+            // 
+            // pbOrangeTshirt
+            // 
+            this.pbOrangeTshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbOrangeTshirt.BackColor = System.Drawing.Color.Teal;
+            this.pbOrangeTshirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbOrangeTshirt.Location = new System.Drawing.Point(365, 196);
+            this.pbOrangeTshirt.Name = "pbOrangeTshirt";
+            this.pbOrangeTshirt.Size = new System.Drawing.Size(18, 20);
+            this.pbOrangeTshirt.TabIndex = 116;
+            this.pbOrangeTshirt.TabStop = false;
+            // 
+            // pbTshirtGreen
+            // 
+            this.pbTshirtGreen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbTshirtGreen.BackColor = System.Drawing.Color.Teal;
+            this.pbTshirtGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbTshirtGreen.Location = new System.Drawing.Point(397, 196);
+            this.pbTshirtGreen.Name = "pbTshirtGreen";
+            this.pbTshirtGreen.Size = new System.Drawing.Size(18, 20);
+            this.pbTshirtGreen.TabIndex = 115;
+            this.pbTshirtGreen.TabStop = false;
+            // 
+            // pbRedTshirt
+            // 
+            this.pbRedTshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pbRedTshirt.BackColor = System.Drawing.Color.Teal;
+            this.pbRedTshirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbRedTshirt.Location = new System.Drawing.Point(334, 195);
+            this.pbRedTshirt.Name = "pbRedTshirt";
+            this.pbRedTshirt.Size = new System.Drawing.Size(18, 20);
+            this.pbRedTshirt.TabIndex = 114;
+            this.pbRedTshirt.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(299, 229);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 19);
+            this.label1.TabIndex = 108;
+            this.label1.Text = "Total : ";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(533, 229);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 19);
+            this.label2.TabIndex = 110;
+            this.label2.Text = "Total : ";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(776, 229);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 19);
+            this.label3.TabIndex = 112;
+            this.label3.Text = "Total : ";
+            // 
+            // lblTotalTshirt
+            // 
+            this.lblTotalTshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTotalTshirt.AutoSize = true;
+            this.lblTotalTshirt.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalTshirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTshirt.ForeColor = System.Drawing.Color.White;
+            this.lblTotalTshirt.Location = new System.Drawing.Point(363, 229);
+            this.lblTotalTshirt.Name = "lblTotalTshirt";
+            this.lblTotalTshirt.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalTshirt.TabIndex = 109;
+            this.lblTotalTshirt.Text = "0";
+            // 
+            // lblTotalPoloShirt
+            // 
+            this.lblTotalPoloShirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTotalPoloShirt.AutoSize = true;
+            this.lblTotalPoloShirt.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPoloShirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPoloShirt.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPoloShirt.Location = new System.Drawing.Point(605, 229);
+            this.lblTotalPoloShirt.Name = "lblTotalPoloShirt";
+            this.lblTotalPoloShirt.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalPoloShirt.TabIndex = 111;
+            this.lblTotalPoloShirt.Text = "0";
+            // 
+            // pboxTshirt
+            // 
+            this.pboxTshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pboxTshirt.Image = ((System.Drawing.Image)(resources.GetObject("pboxTshirt.Image")));
+            this.pboxTshirt.Location = new System.Drawing.Point(269, 32);
+            this.pboxTshirt.Name = "pboxTshirt";
+            this.pboxTshirt.Size = new System.Drawing.Size(196, 194);
+            this.pboxTshirt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxTshirt.TabIndex = 105;
+            this.pboxTshirt.TabStop = false;
+            // 
+            // pboxPants
+            // 
+            this.pboxPants.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pboxPants.Image = ((System.Drawing.Image)(resources.GetObject("pboxPants.Image")));
+            this.pboxPants.Location = new System.Drawing.Point(752, 32);
+            this.pboxPants.Name = "pboxPants";
+            this.pboxPants.Size = new System.Drawing.Size(196, 194);
+            this.pboxPants.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxPants.TabIndex = 107;
+            this.pboxPants.TabStop = false;
+            // 
+            // pboxPoloshirt
+            // 
+            this.pboxPoloshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pboxPoloshirt.Image = ((System.Drawing.Image)(resources.GetObject("pboxPoloshirt.Image")));
+            this.pboxPoloshirt.Location = new System.Drawing.Point(507, 32);
+            this.pboxPoloshirt.Name = "pboxPoloshirt";
+            this.pboxPoloshirt.Size = new System.Drawing.Size(196, 194);
+            this.pboxPoloshirt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxPoloshirt.TabIndex = 106;
+            this.pboxPoloshirt.TabStop = false;
+            // 
+            // lblTotalPants
+            // 
+            this.lblTotalPants.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTotalPants.AutoSize = true;
+            this.lblTotalPants.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPants.ForeColor = System.Drawing.Color.White;
+            this.lblTotalPants.Location = new System.Drawing.Point(902, 229);
+            this.lblTotalPants.Name = "lblTotalPants";
+            this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
+            this.lblTotalPants.TabIndex = 113;
+            this.lblTotalPants.Text = "0";
+            // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
@@ -514,6 +675,7 @@
             // 
             // lblTotalCollection
             // 
+            this.lblTotalCollection.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalCollection.AutoSize = true;
             this.lblTotalCollection.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalCollection.ForeColor = System.Drawing.Color.White;
@@ -525,6 +687,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
@@ -536,6 +699,7 @@
             // 
             // lblTotalPolo
             // 
+            this.lblTotalPolo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalPolo.AutoSize = true;
             this.lblTotalPolo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPolo.ForeColor = System.Drawing.Color.White;
@@ -547,6 +711,7 @@
             // 
             // pboxCollecton
             // 
+            this.pboxCollecton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pboxCollecton.Image = global::Clothing_Store.Properties.Resources.collections;
             this.pboxCollecton.Location = new System.Drawing.Point(752, 299);
             this.pboxCollecton.Name = "pboxCollecton";
@@ -557,6 +722,7 @@
             // 
             // pboxPolo
             // 
+            this.pboxPolo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pboxPolo.Image = ((System.Drawing.Image)(resources.GetObject("pboxPolo.Image")));
             this.pboxPolo.Location = new System.Drawing.Point(507, 299);
             this.pboxPolo.Name = "pboxPolo";
@@ -567,6 +733,7 @@
             // 
             // pboxShorts
             // 
+            this.pboxShorts.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pboxShorts.Image = ((System.Drawing.Image)(resources.GetObject("pboxShorts.Image")));
             this.pboxShorts.Location = new System.Drawing.Point(265, 299);
             this.pboxShorts.Name = "pboxShorts";
@@ -577,6 +744,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
@@ -588,6 +756,7 @@
             // 
             // lblTotalShorts
             // 
+            this.lblTotalShorts.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalShorts.AutoSize = true;
             this.lblTotalShorts.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalShorts.ForeColor = System.Drawing.Color.White;
@@ -599,6 +768,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
@@ -610,6 +780,7 @@
             // 
             // lblTotalBlouse
             // 
+            this.lblTotalBlouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalBlouse.AutoSize = true;
             this.lblTotalBlouse.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBlouse.ForeColor = System.Drawing.Color.White;
@@ -621,6 +792,7 @@
             // 
             // pbBlouse
             // 
+            this.pbBlouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pbBlouse.Image = ((System.Drawing.Image)(resources.GetObject("pbBlouse.Image")));
             this.pbBlouse.Location = new System.Drawing.Point(16, 299);
             this.pbBlouse.Name = "pbBlouse";
@@ -634,180 +806,15 @@
             this.panelRSide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRSide.BackColor = System.Drawing.Color.White;
             this.panelRSide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRSide.Controls.Add(this.btnPending);
             this.panelRSide.Controls.Add(this.label8);
             this.panelRSide.Controls.Add(this.llblTotal);
             this.panelRSide.Controls.Add(this.dataGridViewDelivery);
-            this.panelRSide.Controls.Add(this.btnDeliveriesStatus);
-            this.panelRSide.Location = new System.Drawing.Point(1024, -1);
+            this.panelRSide.Controls.Add(this.btnIntransit);
+            this.panelRSide.Location = new System.Drawing.Point(989, -1);
             this.panelRSide.Name = "panelRSide";
-            this.panelRSide.Size = new System.Drawing.Size(200, 548);
+            this.panelRSide.Size = new System.Drawing.Size(235, 548);
             this.panelRSide.TabIndex = 103;
-            // 
-            // dataGridViewDelivery
-            // 
-            this.dataGridViewDelivery.AllowUserToAddRows = false;
-            this.dataGridViewDelivery.AllowUserToDeleteRows = false;
-            this.dataGridViewDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewDelivery.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDelivery.Location = new System.Drawing.Point(3, 32);
-            this.dataGridViewDelivery.Name = "dataGridViewDelivery";
-            this.dataGridViewDelivery.ReadOnly = true;
-            this.dataGridViewDelivery.Size = new System.Drawing.Size(189, 483);
-            this.dataGridViewDelivery.TabIndex = 2;
-            // 
-            // btnDeliveriesStatus
-            // 
-            this.btnDeliveriesStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeliveriesStatus.BackColor = System.Drawing.Color.White;
-            this.btnDeliveriesStatus.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.btnDeliveriesStatus.FlatAppearance.BorderSize = 0;
-            this.btnDeliveriesStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnDeliveriesStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDeliveriesStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeliveriesStatus.Location = new System.Drawing.Point(-8, 3);
-            this.btnDeliveriesStatus.Name = "btnDeliveriesStatus";
-            this.btnDeliveriesStatus.Size = new System.Drawing.Size(200, 23);
-            this.btnDeliveriesStatus.TabIndex = 0;
-            this.btnDeliveriesStatus.Text = "Deliveries";
-            this.btnDeliveriesStatus.UseVisualStyleBackColor = false;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(16, 32);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 104;
-            // 
-            // pbOrangeTshirt
-            // 
-            this.pbOrangeTshirt.BackColor = System.Drawing.Color.Teal;
-            this.pbOrangeTshirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbOrangeTshirt.Location = new System.Drawing.Point(365, 196);
-            this.pbOrangeTshirt.Name = "pbOrangeTshirt";
-            this.pbOrangeTshirt.Size = new System.Drawing.Size(18, 20);
-            this.pbOrangeTshirt.TabIndex = 116;
-            this.pbOrangeTshirt.TabStop = false;
-            // 
-            // pbTshirtGreen
-            // 
-            this.pbTshirtGreen.BackColor = System.Drawing.Color.Teal;
-            this.pbTshirtGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbTshirtGreen.Location = new System.Drawing.Point(397, 196);
-            this.pbTshirtGreen.Name = "pbTshirtGreen";
-            this.pbTshirtGreen.Size = new System.Drawing.Size(18, 20);
-            this.pbTshirtGreen.TabIndex = 115;
-            this.pbTshirtGreen.TabStop = false;
-            // 
-            // pbRedTshirt
-            // 
-            this.pbRedTshirt.BackColor = System.Drawing.Color.Teal;
-            this.pbRedTshirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbRedTshirt.Location = new System.Drawing.Point(334, 195);
-            this.pbRedTshirt.Name = "pbRedTshirt";
-            this.pbRedTshirt.Size = new System.Drawing.Size(18, 20);
-            this.pbRedTshirt.TabIndex = 114;
-            this.pbRedTshirt.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(299, 229);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 19);
-            this.label1.TabIndex = 108;
-            this.label1.Text = "Total : ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(559, 229);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 19);
-            this.label2.TabIndex = 110;
-            this.label2.Text = "Total : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(828, 229);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 19);
-            this.label3.TabIndex = 112;
-            this.label3.Text = "Total : ";
-            // 
-            // lblTotalTshirt
-            // 
-            this.lblTotalTshirt.AutoSize = true;
-            this.lblTotalTshirt.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalTshirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTshirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalTshirt.Location = new System.Drawing.Point(363, 229);
-            this.lblTotalTshirt.Name = "lblTotalTshirt";
-            this.lblTotalTshirt.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalTshirt.TabIndex = 109;
-            this.lblTotalTshirt.Text = "0";
-            // 
-            // lblTotalPoloShirt
-            // 
-            this.lblTotalPoloShirt.AutoSize = true;
-            this.lblTotalPoloShirt.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPoloShirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPoloShirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPoloShirt.Location = new System.Drawing.Point(631, 229);
-            this.lblTotalPoloShirt.Name = "lblTotalPoloShirt";
-            this.lblTotalPoloShirt.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPoloShirt.TabIndex = 111;
-            this.lblTotalPoloShirt.Text = "0";
-            // 
-            // pboxTshirt
-            // 
-            this.pboxTshirt.Image = ((System.Drawing.Image)(resources.GetObject("pboxTshirt.Image")));
-            this.pboxTshirt.Location = new System.Drawing.Point(269, 32);
-            this.pboxTshirt.Name = "pboxTshirt";
-            this.pboxTshirt.Size = new System.Drawing.Size(196, 194);
-            this.pboxTshirt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxTshirt.TabIndex = 105;
-            this.pboxTshirt.TabStop = false;
-            // 
-            // pboxPants
-            // 
-            this.pboxPants.Image = ((System.Drawing.Image)(resources.GetObject("pboxPants.Image")));
-            this.pboxPants.Location = new System.Drawing.Point(804, 32);
-            this.pboxPants.Name = "pboxPants";
-            this.pboxPants.Size = new System.Drawing.Size(196, 194);
-            this.pboxPants.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxPants.TabIndex = 107;
-            this.pboxPants.TabStop = false;
-            // 
-            // pboxPoloshirt
-            // 
-            this.pboxPoloshirt.Image = ((System.Drawing.Image)(resources.GetObject("pboxPoloshirt.Image")));
-            this.pboxPoloshirt.Location = new System.Drawing.Point(533, 32);
-            this.pboxPoloshirt.Name = "pboxPoloshirt";
-            this.pboxPoloshirt.Size = new System.Drawing.Size(196, 194);
-            this.pboxPoloshirt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxPoloshirt.TabIndex = 106;
-            this.pboxPoloshirt.TabStop = false;
-            // 
-            // lblTotalPants
-            // 
-            this.lblTotalPants.AutoSize = true;
-            this.lblTotalPants.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPants.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPants.Location = new System.Drawing.Point(902, 229);
-            this.lblTotalPants.Name = "lblTotalPants";
-            this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPants.TabIndex = 113;
-            this.lblTotalPants.Text = "0";
             // 
             // label8
             // 
@@ -830,6 +837,95 @@
             this.llblTotal.Size = new System.Drawing.Size(19, 19);
             this.llblTotal.TabIndex = 97;
             this.llblTotal.Text = "0";
+            // 
+            // dataGridViewDelivery
+            // 
+            this.dataGridViewDelivery.AllowUserToAddRows = false;
+            this.dataGridViewDelivery.AllowUserToDeleteRows = false;
+            this.dataGridViewDelivery.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewDelivery.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewDelivery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDelivery.Location = new System.Drawing.Point(3, 48);
+            this.dataGridViewDelivery.Name = "dataGridViewDelivery";
+            this.dataGridViewDelivery.ReadOnly = true;
+            this.dataGridViewDelivery.Size = new System.Drawing.Size(224, 467);
+            this.dataGridViewDelivery.TabIndex = 2;
+            // 
+            // btnIntransit
+            // 
+            this.btnIntransit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIntransit.BackColor = System.Drawing.Color.Teal;
+            this.btnIntransit.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnIntransit.FlatAppearance.BorderSize = 2;
+            this.btnIntransit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnIntransit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnIntransit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIntransit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIntransit.ForeColor = System.Drawing.Color.White;
+            this.btnIntransit.Location = new System.Drawing.Point(3, 5);
+            this.btnIntransit.Name = "btnIntransit";
+            this.btnIntransit.Size = new System.Drawing.Size(114, 37);
+            this.btnIntransit.TabIndex = 0;
+            this.btnIntransit.Text = "Intransit";
+            this.btnIntransit.UseVisualStyleBackColor = false;
+            this.btnIntransit.Click += new System.EventHandler(this.btnIntransit_Click);
+            // 
+            // btnPending
+            // 
+            this.btnPending.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPending.BackColor = System.Drawing.Color.Teal;
+            this.btnPending.FlatAppearance.BorderColor = System.Drawing.Color.Teal;
+            this.btnPending.FlatAppearance.BorderSize = 2;
+            this.btnPending.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnPending.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPending.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPending.ForeColor = System.Drawing.Color.White;
+            this.btnPending.Location = new System.Drawing.Point(113, 5);
+            this.btnPending.Name = "btnPending";
+            this.btnPending.Size = new System.Drawing.Size(114, 37);
+            this.btnPending.TabIndex = 98;
+            this.btnPending.Text = "Pending";
+            this.btnPending.UseVisualStyleBackColor = false;
+            this.btnPending.Click += new System.EventHandler(this.btnPending_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBox2.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(10, 271);
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBox3.Location = new System.Drawing.Point(175, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(10, 271);
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBox4.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(175, 10);
+            this.pictureBox4.TabIndex = 19;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.pictureBox5.Location = new System.Drawing.Point(4, 261);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(175, 10);
+            this.pictureBox5.TabIndex = 20;
+            this.pictureBox5.TabStop = false;
             // 
             // MainForm
             // 
@@ -855,6 +951,12 @@
             this.panelAccount.ResumeLayout(false);
             this.panelHome.ResumeLayout(false);
             this.panelHome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrangeTshirt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTshirtGreen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbRedTshirt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxCollecton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPolo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxShorts)).EndInit();
@@ -862,12 +964,10 @@
             this.panelRSide.ResumeLayout(false);
             this.panelRSide.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOrangeTshirt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTshirtGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRedTshirt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -924,8 +1024,13 @@
         private System.Windows.Forms.PictureBox pbBlouse;
         private System.Windows.Forms.Panel panelRSide;
         private System.Windows.Forms.DataGridView dataGridViewDelivery;
-        private System.Windows.Forms.Button btnDeliveriesStatus;
+        private System.Windows.Forms.Button btnIntransit;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label llblTotal;
+        private System.Windows.Forms.Button btnPending;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

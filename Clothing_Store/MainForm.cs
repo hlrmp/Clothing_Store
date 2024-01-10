@@ -25,7 +25,7 @@ namespace Clothing_Store
             totalCollections();
             totalPantsJeans();
             totalPoloShirt();
-            seeDelivery();
+            seeDeliveryIntransit();
 
 
         } // main constructor end
@@ -926,7 +926,7 @@ namespace Clothing_Store
 
         }  // total delivery - string
 
-        public void seeDelivery() // see delivery begin - datagrid
+        public void seeDeliveryIntransit() // see delivery begin - datagrid
         {
           
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
@@ -940,11 +940,45 @@ namespace Clothing_Store
                 dataGridViewDelivery.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridViewDelivery.DataSource = table;
 
+                btnIntransit.BackColor = Color.CornflowerBlue;
+                btnPending.BackColor = Color.Teal;
                 totalIntrnsit();
          
 
         } // see delivery end - datagrid
+        public void seeDeliveryPending() // see delivery begin - datagrid
+        {
 
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+            string sj = "select concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' ,  d.Description as 'Description' from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'pending' ";
+            SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridViewDelivery.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewDelivery.DataSource = table;
+
+
+            btnIntransit.BackColor = Color.Teal;
+            btnPending.BackColor = Color.CornflowerBlue;
+            totalPending();
+
+
+        } // see delivery end - datagrid
+
+        private void btnPending_Click(object sender, EventArgs e) // btn pending begin
+        {
+            seeDeliveryPending();
+
+        }// bnt pending end
+
+        private void btnIntransit_Click(object sender, EventArgs e) // btn intransit begin
+        {
+            seeDeliveryIntransit();
+
+        } // btn Intransit end
 
     } // class end 
 } // names space end
