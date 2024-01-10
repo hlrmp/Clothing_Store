@@ -203,10 +203,10 @@ namespace Clothing_Store
             }
         }
         Timer timer = new Timer();
-      
+        Timer tm = new Timer();
         private void btnHomeDelivery_Click(object sender, EventArgs e) // btn Home begin
         {
-
+            tm.Stop();
           
 
             seeDelivery();
@@ -225,9 +225,13 @@ namespace Clothing_Store
         private void timer1_Tick(object sender, EventArgs e)
         {
             seeDelivery();
-            
+           
         }
+        private void timer2_Tick(object sender, EventArgs e) //  timer 2 begin
+        {
+            manage();
 
+        } // timer 2 end
         private void btnManage_Click(object sender, EventArgs e) // btn manage begin
         {
             dataGridViewManagePending.Visible = true;
@@ -235,7 +239,10 @@ namespace Clothing_Store
 
             timer.Stop();
 
-          
+
+            tm.Interval = (1 * 1000);
+            tm.Tick += new EventHandler(timer2_Tick);
+            tm.Start();
 
             manage();
             
@@ -464,6 +471,7 @@ namespace Clothing_Store
 
 
         }//  Pending management end
+
 
     } // class end
 }  // name space end
