@@ -93,7 +93,7 @@ namespace Clothing_Store
                 command.Parameters.AddWithValue("@Customer_Id", customerId);
                 command.Parameters.AddWithValue("@Order_Id", cbOrdersId.Text);
                 command.Parameters.AddWithValue("@Description", desc);
-                command.Parameters.AddWithValue("@Status", "1");
+                command.Parameters.AddWithValue("@Status", "pending");
                 command.ExecuteNonQuery();
                 con.Close();
 

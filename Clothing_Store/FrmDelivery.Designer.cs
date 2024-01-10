@@ -39,21 +39,41 @@
             this.btnHomeDelivery = new System.Windows.Forms.Button();
             this.cbSortby = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataGridViewManage = new System.Windows.Forms.DataGridView();
+            this.dataGridViewManagePending = new System.Windows.Forms.DataGridView();
+            this.dataGridViewManageIntransit = new System.Windows.Forms.DataGridView();
+            this.dataGridViewManageDelivered = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.deliveryClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeliveredIntransit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeleteIntransit = new System.Windows.Forms.DataGridViewImageColumn();
             this.deliveryIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pending = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Intransit = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Delivered = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Intransit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1Home)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManagePending)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManageIntransit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManageDelivered)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,50 +205,254 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // dataGridViewManage
+            // dataGridViewManagePending
             // 
-            this.dataGridViewManage.AllowUserToAddRows = false;
-            this.dataGridViewManage.AllowUserToDeleteRows = false;
-            this.dataGridViewManage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewManagePending.AllowUserToAddRows = false;
+            this.dataGridViewManagePending.AllowUserToDeleteRows = false;
+            this.dataGridViewManagePending.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewManage.AutoGenerateColumns = false;
-            this.dataGridViewManage.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewManage.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewManage.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewManagePending.AutoGenerateColumns = false;
+            this.dataGridViewManagePending.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewManagePending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManagePending.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deliveryIdDataGridViewTextBoxColumn,
             this.customernameDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn,
             this.contactNoDataGridViewTextBoxColumn,
             this.orderIdDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
-            this.Pending,
             this.Intransit,
-            this.Delivered,
             this.Delete});
-            this.dataGridViewManage.DataSource = this.deliveryClassBindingSource;
-            this.dataGridViewManage.Location = new System.Drawing.Point(138, 81);
-            this.dataGridViewManage.Name = "dataGridViewManage";
-            this.dataGridViewManage.ReadOnly = true;
-            this.dataGridViewManage.Size = new System.Drawing.Size(617, 431);
-            this.dataGridViewManage.TabIndex = 40;
-            this.dataGridViewManage.Visible = false;
+            this.dataGridViewManagePending.DataSource = this.deliveryClassBindingSource;
+            this.dataGridViewManagePending.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewManagePending.Name = "dataGridViewManagePending";
+            this.dataGridViewManagePending.ReadOnly = true;
+            this.dataGridViewManagePending.Size = new System.Drawing.Size(617, 431);
+            this.dataGridViewManagePending.TabIndex = 40;
+            this.dataGridViewManagePending.Visible = false;
+            this.dataGridViewManagePending.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManagePending_CellContentClick);
+            // 
+            // dataGridViewManageIntransit
+            // 
+            this.dataGridViewManageIntransit.AllowUserToAddRows = false;
+            this.dataGridViewManageIntransit.AllowUserToDeleteRows = false;
+            this.dataGridViewManageIntransit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewManageIntransit.AutoGenerateColumns = false;
+            this.dataGridViewManageIntransit.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewManageIntransit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManageIntransit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.DeliveredIntransit,
+            this.DeleteIntransit});
+            this.dataGridViewManageIntransit.DataSource = this.deliveryClassBindingSource;
+            this.dataGridViewManageIntransit.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewManageIntransit.Name = "dataGridViewManageIntransit";
+            this.dataGridViewManageIntransit.ReadOnly = true;
+            this.dataGridViewManageIntransit.Size = new System.Drawing.Size(617, 431);
+            this.dataGridViewManageIntransit.TabIndex = 41;
+            this.dataGridViewManageIntransit.Visible = false;
+            this.dataGridViewManageIntransit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManageIntransit_CellContentClick);
+            // 
+            // dataGridViewManageDelivered
+            // 
+            this.dataGridViewManageDelivered.AllowUserToAddRows = false;
+            this.dataGridViewManageDelivered.AllowUserToDeleteRows = false;
+            this.dataGridViewManageDelivered.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewManageDelivered.AutoGenerateColumns = false;
+            this.dataGridViewManageDelivered.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewManageDelivered.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewManageDelivered.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewImageColumn2});
+            this.dataGridViewManageDelivered.DataSource = this.deliveryClassBindingSource;
+            this.dataGridViewManageDelivered.Location = new System.Drawing.Point(138, 81);
+            this.dataGridViewManageDelivered.Name = "dataGridViewManageDelivered";
+            this.dataGridViewManageDelivered.ReadOnly = true;
+            this.dataGridViewManageDelivered.Size = new System.Drawing.Size(617, 431);
+            this.dataGridViewManageDelivered.TabIndex = 42;
+            this.dataGridViewManageDelivered.Visible = false;
+            this.dataGridViewManageDelivered.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManageDelivered_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 25F;
+            this.dataGridViewImageColumn1.HeaderText = "Delete";
+            this.dataGridViewImageColumn1.Image = global::Clothing_Store.Properties.Resources.delete_icon;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 5;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.FillWeight = 25F;
+            this.dataGridViewImageColumn2.HeaderText = "Delete";
+            this.dataGridViewImageColumn2.Image = global::Clothing_Store.Properties.Resources.delete_icon;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.Width = 5;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.FillWeight = 25F;
+            this.dataGridViewImageColumn3.HeaderText = "Intransit";
+            this.dataGridViewImageColumn3.Image = global::Clothing_Store.Properties.Resources.move;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn3.Width = 5;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.FillWeight = 25F;
+            this.dataGridViewImageColumn4.HeaderText = "Delete";
+            this.dataGridViewImageColumn4.Image = global::Clothing_Store.Properties.Resources.delete_icon;
+            this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.ReadOnly = true;
+            this.dataGridViewImageColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn4.Width = 5;
             // 
             // deliveryClassBindingSource
             // 
             this.deliveryClassBindingSource.DataSource = typeof(Clothing_Store.classes.deliveryClass);
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Delivery_Id";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Delivery Id";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Customer_name";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Customer Name";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Contact_No";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Contact No";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "order_Id";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Order Id";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Delivery_Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Delivery Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Customer_name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Customer Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Contact_No";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Contact No";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "order_Id";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Order Id";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // DeliveredIntransit
+            // 
+            this.DeliveredIntransit.FillWeight = 30F;
+            this.DeliveredIntransit.HeaderText = "Delivered";
+            this.DeliveredIntransit.Image = global::Clothing_Store.Properties.Resources.move;
+            this.DeliveredIntransit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.DeliveredIntransit.Name = "DeliveredIntransit";
+            this.DeliveredIntransit.ReadOnly = true;
+            this.DeliveredIntransit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DeliveredIntransit.Width = 5;
+            // 
+            // DeleteIntransit
+            // 
+            this.DeleteIntransit.FillWeight = 25F;
+            this.DeleteIntransit.HeaderText = "Delete";
+            this.DeleteIntransit.Image = global::Clothing_Store.Properties.Resources.delete_icon;
+            this.DeleteIntransit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.DeleteIntransit.Name = "DeleteIntransit";
+            this.DeleteIntransit.ReadOnly = true;
+            this.DeleteIntransit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DeleteIntransit.Width = 5;
+            // 
             // deliveryIdDataGridViewTextBoxColumn
             // 
             this.deliveryIdDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Id";
-            this.deliveryIdDataGridViewTextBoxColumn.HeaderText = "Delivery_Id";
+            this.deliveryIdDataGridViewTextBoxColumn.HeaderText = "Delivery Id";
             this.deliveryIdDataGridViewTextBoxColumn.Name = "deliveryIdDataGridViewTextBoxColumn";
             this.deliveryIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // customernameDataGridViewTextBoxColumn
             // 
             this.customernameDataGridViewTextBoxColumn.DataPropertyName = "Customer_name";
-            this.customernameDataGridViewTextBoxColumn.HeaderText = "Customer_name";
+            this.customernameDataGridViewTextBoxColumn.HeaderText = "Customer Name";
             this.customernameDataGridViewTextBoxColumn.Name = "customernameDataGridViewTextBoxColumn";
             this.customernameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -242,14 +466,14 @@
             // contactNoDataGridViewTextBoxColumn
             // 
             this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact No";
             this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
             this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // orderIdDataGridViewTextBoxColumn
             // 
             this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "order_Id";
-            this.orderIdDataGridViewTextBoxColumn.HeaderText = "order_Id";
+            this.orderIdDataGridViewTextBoxColumn.HeaderText = "Order Id";
             this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
             this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -260,23 +484,16 @@
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Pending
-            // 
-            this.Pending.HeaderText = "Pending";
-            this.Pending.Name = "Pending";
-            this.Pending.ReadOnly = true;
-            // 
             // Intransit
             // 
+            this.Intransit.FillWeight = 30F;
             this.Intransit.HeaderText = "Intransit";
+            this.Intransit.Image = global::Clothing_Store.Properties.Resources.move;
+            this.Intransit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Intransit.Name = "Intransit";
             this.Intransit.ReadOnly = true;
-            // 
-            // Delivered
-            // 
-            this.Delivered.HeaderText = "Delivered";
-            this.Delivered.Name = "Delivered";
-            this.Delivered.ReadOnly = true;
+            this.Intransit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Intransit.Width = 5;
             // 
             // Delete
             // 
@@ -294,18 +511,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 524);
-            this.Controls.Add(this.dataGridViewManage);
             this.Controls.Add(this.cbSortby);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.dataGridViewManagePending);
             this.Controls.Add(this.dataGridView1Home);
+            this.Controls.Add(this.dataGridViewManageDelivered);
+            this.Controls.Add(this.dataGridViewManageIntransit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDelivery";
             this.Text = "FrmDelivery";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1Home)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManagePending)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManageIntransit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManageDelivered)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliveryClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,18 +544,36 @@
         private System.Windows.Forms.Button btnHomeDelivery;
         private System.Windows.Forms.Button btnTotal;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridView dataGridViewManage;
+        private System.Windows.Forms.DataGridView dataGridViewManagePending;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.BindingSource deliveryClassBindingSource;
+        private System.Windows.Forms.DataGridView dataGridViewManageIntransit;
+        private System.Windows.Forms.DataGridView dataGridViewManageDelivered;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliveryIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn customernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Pending;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Intransit;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Delivered;
+        private System.Windows.Forms.DataGridViewImageColumn Intransit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewImageColumn DeliveredIntransit;
+        private System.Windows.Forms.DataGridViewImageColumn DeleteIntransit;
     }
 }

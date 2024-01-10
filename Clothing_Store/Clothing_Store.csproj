@@ -310,6 +310,7 @@
     <None Include="Resources\delete.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\move.jpg" />
     <None Include="Resources\store.png" />
     <None Include="Resources\tshirt.jpg" />
     <None Include="Resources\shorts.jpg" />

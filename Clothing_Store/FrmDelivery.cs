@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clothing_Store.classes;
 
 namespace Clothing_Store
 {
@@ -37,7 +38,7 @@ namespace Clothing_Store
             {
                 SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
-                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 1";
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'pending' ";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
@@ -53,7 +54,7 @@ namespace Clothing_Store
             {
                 SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
-                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 3";
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'intransit' ";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
@@ -69,7 +70,7 @@ namespace Clothing_Store
 
                 SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
-                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 4";
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'delivered' ";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
@@ -86,7 +87,7 @@ namespace Clothing_Store
                
                 SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
-                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 1";
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'pending' ";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
@@ -109,14 +110,18 @@ namespace Clothing_Store
             {
                 SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
-                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 1";
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'pending' ";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
                 data.Fill(table);
 
-                dataGridViewManage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridViewManage.DataSource = table;
+                dataGridViewManagePending.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewManagePending.DataSource = table;
+
+                dataGridViewManageDelivered.Visible = false;
+                dataGridViewManageIntransit.Visible = false;
+                dataGridViewManagePending.Visible = true;
 
                 totalPending();
 
@@ -125,17 +130,61 @@ namespace Clothing_Store
             {
                 SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
-                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer Name' , d.Order_Id, d.Description from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 3";
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'intransit' ";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
                 data.Fill(table);
 
-                dataGridViewManage.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                dataGridViewManage.DataSource = table;
+                dataGridViewManageIntransit.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewManageIntransit.DataSource = table;
+
+                dataGridViewManageDelivered.Visible = false;
+                dataGridViewManageIntransit.Visible = true;
+                dataGridViewManagePending.Visible = false;
 
                 totalIntrnsit();
             }
+            else if (cbSortby.Text == "Delivered")
+            {
+                SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'delivered' ";
+                SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+                DataTable table = new DataTable();
+
+                data.Fill(table);
+
+                dataGridViewManageDelivered.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewManageDelivered.DataSource = table;
+
+                dataGridViewManageDelivered.Visible = true;
+                dataGridViewManageIntransit.Visible = false;
+                dataGridViewManagePending.Visible = false;
+
+                Delivery();
+            }
+            else
+            {
+                SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'pending' ";
+                SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
+                DataTable table = new DataTable();
+
+                data.Fill(table);
+
+                dataGridViewManagePending.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dataGridViewManagePending.DataSource = table;
+
+                dataGridViewManageDelivered.Visible = false;
+                dataGridViewManageIntransit.Visible = false;
+                dataGridViewManagePending.Visible = true;
+
+                totalPending();
+
+            }
+
 
         }// manage delivery end - datagrid
 
@@ -143,9 +192,10 @@ namespace Clothing_Store
         public void sort()
         {
             ArrayList arr = new ArrayList();
-            arr.Add("Delivered");
+        
             arr.Add("Pending");
             arr.Add("Intransit");
+            arr.Add("Delivered");
 
             foreach (string i in arr)
             {
@@ -153,10 +203,14 @@ namespace Clothing_Store
             }
         }
         Timer timer = new Timer();
+      
         private void btnHomeDelivery_Click(object sender, EventArgs e) // btn Home begin
         {
+
+          
+
             seeDelivery();
-            dataGridViewManage.Visible = false;
+            dataGridViewManagePending.Visible = false;
             dataGridView1Home.Visible = true;
 
            
@@ -164,26 +218,33 @@ namespace Clothing_Store
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
 
+            
+
         } // btn home end
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             seeDelivery();
+            
         }
 
         private void btnManage_Click(object sender, EventArgs e) // btn manage begin
         {
-            dataGridViewManage.Visible = true;
+            dataGridViewManagePending.Visible = true;
             dataGridView1Home.Visible = false;
 
             timer.Stop();
+
+          
+
+            manage();
             
             
         }// btn manage end
         public void totalPending()  // total delivery - string
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
-            string sj = "select count(*) as total from Delivery where Status = 1";
+            string sj = "select count(*) as total from Delivery where Status = 'pending'";
             sqlcc.Open();
             SqlCommand command;
             command = new SqlCommand(sj, sqlcc);
@@ -196,7 +257,7 @@ namespace Clothing_Store
         public void Delivery()  // total delivery - string
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
-            string sj = "select count(*) as total from Delivery where Status = 4";
+            string sj = "select count(*) as total from Delivery where Status = 'delivered'";
             sqlcc.Open();
             SqlCommand command;
             command = new SqlCommand(sj, sqlcc);
@@ -209,7 +270,7 @@ namespace Clothing_Store
         public void totalIntrnsit()  // total delivery - string
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
-            string sj = "select count(*) as total from Delivery where Status = 3";
+            string sj = "select count(*) as total from Delivery where Status = 'intransit'";
             sqlcc.Open();
             SqlCommand command;
             command = new SqlCommand(sj, sqlcc);
@@ -220,7 +281,189 @@ namespace Clothing_Store
 
         }  // total delivery - string
 
+        deliveryClass dc = new deliveryClass();
 
+        private void dataGridViewManageDelivered_CellContentClick(object sender, DataGridViewCellEventArgs e)//  Delivery management begin
+        {
+          
+
+            dc.Delivery_Id = dataGridViewManageDelivered.CurrentRow.Cells["dataGridViewTextBoxColumn7"].Value.ToString();
+            dc.Description = dataGridViewManageDelivered.CurrentRow.Cells["dataGridViewTextBoxColumn12"].Value.ToString();
+
+            if (dataGridViewManageDelivered.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Remove Delivery # " + dc.Delivery_Id + " by: " + dc.Description + "  ?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Delivery set Status = 'Delete' where Order_Id = " + dc.Delivery_Id + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = " Delete Delivery Info " + dc.Delivery_Id + " by: " + dc.Description + " ";
+
+                    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+
+            manage();
+
+        } //  Delivery management end
+
+        private void dataGridViewManageIntransit_CellContentClick(object sender, DataGridViewCellEventArgs e)//  intransit management begin
+        {
+
+            dc.Delivery_Id = dataGridViewManageIntransit.CurrentRow.Cells["dataGridViewTextBoxColumn1"].Value.ToString();
+            dc.Description = dataGridViewManageIntransit.CurrentRow.Cells["dataGridViewTextBoxColumn6"].Value.ToString();
+
+            if (dataGridViewManageIntransit.Columns[e.ColumnIndex].Name == "DeliveredIntransit")
+            {
+
+                DialogResult result = MessageBox.Show("Do you want to Move this to Delivered  - # " + dc.Delivery_Id + " by: " + dc.Description + "  ?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Delivery set Status = 'Delivered' where Delivery_Id = " + dc.Delivery_Id + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = " move to delivered frm intransit Info " + dc.Delivery_Id + " by: " + dc.Description + " ";
+
+                    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+            else if (dataGridViewManageIntransit.Columns[e.ColumnIndex].Name == "DeleteIntransit")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Remove Delivery # " + dc.Delivery_Id + " by: " + dc.Description + "  ?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Delivery set Status = 'Delete' where Delivery_Id = " + dc.Delivery_Id + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = " Delete Intransit Info " + dc.Delivery_Id + " by: " + dc.Description + " ";
+
+                    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+
+            manage();
+
+        } //  intransit management end
+
+        private void dataGridViewManagePending_CellContentClick(object sender, DataGridViewCellEventArgs e)//  Pending management begin
+        {
+
+            dc.Delivery_Id = dataGridViewManagePending.CurrentRow.Cells["deliveryIdDataGridViewTextBoxColumn"].Value.ToString();
+            dc.Description = dataGridViewManagePending.CurrentRow.Cells["descriptionDataGridViewTextBoxColumn"].Value.ToString();
+
+            if (dataGridViewManagePending.Columns[e.ColumnIndex].Name == "Intransit")
+            {
+
+                DialogResult result = MessageBox.Show("Do you want to Move this to Intransit  - # " + dc.Delivery_Id + " by: " + dc.Description + "  ?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Delivery set Status = 'Intransit' where Delivery_Id = " + dc.Delivery_Id + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = " move to delivered frm intransit Info " + dc.Delivery_Id + " by: " + dc.Description + " ";
+
+                    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+            else if (dataGridViewManagePending.Columns[e.ColumnIndex].Name == "Delete")
+            {
+                DialogResult result = MessageBox.Show("Do you want to Remove Pending # " + dc.Delivery_Id + " by: " + dc.Description + "  ?", "Delete", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    SqlConnection cn = new SqlConnection(ConnectionClass.conn);
+                    cn.Open();
+
+                    string quer = "UPDATE Delivery set Status = 'Delete' where Order_Id = " + dc.Delivery_Id + " ";
+
+                    SqlCommand command = new SqlCommand(quer, cn);
+                    command.ExecuteNonQuery();
+                    cn.Close();
+
+                    // activity logs begin
+
+                    string desc = " Delete Pending Info " + dc.Delivery_Id + " by: " + dc.Description + " ";
+
+                    ConnectionClass.activity(frmLogin.userId, desc);
+
+                    // activity logs end
+                }
+                else
+                {
+
+                }
+
+            }
+
+            manage();
+
+
+        }//  Pending management end
 
     } // class end
 }  // name space end
