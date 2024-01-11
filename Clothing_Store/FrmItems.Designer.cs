@@ -527,6 +527,7 @@
             this.Delete.FillWeight = 30F;
             this.Delete.HeaderText = "Delete";
             this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             this.Delete.Width = 5;

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccounts));
             this.sidepanelAdmin = new System.Windows.Forms.Panel();
             this.btnArchives = new System.Windows.Forms.Button();
             this.btnRecovery = new System.Windows.Forms.Button();
@@ -43,15 +42,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnAddNewStaff = new System.Windows.Forms.Button();
             this.dataGridViewStaffs = new System.Windows.Forms.DataGridView();
-            this.Staff_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Last_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contact_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelStafAndUser = new System.Windows.Forms.Panel();
             this.btnStaffs = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
@@ -90,6 +80,15 @@
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EditUser = new System.Windows.Forms.DataGridViewImageColumn();
             this.DeleteUser = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Staff_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.First_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Last_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.sidepanelAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelAdd.SuspendLayout();
@@ -227,12 +226,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(138, 84);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(617, 428);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.Visible = false;
@@ -307,77 +309,6 @@
             this.dataGridViewStaffs.Visible = false;
             this.dataGridViewStaffs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaffs_CellContentClick);
             // 
-            // Staff_Id
-            // 
-            this.Staff_Id.DataPropertyName = "Staff_Id";
-            this.Staff_Id.HeaderText = "#";
-            this.Staff_Id.Name = "Staff_Id";
-            this.Staff_Id.ReadOnly = true;
-            // 
-            // First_Name
-            // 
-            this.First_Name.DataPropertyName = "First_Name";
-            this.First_Name.HeaderText = "First Name";
-            this.First_Name.Name = "First_Name";
-            this.First_Name.ReadOnly = true;
-            // 
-            // Last_Name
-            // 
-            this.Last_Name.DataPropertyName = "Last_Name";
-            this.Last_Name.HeaderText = "Last Name";
-            this.Last_Name.Name = "Last_Name";
-            this.Last_Name.ReadOnly = true;
-            // 
-            // Contact_No
-            // 
-            this.Contact_No.DataPropertyName = "Contact_No";
-            this.Contact_No.HeaderText = "Contact no";
-            this.Contact_No.Name = "Contact_No";
-            this.Contact_No.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.DataPropertyName = "Email";
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Address
-            // 
-            this.Address.DataPropertyName = "Address";
-            this.Address.HeaderText = "Address";
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            // 
-            // Position
-            // 
-            this.Position.DataPropertyName = "Position";
-            this.Position.HeaderText = "Position";
-            this.Position.Name = "Position";
-            this.Position.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.DataPropertyName = "Edit";
-            this.Edit.FillWeight = 30F;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Image = ((System.Drawing.Image)(resources.GetObject("Edit.Image")));
-            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 30;
-            // 
-            // Delete
-            // 
-            this.Delete.DataPropertyName = "Delete";
-            this.Delete.FillWeight = 30F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 30;
-            // 
             // PanelStafAndUser
             // 
             this.PanelStafAndUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
@@ -423,12 +354,15 @@
             // 
             // dataGridViewHome
             // 
+            this.dataGridViewHome.AllowUserToAddRows = false;
+            this.dataGridViewHome.AllowUserToDeleteRows = false;
             this.dataGridViewHome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewHome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewHome.Location = new System.Drawing.Point(138, 84);
             this.dataGridViewHome.Name = "dataGridViewHome";
+            this.dataGridViewHome.ReadOnly = true;
             this.dataGridViewHome.Size = new System.Drawing.Size(617, 428);
             this.dataGridViewHome.TabIndex = 66;
             // 
@@ -806,7 +740,7 @@
             this.EditUser.DataPropertyName = "Edit";
             this.EditUser.FillWeight = 30F;
             this.EditUser.HeaderText = "Edit";
-            this.EditUser.Image = ((System.Drawing.Image)(resources.GetObject("EditUser.Image")));
+            this.EditUser.Image = global::Clothing_Store.Properties.Resources.Edit;
             this.EditUser.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
             this.EditUser.Name = "EditUser";
             this.EditUser.ReadOnly = true;
@@ -822,6 +756,77 @@
             this.DeleteUser.Name = "DeleteUser";
             this.DeleteUser.ReadOnly = true;
             this.DeleteUser.Width = 30;
+            // 
+            // Staff_Id
+            // 
+            this.Staff_Id.DataPropertyName = "Staff_Id";
+            this.Staff_Id.HeaderText = "#";
+            this.Staff_Id.Name = "Staff_Id";
+            this.Staff_Id.ReadOnly = true;
+            // 
+            // First_Name
+            // 
+            this.First_Name.DataPropertyName = "First_Name";
+            this.First_Name.HeaderText = "First Name";
+            this.First_Name.Name = "First_Name";
+            this.First_Name.ReadOnly = true;
+            // 
+            // Last_Name
+            // 
+            this.Last_Name.DataPropertyName = "Last_Name";
+            this.Last_Name.HeaderText = "Last Name";
+            this.Last_Name.Name = "Last_Name";
+            this.Last_Name.ReadOnly = true;
+            // 
+            // Contact_No
+            // 
+            this.Contact_No.DataPropertyName = "Contact_No";
+            this.Contact_No.HeaderText = "Contact no";
+            this.Contact_No.Name = "Contact_No";
+            this.Contact_No.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Position
+            // 
+            this.Position.DataPropertyName = "Position";
+            this.Position.HeaderText = "Position";
+            this.Position.Name = "Position";
+            this.Position.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.DataPropertyName = "Edit";
+            this.Edit.FillWeight = 30F;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Image = global::Clothing_Store.Properties.Resources.Edit;
+            this.Edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 30;
+            // 
+            // Delete
+            // 
+            this.Delete.DataPropertyName = "Delete";
+            this.Delete.FillWeight = 30F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 30;
             // 
             // FrmAccounts
             // 
@@ -881,15 +886,6 @@
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.DataGridView dataGridViewHome;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn First_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Last_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contact_No;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
-        private System.Windows.Forms.DataGridViewImageColumn Edit;
-        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.Label lblsearch;
         private System.Windows.Forms.TextBox txtSearch;
@@ -916,6 +912,15 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Staff_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn First_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Last_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contact_No;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Position;
+        private System.Windows.Forms.DataGridViewImageColumn Edit;
+        private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn User_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;

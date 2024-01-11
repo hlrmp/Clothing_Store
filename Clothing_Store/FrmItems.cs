@@ -931,7 +931,7 @@ namespace Clothing_Store
                 SqlConnection connection = new SqlConnection(ConnectionClass.conn);
                 connection.Open();
 
-                string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date FROM Products where Status = 2";
+                string quer = "SELECT Product_id as 'Code' , Product_Name as 'Name', Type as type, Category as category, Price as price,Color, Size as size , Date as date FROM Products where Status = 1";
                 SqlDataAdapter data = new SqlDataAdapter(quer, connection);
                 DataTable table = new DataTable();
 
