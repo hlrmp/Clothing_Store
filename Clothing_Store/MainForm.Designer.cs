@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1buttonCollections = new System.Windows.Forms.Panel();
+            this.lblPosition = new System.Windows.Forms.Label();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.lblAccount = new System.Windows.Forms.Label();
             this.btnLogoutAccount = new System.Windows.Forms.Button();
@@ -88,7 +89,6 @@
             this.llblTotal = new System.Windows.Forms.Label();
             this.dataGridViewDelivery = new System.Windows.Forms.DataGridView();
             this.btnIntransit = new System.Windows.Forms.Button();
-            this.lblPosition = new System.Windows.Forms.Label();
             this.panel1buttonCollections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panel1.SuspendLayout();
@@ -136,6 +136,20 @@
             this.panel1buttonCollections.Name = "panel1buttonCollections";
             this.panel1buttonCollections.Size = new System.Drawing.Size(1261, 56);
             this.panel1buttonCollections.TabIndex = 0;
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPosition.AutoSize = true;
+            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPosition.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblPosition.Location = new System.Drawing.Point(1076, 35);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(74, 14);
+            this.lblPosition.TabIndex = 13;
+            this.lblPosition.Text = "(Position)";
             // 
             // pictureBoxProfile
             // 
@@ -928,20 +942,6 @@
             this.btnIntransit.Text = "Intransit";
             this.btnIntransit.UseVisualStyleBackColor = false;
             this.btnIntransit.Click += new System.EventHandler(this.btnIntransit_Click);
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.BackColor = System.Drawing.Color.Transparent;
-            this.lblPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPosition.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblPosition.Location = new System.Drawing.Point(1076, 35);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(74, 14);
-            this.lblPosition.TabIndex = 13;
-            this.lblPosition.Text = "(Position)";
             // 
             // MainForm
             // 
