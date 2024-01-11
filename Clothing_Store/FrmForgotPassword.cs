@@ -86,6 +86,8 @@ namespace Clothing_Store
             txtPosition.Clear();
 
             this.Hide();
+            frmLogin fl = new  frmLogin();
+            fl.Show();
 
         } // btn Cancel MAin end
 
