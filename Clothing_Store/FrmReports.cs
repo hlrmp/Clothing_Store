@@ -1123,6 +1123,20 @@ namespace Clothing_Store
             }
 
             con.Close();
+
+            string delivery = "select count(*) from Delivery where Status = 'pending' or Status = 'delivered' or Status = 'intransit'";
+
+            SqlCommand command3;
+            command3 = new SqlCommand(delivery, con);
+            con.Open();
+            SqlDataReader reader3 = command3.ExecuteReader();
+            if (reader3.Read())
+            {
+                lblDelivery.Text = reader3[0].ToString();
+            }
+
+            con.Close();
+
         }
 
       

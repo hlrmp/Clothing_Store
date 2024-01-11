@@ -51,6 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnDelivery = new System.Windows.Forms.Button();
+            this.lblDelivery = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.sidepanelitems.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -258,6 +260,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHome.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panelHome.Controls.Add(this.lblDelivery);
+            this.panelHome.Controls.Add(this.label6);
             this.panelHome.Controls.Add(this.lblOrders);
             this.panelHome.Controls.Add(this.lblStocks);
             this.panelHome.Controls.Add(this.lblItems);
@@ -276,7 +280,7 @@
             this.lblOrders.AutoSize = true;
             this.lblOrders.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblOrders.Location = new System.Drawing.Point(358, 150);
+            this.lblOrders.Location = new System.Drawing.Point(332, 150);
             this.lblOrders.Name = "lblOrders";
             this.lblOrders.Size = new System.Drawing.Size(114, 39);
             this.lblOrders.TabIndex = 28;
@@ -288,7 +292,7 @@
             this.lblStocks.AutoSize = true;
             this.lblStocks.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStocks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblStocks.Location = new System.Drawing.Point(209, 150);
+            this.lblStocks.Location = new System.Drawing.Point(183, 150);
             this.lblStocks.Name = "lblStocks";
             this.lblStocks.Size = new System.Drawing.Size(110, 39);
             this.lblStocks.TabIndex = 27;
@@ -300,7 +304,7 @@
             this.lblItems.AutoSize = true;
             this.lblItems.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.lblItems.Location = new System.Drawing.Point(36, 150);
+            this.lblItems.Location = new System.Drawing.Point(10, 150);
             this.lblItems.Name = "lblItems";
             this.lblItems.Size = new System.Drawing.Size(99, 39);
             this.lblItems.TabIndex = 26;
@@ -323,7 +327,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label3.Location = new System.Drawing.Point(339, 93);
+            this.label3.Location = new System.Drawing.Point(313, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 39);
             this.label3.TabIndex = 24;
@@ -335,7 +339,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label2.Location = new System.Drawing.Point(21, 93);
+            this.label2.Location = new System.Drawing.Point(-5, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 39);
             this.label2.TabIndex = 23;
@@ -347,7 +351,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
-            this.label1.Location = new System.Drawing.Point(185, 93);
+            this.label1.Location = new System.Drawing.Point(159, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 39);
             this.label1.TabIndex = 22;
@@ -382,6 +386,30 @@
             this.btnDelivery.Text = "Delivery";
             this.btnDelivery.UseVisualStyleBackColor = true;
             this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
+            // 
+            // lblDelivery
+            // 
+            this.lblDelivery.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDelivery.AutoSize = true;
+            this.lblDelivery.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblDelivery.Location = new System.Drawing.Point(481, 150);
+            this.lblDelivery.Name = "lblDelivery";
+            this.lblDelivery.Size = new System.Drawing.Size(135, 39);
+            this.lblDelivery.TabIndex = 30;
+            this.lblDelivery.Text = "Delivery";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Matura MT Script Capitals", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label6.Location = new System.Drawing.Point(462, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 39);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Delivery";
             // 
             // FrmReports
             // 
@@ -434,5 +462,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnDelivery;
+        private System.Windows.Forms.Label lblDelivery;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -9,7 +9,7 @@ namespace Clothing_Store
 {
     internal class regexClass
     {
-        public static string letters = @"^[a-zA-Z]+$";
+        public static string letters = @"^[a-zA-Z][a-zA-Z\\s]+$";
         public static string numbers = @"^09[0-9]{9}$";
         public static string age = @"^[0-9]{1,3}$";
         public static string schar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";

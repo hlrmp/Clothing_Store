@@ -123,7 +123,6 @@ namespace Clothing_Store
         {
             if (Regex.IsMatch(LastName, regexClass.letters))
             {
-                LastName = Char.ToUpper(LastName[0]) + LastName.Substring(1);
 
                 uc.StaffLastName = LastName;
 
