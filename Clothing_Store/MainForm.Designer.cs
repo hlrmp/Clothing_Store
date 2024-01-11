@@ -59,9 +59,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelHome = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.pbOrangeTshirt = new System.Windows.Forms.PictureBox();
-            this.pbTshirtGreen = new System.Windows.Forms.PictureBox();
-            this.pbRedTshirt = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -99,9 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOrangeTshirt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTshirtGreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRedTshirt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).BeginInit();
@@ -536,9 +530,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHome.BackColor = System.Drawing.Color.Teal;
             this.panelHome.Controls.Add(this.monthCalendar1);
-            this.panelHome.Controls.Add(this.pbOrangeTshirt);
-            this.panelHome.Controls.Add(this.pbTshirtGreen);
-            this.panelHome.Controls.Add(this.pbRedTshirt);
             this.panelHome.Controls.Add(this.label1);
             this.panelHome.Controls.Add(this.label2);
             this.panelHome.Controls.Add(this.label3);
@@ -571,39 +562,6 @@
             this.monthCalendar1.Location = new System.Drawing.Point(16, 32);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 104;
-            // 
-            // pbOrangeTshirt
-            // 
-            this.pbOrangeTshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbOrangeTshirt.BackColor = System.Drawing.Color.Teal;
-            this.pbOrangeTshirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbOrangeTshirt.Location = new System.Drawing.Point(365, 196);
-            this.pbOrangeTshirt.Name = "pbOrangeTshirt";
-            this.pbOrangeTshirt.Size = new System.Drawing.Size(18, 20);
-            this.pbOrangeTshirt.TabIndex = 116;
-            this.pbOrangeTshirt.TabStop = false;
-            // 
-            // pbTshirtGreen
-            // 
-            this.pbTshirtGreen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbTshirtGreen.BackColor = System.Drawing.Color.Teal;
-            this.pbTshirtGreen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbTshirtGreen.Location = new System.Drawing.Point(397, 196);
-            this.pbTshirtGreen.Name = "pbTshirtGreen";
-            this.pbTshirtGreen.Size = new System.Drawing.Size(18, 20);
-            this.pbTshirtGreen.TabIndex = 115;
-            this.pbTshirtGreen.TabStop = false;
-            // 
-            // pbRedTshirt
-            // 
-            this.pbRedTshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbRedTshirt.BackColor = System.Drawing.Color.Teal;
-            this.pbRedTshirt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbRedTshirt.Location = new System.Drawing.Point(334, 195);
-            this.pbRedTshirt.Name = "pbRedTshirt";
-            this.pbRedTshirt.Size = new System.Drawing.Size(18, 20);
-            this.pbRedTshirt.TabIndex = 114;
-            this.pbRedTshirt.TabStop = false;
             // 
             // label1
             // 
@@ -971,9 +929,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelHome.ResumeLayout(false);
             this.panelHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOrangeTshirt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbTshirtGreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbRedTshirt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).EndInit();
@@ -1014,9 +969,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panelHome;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.PictureBox pbOrangeTshirt;
-        private System.Windows.Forms.PictureBox pbTshirtGreen;
-        private System.Windows.Forms.PictureBox pbRedTshirt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
