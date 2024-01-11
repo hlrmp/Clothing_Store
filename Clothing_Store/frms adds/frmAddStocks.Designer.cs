@@ -468,6 +468,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(400, 200);
             this.Name = "frmAddStocks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddStocks";
             this.Load += new System.EventHandler(this.frmAddStocks_Load);
             this.panel2.ResumeLayout(false);

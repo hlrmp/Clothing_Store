@@ -347,7 +347,7 @@ namespace Clothing_Store
         {
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
-            string ids = "select concat(First_Name ,' ', Last_Name ) as Name from Customers";
+            string ids = "select concat(First_Name ,' ', Last_Name ) as Name from Customers where Status = 1";
             SqlDataAdapter adapt = new SqlDataAdapter(ids, con);
 
             DataTable dataTable = new DataTable();

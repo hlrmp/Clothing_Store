@@ -1007,9 +1007,9 @@ namespace Clothing_Store
         private void dataGridViewManage_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
-                it.Code = dataGridViewManage.CurrentRow.Cells["code"].Value.ToString();
-                it.Name = dataGridViewManage.CurrentRow.Cells["name"].Value.ToString();
-                it.price = dataGridViewManage.CurrentRow.Cells["price"].Value.ToString();
+                it.Code = dataGridViewManage.CurrentRow.Cells["codeDataGridViewTextBoxColumn"].Value.ToString();
+                it.Name = dataGridViewManage.CurrentRow.Cells["dataGridViewTextBoxColumn1"].Value.ToString();
+                it.price = dataGridViewManage.CurrentRow.Cells["priceDataGridViewTextBoxColumn"].Value.ToString();
 
                 if (dataGridViewManage.Columns[e.ColumnIndex].Name == "Edit")
                 {

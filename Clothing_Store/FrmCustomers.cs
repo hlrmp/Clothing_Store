@@ -40,7 +40,15 @@ namespace Clothing_Store
         FrmAddCustomer fadd = new FrmAddCustomer();
         private void btnAdd_Click(object sender, EventArgs e)  // add buton begin
         {
+            Timer timer = new Timer();
+            timer.Interval = (1 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
+
             fadd.ShowDialog();
+
+            timer.Stop();
+
         } //add button end
 
         private void btnHomeCustomers_Click(object sender, EventArgs e) // home button begin
@@ -397,7 +405,14 @@ namespace Clothing_Store
            
             lbltotal.Refresh();
 
-        } // timer end
+        }
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            seecustomers();
+
+        }// timer end
+
+
 
         private void dataGridViewManage_CellContentClick(object sender, DataGridViewCellEventArgs e)  // datagrid view button begin
         {
@@ -686,6 +701,6 @@ namespace Clothing_Store
             return true;
         } // update the customer info end
 
-
+       
     } // class end
 } // namespace end

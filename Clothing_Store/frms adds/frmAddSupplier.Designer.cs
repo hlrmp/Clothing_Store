@@ -45,6 +45,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.dataGridViewHome = new System.Windows.Forms.DataGridView();
             this.Supplier_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
@@ -52,6 +56,9 @@
             this.dataGridViewManage = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Addres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Em = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelEdit = new System.Windows.Forms.Panel();
@@ -67,21 +74,14 @@
             this.txtEditContact = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Addres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Em = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supplierClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contactNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierClassBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
             this.panelEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -274,6 +274,31 @@
             this.Supplier_Name.Name = "Supplier_Name";
             this.Supplier_Name.ReadOnly = true;
             // 
+            // contactNoDataGridViewTextBoxColumn
+            // 
+            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
+            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
+            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // supplierClassBindingSource
+            // 
+            this.supplierClassBindingSource.DataSource = typeof(Clothing_Store.supplierClass);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -376,6 +401,27 @@
             this.SupName.HeaderText = "Supplier_Name";
             this.SupName.Name = "SupName";
             this.SupName.ReadOnly = true;
+            // 
+            // Contact
+            // 
+            this.Contact.DataPropertyName = "Contact_No";
+            this.Contact.HeaderText = "Contact No";
+            this.Contact.Name = "Contact";
+            this.Contact.ReadOnly = true;
+            // 
+            // Addres
+            // 
+            this.Addres.DataPropertyName = "address";
+            this.Addres.HeaderText = "Address";
+            this.Addres.Name = "Addres";
+            this.Addres.ReadOnly = true;
+            // 
+            // Em
+            // 
+            this.Em.DataPropertyName = "email";
+            this.Em.HeaderText = "Email";
+            this.Em.Name = "Em";
+            this.Em.ReadOnly = true;
             // 
             // Edit
             // 
@@ -551,52 +597,6 @@
             this.pictureBox1.TabIndex = 93;
             this.pictureBox1.TabStop = false;
             // 
-            // Contact
-            // 
-            this.Contact.DataPropertyName = "Contact_No";
-            this.Contact.HeaderText = "Contact No";
-            this.Contact.Name = "Contact";
-            this.Contact.ReadOnly = true;
-            // 
-            // Addres
-            // 
-            this.Addres.DataPropertyName = "address";
-            this.Addres.HeaderText = "Address";
-            this.Addres.Name = "Addres";
-            this.Addres.ReadOnly = true;
-            // 
-            // Em
-            // 
-            this.Em.DataPropertyName = "email";
-            this.Em.HeaderText = "Email";
-            this.Em.Name = "Em";
-            this.Em.ReadOnly = true;
-            // 
-            // supplierClassBindingSource
-            // 
-            this.supplierClassBindingSource.DataSource = typeof(Clothing_Store.supplierClass);
-            // 
-            // contactNoDataGridViewTextBoxColumn
-            // 
-            this.contactNoDataGridViewTextBoxColumn.DataPropertyName = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.HeaderText = "Contact_No";
-            this.contactNoDataGridViewTextBoxColumn.Name = "contactNoDataGridViewTextBoxColumn";
-            this.contactNoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // frmAddSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,17 +608,18 @@
             this.Controls.Add(this.panelAdd);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddSupplier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddSupplier";
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierClassBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

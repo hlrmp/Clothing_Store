@@ -384,9 +384,11 @@ namespace Clothing_Store.frms_adds
                     command.ExecuteNonQuery();
                     cn.Close();
 
+                    Supplier();
+
                     // activity logs begin
 
-                        string desc = "Delete Supplier Information - " + sc.Id;
+                    string desc = "Delete Supplier Information - " + sc.Id;
                         ConnectionClass.activity(frmLogin.userId, desc);
 
                     // activity logs end
