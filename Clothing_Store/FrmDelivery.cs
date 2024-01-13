@@ -462,7 +462,7 @@ namespace Clothing_Store
                     SqlConnection cn = new SqlConnection(ConnectionClass.conn);
                     cn.Open();
 
-                    string quer = "UPDATE Delivery set Status = 'Delete' where Order_Id = " + dc.Delivery_Id + " ";
+                    string quer = "UPDATE Delivery set Status = 'deleted' where Order_Id = " + dc.Delivery_Id + " ";
 
                     SqlCommand command = new SqlCommand(quer, cn);
                     command.ExecuteNonQuery();
