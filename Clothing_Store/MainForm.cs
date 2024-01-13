@@ -141,7 +141,13 @@ namespace Clothing_Store
             lblTotalTshirt.Show();
 
 
-
+            totalShorts();
+            totalPolo();
+            totalTshirt();
+            totalBlouse();
+            totalCollections();
+            totalPantsJeans();
+            totalPoloShirt();
         }
 
      
@@ -720,7 +726,7 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            lblTotalTshirt.Text = reader[0].ToString();  // - total numbers
+            lblTotalPants.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
         public void totalCollections()  // total  - string
@@ -752,7 +758,7 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            lblTotalTshirt.Text = reader[0].ToString();  // - total numbers
+            lblTotalBlouse.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
 

@@ -666,7 +666,7 @@
             this.lblTotalPants.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPants.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPants.Location = new System.Drawing.Point(902, 229);
+            this.lblTotalPants.Location = new System.Drawing.Point(850, 229);
             this.lblTotalPants.Name = "lblTotalPants";
             this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
             this.lblTotalPants.TabIndex = 113;

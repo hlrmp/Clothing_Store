@@ -658,6 +658,7 @@ namespace Clothing_Store
 
                         if (condition == "same")
                         {
+                            listOrders.Items.Clear();
                             listOrders.Visible = true;
                             dataGridViewOrders.Visible = false;
 

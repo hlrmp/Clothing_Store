@@ -526,6 +526,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmDelivery";
             this.Text = "FrmDelivery";
+            this.Load += new System.EventHandler(this.FrmDelivery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1Home)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

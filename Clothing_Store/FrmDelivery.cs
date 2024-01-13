@@ -488,6 +488,9 @@ namespace Clothing_Store
 
         }//  Pending management end
 
-
+        private void FrmDelivery_Load(object sender, EventArgs e)
+        {
+            sort();
+        }
     } // class end
 }  // name space end
