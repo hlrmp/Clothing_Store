@@ -888,6 +888,15 @@ namespace Clothing_Store
             timer.Start();
 
         } // profile click end
+        private void lblPosition_Click(object sender, EventArgs e) // lbl pos clik begin
+        {
+            panelAccount.Visible = true;
+
+            timer.Interval = (4 * 1000);
+            timer.Tick += new EventHandler(timer1_Tick);
+            timer.Start();
+
+        }// lbl pos clik end
 
         public void totalPending()  // total delivery - string
         {
@@ -982,6 +991,8 @@ namespace Clothing_Store
             seeDeliveryIntransit();
 
         } // btn Intransit end
+
+       
 
     } // class end 
 } // names space end

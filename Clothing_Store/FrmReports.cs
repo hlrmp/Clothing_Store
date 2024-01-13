@@ -586,7 +586,7 @@ namespace Clothing_Store
         public void OrdersDailyTotal()
         {
             string day = "select concat(Year(Date) ,'-',Month(Date) , '-', Day(Date) ) as 'Date Added', SUM(Quantity) AS 'Total'  " +
-                "from Orders  where  where Status = 1 or status = 3 or status = 4  " +
+                "from Orders  where Status = 1 or status = 3 or status = 4  " +
                 "group by Year(Date),Month(Date), Day(Date)" +
                 "order by Year(date), Day(date)";
 

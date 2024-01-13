@@ -80,6 +80,9 @@ namespace Clothing_Store
             cbColor.ResetText();
             listOrders.Items.Clear();
 
+            cbColor.BackColor = Color.White;
+            cbColor.ForeColor = Color.Black;
+
         }
         public void size() // size method begin
         {
@@ -138,7 +141,7 @@ namespace Clothing_Store
             arr.Add("Tshirt");
             arr.Add("Polo");
             arr.Add("PoloShirt");
-            arr.Add("Pants");
+            arr.Add("Pants/Jeans");
             arr.Add("Blouse");
             arr.Add("Shorts");
             arr.Add("Collection");
@@ -606,7 +609,7 @@ namespace Clothing_Store
         private void btnClear_Click(object sender, EventArgs e) // clear btn begin
         {
             clear();
-            dataGridViewOrders.Visible = false;
+            dataGridViewOrders.Visible = true;
 
         
         }// clear btn end

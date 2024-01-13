@@ -54,14 +54,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -88,11 +86,10 @@
             this.panel1.Controls.Add(this.panelEdit);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.pbLogo);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.panel1.Location = new System.Drawing.Point(65, 80);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(797, 389);
+            this.panel1.Size = new System.Drawing.Size(432, 389);
             this.panel1.TabIndex = 11;
             // 
             // btnClose
@@ -104,7 +101,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Location = new System.Drawing.Point(334, 332);
+            this.btnClose.Location = new System.Drawing.Point(129, 326);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(155, 41);
             this.btnClose.TabIndex = 63;
@@ -254,7 +251,7 @@
             this.panelEdit.Controls.Add(this.txtPassword);
             this.panelEdit.Controls.Add(this.txtUserName);
             this.panelEdit.Controls.Add(this.pictureBox3);
-            this.panelEdit.Location = new System.Drawing.Point(410, 113);
+            this.panelEdit.Location = new System.Drawing.Point(35, 113);
             this.panelEdit.Name = "panelEdit";
             this.panelEdit.Size = new System.Drawing.Size(350, 197);
             this.panelEdit.TabIndex = 13;
@@ -372,21 +369,11 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Name :";
             // 
-            // pbLogo
-            // 
-            this.pbLogo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbLogo.Location = new System.Drawing.Point(410, 27);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(350, 253);
-            this.pbLogo.TabIndex = 14;
-            this.pbLogo.TabStop = false;
-            // 
             // frmUserAccountManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 495);
+            this.ClientSize = new System.Drawing.Size(568, 520);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -402,7 +389,6 @@
             this.panelEdit.ResumeLayout(false);
             this.panelEdit.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +407,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Label lblPos;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblId;

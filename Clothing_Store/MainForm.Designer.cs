@@ -144,6 +144,7 @@
             this.lblPosition.Size = new System.Drawing.Size(74, 14);
             this.lblPosition.TabIndex = 13;
             this.lblPosition.Text = "(Position)";
+            this.lblPosition.Click += new System.EventHandler(this.lblPosition_Click);
             // 
             // pictureBoxProfile
             // 

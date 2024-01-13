@@ -101,7 +101,7 @@ namespace Clothing_Store
             ArrayList arr = new ArrayList();
             arr.Add("Tshirt");
             arr.Add("Polo");
-            arr.Add("Polo-Shirt");
+            arr.Add("PoloShirt");
             arr.Add("Pants/Jeans");
             arr.Add("Blouse");
             arr.Add("Shorts");
@@ -267,7 +267,9 @@ namespace Clothing_Store
             txtItemName.Clear();
             txtPrice.Clear();
 
-          
+            cbColor.BackColor = Color.White;
+            cbColor.ForeColor = Color.Black;
+
         }
 
       

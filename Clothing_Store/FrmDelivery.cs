@@ -87,7 +87,7 @@ namespace Clothing_Store
                
                 SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
 
-                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'pending' ";
+                string sj = "select d.Delivery_Id,concat(c.First_Name ,' ', c.Last_Name ) as 'Customer_name' ,c.Contact_No as 'Contact_no' , c.Address as 'Address', d.Order_Id as 'order_Id', d.Description as 'Description',d.Status as status from Delivery as d inner join Customers as c on d.Customer_Id = c.Customer_Id where d.Status = 'pending' or d.Status = 'intransit'";
                 SqlDataAdapter data = new SqlDataAdapter(sj, sqlcc);
                 DataTable table = new DataTable();
 
