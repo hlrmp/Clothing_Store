@@ -217,7 +217,7 @@ namespace Clothing_Store
             dataGridView1Home.Visible = true;
 
            
-            timer.Interval = (1 * 1000);
+            timer.Interval = (2 * 1000);
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
 
@@ -243,7 +243,7 @@ namespace Clothing_Store
             timer.Stop();
 
 
-            tm.Interval = (1 * 1000);
+            tm.Interval = (2 * 1000);
             tm.Tick += new EventHandler(timer2_Tick);
             tm.Start();
 
@@ -490,7 +490,7 @@ namespace Clothing_Store
 
         private void FrmDelivery_Load(object sender, EventArgs e)
         {
-            sort();
+           // sort();
         }
     } // class end
 }  // name space end

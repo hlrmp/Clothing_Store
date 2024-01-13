@@ -404,7 +404,7 @@ namespace Clothing_Store
 
 
          
-            timer.Interval = (1 * 1000);
+            timer.Interval = (3 * 1000);
             timer.Tick += new EventHandler(timer1_Tick);
             timer.Start();
 

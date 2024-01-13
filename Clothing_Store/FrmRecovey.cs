@@ -238,9 +238,9 @@ namespace Clothing_Store
                 }
                 else
                 {
-                    string back = "BACKUP DATABASE ClothingStoreDatabase TO DISK = N'"+txtBrowse.Text+ "\\" + txtNewName.Text+".bak'";
+                    string back = "BACKUP DATABASE ClothingStoreDB TO DISK = N'"+txtBrowse.Text+ "\\" + txtNewName.Text+".bak'";
 
-                    string name = "DECLARE @FileName varchar(1000)\r\nSELECT @FileName = (SELECT'"+txtBrowse.Text+"\\ClothingStoreDatabase' + convert(varchar(500), GetDate(),112) + '.bak')\r\nBACKUP DATABASE ClothingStoreDatabase TO DISK=@FileName";
+                    string name = "DECLARE @FileName varchar(1000)\r\nSELECT @FileName = (SELECT'"+txtBrowse.Text+ "\\ClothingStoreDB' + convert(varchar(500), GetDate(),112) + '.bak')\r\nBACKUP DATABASE ClothingStoreDB TO DISK=@FileName";
                   
                     Conn.Open();
                     SqlCommand commamd = new SqlCommand(back , Conn);
@@ -277,7 +277,8 @@ namespace Clothing_Store
         private void btnRestoreBrowse_Click(object sender, EventArgs e) // restore browse begin
         {
             OpenFileDialog openfile = new OpenFileDialog();
-          //  openfile.Filter = "*.bak |.bak";
+           // openfile.Filter = "*.bak |.bak |*.BAK |.BAK";
+           openfile.Filter = "SQL Server database backup files|*.bak";
             openfile.Title = "Database Restore";
 
             if (openfile.ShowDialog() == DialogResult.OK)
