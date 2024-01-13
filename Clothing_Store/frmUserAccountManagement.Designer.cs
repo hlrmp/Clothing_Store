@@ -80,12 +80,12 @@
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.lblPos);
             this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lblId);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.panelEdit);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.panelEdit);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
             this.panel1.Location = new System.Drawing.Point(65, 80);
             this.panel1.Name = "panel1";
@@ -144,6 +144,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 197);
             this.panel2.TabIndex = 12;
+            this.panel2.Visible = false;
             // 
             // label7
             // 
@@ -380,6 +381,7 @@
             this.Name = "frmUserAccountManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUserAccountManagement";
+            this.Load += new System.EventHandler(this.frmUserAccountManagement_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

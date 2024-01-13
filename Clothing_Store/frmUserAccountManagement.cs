@@ -232,5 +232,9 @@ namespace Clothing_Store
 
         } // btn close end
 
+        private void frmUserAccountManagement_Load(object sender, EventArgs e)
+        {
+            panel2.Show();
+        }
     } // class end
 } // name space end

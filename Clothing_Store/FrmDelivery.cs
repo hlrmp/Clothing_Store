@@ -96,7 +96,7 @@ namespace Clothing_Store
                 dataGridView1Home.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dataGridView1Home.DataSource = table;
 
-                totalPending();
+                Total();
             }
           
 
@@ -192,16 +192,19 @@ namespace Clothing_Store
         public void sort()
         {
             ArrayList arr = new ArrayList();
-        
+
+            arr.Add("All");
             arr.Add("Pending");
             arr.Add("Intransit");
             arr.Add("Delivered");
+           
 
             foreach (string i in arr)
             {
                 cbSortby.Items.Add(i);
             }
         }
+
         Timer timer = new Timer();
         Timer tm = new Timer();
         private void btnHomeDelivery_Click(object sender, EventArgs e) // btn Home begin
@@ -278,6 +281,19 @@ namespace Clothing_Store
         {
             SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
             string sj = "select count(*) as total from Delivery where Status = 'intransit'";
+            sqlcc.Open();
+            SqlCommand command;
+            command = new SqlCommand(sj, sqlcc);
+            SqlDataReader reader = command.ExecuteReader();
+            reader.Read();
+
+            lbltotal.Text = reader[0].ToString();  // - total numbers
+
+        }  // total delivery - string
+        public void Total()  // total delivery - string
+        {
+            SqlConnection sqlcc = new SqlConnection(ConnectionClass.conn);
+            string sj = "select count(*) as total from Delivery where Status = 'intransit' or Status = 'pending'";
             sqlcc.Open();
             SqlCommand command;
             command = new SqlCommand(sj, sqlcc);
