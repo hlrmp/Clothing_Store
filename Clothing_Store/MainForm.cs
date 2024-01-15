@@ -17,8 +17,9 @@ namespace Clothing_Store
         {
             InitializeComponent();
 
-          
-            totalShorts();
+            counts();
+
+           totalShorts();
             totalPolo();
             totalTshirt();
             totalBlouse();
@@ -110,12 +111,12 @@ namespace Clothing_Store
             panelHome.Visible = true;
 
             panelRSide.Show();
-            monthCalendar1.Show();
+         //   monthCalendar1.Show();
             panelAccount.Hide();
 
 
             // picture boxes
-            pboxTshirt.Show();
+         /*   pboxTshirt.Show();
             pboxPoloshirt.Show();
             pboxPants.Show();
             pboxShorts.Show();
@@ -124,10 +125,10 @@ namespace Clothing_Store
 
             pbBlouse.Show();
             label7.Show();
-            lblTotalBlouse.Show();
+            lblTotalBlouse.Show();*/
 
             // labels and total
-            label1.Show();
+          /*  label1.Show();
             label2.Show();
             label3.Show();
             label4.Show();
@@ -138,7 +139,7 @@ namespace Clothing_Store
             lblTotalPolo.Show();
             lblTotalPoloShirt.Show();
             lblTotalShorts.Show();
-            lblTotalTshirt.Show();
+            lblTotalTshirt.Show();*/
 
 
             totalShorts();
@@ -187,13 +188,13 @@ namespace Clothing_Store
             panelHome.Visible = false;
 
             panelRSide.Hide();
-            monthCalendar1.Hide();
+          //  monthCalendar1.Hide();
             panelAccount.Hide();
 
 
 
             // picture boxes
-            pboxTshirt.Hide();
+          /*  pboxTshirt.Hide();
             pboxPoloshirt.Hide();
             pboxPants.Hide();
             pboxShorts.Hide();
@@ -216,7 +217,7 @@ namespace Clothing_Store
             lblTotalTshirt.Hide();
             label7.Hide();
             lblTotalBlouse.Hide();
-
+*/
 
         }
 
@@ -256,13 +257,13 @@ namespace Clothing_Store
 
 
             panelRSide.Hide();
-            monthCalendar1.Hide();
+       //     monthCalendar1.Hide();
             panelAccount.Hide();
 
 
 
             // picture boxes
-            pboxTshirt.Hide();
+         /*   pboxTshirt.Hide();
             pboxPoloshirt.Hide();
             pboxPants.Hide();
             pboxShorts.Hide();
@@ -286,7 +287,7 @@ namespace Clothing_Store
             pbBlouse.Hide();
             label7.Hide();
             lblTotalBlouse.Hide();
-
+*/
 
         }
 
@@ -327,13 +328,13 @@ namespace Clothing_Store
 
 
             panelRSide.Hide();
-            monthCalendar1.Hide();
+        //    monthCalendar1.Hide();
             panelAccount.Hide();
 
 
 
             // picture boxes
-            pboxTshirt.Hide();
+         /*   pboxTshirt.Hide();
             pboxPoloshirt.Hide();
             pboxPants.Hide();
             pboxShorts.Hide();
@@ -357,7 +358,7 @@ namespace Clothing_Store
             pbBlouse.Hide();
             label7.Hide();
             lblTotalBlouse.Hide();
-
+*/
 
         } // btnCustomers end 
 
@@ -398,9 +399,9 @@ namespace Clothing_Store
             panelHome.Visible = false;
 
             panelRSide.Hide();
-            monthCalendar1.Hide();
+           // monthCalendar1.Hide();
             panelAccount.Hide();
-
+/*
 
 
             // picture boxes
@@ -427,7 +428,7 @@ namespace Clothing_Store
 
             pbBlouse.Hide();
             label7.Hide();
-            lblTotalBlouse.Hide();
+            lblTotalBlouse.Hide();*/
 
 
         } //btnOrders end
@@ -468,13 +469,13 @@ namespace Clothing_Store
 
 
             panelRSide.Hide();
-            monthCalendar1.Hide();
+       //     monthCalendar1.Hide();
             panelAccount.Hide();
 
 
 
             // picture boxes
-            pboxTshirt.Hide();
+          /*  pboxTshirt.Hide();
             pboxPoloshirt.Hide();
             pboxPants.Hide();
             pboxShorts.Hide();
@@ -498,7 +499,7 @@ namespace Clothing_Store
             pbBlouse.Hide();
             label7.Hide();
             lblTotalBlouse.Hide();
-
+*/
 
         } // btnAccount end
 
@@ -540,12 +541,12 @@ namespace Clothing_Store
             panelHome.Visible = false;
 
             panelRSide.Hide();
-            monthCalendar1.Hide();
+        //    monthCalendar1.Hide();
             panelAccount.Hide();
 
 
 
-            // picture boxes
+         /*   // picture boxes
             pboxTshirt.Hide();
             pboxPoloshirt.Hide();
             pboxPants.Hide();
@@ -570,7 +571,7 @@ namespace Clothing_Store
             pbBlouse.Hide();
             label7.Hide();
             lblTotalBlouse.Hide();
-
+*/
 
         } // button reports end
 
@@ -614,10 +615,10 @@ namespace Clothing_Store
 
 
             panelRSide.Hide();
-            monthCalendar1.Hide();
+        //    monthCalendar1.Hide();
             panelAccount.Hide();
 
-
+/*
             // picture boxes
             pboxTshirt.Hide();
             pboxPoloshirt.Hide();
@@ -642,11 +643,20 @@ namespace Clothing_Store
 
             pbBlouse.Hide();
             label7.Hide();
-            lblTotalBlouse.Hide();
+            lblTotalBlouse.Hide();*/
 
 
         } // button delivery end
 
+
+        string shorts;
+        string polo;
+        string PoloShirt;
+        string Tshirt;
+
+        string collections;
+        string jeans;
+        string blouse;
 
 
         public void totalShorts()  // total  - string
@@ -661,8 +671,9 @@ namespace Clothing_Store
             command = new SqlCommand(sj, sqlcc);
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
+            shorts = reader[0].ToString();
 
-            lblTotalShorts.Text = reader[0].ToString();  // - total numbers
+            //  lblTotalShorts.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
         public void totalPolo()  // total  - string
@@ -678,7 +689,9 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            lblTotalPolo.Text = reader[0].ToString();  // - total numbers
+            polo = reader[0].ToString();
+
+            //     lblTotalPolo.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
         public void totalTshirt()  // total  - string
@@ -694,7 +707,8 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            lblTotalTshirt.Text = reader[0].ToString();  // - total numbers
+            Tshirt = reader[0].ToString();
+            //   lblTotalTshirt.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
         public void totalPoloShirt()  // total  - string
@@ -710,7 +724,9 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            lblTotalPoloShirt.Text = reader[0].ToString();  // - total numbers
+            PoloShirt = reader[0].ToString();
+
+            //     lblTotalPoloShirt.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
         public void totalPantsJeans()  // total  - string
@@ -726,7 +742,8 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            lblTotalPants.Text = reader[0].ToString();  // - total numbers
+            jeans = reader[0].ToString();
+            //  lblTotalPants.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
         public void totalCollections()  // total  - string
@@ -742,7 +759,9 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            lblTotalCollection.Text = reader[0].ToString();  // - total numbers
+            collections = reader[0].ToString();
+
+            //    lblTotalCollection.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
         public void totalBlouse()  // total  - string
@@ -758,14 +777,47 @@ namespace Clothing_Store
             SqlDataReader reader = command.ExecuteReader();
             reader.Read();
 
-            lblTotalBlouse.Text = reader[0].ToString();  // - total numbers
+
+            blouse = reader[0].ToString();
+
+            //    lblTotalBlouse.Text = reader[0].ToString();  // - total numbers
 
         }  // total  - string
 
         private void MainForm_Load(object sender, EventArgs e)  // frm load begin
         {
             employee();
+
+
+            chart();
+
         }  // frm load end
+        public void chart()
+        {
+            string ord = lblOrders.Text;
+            string del = lblDelivery.Text;
+            string sto = lblStocks.Text;
+            string ite = lblItems.Text;
+
+            chart1.Series["Orders"].Points.AddXY("Orders",ord);
+            chart1.Series["Delivery"].Points.AddXY("Delivery", del);
+            chart1.Series["Stocks"].Points.AddXY("Stocks", sto);
+            chart1.Series["Items"].Points.AddXY("Items", ite);
+
+
+
+
+              chart2.Series["Sales"].Points.AddXY("Tshirt",Tshirt);
+              chart2.Series["Sales"].Points.AddXY("Polo", polo);
+              chart2.Series["Sales"].Points.AddXY("PoloShirt", PoloShirt);
+              chart2.Series["Sales"].Points.AddXY("Jeans", jeans);
+              chart2.Series["Sales"].Points.AddXY("Shorts", shorts);
+              chart2.Series["Sales"].Points.AddXY("Blouse", blouse);
+              chart2.Series["Sales"].Points.AddXY("Collectns", collections);
+  
+
+
+        }
 
         Timer timer = new Timer();
         private void btnLogoutAccount_Click(object sender, EventArgs e)  // log out account begin
@@ -998,7 +1050,63 @@ namespace Clothing_Store
 
         } // btn Intransit end
 
-       
+        public void counts()
+        {
+            SqlConnection con = new SqlConnection(ConnectionClass.conn);
+            string Items = "select count(*) from Products where status = 1";
+
+            SqlCommand command;
+            command = new SqlCommand(Items, con);
+            con.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                lblItems.Text = reader[0].ToString();
+            }
+
+            con.Close();
+
+            string Inventory = "select count(*) from Inventory where status = 1";
+
+            SqlCommand command1;
+            command1 = new SqlCommand(Inventory, con);
+            con.Open();
+            SqlDataReader reader1 = command1.ExecuteReader();
+            if (reader1.Read())
+            {
+                lblStocks.Text = reader1[0].ToString();
+            }
+
+
+            con.Close();
+
+            string Orders = "select count(*) from Orders where status = 1";
+
+            SqlCommand command2;
+            command2 = new SqlCommand(Orders, con);
+            con.Open();
+            SqlDataReader reader2 = command2.ExecuteReader();
+            if (reader2.Read())
+            {
+                lblOrders.Text = reader2[0].ToString();
+            }
+
+            con.Close();
+
+            string delivery = "select count(*) from Delivery where Status = 'pending' or Status = 'delivered' or Status = 'intransit'";
+
+            SqlCommand command3;
+            command3 = new SqlCommand(delivery, con);
+            con.Open();
+            SqlDataReader reader3 = command3.ExecuteReader();
+            if (reader3.Read())
+            {
+                lblDelivery.Text = reader3[0].ToString();
+            }
+
+            con.Close();
+
+        }
 
     } // class end 
 } // names space end

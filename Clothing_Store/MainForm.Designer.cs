@@ -30,6 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1buttonCollections = new System.Windows.Forms.Panel();
             this.lblPosition = new System.Windows.Forms.Label();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
@@ -58,34 +68,25 @@
             this.mainpanel = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelHome = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblTotalTshirt = new System.Windows.Forms.Label();
-            this.lblTotalPoloShirt = new System.Windows.Forms.Label();
-            this.pboxTshirt = new System.Windows.Forms.PictureBox();
-            this.pboxPants = new System.Windows.Forms.PictureBox();
-            this.pboxPoloshirt = new System.Windows.Forms.PictureBox();
-            this.lblTotalPants = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblTotalCollection = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblTotalPolo = new System.Windows.Forms.Label();
-            this.pboxCollecton = new System.Windows.Forms.PictureBox();
-            this.pboxPolo = new System.Windows.Forms.PictureBox();
-            this.pboxShorts = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTotalShorts = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalBlouse = new System.Windows.Forms.Label();
-            this.pbBlouse = new System.Windows.Forms.PictureBox();
             this.panelRSide = new System.Windows.Forms.Panel();
             this.btnPending = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.llblTotal = new System.Windows.Forms.Label();
             this.dataGridViewDelivery = new System.Windows.Forms.DataGridView();
             this.btnIntransit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDelivery = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblOrders = new System.Windows.Forms.Label();
+            this.lblStocks = new System.Windows.Forms.Label();
+            this.lblItems = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label5 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1buttonCollections.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
             this.panel1.SuspendLayout();
@@ -96,15 +97,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCollecton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPolo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxShorts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBlouse)).BeginInit();
             this.panelRSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1buttonCollections
@@ -530,287 +527,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHome.BackColor = System.Drawing.Color.Teal;
-            this.panelHome.Controls.Add(this.monthCalendar1);
-            this.panelHome.Controls.Add(this.label1);
-            this.panelHome.Controls.Add(this.label2);
-            this.panelHome.Controls.Add(this.label3);
-            this.panelHome.Controls.Add(this.lblTotalTshirt);
-            this.panelHome.Controls.Add(this.lblTotalPoloShirt);
-            this.panelHome.Controls.Add(this.pboxTshirt);
-            this.panelHome.Controls.Add(this.pboxPants);
-            this.panelHome.Controls.Add(this.pboxPoloshirt);
-            this.panelHome.Controls.Add(this.lblTotalPants);
+            this.panelHome.Controls.Add(this.chart1);
             this.panelHome.Controls.Add(this.label5);
-            this.panelHome.Controls.Add(this.lblTotalCollection);
-            this.panelHome.Controls.Add(this.label6);
-            this.panelHome.Controls.Add(this.lblTotalPolo);
-            this.panelHome.Controls.Add(this.pboxCollecton);
-            this.panelHome.Controls.Add(this.pboxPolo);
-            this.panelHome.Controls.Add(this.pboxShorts);
-            this.panelHome.Controls.Add(this.label4);
-            this.panelHome.Controls.Add(this.lblTotalShorts);
-            this.panelHome.Controls.Add(this.label7);
-            this.panelHome.Controls.Add(this.lblTotalBlouse);
-            this.panelHome.Controls.Add(this.pbBlouse);
+            this.panelHome.Controls.Add(this.chart2);
             this.panelHome.Controls.Add(this.panelRSide);
+            this.panelHome.Controls.Add(this.panel2);
             this.panelHome.Location = new System.Drawing.Point(18, 147);
             this.panelHome.Name = "panelHome";
             this.panelHome.Size = new System.Drawing.Size(1224, 550);
             this.panelHome.TabIndex = 3;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(16, 32);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 104;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(299, 229);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 19);
-            this.label1.TabIndex = 108;
-            this.label1.Text = "Total : ";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(533, 229);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 19);
-            this.label2.TabIndex = 110;
-            this.label2.Text = "Total : ";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(776, 229);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 19);
-            this.label3.TabIndex = 112;
-            this.label3.Text = "Total : ";
-            // 
-            // lblTotalTshirt
-            // 
-            this.lblTotalTshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalTshirt.AutoSize = true;
-            this.lblTotalTshirt.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalTshirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalTshirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalTshirt.Location = new System.Drawing.Point(363, 229);
-            this.lblTotalTshirt.Name = "lblTotalTshirt";
-            this.lblTotalTshirt.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalTshirt.TabIndex = 109;
-            this.lblTotalTshirt.Text = "0";
-            // 
-            // lblTotalPoloShirt
-            // 
-            this.lblTotalPoloShirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalPoloShirt.AutoSize = true;
-            this.lblTotalPoloShirt.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPoloShirt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPoloShirt.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPoloShirt.Location = new System.Drawing.Point(605, 229);
-            this.lblTotalPoloShirt.Name = "lblTotalPoloShirt";
-            this.lblTotalPoloShirt.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPoloShirt.TabIndex = 111;
-            this.lblTotalPoloShirt.Text = "0";
-            // 
-            // pboxTshirt
-            // 
-            this.pboxTshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pboxTshirt.Image = ((System.Drawing.Image)(resources.GetObject("pboxTshirt.Image")));
-            this.pboxTshirt.Location = new System.Drawing.Point(269, 32);
-            this.pboxTshirt.Name = "pboxTshirt";
-            this.pboxTshirt.Size = new System.Drawing.Size(196, 194);
-            this.pboxTshirt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxTshirt.TabIndex = 105;
-            this.pboxTshirt.TabStop = false;
-            // 
-            // pboxPants
-            // 
-            this.pboxPants.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pboxPants.Image = ((System.Drawing.Image)(resources.GetObject("pboxPants.Image")));
-            this.pboxPants.Location = new System.Drawing.Point(752, 32);
-            this.pboxPants.Name = "pboxPants";
-            this.pboxPants.Size = new System.Drawing.Size(196, 194);
-            this.pboxPants.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxPants.TabIndex = 107;
-            this.pboxPants.TabStop = false;
-            // 
-            // pboxPoloshirt
-            // 
-            this.pboxPoloshirt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pboxPoloshirt.Image = ((System.Drawing.Image)(resources.GetObject("pboxPoloshirt.Image")));
-            this.pboxPoloshirt.Location = new System.Drawing.Point(507, 32);
-            this.pboxPoloshirt.Name = "pboxPoloshirt";
-            this.pboxPoloshirt.Size = new System.Drawing.Size(196, 194);
-            this.pboxPoloshirt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxPoloshirt.TabIndex = 106;
-            this.pboxPoloshirt.TabStop = false;
-            // 
-            // lblTotalPants
-            // 
-            this.lblTotalPants.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalPants.AutoSize = true;
-            this.lblTotalPants.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPants.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPants.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPants.Location = new System.Drawing.Point(850, 229);
-            this.lblTotalPants.Name = "lblTotalPants";
-            this.lblTotalPants.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPants.TabIndex = 113;
-            this.lblTotalPants.Text = "0";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(526, 496);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 19);
-            this.label5.TabIndex = 96;
-            this.label5.Text = "Total : ";
-            // 
-            // lblTotalCollection
-            // 
-            this.lblTotalCollection.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalCollection.AutoSize = true;
-            this.lblTotalCollection.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCollection.ForeColor = System.Drawing.Color.White;
-            this.lblTotalCollection.Location = new System.Drawing.Point(837, 496);
-            this.lblTotalCollection.Name = "lblTotalCollection";
-            this.lblTotalCollection.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalCollection.TabIndex = 99;
-            this.lblTotalCollection.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(763, 496);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 19);
-            this.label6.TabIndex = 98;
-            this.label6.Text = "Total : ";
-            // 
-            // lblTotalPolo
-            // 
-            this.lblTotalPolo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalPolo.AutoSize = true;
-            this.lblTotalPolo.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPolo.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPolo.Location = new System.Drawing.Point(600, 496);
-            this.lblTotalPolo.Name = "lblTotalPolo";
-            this.lblTotalPolo.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalPolo.TabIndex = 97;
-            this.lblTotalPolo.Text = "0";
-            // 
-            // pboxCollecton
-            // 
-            this.pboxCollecton.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pboxCollecton.Image = global::Clothing_Store.Properties.Resources.collections;
-            this.pboxCollecton.Location = new System.Drawing.Point(752, 299);
-            this.pboxCollecton.Name = "pboxCollecton";
-            this.pboxCollecton.Size = new System.Drawing.Size(196, 194);
-            this.pboxCollecton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxCollecton.TabIndex = 93;
-            this.pboxCollecton.TabStop = false;
-            // 
-            // pboxPolo
-            // 
-            this.pboxPolo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pboxPolo.Image = ((System.Drawing.Image)(resources.GetObject("pboxPolo.Image")));
-            this.pboxPolo.Location = new System.Drawing.Point(507, 299);
-            this.pboxPolo.Name = "pboxPolo";
-            this.pboxPolo.Size = new System.Drawing.Size(196, 194);
-            this.pboxPolo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxPolo.TabIndex = 92;
-            this.pboxPolo.TabStop = false;
-            // 
-            // pboxShorts
-            // 
-            this.pboxShorts.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pboxShorts.Image = ((System.Drawing.Image)(resources.GetObject("pboxShorts.Image")));
-            this.pboxShorts.Location = new System.Drawing.Point(265, 299);
-            this.pboxShorts.Name = "pboxShorts";
-            this.pboxShorts.Size = new System.Drawing.Size(196, 194);
-            this.pboxShorts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pboxShorts.TabIndex = 91;
-            this.pboxShorts.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(274, 496);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 19);
-            this.label4.TabIndex = 94;
-            this.label4.Text = "Total : ";
-            // 
-            // lblTotalShorts
-            // 
-            this.lblTotalShorts.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalShorts.AutoSize = true;
-            this.lblTotalShorts.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalShorts.ForeColor = System.Drawing.Color.White;
-            this.lblTotalShorts.Location = new System.Drawing.Point(337, 496);
-            this.lblTotalShorts.Name = "lblTotalShorts";
-            this.lblTotalShorts.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalShorts.TabIndex = 95;
-            this.lblTotalShorts.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(50, 496);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 19);
-            this.label7.TabIndex = 101;
-            this.label7.Text = "Total : ";
-            // 
-            // lblTotalBlouse
-            // 
-            this.lblTotalBlouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalBlouse.AutoSize = true;
-            this.lblTotalBlouse.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBlouse.ForeColor = System.Drawing.Color.White;
-            this.lblTotalBlouse.Location = new System.Drawing.Point(113, 496);
-            this.lblTotalBlouse.Name = "lblTotalBlouse";
-            this.lblTotalBlouse.Size = new System.Drawing.Size(19, 19);
-            this.lblTotalBlouse.TabIndex = 102;
-            this.lblTotalBlouse.Text = "0";
-            // 
-            // pbBlouse
-            // 
-            this.pbBlouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pbBlouse.Image = ((System.Drawing.Image)(resources.GetObject("pbBlouse.Image")));
-            this.pbBlouse.Location = new System.Drawing.Point(16, 299);
-            this.pbBlouse.Name = "pbBlouse";
-            this.pbBlouse.Size = new System.Drawing.Size(196, 194);
-            this.pbBlouse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbBlouse.TabIndex = 100;
-            this.pbBlouse.TabStop = false;
             // 
             // panelRSide
             // 
@@ -822,9 +547,9 @@
             this.panelRSide.Controls.Add(this.llblTotal);
             this.panelRSide.Controls.Add(this.dataGridViewDelivery);
             this.panelRSide.Controls.Add(this.btnIntransit);
-            this.panelRSide.Location = new System.Drawing.Point(989, -1);
+            this.panelRSide.Location = new System.Drawing.Point(942, -1);
             this.panelRSide.Name = "panelRSide";
-            this.panelRSide.Size = new System.Drawing.Size(235, 548);
+            this.panelRSide.Size = new System.Drawing.Size(282, 548);
             this.panelRSide.TabIndex = 103;
             // 
             // btnPending
@@ -838,7 +563,7 @@
             this.btnPending.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPending.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPending.ForeColor = System.Drawing.Color.White;
-            this.btnPending.Location = new System.Drawing.Point(113, 5);
+            this.btnPending.Location = new System.Drawing.Point(160, 5);
             this.btnPending.Name = "btnPending";
             this.btnPending.Size = new System.Drawing.Size(114, 37);
             this.btnPending.TabIndex = 98;
@@ -880,7 +605,7 @@
             this.dataGridViewDelivery.Location = new System.Drawing.Point(3, 48);
             this.dataGridViewDelivery.Name = "dataGridViewDelivery";
             this.dataGridViewDelivery.ReadOnly = true;
-            this.dataGridViewDelivery.Size = new System.Drawing.Size(224, 467);
+            this.dataGridViewDelivery.Size = new System.Drawing.Size(271, 467);
             this.dataGridViewDelivery.TabIndex = 2;
             // 
             // btnIntransit
@@ -894,13 +619,212 @@
             this.btnIntransit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIntransit.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIntransit.ForeColor = System.Drawing.Color.White;
-            this.btnIntransit.Location = new System.Drawing.Point(3, 5);
+            this.btnIntransit.Location = new System.Drawing.Point(50, 5);
             this.btnIntransit.Name = "btnIntransit";
             this.btnIntransit.Size = new System.Drawing.Size(114, 37);
             this.btnIntransit.TabIndex = 0;
             this.btnIntransit.Text = "Intransit";
             this.btnIntransit.UseVisualStyleBackColor = false;
             this.btnIntransit.Click += new System.EventHandler(this.btnIntransit_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblDelivery);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.lblOrders);
+            this.panel2.Controls.Add(this.lblStocks);
+            this.panel2.Controls.Add(this.lblItems);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(12, 333);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(924, 217);
+            this.panel2.TabIndex = 104;
+            // 
+            // lblDelivery
+            // 
+            this.lblDelivery.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDelivery.AutoSize = true;
+            this.lblDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.lblDelivery.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblDelivery.Location = new System.Drawing.Point(630, 147);
+            this.lblDelivery.Name = "lblDelivery";
+            this.lblDelivery.Size = new System.Drawing.Size(135, 35);
+            this.lblDelivery.TabIndex = 30;
+            this.lblDelivery.Text = "Delivery";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label6.Location = new System.Drawing.Point(611, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 35);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Delivery";
+            // 
+            // lblOrders
+            // 
+            this.lblOrders.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.BackColor = System.Drawing.Color.Transparent;
+            this.lblOrders.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblOrders.Location = new System.Drawing.Point(481, 147);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(112, 35);
+            this.lblOrders.TabIndex = 28;
+            this.lblOrders.Text = "Orders";
+            // 
+            // lblStocks
+            // 
+            this.lblStocks.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblStocks.AutoSize = true;
+            this.lblStocks.BackColor = System.Drawing.Color.Transparent;
+            this.lblStocks.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStocks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblStocks.Location = new System.Drawing.Point(332, 147);
+            this.lblStocks.Name = "lblStocks";
+            this.lblStocks.Size = new System.Drawing.Size(111, 35);
+            this.lblStocks.TabIndex = 27;
+            this.lblStocks.Text = "Stocks";
+            // 
+            // lblItems
+            // 
+            this.lblItems.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblItems.AutoSize = true;
+            this.lblItems.BackColor = System.Drawing.Color.Transparent;
+            this.lblItems.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItems.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.lblItems.Location = new System.Drawing.Point(159, 147);
+            this.lblItems.Name = "lblItems";
+            this.lblItems.Size = new System.Drawing.Size(99, 35);
+            this.lblItems.TabIndex = 26;
+            this.lblItems.Text = "Items";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label4.Location = new System.Drawing.Point(29, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(318, 35);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Total Numbers of :";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label3.Location = new System.Drawing.Point(462, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 35);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Orders";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label2.Location = new System.Drawing.Point(144, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 35);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Items";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Verdana", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(25)))), ((int)(((byte)(82)))));
+            this.label1.Location = new System.Drawing.Point(308, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 35);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Stocks";
+            // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(481, 66);
+            this.chart2.Name = "chart2";
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.IsValueShownAsLabel = true;
+            series6.Legend = "Legend1";
+            series6.Name = "Sales";
+            this.chart2.Series.Add(series6);
+            this.chart2.Size = new System.Drawing.Size(423, 251);
+            this.chart2.TabIndex = 106;
+            this.chart2.Text = "chart2";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Rockwell", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(485, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(171, 32);
+            this.label5.TabIndex = 107;
+            this.label5.Text = "Items Status";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(16, 27);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "total";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Items";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Orders";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Delivery";
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Stocks";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Series.Add(series5);
+            this.chart1.Size = new System.Drawing.Size(357, 290);
+            this.chart1.TabIndex = 108;
+            this.chart1.Text = "Total";
             // 
             // MainForm
             // 
@@ -930,16 +854,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelHome.ResumeLayout(false);
             this.panelHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxTshirt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPants)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPoloshirt)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxCollecton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxPolo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pboxShorts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBlouse)).EndInit();
             this.panelRSide.ResumeLayout(false);
             this.panelRSide.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelivery)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -969,28 +890,6 @@
         private System.Windows.Forms.Panel mainpanel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panelHome;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblTotalTshirt;
-        private System.Windows.Forms.Label lblTotalPoloShirt;
-        private System.Windows.Forms.PictureBox pboxTshirt;
-        private System.Windows.Forms.PictureBox pboxPants;
-        private System.Windows.Forms.PictureBox pboxPoloshirt;
-        private System.Windows.Forms.Label lblTotalPants;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblTotalCollection;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblTotalPolo;
-        private System.Windows.Forms.PictureBox pboxCollecton;
-        private System.Windows.Forms.PictureBox pboxPolo;
-        private System.Windows.Forms.PictureBox pboxShorts;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblTotalShorts;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblTotalBlouse;
-        private System.Windows.Forms.PictureBox pbBlouse;
         private System.Windows.Forms.Panel panelRSide;
         private System.Windows.Forms.DataGridView dataGridViewDelivery;
         private System.Windows.Forms.Button btnIntransit;
@@ -1002,5 +901,18 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lblPosition;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblDelivery;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblOrders;
+        private System.Windows.Forms.Label lblStocks;
+        private System.Windows.Forms.Label lblItems;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
