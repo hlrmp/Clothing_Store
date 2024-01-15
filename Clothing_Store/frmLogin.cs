@@ -25,10 +25,10 @@ namespace Clothing_Store
             //  base.OnPaint(e);
 
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle,
-                  Color.Teal, 10, ButtonBorderStyle.Solid,
-                  Color.Teal, 10, ButtonBorderStyle.Solid,
-                  Color.Teal, 10, ButtonBorderStyle.Solid,
-                  Color.Teal, 10, ButtonBorderStyle.Solid);
+                  Color.Black, 10, ButtonBorderStyle.Solid,
+                  Color.Black, 10, ButtonBorderStyle.Solid,
+                  Color.Black, 10, ButtonBorderStyle.Solid,
+                  Color.Black, 10, ButtonBorderStyle.Solid);
         }  // border color end
 
 

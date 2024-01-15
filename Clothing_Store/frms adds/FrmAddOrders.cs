@@ -78,7 +78,9 @@ namespace Clothing_Store
             cbSize.ResetText();
             cbType.ResetText();
             cbColor.ResetText();
-            listOrders.Items.Clear();
+
+            listOrders1.Items.Clear();
+            listOrders2.Items.Clear();
 
             cbColor.BackColor = Color.White;
             cbColor.ForeColor = Color.Black;
@@ -314,7 +316,7 @@ namespace Clothing_Store
                         else
                         {
                            
-                            listOrders.Items.Clear();
+                            listOrders1.Items.Clear();
                             MessageBox.Show("Insuficient Stocks" ,"Stocks",MessageBoxButtons.OK);
                             
                         }
@@ -445,7 +447,9 @@ namespace Clothing_Store
                   
                     ordersList();
 
-                    listOrders.Visible = false;
+                    listOrders1.Visible = false;
+                    listOrders2.Visible = false;
+
                     dataGridViewOrders.Visible = true;
 
                     //   MessageBox.Show(customerId + " " + productId);
@@ -479,8 +483,7 @@ namespace Clothing_Store
 
         public void itemslist()  // items begin
         {
-            string item = "SELECT p.Product_Id ,p.Product_Name AS Name, p.Category,p.Type, p.Price,p.Size, p.Color, i.Quantity FROM Products AS p INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) where i.Quantity > 0";
-
+            string item = "SELECT p.Product_Id as 'Code',p.Product_Name AS Name, p.Category,p.Type, p.Price,p.Size, p.Color, sum(i.Quantity) as 'Quantity' FROM Products AS p INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) where i.Quantity > 0 and p.Status = 1 \r\nGroup by p.Product_Id ,p.Product_Name, p.Category,p.Type, p.Price,p.Size, p.Color\r\norder by p.Product_Id";
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
            
@@ -500,7 +503,14 @@ namespace Clothing_Store
         } // items end
         public void ordersList() // orders begin
         {
-            string order = "select * from Orders";
+            string order = "select  o.Order_Id as 'ID', concat(c.First_Name,' ',c.Last_Name)as 'Customer Name' ," +
+                "p.Product_Name as 'Product Name',p.Price, o.Quantity ," +
+                "(p.Price * o.Quantity)as 'Total'," +
+                "o.Date from Customers as c " +
+                "inner join Orders as o on o.Customer_Id = c.Customer_Id " +
+                "inner join Products as p on p.Product_Id = o.Product_Id " +
+                " where o.Status = 1";
+
             SqlConnection con = new SqlConnection(ConnectionClass.conn);
 
 
@@ -539,7 +549,7 @@ namespace Clothing_Store
                 }
                 else
                 {
-                    string order = "SELECT p.Product_Id ,p.Product_Name AS 'Name', p.Category,p.Type, p.Price,p.Size, p.Color, i.Quantity FROM Products AS p" +
+                    string order = "SELECT p.Product_Id  as 'Code',p.Product_Name AS 'Name', p.Category as 'category' ,p.Type as 'type', p.Price as 'price',p.Size as 'Size', p.Color as 'Color', i.Quantity as 'quantity' FROM Products AS p" +
                " INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) " +
                "where i.Quantity > 0 and p.Type = '" + cbType.Text + "' and p.Category = '" + cbCategory.Text + "' " +
                "and p.Product_Name = '" + cbItem.Text + "' and p.Size = '" + cbSize.Text + "' and p.Color = '" + cbColor.Text + "' ";
@@ -658,17 +668,21 @@ namespace Clothing_Store
 
                         if (condition == "same")
                         {
-                            listOrders.Items.Clear();
-                            listOrders.Visible = true;
+                            listOrders1.Items.Clear();
+                            listOrders1.Visible = true;
+
+                            listOrders2.Items.Clear();
+                            listOrders2.Visible = true;
+
                             dataGridViewOrders.Visible = false;
 
-                            listOrders.Items.Add("Name:" + oc.Name);
-                            listOrders.Items.Add("Item:" + oc.Item);
-                            listOrders.Items.Add("Category:" + oc.Category);
-                            listOrders.Items.Add("Quantity:" + oc.Quantity);
-                            listOrders.Items.Add("Size:" + oc.Size);
-                            listOrders.Items.Add("Color:" + oc.Color);
-                            listOrders.Items.Add("Type:" + oc.Type);
+                            listOrders1.Items.Add("Name:" + oc.Name);
+                            listOrders1.Items.Add("Item:" + oc.Item);
+                            listOrders1.Items.Add("Category:" + oc.Category);
+                            listOrders2.Items.Add("Quantity:" + oc.Quantity);
+                            listOrders2.Items.Add("Size:" + oc.Size);
+                            listOrders2.Items.Add("Color:" + oc.Color);
+                            listOrders2.Items.Add("Type:" + oc.Type);
 
                         }
                         else if (condition == "notsame")
@@ -702,5 +716,52 @@ namespace Clothing_Store
 
         }// add order btn rom textboxs to datagrid ennd
 
+        private void dataGridViewItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            oc.Product_Id = dataGridViewItems.CurrentRow.Cells["codeDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Product_Name = dataGridViewItems.CurrentRow.Cells["nameDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Color = dataGridViewItems.CurrentRow.Cells["colorDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Type = dataGridViewItems.CurrentRow.Cells["typeDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Category = dataGridViewItems.CurrentRow.Cells["categoryDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Size = dataGridViewItems.CurrentRow.Cells["sizeDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Quantity = dataGridViewItems.CurrentRow.Cells["quantityDataGridViewTextBoxColumn"].Value.ToString();
+            oc.Product_Price = dataGridViewItems.CurrentRow.Cells["priceDataGridViewTextBoxColumn"].Value.ToString();
+
+                cbItem.Text = oc.Product_Name;
+                cbCategory.Text = oc.Category;
+                cbSize.Text = oc.Size;
+                cbType.Text = oc.Type;
+                cbColor.Text = oc.Color;
+            
+           
+
+
+        }
+
+        public void seeTotalItems() // see all items begin - datagrid
+        {
+
+            SqlConnection connection = new SqlConnection(ConnectionClass.conn);
+            connection.Open();
+
+            string order = "SELECT p.Product_Id  as 'Code',p.Product_Name AS 'Name', p.Category as 'category' ,p.Type as 'type', p.Price as 'price',p.Size as 'Size', p.Color as 'Color', i.Quantity as 'quantity' FROM Products AS p" +
+               " INNER JOIN Inventory AS i ON (p.Product_Id = i.product_Id) " +
+               "where i.Quantity > 0 and p.Status = 1";
+
+           
+            SqlDataAdapter data = new SqlDataAdapter(order, connection);
+            DataTable table = new DataTable();
+
+            data.Fill(table);
+
+            dataGridViewItems.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewItems.DataSource = table;
+
+            connection.Close();
+
+
+
+
+        } // see all items end - datagrid
     } // calss end
 } // namespace end

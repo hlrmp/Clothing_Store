@@ -38,7 +38,7 @@
             this.btnAddStock = new System.Windows.Forms.Button();
             this.dataGridViewHome = new System.Windows.Forms.DataGridView();
             this.dataGridViewManage = new System.Windows.Forms.DataGridView();
-            this.ordersClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.cbFilter = new System.Windows.Forms.ComboBox();
             this.lblsearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -53,12 +53,12 @@
             this.staffsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ordersClassBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sidepanelitems.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -204,9 +204,15 @@
             this.dataGridViewManage.Visible = false;
             this.dataGridViewManage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewManage_CellContentClick);
             // 
-            // ordersClassBindingSource
+            // Delete
             // 
-            this.ordersClassBindingSource.DataSource = typeof(Clothing_Store.classes.ordersClass);
+            this.Delete.FillWeight = 25F;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
+            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 5;
             // 
             // cbFilter
             // 
@@ -326,15 +332,9 @@
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
             // 
-            // Delete
+            // ordersClassBindingSource
             // 
-            this.Delete.FillWeight = 25F;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Image = global::Clothing_Store.Properties.Resources.delete;
-            this.Delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 5;
+            this.ordersClassBindingSource.DataSource = typeof(Clothing_Store.classes.ordersClass);
             // 
             // FrmOrders
             // 
@@ -357,8 +357,8 @@
             this.sidepanelitems.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersClassBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
