@@ -214,7 +214,7 @@ namespace Clothing_Store
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
                 txtBrowse.Text = folderBrowserDialog.SelectedPath;
-                txtNewName.Text = "ClothingStoreDatabase-" + TimeandDate;
+                txtNewName.Text = "ClothingStoreDB-" + TimeandDate;
 
             }
                  
