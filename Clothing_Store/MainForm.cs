@@ -813,7 +813,7 @@ namespace Clothing_Store
               chart2.Series["Sales"].Points.AddXY("Jeans", jeans);
               chart2.Series["Sales"].Points.AddXY("Shorts", shorts);
               chart2.Series["Sales"].Points.AddXY("Blouse", blouse);
-              chart2.Series["Sales"].Points.AddXY("Collectns", collections);
+              chart2.Series["Sales"].Points.AddXY("Collections", collections);
   
 
 
