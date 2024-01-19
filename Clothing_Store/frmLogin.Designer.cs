@@ -205,7 +205,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(774, 395);
-            this.Controls.Add(this.circularProgressBar1);
+          // this.Controls.Add(this.circularProgressBar1);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblForgotPasword);
             this.Controls.Add(this.txtUserName);
